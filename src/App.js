@@ -23,7 +23,6 @@ function App() {
                     <Topbar/>
                     <div className="content">
                         <Sidebar/>
-
                         <MainContent/>
                     </div>
 
