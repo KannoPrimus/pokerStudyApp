@@ -1,0 +1,18 @@
+/* MainContent.css */
+.MainContent {
+    display: flex;            /* Utiliza Flexbox para el layout horizontal */
+    justify-content: space-between; /* Distribuye el espacio uniformemente entre columnas */
+    align-items: flex-start;  /* Alinea las columnas al inicio verticalmente */
+    padding: 0px;            /* Añade espacio alrededor del contenedor para evitar que los elementos toquen los bordes externos */
+    gap: 0px;                /* Añade un espacio entre cada columna */
+    /*height: 100%;              Ajusta la altura según sea necesario */
+    width: 100%;
+    left:250px;
+    padding-left: 280px;
+}
+
+/* Aplica el borde derecho a todas las columnas excepto la última */
+.MainContent > div:not(:last-child) {
+     border-right: 1px dashed #ccc; /*Añade un borde derecho sólido */
+    padding-right: 0px;          /* Añade padding a la derecha para separar el contenido del borde */
+}

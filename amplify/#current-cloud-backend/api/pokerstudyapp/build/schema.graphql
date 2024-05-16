@@ -1,0 +1,340 @@
+type Hands @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  playerId: ID
+  tableType: String
+  handTags: AWSJSON
+  heroPosition: String
+  handTitle: String!
+  preflopNotes: String
+  preflopHeroRange: AWSJSON
+  preflopVillainRange: AWSJSON
+  flopNotes: String
+  flopHeroRange: AWSJSON
+  flopVillainRange: AWSJSON
+  turnNotes: String
+  turnHeroRange: AWSJSON
+  turnVillainRange: AWSJSON
+  riverNotes: String
+  riverHeroRange: AWSJSON
+  riverVillainRange: AWSJSON
+  flopCards: AWSJSON
+  turnCard: AWSJSON
+  riverCard: AWSJSON
+  villainPosition: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelHandsConnection @aws_iam @aws_cognito_user_pools {
+  items: [Hands]!
+  nextToken: String
+}
+
+input ModelHandsFilterInput {
+  id: ModelIDInput
+  playerId: ModelIDInput
+  tableType: ModelStringInput
+  handTags: ModelStringInput
+  heroPosition: ModelStringInput
+  handTitle: ModelStringInput
+  preflopNotes: ModelStringInput
+  preflopHeroRange: ModelStringInput
+  preflopVillainRange: ModelStringInput
+  flopNotes: ModelStringInput
+  flopHeroRange: ModelStringInput
+  flopVillainRange: ModelStringInput
+  turnNotes: ModelStringInput
+  turnHeroRange: ModelStringInput
+  turnVillainRange: ModelStringInput
+  riverNotes: ModelStringInput
+  riverHeroRange: ModelStringInput
+  riverVillainRange: ModelStringInput
+  flopCards: ModelStringInput
+  turnCard: ModelStringInput
+  riverCard: ModelStringInput
+  villainPosition: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelHandsFilterInput]
+  or: [ModelHandsFilterInput]
+  not: ModelHandsFilterInput
+}
+
+type Query {
+  getHands(id: ID!): Hands @aws_iam @aws_cognito_user_pools
+  listHands(filter: ModelHandsFilterInput, limit: Int, nextToken: String): ModelHandsConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelHandsConditionInput {
+  playerId: ModelIDInput
+  tableType: ModelStringInput
+  handTags: ModelStringInput
+  heroPosition: ModelStringInput
+  handTitle: ModelStringInput
+  preflopNotes: ModelStringInput
+  preflopHeroRange: ModelStringInput
+  preflopVillainRange: ModelStringInput
+  flopNotes: ModelStringInput
+  flopHeroRange: ModelStringInput
+  flopVillainRange: ModelStringInput
+  turnNotes: ModelStringInput
+  turnHeroRange: ModelStringInput
+  turnVillainRange: ModelStringInput
+  riverNotes: ModelStringInput
+  riverHeroRange: ModelStringInput
+  riverVillainRange: ModelStringInput
+  flopCards: ModelStringInput
+  turnCard: ModelStringInput
+  riverCard: ModelStringInput
+  villainPosition: ModelStringInput
+  and: [ModelHandsConditionInput]
+  or: [ModelHandsConditionInput]
+  not: ModelHandsConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateHandsInput {
+  id: ID
+  playerId: ID
+  tableType: String
+  handTags: AWSJSON
+  heroPosition: String
+  handTitle: String!
+  preflopNotes: String
+  preflopHeroRange: AWSJSON
+  preflopVillainRange: AWSJSON
+  flopNotes: String
+  flopHeroRange: AWSJSON
+  flopVillainRange: AWSJSON
+  turnNotes: String
+  turnHeroRange: AWSJSON
+  turnVillainRange: AWSJSON
+  riverNotes: String
+  riverHeroRange: AWSJSON
+  riverVillainRange: AWSJSON
+  flopCards: AWSJSON
+  turnCard: AWSJSON
+  riverCard: AWSJSON
+  villainPosition: String
+}
+
+input UpdateHandsInput {
+  id: ID!
+  playerId: ID
+  tableType: String
+  handTags: AWSJSON
+  heroPosition: String
+  handTitle: String
+  preflopNotes: String
+  preflopHeroRange: AWSJSON
+  preflopVillainRange: AWSJSON
+  flopNotes: String
+  flopHeroRange: AWSJSON
+  flopVillainRange: AWSJSON
+  turnNotes: String
+  turnHeroRange: AWSJSON
+  turnVillainRange: AWSJSON
+  riverNotes: String
+  riverHeroRange: AWSJSON
+  riverVillainRange: AWSJSON
+  flopCards: AWSJSON
+  turnCard: AWSJSON
+  riverCard: AWSJSON
+  villainPosition: String
+}
+
+input DeleteHandsInput {
+  id: ID!
+}
+
+type Mutation {
+  createHands(input: CreateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+  updateHands(input: UpdateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+  deleteHands(input: DeleteHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionHandsFilterInput {
+  id: ModelSubscriptionIDInput
+  playerId: ModelSubscriptionIDInput
+  tableType: ModelSubscriptionStringInput
+  handTags: ModelSubscriptionStringInput
+  heroPosition: ModelSubscriptionStringInput
+  handTitle: ModelSubscriptionStringInput
+  preflopNotes: ModelSubscriptionStringInput
+  preflopHeroRange: ModelSubscriptionStringInput
+  preflopVillainRange: ModelSubscriptionStringInput
+  flopNotes: ModelSubscriptionStringInput
+  flopHeroRange: ModelSubscriptionStringInput
+  flopVillainRange: ModelSubscriptionStringInput
+  turnNotes: ModelSubscriptionStringInput
+  turnHeroRange: ModelSubscriptionStringInput
+  turnVillainRange: ModelSubscriptionStringInput
+  riverNotes: ModelSubscriptionStringInput
+  riverHeroRange: ModelSubscriptionStringInput
+  riverVillainRange: ModelSubscriptionStringInput
+  flopCards: ModelSubscriptionStringInput
+  turnCard: ModelSubscriptionStringInput
+  riverCard: ModelSubscriptionStringInput
+  villainPosition: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionHandsFilterInput]
+  or: [ModelSubscriptionHandsFilterInput]
+}
+
+type Subscription {
+  onCreateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["createHands"]) @aws_iam @aws_cognito_user_pools
+  onUpdateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["updateHands"]) @aws_iam @aws_cognito_user_pools
+  onDeleteHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["deleteHands"]) @aws_iam @aws_cognito_user_pools
+}

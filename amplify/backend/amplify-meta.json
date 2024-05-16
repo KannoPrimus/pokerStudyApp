@@ -1,0 +1,95 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-pokerstudyapp-dev-90729-authRole",
+      "UnauthRoleArn": "arn:aws:iam::286985057641:role/amplify-pokerstudyapp-dev-90729-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::286985057641:role/amplify-pokerstudyapp-dev-90729-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-pokerstudyapp-dev-90729-deployment",
+      "UnauthRoleName": "amplify-pokerstudyapp-dev-90729-unauthRole",
+      "StackName": "amplify-pokerstudyapp-dev-90729",
+      "StackId": "arn:aws:cloudformation:us-east-1:286985057641:stack/amplify-pokerstudyapp-dev-90729/c7556b10-1129-11ef-ace8-0affff359b51",
+      "AmplifyAppId": "d1uyabk8140lji"
+    }
+  },
+  "api": {
+    "pokerstudyapp": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "pokerstudyappebab29a7"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authpokerstudyappebab29a7"
+            }
+          }
+        },
+        "GraphQLAPIIdOutput": "2lzghosecna3li3d2bpgkwurdu",
+        "GraphQLAPIEndpointOutput": "https://d6p2ytz6hjau7pc2pvxdbw67u4.appsync-api.us-east-1.amazonaws.com/graphql"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2024-05-16T02:49:53.478Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-pokerstudyapp-dev-90729-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apipokerstudyapp"
+      },
+      "lastPushDirHash": "wCPDxDq15dJpmZBhbSIe/Ctes0M="
+    }
+  },
+  "auth": {
+    "pokerstudyappebab29a7": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "output": {
+        "UserPoolId": "us-east-1_JgmAxQtPH",
+        "AppClientIDWeb": "5d828on25aqa0oc1u40r4ksfv9",
+        "AppClientID": "19oksdv1u1vjei37l6j2cdvks3",
+        "IdentityPoolId": "us-east-1:146604eb-8cf4-4cac-8fab-a81e06ae900a",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:286985057641:userpool/us-east-1_JgmAxQtPH",
+        "IdentityPoolName": "pokerstudyappebab29a7_identitypool_ebab29a7__dev",
+        "UserPoolName": "pokerstudyappebab29a7_userpool_ebab29a7"
+      },
+      "lastPushTimeStamp": "2024-05-16T02:49:53.480Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-pokerstudyapp-dev-90729-deployment/amplify-cfn-templates/auth/pokerstudyappebab29a7-cloudformation-template.json",
+        "logicalId": "authpokerstudyappebab29a7"
+      }
+    }
+  }
+}

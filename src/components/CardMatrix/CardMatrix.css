@@ -1,0 +1,54 @@
+/* CardMatrix.css */
+.card-matrix {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    user-select: none; /* Aplica también al contenedor para asegurar */
+    cursor: pointer;
+    background: #f9f9f9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    padding: 3px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Ajusta según el tamaño deseado */
+    font-weight: bold;
+    user-select: none; /* Evita la selección de texto */
+    cursor: pointer;
+    color:#333;
+}
+
+/* Agrega esto a tu archivo CSS global o directamente en el componente con etiquetas de estilo */
+/* Estilo para el botón con ícono */
+.button-clear-matrix {
+    background-color: #f9f9f9;
+    color: #333;
+    border: none;
+    padding: 0px;
+    border-radius: 5px; /* Hace el botón redondo */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 25px;
+    height: 25px;
+}
+
+.button-clear-matrix:hover {
+    background-color: #444;
+    color:#fff;
+}
+
+.button-clear-matrix:active {
+    background-color: #222;
+}

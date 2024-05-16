@@ -1,0 +1,47 @@
+
+
+/* CardModal.css */
+.modal-overlay {
+    position: fixed;  /* Cambio de absolute a fixed para asegurar cobertura de toda la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Alto z-index para asegurar que se sitúe encima de todo lo demás */
+}
+
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1051; /* Asegúrate de que esté por encima del overlay */
+}
+
+/* CardModal.css */
+.button-card {
+    height: 65px; /* Altura del botón */
+    width: 40px; /* Ancho del botón, la mitad de la altura */
+    font-size: 18px; /* Tamaño del texto más pequeño */
+    color:#fff;
+    padding: 4px 8px; /* Padding para mantener el contenido centrado */
+    margin: 5px;
+    background-color: #f8f8f8; /* Color de fondo ligero para el botón */
+    border: 1px solid #ccc; /* Bordes sutiles */
+    border-radius: 4px; /* Esquinas ligeramente redondeadas */
+    cursor: pointer; /* Cursor en forma de puntero para indicar que es clickeable */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, transform 0.2s; /* Transición suave para interactividad */
+}
+
+.button-card:hover {
+    background-color: #e0e0e0; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}

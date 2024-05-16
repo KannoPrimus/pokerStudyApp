@@ -1,0 +1,14 @@
+{
+    "AppSyncApiName": "pokerstudyapp",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authpokerstudyappebab29a7",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "AuthModeLastUpdated": "2024-05-15T23:41:45.262Z",
+    "S3DeploymentBucket": "amplify-pokerstudyapp-dev-90729-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/101fbd7fd3ed3f0f7102bfb01972c479143f3a91"
+}

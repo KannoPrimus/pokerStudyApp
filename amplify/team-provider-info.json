@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-pokerstudyapp-dev-90729-authRole",
+      "UnauthRoleArn": "arn:aws:iam::286985057641:role/amplify-pokerstudyapp-dev-90729-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::286985057641:role/amplify-pokerstudyapp-dev-90729-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-pokerstudyapp-dev-90729-deployment",
+      "UnauthRoleName": "amplify-pokerstudyapp-dev-90729-unauthRole",
+      "StackName": "amplify-pokerstudyapp-dev-90729",
+      "StackId": "arn:aws:cloudformation:us-east-1:286985057641:stack/amplify-pokerstudyapp-dev-90729/c7556b10-1129-11ef-ace8-0affff359b51",
+      "AmplifyAppId": "d1uyabk8140lji"
+    },
+    "categories": {
+      "auth": {
+        "pokerstudyappebab29a7": {}
+      },
+      "api": {
+        "pokerstudyapp": {}
+      }
+    }
+  }
+}

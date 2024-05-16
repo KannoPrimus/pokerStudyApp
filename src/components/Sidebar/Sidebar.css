@@ -1,0 +1,108 @@
+/* Estilos generales del sidebar */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #1a1a1a;  /* Cambio a un color más oscuro */
+    color: #ffffff;  /* Texto blanco para mejor contraste */
+    font-family: 'Helvetica Neue', sans-serif;  /* Fuente más moderna */
+    /*box-shadow: 2px 0 10px rgba(0,0,0,0.5);*/
+position: fixed;
+    height:100vh;
+}
+
+/* Estilos para los inputs */
+.input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin: 8px 0;
+    background-color: #1a1a1a;  /* Asegúrate de que coincida con el color de fondo de la barra lateral */
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #555;  /* Borde inferior visible */
+    border-radius: 0;
+    transition: border-bottom-color 0.3s ease, box-shadow 0.3s ease;  /* Transiciones suaves */
+}
+
+.input:hover {
+    border-bottom-color: #007bff;  /* Cambio de color en hover también */
+}
+
+.input:focus {
+    outline: none;
+    border-bottom-color: #007bff;  /* Color del borde inferior cuando está enfocado */
+    box-shadow: 0 1px 0 0 rgba(0,123,255,0.5);  /* Sombra sutil para enfocar */
+}
+
+
+
+/* Ajustes adicionales para asegurar la consistencia visual */
+.input::placeholder {
+    color: #bbb;  /* Color de placeholder más claro para contraste sutil */
+}
+
+
+/* Contenedor del input de tags que tiene posicionamiento relativo */
+.tag-input-container {
+    position: relative;
+    color: #ffffff;
+}
+
+/* Lista de sugerencias */
+.suggestions {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    background-color: #2b2b2b;  /* Un fondo oscuro más elegante */
+    border: 1px solid #444;  /* Un borde más sutil y oscuro */
+    position: absolute;
+    width: calc(100% - 16px);  /* Ajuste para margen */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);  /* Sombra más prominente y moderna */
+    border-radius: 4px;  /* Bordes redondeados para un look más moderno */
+    overflow: hidden;  /* Oculta cualquier contenido que se desborde */
+}
+
+/* Elementos individuales de sugerencia */
+.suggestionItem {
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;  /* Texto claro para mejor legibilidad */
+    font-family: 'Roboto', sans-serif;  /* Consistencia en la tipografía */
+    transition: background-color 0.3s ease;  /* Transición más suave al cambiar el fondo */
+}
+
+.suggestionItem:hover, .suggestionItem:focus {
+    background-color: #3a3a3a;  /* Un cambio sutil al pasar el ratón o enfocar */
+}
+
+
+/* Contenedor de tags existentes */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    background-color: #50C878;  /* Fondo más oscuro para los tags */
+    color: #fff;  /* Texto claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.tag button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #ccc;  /* Icono claro */
+    margin-left: 5px;
+}
+
+
+/* Transiciones para una experiencia de usuario más fluida */
+.input, .tag button, .suggestionItem {
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}

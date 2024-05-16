@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "pokerstudyapp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authpokerstudyappebab29a7",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2024-05-15T23:41:45.262Z"
+}

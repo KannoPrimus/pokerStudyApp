@@ -1,0 +1,38 @@
+.poker-notes {
+    background-color: #1a1a1a; /* Fondo oscuro para un look sofisticado */
+    color: #dcdcdc; /* Texto en un gris claro para contraste */
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna y legible */
+    font-size: 12px; /* Tamaño adecuado para la lectura */
+    padding: 20px; /* Espacio interior para una mejor estructura */
+    border-radius: 5px; /* Bordes redondeados sutiles */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Sombra para profundidad */
+    margin: 10px 0; /* Margen para separar de otros elementos */
+    border: 1px solid #333; /* Borde sutil */
+    line-height: 1.5; /* Espaciado de línea para facilitar la lectura */
+    outline: none; /* Remover el borde al enfocar */
+    height:300px;
+}
+
+.poker-notes:focus {
+    border-color: #6c757d; /* Cambio de color de borde al enfocar */
+}
+
+/* Personalización de la barra de desplazamiento para mantener el estilo elegante */
+.poker-notes::-webkit-scrollbar {
+    width: 6px;
+}
+
+.poker-notes::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color del thumb más oscuro */
+    border-radius: 3px;
+}
+
+.poker-notes::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Color al pasar el ratón */
+}
+
+/* Estilos para Firefox */
+.poker-notes {
+    scrollbar-width: thin;
+    scrollbar-color: #555 #1a1a1a;
+}

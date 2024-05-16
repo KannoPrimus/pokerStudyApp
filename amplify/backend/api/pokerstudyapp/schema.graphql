@@ -1,0 +1,25 @@
+type Hands @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  playerId: ID
+  tableType: String
+  handTags: AWSJSON
+  heroPosition: String
+  handTitle: String!
+  preflopNotes: String
+  preflopHeroRange: AWSJSON
+  preflopVillainRange: AWSJSON
+  flopNotes: String
+  flopHeroRange: AWSJSON
+  flopVillainRange: AWSJSON
+  turnNotes: String
+  turnHeroRange: AWSJSON
+  turnVillainRange: AWSJSON
+  riverNotes: String
+  riverHeroRange: AWSJSON
+  riverVillainRange: AWSJSON
+  flopCards: AWSJSON
+  turnCard: AWSJSON
+  riverCard: AWSJSON
+  villainPosition: String
+}
+ 

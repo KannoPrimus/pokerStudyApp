@@ -1,0 +1,50 @@
+/* StreetColumn.css */
+.street-column-container {
+    display: flex;
+    flex-direction: column;  /* Cambia la dirección del flex a vertical */
+    /*height: 100%;   Ajusta según la altura deseada */
+    width: 100%;   /* Ajusta según el ancho deseado */
+    font-size: 12px;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+
+}
+
+.section {
+    padding: 5px;
+    /*border-bottom: 1px solid #ccc;  Línea divisoria entre secciones */
+    justify-content: center;
+    margin-right:3px;
+    margin-left:3px;
+    width:90%;
+}
+
+.section:last-child {
+    border-bottom: none;  /* Elimina la línea divisoria en la última sección */
+}
+/* StreetColumn.css */
+.board-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre los selectores de cartas */
+    background: #33333;
+    margin-bottom: 10px;
+    height: 180px !important;
+}
+
+/* Estilos específicos para los botones de cartas si es necesario */
+.card-button {
+    padding: 5px 10px;
+    margin: 2px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+}
+
+.title{
+    font-weight: bold;
+    padding-left: 15px;
+    color:#fff;
+    padding-top:5px;
+}
