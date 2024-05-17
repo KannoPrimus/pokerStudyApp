@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext , useRef} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa los estilos CSS necesarios
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import './CardMatrix.css';
+import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
 
+library.add(fas);
 const ranks = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
 
 function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
     const initialMatrix = () => Array(clickCounts.length).fill().map(() => Array(clickCounts[0].length).fill(0));
-
     const [clickCounts, setClickCounts] = useState(
         Array(ranks.length).fill(null).map(() => Array(ranks.length).fill(0))
     );
     const [isDragging, setIsDragging] = useState(false);
     const [dragColor, setDragColor] = useState(null);  // Nuevo estado para almacenar el color durante el arrastre
+    const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
 
 
     const handleMouseDown = (i, j, event) => {
@@ -32,6 +38,44 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
     const handleMouseUp = () => {
         setIsDragging(false);
         setDragColor(null);  // Restablece el color de arrastre
+
+        switch(id) {
+            case 'Preflop':
+                if(myRange='true'){
+                    updatePokerHand('preflopHeroRange', clickCounts);
+                }
+                else{
+                    updatePokerHand('preflopVillainRange', clickCounts);
+                }
+                break;
+            case 'Flop':
+                if(myRange='true'){
+                    updatePokerHand('flopHeroRange', clickCounts);
+                }
+                else{
+                    updatePokerHand('flopVillainRange', clickCounts);
+                }
+                break;
+            case 'Turn':
+                if(myRange=='true'){
+                    updatePokerHand('turnHeroRange', clickCounts);
+                }
+                else{
+                    updatePokerHand('turnVillainRange', clickCounts);
+                }
+                break;
+            case 'River':
+                if(myRange='true'){
+                    updatePokerHand('riverHeroRange', clickCounts);
+                }
+                else{
+                    updatePokerHand('riverVillainRange', clickCounts);
+                }
+                break;
+            default:
+                break;
+        }
+
     };
 
     const handleClick = (i, j) => {
@@ -42,6 +86,10 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
     const handleClear = () => {
         setClickCounts(initialMatrix());
+    };
+
+    const handleSave = () => {
+        updatePokerHand('preflopHeroRange', clickCounts);
     };
 
     const setDragColorForCell = (i, j, color) => {
@@ -75,8 +123,11 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
         <div className="card-matrix" onMouseUp={handleMouseUp} onContextMenu={(e) => e.preventDefault()}>
             <button className="button-clear-matrix" onClick={handleClear} title="Limpiar Matriz">
-                <i className="fas fa-eraser"></i>
+                <FontAwesomeIcon icon="eraser" />
             </button>
+            <button className="button-clear-matrix" onClick={handleSave} title="Guardar Matriz">
+            <FontAwesomeIcon icon="floppy-disk" />
+        </button>
             {ranks.map((rank1, i) => (
                 <div key={i} className="row">
                     {ranks.map((rank2, j) => (

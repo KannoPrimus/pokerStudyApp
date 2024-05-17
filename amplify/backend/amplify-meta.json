@@ -42,12 +42,12 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2024-05-16T02:49:53.478Z",
+      "lastPushTimeStamp": "2024-05-17T12:11:52.621Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-pokerstudyapp-dev-90729-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apipokerstudyapp"
       },
-      "lastPushDirHash": "wCPDxDq15dJpmZBhbSIe/Ctes0M="
+      "lastPushDirHash": "vpnexGTyVdjPWaWi9IsdD02CZJU="
     }
   },
   "auth": {
@@ -85,7 +85,7 @@
         "IdentityPoolName": "pokerstudyappebab29a7_identitypool_ebab29a7__dev",
         "UserPoolName": "pokerstudyappebab29a7_userpool_ebab29a7"
       },
-      "lastPushTimeStamp": "2024-05-16T02:49:53.480Z",
+      "lastPushTimeStamp": "2024-05-17T12:11:52.627Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-pokerstudyapp-dev-90729-deployment/amplify-cfn-templates/auth/pokerstudyappebab29a7-cloudformation-template.json",
         "logicalId": "authpokerstudyappebab29a7"

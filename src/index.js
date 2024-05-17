@@ -1,3 +1,4 @@
+import { PokerHandProvider } from './components/PokerHandContext/PokerHandContext';
 import { Authenticator } from "@aws-amplify/ui-react";
 import './index.css';
 import { StrictMode } from "react";
@@ -17,7 +18,9 @@ ReactDOM.render(
     <StrictMode>
 
             <Authenticator.Provider>
+                <PokerHandProvider>
                 <App />
+                </PokerHandProvider>
             </Authenticator.Provider>
 
     </StrictMode>,

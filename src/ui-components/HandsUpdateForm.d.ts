@@ -38,11 +38,13 @@ export declare type HandsUpdateFormInputValues = {
     turnVillainRange?: string;
     riverNotes?: string;
     riverHeroRange?: string;
-    riverVillainRange?: string;
-    flopCards?: string;
+    flopCards_1?: string;
+    flopCards_3?: string;
+    flopCards_2?: string;
     turnCard?: string;
     riverCard?: string;
     villainPosition?: string;
+    riverVillainRange?: string;
 };
 export declare type HandsUpdateFormValidationValues = {
     playerId?: ValidationFunction<string>;
@@ -61,11 +63,13 @@ export declare type HandsUpdateFormValidationValues = {
     turnVillainRange?: ValidationFunction<string>;
     riverNotes?: ValidationFunction<string>;
     riverHeroRange?: ValidationFunction<string>;
-    riverVillainRange?: ValidationFunction<string>;
-    flopCards?: ValidationFunction<string>;
+    flopCards_1?: ValidationFunction<string>;
+    flopCards_3?: ValidationFunction<string>;
+    flopCards_2?: ValidationFunction<string>;
     turnCard?: ValidationFunction<string>;
     riverCard?: ValidationFunction<string>;
     villainPosition?: ValidationFunction<string>;
+    riverVillainRange?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type HandsUpdateFormOverridesProps = {
@@ -86,11 +90,13 @@ export declare type HandsUpdateFormOverridesProps = {
     turnVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
     riverNotes?: PrimitiveOverrideProps<TextFieldProps>;
     riverHeroRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    riverVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    flopCards?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    flopCards_1?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    flopCards_3?: PrimitiveOverrideProps<TextFieldProps>;
+    flopCards_2?: PrimitiveOverrideProps<TextFieldProps>;
     turnCard?: PrimitiveOverrideProps<TextAreaFieldProps>;
     riverCard?: PrimitiveOverrideProps<TextAreaFieldProps>;
     villainPosition?: PrimitiveOverrideProps<TextFieldProps>;
+    riverVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;
 export declare type HandsUpdateFormProps = React.PropsWithChildren<{
     overrides?: HandsUpdateFormOverridesProps | undefined | null;

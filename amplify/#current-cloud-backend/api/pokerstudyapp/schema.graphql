@@ -16,10 +16,12 @@ type Hands @model @auth(rules: [{allow: private}]) {
   turnVillainRange: AWSJSON
   riverNotes: String
   riverHeroRange: AWSJSON
-  riverVillainRange: AWSJSON
-  flopCards: AWSJSON
+  flopCards_1: AWSJSON
+  flopCards_3: String
+  flopCards_2: String
   turnCard: AWSJSON
   riverCard: AWSJSON
   villainPosition: String
+  riverVillainRange: AWSJSON
 }
  

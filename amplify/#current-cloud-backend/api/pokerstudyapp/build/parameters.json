@@ -15,5 +15,5 @@
         "Ref": "UnauthRoleName"
     },
     "S3DeploymentBucket": "amplify-pokerstudyapp-dev-90729-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/101fbd7fd3ed3f0f7102bfb01972c479143f3a91"
+    "S3DeploymentRootKey": "amplify-appsync-files/1198f204610797dbf5a4c8dc9897db3f77188421"
 }

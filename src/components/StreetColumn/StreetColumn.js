@@ -17,13 +17,13 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
                 {streetName === 'Preflop' && <PokerTable />}
                 {streetName === 'Flop' && (
                     <>
-                        <CardSelector />
-                        <CardSelector />
-                        <CardSelector />
+                        <CardSelector card="flopCards_1"/>
+                        <CardSelector card="flopCards_2"/>
+                        <CardSelector card="flopCards_3"/>
                     </>
                 )}
-                {streetName === 'Turn' && <CardSelector />}
-                {streetName === 'River' && <CardSelector />}
+                {streetName === 'Turn' && <CardSelector card="turnCard"/>}
+                {streetName === 'River' && <CardSelector card="riverCard"/>}
             </div>
             <div className="section"><PokerNotes id={streetName}/></div>
             <span className="title">Rango Hero</span>

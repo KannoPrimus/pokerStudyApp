@@ -16,25 +16,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 /* PokerTable.css - Añade estos estilos al archivo existente */
 
 .table-center {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10; /* Asegúrate de que el selector se sitúe por encima de otros elementos */
 }
 
 .player-count-selector {
-    padding: 8px 16px;
+    padding: 4px 8px;
     border: 2px solid #fff; /* Borde blanco para destacar en el fondo verde oscuro */
     border-radius: 20px; /* Bordes redondeados para un look moderno */
     background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente transparente */
     color: #005500; /* Color de texto que combine con el verde de la mesa */
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave para dar profundidad */
     cursor: pointer; /* Cursor tipo puntero para indicar interactividad */
@@ -58,6 +59,7 @@
     height: 45px;
     background: white;
     border-radius: 50%;
+    border: 1px solid #2b2b2b;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,17 +67,41 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
     transition: background-color 0.3s ease; /* Suave transición para los cambios de color */
+    box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.5); /* Sombra para darle volumen */
 }
 
+
 /* Ajustes específicos para la ubicación de los asientos en el modo 6-max */
-.player-seat-0 { top: 80%; left: 5%; transform: translate(-50%, -50%); } /*UTG*/
+.player-seat-0 { top: 80%; left: 5%; transform: translate(-50%, -50%);} /*UTG*/
 .player-seat-1 { top: 30%; left: 5%; transform: translate(-50%, -50%); } /*MP*/
 .player-seat-2 { top: 30%; right: 5%; transform: translate(50%, -50%); } /*CO*/
-.player-seat-3 { top: 80%; right: 5%; transform: translate(50%, -50%); }/*BU*/
-.player-seat-4 { bottom: -25%; right: 15%; transform: translate(-50%, -50%); }/*SB*/
-.player-seat-5 { bottom: -25%; left: 15%; transform: translate(50%, -50%); }/*BB*/
+.player-seat-3 { top: 80%; right: 5%; transform: translate(50%, -50%);  border: #ffdd55 2px solid; }/*BU*/
+.player-seat-4 { bottom: -25%; right: 15%; transform: translate(-50%, -50%); border: #747bff 2px solid; }/*SB*/
+.player-seat-5 { bottom: -25%; left: 15%; transform: translate(50%, -50%); border: #747bff 2px solid; }/*BB*/
 
 /* Ajustes para la ubicación de los asientos adicionales en el modo 9-max */
 .player-seat-6 { bottom: 65%; left: 25%; transform: translate(-50%, -50%); }/*MP2*/
 .player-seat-7 { bottom: 70%; left: 50%; transform: translate(-50%, -50%); }/*MP3*/
 .player-seat-8 { bottom: 65%; right: 25%; transform: translate(50%, -50%); }/*HJ*/
+
+.legend {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color:#fff;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+

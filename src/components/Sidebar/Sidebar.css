@@ -86,19 +86,21 @@ position: fixed;
 .tag {
     background-color: #50C878;  /* Fondo más oscuro para los tags */
     color: #fff;  /* Texto claro */
-    padding: 5px 10px;
+    padding: 5px ;
     border-radius: 5px;
     display: flex;
     align-items: center;
     margin-top: 5px;
+    height:25px;
 }
 
 .tag button {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    color: #ccc;  /* Icono claro */
+    color: #fff;  /* Icono claro */
     margin-left: 5px;
+    text-align: right;
 }
 
 

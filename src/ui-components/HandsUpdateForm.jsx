@@ -47,11 +47,13 @@ export default function HandsUpdateForm(props) {
     turnVillainRange: "",
     riverNotes: "",
     riverHeroRange: "",
-    riverVillainRange: "",
-    flopCards: "",
+    flopCards_1: "",
+    flopCards_3: "",
+    flopCards_2: "",
     turnCard: "",
     riverCard: "",
     villainPosition: "",
+    riverVillainRange: "",
   };
   const [playerId, setPlayerId] = React.useState(initialValues.playerId);
   const [tableType, setTableType] = React.useState(initialValues.tableType);
@@ -87,14 +89,22 @@ export default function HandsUpdateForm(props) {
   const [riverHeroRange, setRiverHeroRange] = React.useState(
     initialValues.riverHeroRange
   );
-  const [riverVillainRange, setRiverVillainRange] = React.useState(
-    initialValues.riverVillainRange
+  const [flopCards_1, setFlopCards_1] = React.useState(
+    initialValues.flopCards_1
   );
-  const [flopCards, setFlopCards] = React.useState(initialValues.flopCards);
+  const [flopCards_3, setFlopCards_3] = React.useState(
+    initialValues.flopCards_3
+  );
+  const [flopCards_2, setFlopCards_2] = React.useState(
+    initialValues.flopCards_2
+  );
   const [turnCard, setTurnCard] = React.useState(initialValues.turnCard);
   const [riverCard, setRiverCard] = React.useState(initialValues.riverCard);
   const [villainPosition, setVillainPosition] = React.useState(
     initialValues.villainPosition
+  );
+  const [riverVillainRange, setRiverVillainRange] = React.useState(
+    initialValues.riverVillainRange
   );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
@@ -156,18 +166,14 @@ export default function HandsUpdateForm(props) {
         ? cleanValues.riverHeroRange
         : JSON.stringify(cleanValues.riverHeroRange)
     );
-    setRiverVillainRange(
-      typeof cleanValues.riverVillainRange === "string" ||
-        cleanValues.riverVillainRange === null
-        ? cleanValues.riverVillainRange
-        : JSON.stringify(cleanValues.riverVillainRange)
+    setFlopCards_1(
+      typeof cleanValues.flopCards_1 === "string" ||
+        cleanValues.flopCards_1 === null
+        ? cleanValues.flopCards_1
+        : JSON.stringify(cleanValues.flopCards_1)
     );
-    setFlopCards(
-      typeof cleanValues.flopCards === "string" ||
-        cleanValues.flopCards === null
-        ? cleanValues.flopCards
-        : JSON.stringify(cleanValues.flopCards)
-    );
+    setFlopCards_3(cleanValues.flopCards_3);
+    setFlopCards_2(cleanValues.flopCards_2);
     setTurnCard(
       typeof cleanValues.turnCard === "string" || cleanValues.turnCard === null
         ? cleanValues.turnCard
@@ -180,6 +186,12 @@ export default function HandsUpdateForm(props) {
         : JSON.stringify(cleanValues.riverCard)
     );
     setVillainPosition(cleanValues.villainPosition);
+    setRiverVillainRange(
+      typeof cleanValues.riverVillainRange === "string" ||
+        cleanValues.riverVillainRange === null
+        ? cleanValues.riverVillainRange
+        : JSON.stringify(cleanValues.riverVillainRange)
+    );
     setErrors({});
   };
   const [handsRecord, setHandsRecord] = React.useState(handsModelProp);
@@ -215,11 +227,13 @@ export default function HandsUpdateForm(props) {
     turnVillainRange: [{ type: "JSON" }],
     riverNotes: [],
     riverHeroRange: [{ type: "JSON" }],
-    riverVillainRange: [{ type: "JSON" }],
-    flopCards: [{ type: "JSON" }],
+    flopCards_1: [{ type: "JSON" }],
+    flopCards_3: [],
+    flopCards_2: [],
     turnCard: [{ type: "JSON" }],
     riverCard: [{ type: "JSON" }],
     villainPosition: [],
+    riverVillainRange: [{ type: "JSON" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -263,11 +277,13 @@ export default function HandsUpdateForm(props) {
           turnVillainRange: turnVillainRange ?? null,
           riverNotes: riverNotes ?? null,
           riverHeroRange: riverHeroRange ?? null,
-          riverVillainRange: riverVillainRange ?? null,
-          flopCards: flopCards ?? null,
+          flopCards_1: flopCards_1 ?? null,
+          flopCards_3: flopCards_3 ?? null,
+          flopCards_2: flopCards_2 ?? null,
           turnCard: turnCard ?? null,
           riverCard: riverCard ?? null,
           villainPosition: villainPosition ?? null,
+          riverVillainRange: riverVillainRange ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -344,11 +360,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.playerId ?? value;
@@ -388,11 +406,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.tableType ?? value;
@@ -432,11 +452,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.handTags ?? value;
@@ -476,11 +498,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.heroPosition ?? value;
@@ -520,11 +544,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.handTitle ?? value;
@@ -564,11 +590,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.preflopNotes ?? value;
@@ -608,11 +636,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.preflopHeroRange ?? value;
@@ -652,11 +682,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.preflopVillainRange ?? value;
@@ -698,11 +730,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.flopNotes ?? value;
@@ -742,11 +776,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.flopHeroRange ?? value;
@@ -786,11 +822,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.flopVillainRange ?? value;
@@ -830,11 +868,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.turnNotes ?? value;
@@ -874,11 +914,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.turnHeroRange ?? value;
@@ -918,11 +960,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange: value,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.turnVillainRange ?? value;
@@ -962,11 +1006,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes: value,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.riverNotes ?? value;
@@ -1006,11 +1052,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange: value,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.riverHeroRange ?? value;
@@ -1026,10 +1074,10 @@ export default function HandsUpdateForm(props) {
         {...getOverrideProps(overrides, "riverHeroRange")}
       ></TextAreaField>
       <TextAreaField
-        label="River villain range"
+        label="Flop cards 1"
         isRequired={false}
         isReadOnly={false}
-        value={riverVillainRange}
+        value={flopCards_1}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1050,71 +1098,119 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange: value,
-              flopCards,
+              flopCards_1: value,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
-            };
-            const result = onChange(modelFields);
-            value = result?.riverVillainRange ?? value;
-          }
-          if (errors.riverVillainRange?.hasError) {
-            runValidationTasks("riverVillainRange", value);
-          }
-          setRiverVillainRange(value);
-        }}
-        onBlur={() =>
-          runValidationTasks("riverVillainRange", riverVillainRange)
-        }
-        errorMessage={errors.riverVillainRange?.errorMessage}
-        hasError={errors.riverVillainRange?.hasError}
-        {...getOverrideProps(overrides, "riverVillainRange")}
-      ></TextAreaField>
-      <TextAreaField
-        label="Flop cards"
-        isRequired={false}
-        isReadOnly={false}
-        value={flopCards}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              playerId,
-              tableType,
-              handTags,
-              heroPosition,
-              handTitle,
-              preflopNotes,
-              preflopHeroRange,
-              preflopVillainRange,
-              flopNotes,
-              flopHeroRange,
-              flopVillainRange,
-              turnNotes,
-              turnHeroRange,
-              turnVillainRange,
-              riverNotes,
-              riverHeroRange,
               riverVillainRange,
-              flopCards: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.flopCards_1 ?? value;
+          }
+          if (errors.flopCards_1?.hasError) {
+            runValidationTasks("flopCards_1", value);
+          }
+          setFlopCards_1(value);
+        }}
+        onBlur={() => runValidationTasks("flopCards_1", flopCards_1)}
+        errorMessage={errors.flopCards_1?.errorMessage}
+        hasError={errors.flopCards_1?.hasError}
+        {...getOverrideProps(overrides, "flopCards_1")}
+      ></TextAreaField>
+      <TextField
+        label="Flop cards 3"
+        isRequired={false}
+        isReadOnly={false}
+        value={flopCards_3}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              preflopNotes,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3: value,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
-            value = result?.flopCards ?? value;
+            value = result?.flopCards_3 ?? value;
           }
-          if (errors.flopCards?.hasError) {
-            runValidationTasks("flopCards", value);
+          if (errors.flopCards_3?.hasError) {
+            runValidationTasks("flopCards_3", value);
           }
-          setFlopCards(value);
+          setFlopCards_3(value);
         }}
-        onBlur={() => runValidationTasks("flopCards", flopCards)}
-        errorMessage={errors.flopCards?.errorMessage}
-        hasError={errors.flopCards?.hasError}
-        {...getOverrideProps(overrides, "flopCards")}
-      ></TextAreaField>
+        onBlur={() => runValidationTasks("flopCards_3", flopCards_3)}
+        errorMessage={errors.flopCards_3?.errorMessage}
+        hasError={errors.flopCards_3?.hasError}
+        {...getOverrideProps(overrides, "flopCards_3")}
+      ></TextField>
+      <TextField
+        label="Flop cards 2"
+        isRequired={false}
+        isReadOnly={false}
+        value={flopCards_2}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              preflopNotes,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2: value,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+            };
+            const result = onChange(modelFields);
+            value = result?.flopCards_2 ?? value;
+          }
+          if (errors.flopCards_2?.hasError) {
+            runValidationTasks("flopCards_2", value);
+          }
+          setFlopCards_2(value);
+        }}
+        onBlur={() => runValidationTasks("flopCards_2", flopCards_2)}
+        errorMessage={errors.flopCards_2?.errorMessage}
+        hasError={errors.flopCards_2?.hasError}
+        {...getOverrideProps(overrides, "flopCards_2")}
+      ></TextField>
       <TextAreaField
         label="Turn card"
         isRequired={false}
@@ -1140,11 +1236,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard: value,
               riverCard,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.turnCard ?? value;
@@ -1184,11 +1282,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard: value,
               villainPosition,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.riverCard ?? value;
@@ -1228,11 +1328,13 @@ export default function HandsUpdateForm(props) {
               turnVillainRange,
               riverNotes,
               riverHeroRange,
-              riverVillainRange,
-              flopCards,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
               turnCard,
               riverCard,
               villainPosition: value,
+              riverVillainRange,
             };
             const result = onChange(modelFields);
             value = result?.villainPosition ?? value;
@@ -1247,6 +1349,54 @@ export default function HandsUpdateForm(props) {
         hasError={errors.villainPosition?.hasError}
         {...getOverrideProps(overrides, "villainPosition")}
       ></TextField>
+      <TextAreaField
+        label="River villain range"
+        isRequired={false}
+        isReadOnly={false}
+        value={riverVillainRange}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              preflopNotes,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.riverVillainRange ?? value;
+          }
+          if (errors.riverVillainRange?.hasError) {
+            runValidationTasks("riverVillainRange", value);
+          }
+          setRiverVillainRange(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("riverVillainRange", riverVillainRange)
+        }
+        errorMessage={errors.riverVillainRange?.errorMessage}
+        hasError={errors.riverVillainRange?.hasError}
+        {...getOverrideProps(overrides, "riverVillainRange")}
+      ></TextAreaField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

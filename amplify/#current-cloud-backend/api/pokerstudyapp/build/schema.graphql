@@ -16,11 +16,13 @@ type Hands @aws_iam @aws_cognito_user_pools {
   turnVillainRange: AWSJSON
   riverNotes: String
   riverHeroRange: AWSJSON
-  riverVillainRange: AWSJSON
-  flopCards: AWSJSON
+  flopCards_1: AWSJSON
+  flopCards_3: String
+  flopCards_2: String
   turnCard: AWSJSON
   riverCard: AWSJSON
   villainPosition: String
+  riverVillainRange: AWSJSON
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -198,11 +200,13 @@ input ModelHandsFilterInput {
   turnVillainRange: ModelStringInput
   riverNotes: ModelStringInput
   riverHeroRange: ModelStringInput
-  riverVillainRange: ModelStringInput
-  flopCards: ModelStringInput
+  flopCards_1: ModelStringInput
+  flopCards_3: ModelStringInput
+  flopCards_2: ModelStringInput
   turnCard: ModelStringInput
   riverCard: ModelStringInput
   villainPosition: ModelStringInput
+  riverVillainRange: ModelStringInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelHandsFilterInput]
@@ -232,11 +236,13 @@ input ModelHandsConditionInput {
   turnVillainRange: ModelStringInput
   riverNotes: ModelStringInput
   riverHeroRange: ModelStringInput
-  riverVillainRange: ModelStringInput
-  flopCards: ModelStringInput
+  flopCards_1: ModelStringInput
+  flopCards_3: ModelStringInput
+  flopCards_2: ModelStringInput
   turnCard: ModelStringInput
   riverCard: ModelStringInput
   villainPosition: ModelStringInput
+  riverVillainRange: ModelStringInput
   and: [ModelHandsConditionInput]
   or: [ModelHandsConditionInput]
   not: ModelHandsConditionInput
@@ -262,11 +268,13 @@ input CreateHandsInput {
   turnVillainRange: AWSJSON
   riverNotes: String
   riverHeroRange: AWSJSON
-  riverVillainRange: AWSJSON
-  flopCards: AWSJSON
+  flopCards_1: AWSJSON
+  flopCards_3: String
+  flopCards_2: String
   turnCard: AWSJSON
   riverCard: AWSJSON
   villainPosition: String
+  riverVillainRange: AWSJSON
 }
 
 input UpdateHandsInput {
@@ -287,11 +295,13 @@ input UpdateHandsInput {
   turnVillainRange: AWSJSON
   riverNotes: String
   riverHeroRange: AWSJSON
-  riverVillainRange: AWSJSON
-  flopCards: AWSJSON
+  flopCards_1: AWSJSON
+  flopCards_3: String
+  flopCards_2: String
   turnCard: AWSJSON
   riverCard: AWSJSON
   villainPosition: String
+  riverVillainRange: AWSJSON
 }
 
 input DeleteHandsInput {
@@ -322,11 +332,13 @@ input ModelSubscriptionHandsFilterInput {
   turnVillainRange: ModelSubscriptionStringInput
   riverNotes: ModelSubscriptionStringInput
   riverHeroRange: ModelSubscriptionStringInput
-  riverVillainRange: ModelSubscriptionStringInput
-  flopCards: ModelSubscriptionStringInput
+  flopCards_1: ModelSubscriptionStringInput
+  flopCards_3: ModelSubscriptionStringInput
+  flopCards_2: ModelSubscriptionStringInput
   turnCard: ModelSubscriptionStringInput
   riverCard: ModelSubscriptionStringInput
   villainPosition: ModelSubscriptionStringInput
+  riverVillainRange: ModelSubscriptionStringInput
   createdAt: ModelSubscriptionStringInput
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionHandsFilterInput]
