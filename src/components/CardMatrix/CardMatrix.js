@@ -11,14 +11,13 @@ const ranks = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
 
 function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
-    const initialMatrix = () => Array(clickCounts.length).fill().map(() => Array(clickCounts[0].length).fill(0));
+    let initialMatrix = () => Array(clickCounts.length).fill().map(() => Array(clickCounts[0].length).fill(0));
     const [clickCounts, setClickCounts] = useState(
         Array(ranks.length).fill(null).map(() => Array(ranks.length).fill(0))
     );
     const [isDragging, setIsDragging] = useState(false);
     const [dragColor, setDragColor] = useState(null);  // Nuevo estado para almacenar el color durante el arrastre
     const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
-
 
     const handleMouseDown = (i, j, event) => {
         if (event.button === 0) { // Botón izquierdo
@@ -39,44 +38,50 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
         setIsDragging(false);
         setDragColor(null);  // Restablece el color de arrastre
 
-        switch(id) {
-            case 'Preflop':
-                if(myRange='true'){
-                    updatePokerHand('preflopHeroRange', clickCounts);
-                }
-                else{
-                    updatePokerHand('preflopVillainRange', clickCounts);
-                }
-                break;
-            case 'Flop':
-                if(myRange='true'){
-                    updatePokerHand('flopHeroRange', clickCounts);
-                }
-                else{
-                    updatePokerHand('flopVillainRange', clickCounts);
-                }
-                break;
-            case 'Turn':
-                if(myRange=='true'){
-                    updatePokerHand('turnHeroRange', clickCounts);
-                }
-                else{
-                    updatePokerHand('turnVillainRange', clickCounts);
-                }
-                break;
-            case 'River':
-                if(myRange='true'){
-                    updatePokerHand('riverHeroRange', clickCounts);
-                }
-                else{
-                    updatePokerHand('riverVillainRange', clickCounts);
-                }
-                break;
-            default:
-                break;
+        if(myRange=='true'){
+            console.log('id:'+id);
+            console.log(myRange);
+            switch(id) {
+                case 'Preflop':
+                    updatePokerHand('preflopHeroRange', JSON.stringify(clickCounts));
+                    break;
+                case 'Flop':
+                        updatePokerHand('flopHeroRange', JSON.stringify(clickCounts));
+                    break;
+                case 'Turn':
+                        updatePokerHand('turnHeroRange', JSON.stringify(clickCounts));
+                    break;
+                case 'River':
+                        updatePokerHand('riverHeroRange', JSON.stringify(clickCounts));
+                    break;
+                default:
+                    break;
+            }
+        }
+        else{
+            console.log(myRange);
+            switch(id) {
+                case 'Preflop':
+                    updatePokerHand('preflopVillainRange', JSON.stringify(clickCounts));
+                    break;
+                case 'Flop':
+                    updatePokerHand('flopVillainRange', JSON.stringify(clickCounts));
+                    break;
+                case 'Turn':
+                    updatePokerHand('turnVillainRange', JSON.stringify(clickCounts));
+                    break;
+                case 'River':
+                    updatePokerHand('riverVillainRange', JSON.stringify(clickCounts));
+                    break;
+                default:
+                    break;
+            }
         }
 
+
+
     };
+
 
     const handleClick = (i, j) => {
         const color = getNextColor(clickCounts[i][j]);
@@ -86,6 +91,46 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
     const handleClear = () => {
         setClickCounts(initialMatrix());
+
+        if(myRange=='true'){
+            console.log('id:'+id);
+            console.log(myRange);
+            switch(id) {
+                case 'Preflop':
+                    updatePokerHand('preflopHeroRange', initialMatrix());
+                    break;
+                case 'Flop':
+                    updatePokerHand('flopHeroRange', initialMatrix());
+                    break;
+                case 'Turn':
+                    updatePokerHand('turnHeroRange', initialMatrix());
+                    break;
+                case 'River':
+                    updatePokerHand('riverHeroRange', initialMatrix());
+                    break;
+                default:
+                    break;
+            }
+        }
+        else{
+            console.log(myRange);
+            switch(id) {
+                case 'Preflop':
+                    updatePokerHand('preflopVillainRange', initialMatrix());
+                    break;
+                case 'Flop':
+                    updatePokerHand('flopVillainRange', initialMatrix());
+                    break;
+                case 'Turn':
+                    updatePokerHand('turnVillainRange', initialMatrix());
+                    break;
+                case 'River':
+                    updatePokerHand('riverVillainRange', initialMatrix());
+                    break;
+                default:
+                    break;
+            }
+        }
     };
 
     const handleSave = () => {
@@ -121,17 +166,15 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
     return (
 
-        <div className="card-matrix" onMouseUp={handleMouseUp} onContextMenu={(e) => e.preventDefault()}>
+        <div className="card-matrix" onMouseUp={handleMouseUp} onContextMenu={(e) => e.preventDefault()} >
             <button className="button-clear-matrix" onClick={handleClear} title="Limpiar Matriz">
                 <FontAwesomeIcon icon="eraser" />
             </button>
-            <button className="button-clear-matrix" onClick={handleSave} title="Guardar Matriz">
-            <FontAwesomeIcon icon="floppy-disk" />
-        </button>
+
             {ranks.map((rank1, i) => (
                 <div key={i} className="row">
                     {ranks.map((rank2, j) => (
-                        <div key={j} className="cell" style={{ backgroundColor: getColor(clickCounts[i][j]) }}
+                        <div  key={j} className="cell" style={{ backgroundColor: getColor(clickCounts[i][j]) }}
                              onMouseDown={(e) => handleMouseDown(i, j, e)}
                              onMouseEnter={() => handleMouseEnter(i, j)}>
                             {rank1 + rank2}

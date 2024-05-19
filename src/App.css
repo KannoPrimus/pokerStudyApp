@@ -19,7 +19,7 @@ html, body, #root, .App {
   display: flex;
 
   min-height: 100vh; /* Asegura que la aplicación cubra al menos toda la altura de la ventana del navegador */
-  background-color: #333; /* Define un color de fondo suave para toda la aplicación */
+  background-color: #32414A; /* Define un color de fondo suave para toda la aplicación */
   font-family: 'Roboto', sans-serif;
   padding-top: 54px; /* Ajusta según la altura de tu barra superior */
 

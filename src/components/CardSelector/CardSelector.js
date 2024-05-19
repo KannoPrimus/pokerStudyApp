@@ -19,6 +19,12 @@ function CardSelector(card) {
    useEffect(() => {
 
         switch(card['card']) {
+            case 'myHand_1':
+                updatePokerHand('myHand_1', selectedCard);
+                break;
+            case 'myHand_2':
+                updatePokerHand('myHand_2', selectedCard);
+                break;
             case 'flopCards_1':
                 updatePokerHand('flopCards_1', selectedCard);
                 break;
@@ -53,6 +59,12 @@ function CardSelector(card) {
         setIsModalOpen(false);
 
         switch(card['card']) {
+            case 'myHand_1':
+                updatePokerHand('myHand_1', selectedCard);
+                break;
+            case 'myHand_2':
+                updatePokerHand('myHand_2', selectedCard);
+                break;
             case 'flopCards_1':
                 updatePokerHand('flopCards_1', selCard);
                 break;
@@ -99,12 +111,20 @@ function CardSelector(card) {
         console.log("Card selection cleared!");
     };
 
+    let cardClass =''
+
     // Determina el color basado en el último carácter del palo de la carta
     const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#ff116e';
+    if(card['card']=='myHand_1' || card['card']=='myHand_2' ) {
+            cardClass = 'card-container-hero';
+        }
+        else{
+            cardClass = 'card-container';
+        }
 
     return (
 
-        <div className="card-container" onClick={handleCardClick} onContextMenu={handleRightClick}  style={{ backgroundColor }}>
+        <div className={cardClass} onClick={handleCardClick} onContextMenu={handleRightClick}  style={{ backgroundColor }}>
             {selectedCard || <span>🂠</span>}
             {isModalOpen && <CardModal isOpen={isModalOpen}  onSelectCard={handleCardSelect} />}
         </div>

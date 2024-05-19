@@ -5,6 +5,8 @@ type Hands @model @auth(rules: [{allow: private}]) {
   handTags: AWSJSON
   heroPosition: String
   handTitle: String!
+  myHand_1: String
+  myHand_2: String
   preflopNotes: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
@@ -19,8 +21,8 @@ type Hands @model @auth(rules: [{allow: private}]) {
   flopCards_1: String
   flopCards_3: String
   flopCards_2: String
-  turnCard: AWSJSON
-  riverCard: AWSJSON
+  turnCard: String
+  riverCard: String
   villainPosition: String
   riverVillainRange: AWSJSON
 }

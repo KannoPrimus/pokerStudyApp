@@ -5,6 +5,8 @@ type Hands @aws_iam @aws_cognito_user_pools {
   handTags: AWSJSON
   heroPosition: String
   handTitle: String!
+  myHand_1: String
+  myHand_2: String
   preflopNotes: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
@@ -16,11 +18,11 @@ type Hands @aws_iam @aws_cognito_user_pools {
   turnVillainRange: AWSJSON
   riverNotes: String
   riverHeroRange: AWSJSON
-  flopCards_1: AWSJSON
+  flopCards_1: String
   flopCards_3: String
   flopCards_2: String
-  turnCard: AWSJSON
-  riverCard: AWSJSON
+  turnCard: String
+  riverCard: String
   villainPosition: String
   riverVillainRange: AWSJSON
   createdAt: AWSDateTime!
@@ -189,6 +191,8 @@ input ModelHandsFilterInput {
   handTags: ModelStringInput
   heroPosition: ModelStringInput
   handTitle: ModelStringInput
+  myHand_1: ModelStringInput
+  myHand_2: ModelStringInput
   preflopNotes: ModelStringInput
   preflopHeroRange: ModelStringInput
   preflopVillainRange: ModelStringInput
@@ -225,6 +229,8 @@ input ModelHandsConditionInput {
   handTags: ModelStringInput
   heroPosition: ModelStringInput
   handTitle: ModelStringInput
+  myHand_1: ModelStringInput
+  myHand_2: ModelStringInput
   preflopNotes: ModelStringInput
   preflopHeroRange: ModelStringInput
   preflopVillainRange: ModelStringInput
@@ -257,6 +263,8 @@ input CreateHandsInput {
   handTags: AWSJSON
   heroPosition: String
   handTitle: String!
+  myHand_1: String
+  myHand_2: String
   preflopNotes: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
@@ -268,11 +276,11 @@ input CreateHandsInput {
   turnVillainRange: AWSJSON
   riverNotes: String
   riverHeroRange: AWSJSON
-  flopCards_1: AWSJSON
+  flopCards_1: String
   flopCards_3: String
   flopCards_2: String
-  turnCard: AWSJSON
-  riverCard: AWSJSON
+  turnCard: String
+  riverCard: String
   villainPosition: String
   riverVillainRange: AWSJSON
 }
@@ -284,6 +292,8 @@ input UpdateHandsInput {
   handTags: AWSJSON
   heroPosition: String
   handTitle: String
+  myHand_1: String
+  myHand_2: String
   preflopNotes: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
@@ -295,11 +305,11 @@ input UpdateHandsInput {
   turnVillainRange: AWSJSON
   riverNotes: String
   riverHeroRange: AWSJSON
-  flopCards_1: AWSJSON
+  flopCards_1: String
   flopCards_3: String
   flopCards_2: String
-  turnCard: AWSJSON
-  riverCard: AWSJSON
+  turnCard: String
+  riverCard: String
   villainPosition: String
   riverVillainRange: AWSJSON
 }
@@ -321,6 +331,8 @@ input ModelSubscriptionHandsFilterInput {
   handTags: ModelSubscriptionStringInput
   heroPosition: ModelSubscriptionStringInput
   handTitle: ModelSubscriptionStringInput
+  myHand_1: ModelSubscriptionStringInput
+  myHand_2: ModelSubscriptionStringInput
   preflopNotes: ModelSubscriptionStringInput
   preflopHeroRange: ModelSubscriptionStringInput
   preflopVillainRange: ModelSubscriptionStringInput

@@ -15,7 +15,7 @@ function Sidebar() {
 
     useEffect(() => {
         updatePokerHand('handTitle', handTitle);
-        updatePokerHand('handTags', handTags);
+        updatePokerHand('handTags', JSON.stringify(handTags));
     }, [handTitle, handTags]);
 
     const handleTitleChange = e => {
@@ -30,11 +30,11 @@ function Sidebar() {
         const input = e.target.value;
         setInputTag(input);
         updateSuggestions(input);
-        updatePokerHand('handTags', handTags);
+        updatePokerHand('handTags', JSON.stringify(handTags));
     };
 
     const handleTagInputBlur = () => {
-        updatePokerHand('handTags', handTags);
+        updatePokerHand('handTags', JSON.stringify(handTags));
     };
 
     const updateSuggestions = input => {
@@ -48,7 +48,7 @@ function Sidebar() {
             setShowSuggestions(false); // Ocultar sugerencias si el input está vacío
         }
 
-        updatePokerHand('handTags', handTags);
+        updatePokerHand('handTags', JSON.stringify(handTags) );
     };
 
     const addTag = tag => {
@@ -104,7 +104,7 @@ function Sidebar() {
                     </span>
                 ))}
             </div>
-            <button onClick={signOut}>Sign Out</button>
+            <button onClick={signOut}>Salir</button>
         </div>
     );
 }

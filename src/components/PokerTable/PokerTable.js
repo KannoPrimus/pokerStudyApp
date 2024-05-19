@@ -77,6 +77,7 @@ function PokerTable() {
                         <option value={6}>6-Max</option>
                         <option value={9}>9-Max</option>
                     </select>
+
                 </div>
             </div>
         </div>

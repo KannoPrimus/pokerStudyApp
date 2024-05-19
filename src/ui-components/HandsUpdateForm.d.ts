@@ -27,6 +27,8 @@ export declare type HandsUpdateFormInputValues = {
     handTags?: string;
     heroPosition?: string;
     handTitle?: string;
+    myHand_1?: string;
+    myHand_2?: string;
     preflopNotes?: string;
     preflopHeroRange?: string;
     preflopVillainRange?: string;
@@ -52,6 +54,8 @@ export declare type HandsUpdateFormValidationValues = {
     handTags?: ValidationFunction<string>;
     heroPosition?: ValidationFunction<string>;
     handTitle?: ValidationFunction<string>;
+    myHand_1?: ValidationFunction<string>;
+    myHand_2?: ValidationFunction<string>;
     preflopNotes?: ValidationFunction<string>;
     preflopHeroRange?: ValidationFunction<string>;
     preflopVillainRange?: ValidationFunction<string>;
@@ -79,6 +83,8 @@ export declare type HandsUpdateFormOverridesProps = {
     handTags?: PrimitiveOverrideProps<TextAreaFieldProps>;
     heroPosition?: PrimitiveOverrideProps<TextFieldProps>;
     handTitle?: PrimitiveOverrideProps<TextFieldProps>;
+    myHand_1?: PrimitiveOverrideProps<TextFieldProps>;
+    myHand_2?: PrimitiveOverrideProps<TextFieldProps>;
     preflopNotes?: PrimitiveOverrideProps<TextFieldProps>;
     preflopHeroRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
     preflopVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
@@ -90,11 +96,11 @@ export declare type HandsUpdateFormOverridesProps = {
     turnVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
     riverNotes?: PrimitiveOverrideProps<TextFieldProps>;
     riverHeroRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    flopCards_1?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    flopCards_1?: PrimitiveOverrideProps<TextFieldProps>;
     flopCards_3?: PrimitiveOverrideProps<TextFieldProps>;
     flopCards_2?: PrimitiveOverrideProps<TextFieldProps>;
-    turnCard?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    riverCard?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    turnCard?: PrimitiveOverrideProps<TextFieldProps>;
+    riverCard?: PrimitiveOverrideProps<TextFieldProps>;
     villainPosition?: PrimitiveOverrideProps<TextFieldProps>;
     riverVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;

@@ -11,10 +11,21 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
 
     return (
         <div className="street-column-container">
-            <span className="title">{streetName}</span>
+
             <div className="board-cards section ">
                 {/* Renderizar CardSelectors basado en el streetName */}
-                {streetName === 'Preflop' && <PokerTable />}
+                {streetName === 'Preflop' && (
+                    <>
+                        <PokerTable />
+                        <div>
+                            <div className="title">Mi mano</div>
+                            <div className="board-cards-hero">
+                                <CardSelector  card="myHand_1"/>
+                                <CardSelector  card="myHand_2"/>
+                            </div>
+                        </div>
+                    </>
+                        )}
                 {streetName === 'Flop' && (
                     <>
                         <CardSelector card="flopCards_1"/>
@@ -25,13 +36,14 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
                 {streetName === 'Turn' && <CardSelector card="turnCard"/>}
                 {streetName === 'River' && <CardSelector card="riverCard"/>}
             </div>
-            <div className="section"><PokerNotes id={streetName}/></div>
-            <span className="title">Rango Hero</span>
-            <div className="section"><CardMatrix id={streetName} myRange="true" />
+            <div className="streetInfo">
+                <div className="section"><PokerNotes id={streetName}/></div>
+                <span className="title">Rango Hero</span>
+                <div className="section"><CardMatrix id={streetName} myRange="true" />
+                </div>
+                <span className="title">Rango Villano</span>
+                <div className="section"><CardMatrix id={streetName} myRange="false"/></div>
             </div>
-            <span className="title">Rango Villano</span>
-            <div className="section"><CardMatrix id={streetName} myRange="false"/></div>
-
         </div>
     );
 }

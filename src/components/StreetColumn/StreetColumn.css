@@ -16,7 +16,7 @@
     justify-content: center;
     margin-right:3px;
     margin-left:3px;
-    width:90%;
+    width:100%;
 }
 
 .section:last-child {
@@ -33,6 +33,16 @@
     height: 180px !important;
 }
 
+.board-cards-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre los selectores de cartas */
+    background: #33333;
+    margin-bottom: 5px;
+    height: 60px !important;
+}
+
 /* Estilos específicos para los botones de cartas si es necesario */
 .card-button {
     padding: 5px 10px;
@@ -47,4 +57,48 @@
     padding-left: 15px;
     color:#fff;
     padding-top:5px;
+
+}
+
+.streetInfo{
+ margin-top:25px;
+    height: 70vh;
+    overflow-y: scroll; /* Agrega una barra de desplazamiento vertical si el contenido es demasiado grande */
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    padding: 0px; /* Espacio interno opcional */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en las dimensiones del div */
+}
+
+.streetInfo::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+    background-color: #32414A; /* Color de fondo del scrollbar */
+    border-radius: 4px;
+}
+
+.streetInfo::-webkit-scrollbar-thumb {
+    background-color: #32414A; /* Color del "thumb" del scrollbar */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.streetInfo::-webkit-scrollbar-thumb:hover {
+    background-color: #32414A; /* Color del "thumb" del scrollbar al pasar el ratón */
+}
+
+.streetInfo::-webkit-scrollbar-thumb:active {
+    background-color: #32414A; /* Color del "thumb" del scrollbar al hacer clic */
+}
+
+.streetInfo::-webkit-scrollbar-track {
+    background-color: #32414A; /* Color del "track" del scrollbar */
+    border-radius: 4px; /* Bordes redondeados del "track" */
+}
+
+/* Estilo para navegadores basados en Gecko (Firefox) */
+.streetInfo {
+    scrollbar-width: thin; /* Hace el scrollbar más delgado */
+    scrollbar-color: #32414A #32414A; /* Color del "thumb" y del "track" */
+}
+
+.streetInfo:hover {
+    scrollbar-color: #32414A #192831; /* Color del "thumb" y del "track" al pasar el ratón */
 }
