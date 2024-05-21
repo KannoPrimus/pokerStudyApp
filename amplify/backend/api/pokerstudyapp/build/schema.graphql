@@ -8,15 +8,19 @@ type Hands @aws_iam @aws_cognito_user_pools {
   myHand_1: String
   myHand_2: String
   preflopNotes: String
+  preflopAction: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
   flopNotes: String
+  flopAction: String
   flopHeroRange: AWSJSON
   flopVillainRange: AWSJSON
   turnNotes: String
+  turnAction: String
   turnHeroRange: AWSJSON
   turnVillainRange: AWSJSON
   riverNotes: String
+  riverAction: String
   riverHeroRange: AWSJSON
   flopCards_1: String
   flopCards_3: String
@@ -194,15 +198,19 @@ input ModelHandsFilterInput {
   myHand_1: ModelStringInput
   myHand_2: ModelStringInput
   preflopNotes: ModelStringInput
+  preflopAction: ModelStringInput
   preflopHeroRange: ModelStringInput
   preflopVillainRange: ModelStringInput
   flopNotes: ModelStringInput
+  flopAction: ModelStringInput
   flopHeroRange: ModelStringInput
   flopVillainRange: ModelStringInput
   turnNotes: ModelStringInput
+  turnAction: ModelStringInput
   turnHeroRange: ModelStringInput
   turnVillainRange: ModelStringInput
   riverNotes: ModelStringInput
+  riverAction: ModelStringInput
   riverHeroRange: ModelStringInput
   flopCards_1: ModelStringInput
   flopCards_3: ModelStringInput
@@ -232,15 +240,19 @@ input ModelHandsConditionInput {
   myHand_1: ModelStringInput
   myHand_2: ModelStringInput
   preflopNotes: ModelStringInput
+  preflopAction: ModelStringInput
   preflopHeroRange: ModelStringInput
   preflopVillainRange: ModelStringInput
   flopNotes: ModelStringInput
+  flopAction: ModelStringInput
   flopHeroRange: ModelStringInput
   flopVillainRange: ModelStringInput
   turnNotes: ModelStringInput
+  turnAction: ModelStringInput
   turnHeroRange: ModelStringInput
   turnVillainRange: ModelStringInput
   riverNotes: ModelStringInput
+  riverAction: ModelStringInput
   riverHeroRange: ModelStringInput
   flopCards_1: ModelStringInput
   flopCards_3: ModelStringInput
@@ -266,15 +278,19 @@ input CreateHandsInput {
   myHand_1: String
   myHand_2: String
   preflopNotes: String
+  preflopAction: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
   flopNotes: String
+  flopAction: String
   flopHeroRange: AWSJSON
   flopVillainRange: AWSJSON
   turnNotes: String
+  turnAction: String
   turnHeroRange: AWSJSON
   turnVillainRange: AWSJSON
   riverNotes: String
+  riverAction: String
   riverHeroRange: AWSJSON
   flopCards_1: String
   flopCards_3: String
@@ -295,15 +311,19 @@ input UpdateHandsInput {
   myHand_1: String
   myHand_2: String
   preflopNotes: String
+  preflopAction: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
   flopNotes: String
+  flopAction: String
   flopHeroRange: AWSJSON
   flopVillainRange: AWSJSON
   turnNotes: String
+  turnAction: String
   turnHeroRange: AWSJSON
   turnVillainRange: AWSJSON
   riverNotes: String
+  riverAction: String
   riverHeroRange: AWSJSON
   flopCards_1: String
   flopCards_3: String
@@ -334,15 +354,19 @@ input ModelSubscriptionHandsFilterInput {
   myHand_1: ModelSubscriptionStringInput
   myHand_2: ModelSubscriptionStringInput
   preflopNotes: ModelSubscriptionStringInput
+  preflopAction: ModelSubscriptionStringInput
   preflopHeroRange: ModelSubscriptionStringInput
   preflopVillainRange: ModelSubscriptionStringInput
   flopNotes: ModelSubscriptionStringInput
+  flopAction: ModelSubscriptionStringInput
   flopHeroRange: ModelSubscriptionStringInput
   flopVillainRange: ModelSubscriptionStringInput
   turnNotes: ModelSubscriptionStringInput
+  turnAction: ModelSubscriptionStringInput
   turnHeroRange: ModelSubscriptionStringInput
   turnVillainRange: ModelSubscriptionStringInput
   riverNotes: ModelSubscriptionStringInput
+  riverAction: ModelSubscriptionStringInput
   riverHeroRange: ModelSubscriptionStringInput
   flopCards_1: ModelSubscriptionStringInput
   flopCards_3: ModelSubscriptionStringInput

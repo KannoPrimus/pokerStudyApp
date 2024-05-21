@@ -8,15 +8,19 @@ type Hands @model @auth(rules: [{allow: private}]) {
   myHand_1: String
   myHand_2: String
   preflopNotes: String
+  preflopAction: String
   preflopHeroRange: AWSJSON
   preflopVillainRange: AWSJSON
   flopNotes: String
+  flopAction: String
   flopHeroRange: AWSJSON
   flopVillainRange: AWSJSON
   turnNotes: String
+  turnAction: String
   turnHeroRange: AWSJSON
   turnVillainRange: AWSJSON
   riverNotes: String
+  riverAction: String
   riverHeroRange: AWSJSON
   flopCards_1: String
   flopCards_3: String

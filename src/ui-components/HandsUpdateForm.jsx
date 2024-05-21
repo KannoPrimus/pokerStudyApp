@@ -39,15 +39,19 @@ export default function HandsUpdateForm(props) {
     myHand_1: "",
     myHand_2: "",
     preflopNotes: "",
+    preflopAction: "",
     preflopHeroRange: "",
     preflopVillainRange: "",
     flopNotes: "",
+    flopAction: "",
     flopHeroRange: "",
     flopVillainRange: "",
     turnNotes: "",
+    turnAction: "",
     turnHeroRange: "",
     turnVillainRange: "",
     riverNotes: "",
+    riverAction: "",
     riverHeroRange: "",
     flopCards_1: "",
     flopCards_3: "",
@@ -69,6 +73,9 @@ export default function HandsUpdateForm(props) {
   const [preflopNotes, setPreflopNotes] = React.useState(
     initialValues.preflopNotes
   );
+  const [preflopAction, setPreflopAction] = React.useState(
+    initialValues.preflopAction
+  );
   const [preflopHeroRange, setPreflopHeroRange] = React.useState(
     initialValues.preflopHeroRange
   );
@@ -76,6 +83,7 @@ export default function HandsUpdateForm(props) {
     initialValues.preflopVillainRange
   );
   const [flopNotes, setFlopNotes] = React.useState(initialValues.flopNotes);
+  const [flopAction, setFlopAction] = React.useState(initialValues.flopAction);
   const [flopHeroRange, setFlopHeroRange] = React.useState(
     initialValues.flopHeroRange
   );
@@ -83,6 +91,7 @@ export default function HandsUpdateForm(props) {
     initialValues.flopVillainRange
   );
   const [turnNotes, setTurnNotes] = React.useState(initialValues.turnNotes);
+  const [turnAction, setTurnAction] = React.useState(initialValues.turnAction);
   const [turnHeroRange, setTurnHeroRange] = React.useState(
     initialValues.turnHeroRange
   );
@@ -90,6 +99,9 @@ export default function HandsUpdateForm(props) {
     initialValues.turnVillainRange
   );
   const [riverNotes, setRiverNotes] = React.useState(initialValues.riverNotes);
+  const [riverAction, setRiverAction] = React.useState(
+    initialValues.riverAction
+  );
   const [riverHeroRange, setRiverHeroRange] = React.useState(
     initialValues.riverHeroRange
   );
@@ -127,6 +139,7 @@ export default function HandsUpdateForm(props) {
     setMyHand_1(cleanValues.myHand_1);
     setMyHand_2(cleanValues.myHand_2);
     setPreflopNotes(cleanValues.preflopNotes);
+    setPreflopAction(cleanValues.preflopAction);
     setPreflopHeroRange(
       typeof cleanValues.preflopHeroRange === "string" ||
         cleanValues.preflopHeroRange === null
@@ -140,6 +153,7 @@ export default function HandsUpdateForm(props) {
         : JSON.stringify(cleanValues.preflopVillainRange)
     );
     setFlopNotes(cleanValues.flopNotes);
+    setFlopAction(cleanValues.flopAction);
     setFlopHeroRange(
       typeof cleanValues.flopHeroRange === "string" ||
         cleanValues.flopHeroRange === null
@@ -153,6 +167,7 @@ export default function HandsUpdateForm(props) {
         : JSON.stringify(cleanValues.flopVillainRange)
     );
     setTurnNotes(cleanValues.turnNotes);
+    setTurnAction(cleanValues.turnAction);
     setTurnHeroRange(
       typeof cleanValues.turnHeroRange === "string" ||
         cleanValues.turnHeroRange === null
@@ -166,6 +181,7 @@ export default function HandsUpdateForm(props) {
         : JSON.stringify(cleanValues.turnVillainRange)
     );
     setRiverNotes(cleanValues.riverNotes);
+    setRiverAction(cleanValues.riverAction);
     setRiverHeroRange(
       typeof cleanValues.riverHeroRange === "string" ||
         cleanValues.riverHeroRange === null
@@ -211,15 +227,19 @@ export default function HandsUpdateForm(props) {
     myHand_1: [],
     myHand_2: [],
     preflopNotes: [],
+    preflopAction: [],
     preflopHeroRange: [{ type: "JSON" }],
     preflopVillainRange: [{ type: "JSON" }],
     flopNotes: [],
+    flopAction: [],
     flopHeroRange: [{ type: "JSON" }],
     flopVillainRange: [{ type: "JSON" }],
     turnNotes: [],
+    turnAction: [],
     turnHeroRange: [{ type: "JSON" }],
     turnVillainRange: [{ type: "JSON" }],
     riverNotes: [],
+    riverAction: [],
     riverHeroRange: [{ type: "JSON" }],
     flopCards_1: [],
     flopCards_3: [],
@@ -263,15 +283,19 @@ export default function HandsUpdateForm(props) {
           myHand_1: myHand_1 ?? null,
           myHand_2: myHand_2 ?? null,
           preflopNotes: preflopNotes ?? null,
+          preflopAction: preflopAction ?? null,
           preflopHeroRange: preflopHeroRange ?? null,
           preflopVillainRange: preflopVillainRange ?? null,
           flopNotes: flopNotes ?? null,
+          flopAction: flopAction ?? null,
           flopHeroRange: flopHeroRange ?? null,
           flopVillainRange: flopVillainRange ?? null,
           turnNotes: turnNotes ?? null,
+          turnAction: turnAction ?? null,
           turnHeroRange: turnHeroRange ?? null,
           turnVillainRange: turnVillainRange ?? null,
           riverNotes: riverNotes ?? null,
+          riverAction: riverAction ?? null,
           riverHeroRange: riverHeroRange ?? null,
           flopCards_1: flopCards_1 ?? null,
           flopCards_3: flopCards_3 ?? null,
@@ -348,15 +372,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -396,15 +424,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -444,15 +476,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -492,15 +528,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -540,15 +580,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -588,15 +632,19 @@ export default function HandsUpdateForm(props) {
               myHand_1: value,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -636,15 +684,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2: value,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -684,15 +736,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes: value,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -715,6 +771,58 @@ export default function HandsUpdateForm(props) {
         hasError={errors.preflopNotes?.hasError}
         {...getOverrideProps(overrides, "preflopNotes")}
       ></TextField>
+      <TextField
+        label="Preflop action"
+        isRequired={false}
+        isReadOnly={false}
+        value={preflopAction}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              myHand_1,
+              myHand_2,
+              preflopNotes,
+              preflopAction: value,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopAction,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnAction,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverAction,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+            };
+            const result = onChange(modelFields);
+            value = result?.preflopAction ?? value;
+          }
+          if (errors.preflopAction?.hasError) {
+            runValidationTasks("preflopAction", value);
+          }
+          setPreflopAction(value);
+        }}
+        onBlur={() => runValidationTasks("preflopAction", preflopAction)}
+        errorMessage={errors.preflopAction?.errorMessage}
+        hasError={errors.preflopAction?.hasError}
+        {...getOverrideProps(overrides, "preflopAction")}
+      ></TextField>
       <TextAreaField
         label="Preflop hero range"
         isRequired={false}
@@ -732,15 +840,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange: value,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -780,15 +892,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange: value,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -830,15 +946,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes: value,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -861,6 +981,58 @@ export default function HandsUpdateForm(props) {
         hasError={errors.flopNotes?.hasError}
         {...getOverrideProps(overrides, "flopNotes")}
       ></TextField>
+      <TextField
+        label="Flop action"
+        isRequired={false}
+        isReadOnly={false}
+        value={flopAction}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              myHand_1,
+              myHand_2,
+              preflopNotes,
+              preflopAction,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopAction: value,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnAction,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverAction,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+            };
+            const result = onChange(modelFields);
+            value = result?.flopAction ?? value;
+          }
+          if (errors.flopAction?.hasError) {
+            runValidationTasks("flopAction", value);
+          }
+          setFlopAction(value);
+        }}
+        onBlur={() => runValidationTasks("flopAction", flopAction)}
+        errorMessage={errors.flopAction?.errorMessage}
+        hasError={errors.flopAction?.hasError}
+        {...getOverrideProps(overrides, "flopAction")}
+      ></TextField>
       <TextAreaField
         label="Flop hero range"
         isRequired={false}
@@ -878,15 +1050,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange: value,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -926,15 +1102,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange: value,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -974,15 +1154,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes: value,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1005,6 +1189,58 @@ export default function HandsUpdateForm(props) {
         hasError={errors.turnNotes?.hasError}
         {...getOverrideProps(overrides, "turnNotes")}
       ></TextField>
+      <TextField
+        label="Turn action"
+        isRequired={false}
+        isReadOnly={false}
+        value={turnAction}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              myHand_1,
+              myHand_2,
+              preflopNotes,
+              preflopAction,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopAction,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnAction: value,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverAction,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+            };
+            const result = onChange(modelFields);
+            value = result?.turnAction ?? value;
+          }
+          if (errors.turnAction?.hasError) {
+            runValidationTasks("turnAction", value);
+          }
+          setTurnAction(value);
+        }}
+        onBlur={() => runValidationTasks("turnAction", turnAction)}
+        errorMessage={errors.turnAction?.errorMessage}
+        hasError={errors.turnAction?.hasError}
+        {...getOverrideProps(overrides, "turnAction")}
+      ></TextField>
       <TextAreaField
         label="Turn hero range"
         isRequired={false}
@@ -1022,15 +1258,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange: value,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1070,15 +1310,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange: value,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1118,15 +1362,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes: value,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1149,6 +1397,58 @@ export default function HandsUpdateForm(props) {
         hasError={errors.riverNotes?.hasError}
         {...getOverrideProps(overrides, "riverNotes")}
       ></TextField>
+      <TextField
+        label="River action"
+        isRequired={false}
+        isReadOnly={false}
+        value={riverAction}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              myHand_1,
+              myHand_2,
+              preflopNotes,
+              preflopAction,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopAction,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnAction,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverAction: value,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+            };
+            const result = onChange(modelFields);
+            value = result?.riverAction ?? value;
+          }
+          if (errors.riverAction?.hasError) {
+            runValidationTasks("riverAction", value);
+          }
+          setRiverAction(value);
+        }}
+        onBlur={() => runValidationTasks("riverAction", riverAction)}
+        errorMessage={errors.riverAction?.errorMessage}
+        hasError={errors.riverAction?.hasError}
+        {...getOverrideProps(overrides, "riverAction")}
+      ></TextField>
       <TextAreaField
         label="River hero range"
         isRequired={false}
@@ -1166,15 +1466,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange: value,
               flopCards_1,
               flopCards_3,
@@ -1214,15 +1518,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1: value,
               flopCards_3,
@@ -1262,15 +1570,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3: value,
@@ -1310,15 +1622,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1358,15 +1674,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1406,15 +1726,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1454,15 +1778,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
@@ -1502,15 +1830,19 @@ export default function HandsUpdateForm(props) {
               myHand_1,
               myHand_2,
               preflopNotes,
+              preflopAction,
               preflopHeroRange,
               preflopVillainRange,
               flopNotes,
+              flopAction,
               flopHeroRange,
               flopVillainRange,
               turnNotes,
+              turnAction,
               turnHeroRange,
               turnVillainRange,
               riverNotes,
+              riverAction,
               riverHeroRange,
               flopCards_1,
               flopCards_3,
