@@ -11,10 +11,10 @@ import { Oval } from 'react-loader-spinner';
 library.add(fas);
 
 const suitColors = {
-    '♠': '#808080', // Gray for Spades
-    '♣': '#008000', // Green for Clubs
-    '♥': '#ff1405', // Red for Hearts
-    '♦': '#5e4fff'  // Blue for Diamonds
+    '♠': '#808080', // Gris para Espadas
+    '♣': '#25C6A2', // Verde para Tréboles
+    '♥': '#C62549', // Rojo para Corazones
+    '♦': '#5e4fff'  // Azul para Diamantes
 };
 
 function TopBar() {
@@ -91,7 +91,7 @@ function TopBar() {
             setModalMessage(response.error);
             setIsError(true);
         } else {
-            setModalMessage('Poker hand created successfully!');
+            setModalMessage('Mano guardada con éxito!');
             setIsError(false);
         }
         setTimeout(() => {
@@ -113,7 +113,7 @@ function TopBar() {
             setModalMessage(response.error);
             setIsError(true);
         } else {
-            setModalMessage('Poker hand updated successfully!');
+            setModalMessage('Mano guardada con éxito!');
             setIsError(false);
         }
         setTimeout(() => {
@@ -225,7 +225,7 @@ function TopBar() {
                 </button>
             ) : (
                 <button className="nav-button" onClick={handleCreateHand}>
-                    <FontAwesomeIcon icon="star" /> Guardar Mano
+                    <FontAwesomeIcon icon="floppy-disk" /> Guardar Mano
                 </button>
             )}
             {modalMessage && <div className={`modal ${isError ? 'error' : 'success'}`}>{modalMessage}</div>}

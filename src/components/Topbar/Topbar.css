@@ -53,9 +53,9 @@
     top: 45px;
     left: 25%;
     width: 50%;
-    max-height: 500px;
+    max-height: 93vh;
     overflow-y: auto;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);;
     z-index: 1000;
     animation: fadeIn 0.3s ease-in-out;
     transition: max-height 0.3s ease-in-out;
@@ -85,7 +85,7 @@
 }
 
 .dropdown-menu li:hover {
-    background-color: #f1f1f1;
+    background-color: #5AF8D7;
     color: white;
     border-radius: 10px;
     margin: 2px;
@@ -129,7 +129,7 @@
 .hand-title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
     font-weight: bold;
     margin-bottom: 5px;
     color:#192831;
@@ -209,8 +209,8 @@
 .player-positions {
     margin-left: 10px;
     font-size: 14px;
-    color: #555;
-    background-color: #e9ecef;
+    color: #fff;
+    background-color: #7659BA;
     padding: 2px 8px;
     border-radius: 4px;
     white-space: nowrap; /* Prevent wrapping */

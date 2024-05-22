@@ -5,8 +5,8 @@ import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
 
 const suitColors = {
     '♠': '#808080', // Gris para Espadas
-    '♣': '#008000', // Verde para Tréboles
-    '♥': '#ff1405', // Rojo para Corazones
+    '♣': '#25C6A2', // Verde para Tréboles
+    '♥': '#C62549', // Rojo para Corazones
     '♦': '#5e4fff'  // Azul para Diamantes
 };
 

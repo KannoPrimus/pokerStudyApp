@@ -28,7 +28,19 @@ export function Header() {
                     }}
                 >
                     Poker Study App
+                    <Text
+                        fontStyle="italic"
+                        fontSize="1.5rem" // Agrandar el tamaño de la fuente
+                        fontWeight={tokens.fontWeights.bold}
+                        color="#5AF8D7"
+                        style={{
+                            textShadow: ' 0px 0px 5px rgba(0, 0, 0, 1)' // Sombra inset
+                        }}
+                    >
+                        Una herramienta simple pero poderosa
+                    </Text>
                 </Text>
+
             </Flex>
         </View>
     );

@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useContext , useRef} from 'react';
 import './PokerNotes.css'
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 function PokerNotes({ id }) {
     const noteRef = useRef(null);
@@ -134,8 +138,8 @@ function PokerNotes({ id }) {
     */
 
     return (
-        <div style={{ position: 'relative' }}>
-
+        <div style={{ position: 'relative',color:'white', fontWeight:'bold' }}>
+            <FontAwesomeIcon icon="clipboard" /> Notas {id}
             <div
                 ref={noteRef}
                 contentEditable
