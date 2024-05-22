@@ -66,7 +66,7 @@ export const PokerHandProvider = ({ children }) => {
 
         if (!pokerHand.handTitle.trim()) {
 
-            return { success: false, error: 'Hand title cannot be empty.' };
+            return { success: false, error: 'El titulo o descripción no puede estar en blanco' };
         }
 
         const newHandId = Date.now();
@@ -124,7 +124,7 @@ export const PokerHandProvider = ({ children }) => {
 
         if (!pokerHand.handTitle.trim()) {
 
-            return { success: false, error: 'Hand title cannot be empty.' };
+            return { success: false, error: 'El titulo o descripción no puede estar en blanco' };
         }
 
 
