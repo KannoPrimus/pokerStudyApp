@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
+import { Flex, Image, useTheme, View, Text } from "@aws-amplify/ui-react";
 import './Topbar.css'; // Make sure to create this CSS file
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
+import logo from '../../assets/logoPSA_2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -164,6 +166,23 @@ function TopBar() {
                     />
                 </div>
             )}
+            <Image
+                height="50px"
+                alt="Poker Study App Logo"
+                src={logo}
+
+            />
+            <Text
+                width="220px"
+                fontSize="2rem" // Agrandar el tamaño de la fuente
+                fontWeight="bold"
+                color="white"
+                style={{
+                    textShadow: ' 0px 0px 5px rgba(0, 0, 0, 1)' // Sombra inset
+                }}
+            >
+                PSA
+            </Text>
             {pokerHand?.id && (
                 <button className="nav-button" onClick={handleResetHand}>
                     <FontAwesomeIcon icon="sync" /> Nueva Mano
