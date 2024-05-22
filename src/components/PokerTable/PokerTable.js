@@ -104,6 +104,7 @@ function PokerTable() {
                         </div>
                     </div>
                     <select value={maxPlayers} onChange={handleTableTypeChange} className="player-count-selector">
+                        <option value="">- -</option>
                         <option value={6}>6-Max</option>
                         <option value={9}>9-Max</option>
                     </select>

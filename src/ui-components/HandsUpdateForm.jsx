@@ -6,13 +6,7 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  Button,
-  Flex,
-  Grid,
-  TextAreaField,
-  TextField,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { generateClient } from "aws-amplify/api";
 import { getHands } from "../../queries";
@@ -129,77 +123,33 @@ export default function HandsUpdateForm(props) {
       : initialValues;
     setPlayerId(cleanValues.playerId);
     setTableType(cleanValues.tableType);
-    setHandTags(
-      typeof cleanValues.handTags === "string" || cleanValues.handTags === null
-        ? cleanValues.handTags
-        : JSON.stringify(cleanValues.handTags)
-    );
+    setHandTags(cleanValues.handTags);
     setHeroPosition(cleanValues.heroPosition);
     setHandTitle(cleanValues.handTitle);
     setMyHand_1(cleanValues.myHand_1);
     setMyHand_2(cleanValues.myHand_2);
     setPreflopNotes(cleanValues.preflopNotes);
     setPreflopAction(cleanValues.preflopAction);
-    setPreflopHeroRange(
-      typeof cleanValues.preflopHeroRange === "string" ||
-        cleanValues.preflopHeroRange === null
-        ? cleanValues.preflopHeroRange
-        : JSON.stringify(cleanValues.preflopHeroRange)
-    );
-    setPreflopVillainRange(
-      typeof cleanValues.preflopVillainRange === "string" ||
-        cleanValues.preflopVillainRange === null
-        ? cleanValues.preflopVillainRange
-        : JSON.stringify(cleanValues.preflopVillainRange)
-    );
+    setPreflopHeroRange(cleanValues.preflopHeroRange);
+    setPreflopVillainRange(cleanValues.preflopVillainRange);
     setFlopNotes(cleanValues.flopNotes);
     setFlopAction(cleanValues.flopAction);
-    setFlopHeroRange(
-      typeof cleanValues.flopHeroRange === "string" ||
-        cleanValues.flopHeroRange === null
-        ? cleanValues.flopHeroRange
-        : JSON.stringify(cleanValues.flopHeroRange)
-    );
-    setFlopVillainRange(
-      typeof cleanValues.flopVillainRange === "string" ||
-        cleanValues.flopVillainRange === null
-        ? cleanValues.flopVillainRange
-        : JSON.stringify(cleanValues.flopVillainRange)
-    );
+    setFlopHeroRange(cleanValues.flopHeroRange);
+    setFlopVillainRange(cleanValues.flopVillainRange);
     setTurnNotes(cleanValues.turnNotes);
     setTurnAction(cleanValues.turnAction);
-    setTurnHeroRange(
-      typeof cleanValues.turnHeroRange === "string" ||
-        cleanValues.turnHeroRange === null
-        ? cleanValues.turnHeroRange
-        : JSON.stringify(cleanValues.turnHeroRange)
-    );
-    setTurnVillainRange(
-      typeof cleanValues.turnVillainRange === "string" ||
-        cleanValues.turnVillainRange === null
-        ? cleanValues.turnVillainRange
-        : JSON.stringify(cleanValues.turnVillainRange)
-    );
+    setTurnHeroRange(cleanValues.turnHeroRange);
+    setTurnVillainRange(cleanValues.turnVillainRange);
     setRiverNotes(cleanValues.riverNotes);
     setRiverAction(cleanValues.riverAction);
-    setRiverHeroRange(
-      typeof cleanValues.riverHeroRange === "string" ||
-        cleanValues.riverHeroRange === null
-        ? cleanValues.riverHeroRange
-        : JSON.stringify(cleanValues.riverHeroRange)
-    );
+    setRiverHeroRange(cleanValues.riverHeroRange);
     setFlopCards_1(cleanValues.flopCards_1);
     setFlopCards_3(cleanValues.flopCards_3);
     setFlopCards_2(cleanValues.flopCards_2);
     setTurnCard(cleanValues.turnCard);
     setRiverCard(cleanValues.riverCard);
     setVillainPosition(cleanValues.villainPosition);
-    setRiverVillainRange(
-      typeof cleanValues.riverVillainRange === "string" ||
-        cleanValues.riverVillainRange === null
-        ? cleanValues.riverVillainRange
-        : JSON.stringify(cleanValues.riverVillainRange)
-    );
+    setRiverVillainRange(cleanValues.riverVillainRange);
     setErrors({});
   };
   const [handsRecord, setHandsRecord] = React.useState(handsModelProp);
@@ -221,33 +171,33 @@ export default function HandsUpdateForm(props) {
   const validations = {
     playerId: [],
     tableType: [],
-    handTags: [{ type: "JSON" }],
+    handTags: [],
     heroPosition: [],
     handTitle: [{ type: "Required" }],
     myHand_1: [],
     myHand_2: [],
     preflopNotes: [],
     preflopAction: [],
-    preflopHeroRange: [{ type: "JSON" }],
-    preflopVillainRange: [{ type: "JSON" }],
+    preflopHeroRange: [],
+    preflopVillainRange: [],
     flopNotes: [],
     flopAction: [],
-    flopHeroRange: [{ type: "JSON" }],
-    flopVillainRange: [{ type: "JSON" }],
+    flopHeroRange: [],
+    flopVillainRange: [],
     turnNotes: [],
     turnAction: [],
-    turnHeroRange: [{ type: "JSON" }],
-    turnVillainRange: [{ type: "JSON" }],
+    turnHeroRange: [],
+    turnVillainRange: [],
     riverNotes: [],
     riverAction: [],
-    riverHeroRange: [{ type: "JSON" }],
+    riverHeroRange: [],
     flopCards_1: [],
     flopCards_3: [],
     flopCards_2: [],
     turnCard: [],
     riverCard: [],
     villainPosition: [],
-    riverVillainRange: [{ type: "JSON" }],
+    riverVillainRange: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -459,7 +409,7 @@ export default function HandsUpdateForm(props) {
         hasError={errors.tableType?.hasError}
         {...getOverrideProps(overrides, "tableType")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Hand tags"
         isRequired={false}
         isReadOnly={false}
@@ -510,7 +460,7 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.handTags?.errorMessage}
         hasError={errors.handTags?.hasError}
         {...getOverrideProps(overrides, "handTags")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Hero position"
         isRequired={false}
@@ -823,7 +773,7 @@ export default function HandsUpdateForm(props) {
         hasError={errors.preflopAction?.hasError}
         {...getOverrideProps(overrides, "preflopAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Preflop hero range"
         isRequired={false}
         isReadOnly={false}
@@ -874,8 +824,8 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.preflopHeroRange?.errorMessage}
         hasError={errors.preflopHeroRange?.hasError}
         {...getOverrideProps(overrides, "preflopHeroRange")}
-      ></TextAreaField>
-      <TextAreaField
+      ></TextField>
+      <TextField
         label="Preflop villain range"
         isRequired={false}
         isReadOnly={false}
@@ -928,7 +878,7 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.preflopVillainRange?.errorMessage}
         hasError={errors.preflopVillainRange?.hasError}
         {...getOverrideProps(overrides, "preflopVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Flop notes"
         isRequired={false}
@@ -1033,7 +983,7 @@ export default function HandsUpdateForm(props) {
         hasError={errors.flopAction?.hasError}
         {...getOverrideProps(overrides, "flopAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Flop hero range"
         isRequired={false}
         isReadOnly={false}
@@ -1084,8 +1034,8 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.flopHeroRange?.errorMessage}
         hasError={errors.flopHeroRange?.hasError}
         {...getOverrideProps(overrides, "flopHeroRange")}
-      ></TextAreaField>
-      <TextAreaField
+      ></TextField>
+      <TextField
         label="Flop villain range"
         isRequired={false}
         isReadOnly={false}
@@ -1136,7 +1086,7 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.flopVillainRange?.errorMessage}
         hasError={errors.flopVillainRange?.hasError}
         {...getOverrideProps(overrides, "flopVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Turn notes"
         isRequired={false}
@@ -1241,7 +1191,7 @@ export default function HandsUpdateForm(props) {
         hasError={errors.turnAction?.hasError}
         {...getOverrideProps(overrides, "turnAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Turn hero range"
         isRequired={false}
         isReadOnly={false}
@@ -1292,8 +1242,8 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.turnHeroRange?.errorMessage}
         hasError={errors.turnHeroRange?.hasError}
         {...getOverrideProps(overrides, "turnHeroRange")}
-      ></TextAreaField>
-      <TextAreaField
+      ></TextField>
+      <TextField
         label="Turn villain range"
         isRequired={false}
         isReadOnly={false}
@@ -1344,7 +1294,7 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.turnVillainRange?.errorMessage}
         hasError={errors.turnVillainRange?.hasError}
         {...getOverrideProps(overrides, "turnVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="River notes"
         isRequired={false}
@@ -1449,7 +1399,7 @@ export default function HandsUpdateForm(props) {
         hasError={errors.riverAction?.hasError}
         {...getOverrideProps(overrides, "riverAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="River hero range"
         isRequired={false}
         isReadOnly={false}
@@ -1500,7 +1450,7 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.riverHeroRange?.errorMessage}
         hasError={errors.riverHeroRange?.hasError}
         {...getOverrideProps(overrides, "riverHeroRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Flop cards 1"
         isRequired={false}
@@ -1813,7 +1763,7 @@ export default function HandsUpdateForm(props) {
         hasError={errors.villainPosition?.hasError}
         {...getOverrideProps(overrides, "villainPosition")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="River villain range"
         isRequired={false}
         isReadOnly={false}
@@ -1866,7 +1816,7 @@ export default function HandsUpdateForm(props) {
         errorMessage={errors.riverVillainRange?.errorMessage}
         hasError={errors.riverVillainRange?.hasError}
         {...getOverrideProps(overrides, "riverVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

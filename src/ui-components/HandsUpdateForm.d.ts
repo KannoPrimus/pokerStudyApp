@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps, TextAreaFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -88,33 +88,33 @@ export declare type HandsUpdateFormOverridesProps = {
     HandsUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     playerId?: PrimitiveOverrideProps<TextFieldProps>;
     tableType?: PrimitiveOverrideProps<TextFieldProps>;
-    handTags?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    handTags?: PrimitiveOverrideProps<TextFieldProps>;
     heroPosition?: PrimitiveOverrideProps<TextFieldProps>;
     handTitle?: PrimitiveOverrideProps<TextFieldProps>;
     myHand_1?: PrimitiveOverrideProps<TextFieldProps>;
     myHand_2?: PrimitiveOverrideProps<TextFieldProps>;
     preflopNotes?: PrimitiveOverrideProps<TextFieldProps>;
     preflopAction?: PrimitiveOverrideProps<TextFieldProps>;
-    preflopHeroRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    preflopVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    preflopHeroRange?: PrimitiveOverrideProps<TextFieldProps>;
+    preflopVillainRange?: PrimitiveOverrideProps<TextFieldProps>;
     flopNotes?: PrimitiveOverrideProps<TextFieldProps>;
     flopAction?: PrimitiveOverrideProps<TextFieldProps>;
-    flopHeroRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    flopVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    flopHeroRange?: PrimitiveOverrideProps<TextFieldProps>;
+    flopVillainRange?: PrimitiveOverrideProps<TextFieldProps>;
     turnNotes?: PrimitiveOverrideProps<TextFieldProps>;
     turnAction?: PrimitiveOverrideProps<TextFieldProps>;
-    turnHeroRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    turnVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    turnHeroRange?: PrimitiveOverrideProps<TextFieldProps>;
+    turnVillainRange?: PrimitiveOverrideProps<TextFieldProps>;
     riverNotes?: PrimitiveOverrideProps<TextFieldProps>;
     riverAction?: PrimitiveOverrideProps<TextFieldProps>;
-    riverHeroRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    riverHeroRange?: PrimitiveOverrideProps<TextFieldProps>;
     flopCards_1?: PrimitiveOverrideProps<TextFieldProps>;
     flopCards_3?: PrimitiveOverrideProps<TextFieldProps>;
     flopCards_2?: PrimitiveOverrideProps<TextFieldProps>;
     turnCard?: PrimitiveOverrideProps<TextFieldProps>;
     riverCard?: PrimitiveOverrideProps<TextFieldProps>;
     villainPosition?: PrimitiveOverrideProps<TextFieldProps>;
-    riverVillainRange?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    riverVillainRange?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type HandsUpdateFormProps = React.PropsWithChildren<{
     overrides?: HandsUpdateFormOverridesProps | undefined | null;

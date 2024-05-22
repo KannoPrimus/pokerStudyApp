@@ -2,32 +2,32 @@ type Hands @model @auth(rules: [{allow: private}]) {
   id: ID!
   playerId: ID
   tableType: String
-  handTags: AWSJSON
+  handTags: String
   heroPosition: String
   handTitle: String!
   myHand_1: String
   myHand_2: String
   preflopNotes: String
   preflopAction: String
-  preflopHeroRange: AWSJSON
-  preflopVillainRange: AWSJSON
+  preflopHeroRange: String
+  preflopVillainRange: String
   flopNotes: String
   flopAction: String
-  flopHeroRange: AWSJSON
-  flopVillainRange: AWSJSON
+  flopHeroRange: String
+  flopVillainRange: String
   turnNotes: String
   turnAction: String
-  turnHeroRange: AWSJSON
-  turnVillainRange: AWSJSON
+  turnHeroRange: String
+  turnVillainRange: String
   riverNotes: String
   riverAction: String
-  riverHeroRange: AWSJSON
+  riverHeroRange: String
   flopCards_1: String
   flopCards_3: String
   flopCards_2: String
   turnCard: String
   riverCard: String
   villainPosition: String
-  riverVillainRange: AWSJSON
+  riverVillainRange: String
 }
  

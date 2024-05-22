@@ -6,13 +6,7 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  Button,
-  Flex,
-  Grid,
-  TextAreaField,
-  TextField,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { generateClient } from "aws-amplify/api";
 import { createHands } from "../../mutations";
@@ -156,33 +150,33 @@ export default function HandsCreateForm(props) {
   const validations = {
     playerId: [],
     tableType: [],
-    handTags: [{ type: "JSON" }],
+    handTags: [],
     heroPosition: [],
     handTitle: [{ type: "Required" }],
     myHand_1: [],
     myHand_2: [],
     preflopNotes: [],
     preflopAction: [],
-    preflopHeroRange: [{ type: "JSON" }],
-    preflopVillainRange: [{ type: "JSON" }],
+    preflopHeroRange: [],
+    preflopVillainRange: [],
     flopNotes: [],
     flopAction: [],
-    flopHeroRange: [{ type: "JSON" }],
-    flopVillainRange: [{ type: "JSON" }],
+    flopHeroRange: [],
+    flopVillainRange: [],
     turnNotes: [],
     turnAction: [],
-    turnHeroRange: [{ type: "JSON" }],
-    turnVillainRange: [{ type: "JSON" }],
+    turnHeroRange: [],
+    turnVillainRange: [],
     riverNotes: [],
     riverAction: [],
-    riverHeroRange: [{ type: "JSON" }],
+    riverHeroRange: [],
     flopCards_1: [],
     flopCards_3: [],
     flopCards_2: [],
     turnCard: [],
     riverCard: [],
     villainPosition: [],
-    riverVillainRange: [{ type: "JSON" }],
+    riverVillainRange: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -396,10 +390,11 @@ export default function HandsCreateForm(props) {
         hasError={errors.tableType?.hasError}
         {...getOverrideProps(overrides, "tableType")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Hand tags"
         isRequired={false}
         isReadOnly={false}
+        value={handTags}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -446,7 +441,7 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.handTags?.errorMessage}
         hasError={errors.handTags?.hasError}
         {...getOverrideProps(overrides, "handTags")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Hero position"
         isRequired={false}
@@ -759,10 +754,11 @@ export default function HandsCreateForm(props) {
         hasError={errors.preflopAction?.hasError}
         {...getOverrideProps(overrides, "preflopAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Preflop hero range"
         isRequired={false}
         isReadOnly={false}
+        value={preflopHeroRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -809,11 +805,12 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.preflopHeroRange?.errorMessage}
         hasError={errors.preflopHeroRange?.hasError}
         {...getOverrideProps(overrides, "preflopHeroRange")}
-      ></TextAreaField>
-      <TextAreaField
+      ></TextField>
+      <TextField
         label="Preflop villain range"
         isRequired={false}
         isReadOnly={false}
+        value={preflopVillainRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -862,7 +859,7 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.preflopVillainRange?.errorMessage}
         hasError={errors.preflopVillainRange?.hasError}
         {...getOverrideProps(overrides, "preflopVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Flop notes"
         isRequired={false}
@@ -967,10 +964,11 @@ export default function HandsCreateForm(props) {
         hasError={errors.flopAction?.hasError}
         {...getOverrideProps(overrides, "flopAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Flop hero range"
         isRequired={false}
         isReadOnly={false}
+        value={flopHeroRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1017,11 +1015,12 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.flopHeroRange?.errorMessage}
         hasError={errors.flopHeroRange?.hasError}
         {...getOverrideProps(overrides, "flopHeroRange")}
-      ></TextAreaField>
-      <TextAreaField
+      ></TextField>
+      <TextField
         label="Flop villain range"
         isRequired={false}
         isReadOnly={false}
+        value={flopVillainRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1068,7 +1067,7 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.flopVillainRange?.errorMessage}
         hasError={errors.flopVillainRange?.hasError}
         {...getOverrideProps(overrides, "flopVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Turn notes"
         isRequired={false}
@@ -1173,10 +1172,11 @@ export default function HandsCreateForm(props) {
         hasError={errors.turnAction?.hasError}
         {...getOverrideProps(overrides, "turnAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Turn hero range"
         isRequired={false}
         isReadOnly={false}
+        value={turnHeroRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1223,11 +1223,12 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.turnHeroRange?.errorMessage}
         hasError={errors.turnHeroRange?.hasError}
         {...getOverrideProps(overrides, "turnHeroRange")}
-      ></TextAreaField>
-      <TextAreaField
+      ></TextField>
+      <TextField
         label="Turn villain range"
         isRequired={false}
         isReadOnly={false}
+        value={turnVillainRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1274,7 +1275,7 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.turnVillainRange?.errorMessage}
         hasError={errors.turnVillainRange?.hasError}
         {...getOverrideProps(overrides, "turnVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="River notes"
         isRequired={false}
@@ -1379,10 +1380,11 @@ export default function HandsCreateForm(props) {
         hasError={errors.riverAction?.hasError}
         {...getOverrideProps(overrides, "riverAction")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="River hero range"
         isRequired={false}
         isReadOnly={false}
+        value={riverHeroRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1429,7 +1431,7 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.riverHeroRange?.errorMessage}
         hasError={errors.riverHeroRange?.hasError}
         {...getOverrideProps(overrides, "riverHeroRange")}
-      ></TextAreaField>
+      ></TextField>
       <TextField
         label="Flop cards 1"
         isRequired={false}
@@ -1742,10 +1744,11 @@ export default function HandsCreateForm(props) {
         hasError={errors.villainPosition?.hasError}
         {...getOverrideProps(overrides, "villainPosition")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="River villain range"
         isRequired={false}
         isReadOnly={false}
+        value={riverVillainRange}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1794,7 +1797,7 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.riverVillainRange?.errorMessage}
         hasError={errors.riverVillainRange?.hasError}
         {...getOverrideProps(overrides, "riverVillainRange")}
-      ></TextAreaField>
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

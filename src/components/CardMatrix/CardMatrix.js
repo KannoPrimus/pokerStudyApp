@@ -19,6 +19,79 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
     const [dragColor, setDragColor] = useState(null);  // Nuevo estado para almacenar el color durante el arrastre
     const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
 
+    useEffect(() => {
+
+
+
+            if (myRange == 'true') {
+
+
+
+                switch (id) {
+                    case 'Preflop':
+                        if(pokerHand.preflopHeroRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.preflopHeroRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    case 'Flop':
+                        if(pokerHand.flopHeroRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.flopHeroRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    case 'Turn':
+                        if(pokerHand.turnHeroRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.turnHeroRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    case 'River':
+                        if(pokerHand.riverHeroRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.riverHeroRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else {
+
+                switch (id) {
+                    case 'Preflop':
+                        if(pokerHand.preflopVillainRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.preflopVillainRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    case 'Flop':
+                        if(pokerHand.flopVillainRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.flopVillainRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    case 'Turn':
+                        if(pokerHand.turnVillainRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.turnVillainRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    case 'River':
+                        if(pokerHand.riverVillainRange!="{}") {
+
+                            setClickCounts(JSON.parse(pokerHand.riverVillainRange));
+                        }else setClickCounts(initialMatrix());
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
+    }, [pokerHand]);
+
+
     const handleMouseDown = (i, j, event) => {
         if (event.button === 0) { // Botón izquierdo
             handleClick(i, j);
@@ -39,8 +112,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
         setDragColor(null);  // Restablece el color de arrastre
 
         if(myRange=='true'){
-            console.log('id:'+id);
-            console.log(myRange);
+
             switch(id) {
                 case 'Preflop':
                     updatePokerHand('preflopHeroRange', JSON.stringify(clickCounts));
@@ -59,7 +131,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
             }
         }
         else{
-            console.log(myRange);
+
             switch(id) {
                 case 'Preflop':
                     updatePokerHand('preflopVillainRange', JSON.stringify(clickCounts));
@@ -93,8 +165,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
         setClickCounts(initialMatrix());
 
         if(myRange=='true'){
-            console.log('id:'+id);
-            console.log(myRange);
+
             switch(id) {
                 case 'Preflop':
                     updatePokerHand('preflopHeroRange', initialMatrix());
@@ -113,7 +184,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
             }
         }
         else{
-            console.log(myRange);
+
             switch(id) {
                 case 'Preflop':
                     updatePokerHand('preflopVillainRange', initialMatrix());

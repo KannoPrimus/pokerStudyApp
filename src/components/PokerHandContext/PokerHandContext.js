@@ -3,7 +3,7 @@ import { generateClient } from "aws-amplify/api";
 
 import {
     createHands as createHandMutation,
-    updateHands as updatehandMutation
+    updateHands as updateHandMutation
 } from "../../graphql/mutations";
 import {
     listHands as listHandsQuery,
@@ -19,26 +19,26 @@ export const PokerHandProvider = ({ children }) => {
     const [pokerHand, setPokerHand] = useState({
         id: '',
         playerId: '',
-        tableType: '',
-        handTags: [], // Asegúrate de que esto sea un array vacío
-        heroPosition: 9,
+        tableType: '6',
+        handTags: '', // Asegúrate de que esto sea un array vacío
+        heroPosition: '9',
         handTitle: '',
         myHand_1: '',
         myHand_2: '',
         preflopNotes: '',
-        preflopActions: '',
+        preflopAction: '',
         preflopHeroRange: '{}',
         preflopVillainRange: '{}',
         flopNotes: '',
-        flopActions: '',
+        flopAction: '',
         flopHeroRange: '{}',
         flopVillainRange: '{}',
         turnNotes: '',
-        turnActions: '',
+        turnAction: '',
         turnHeroRange: '{}',
         turnVillainRange: '{}',
         riverNotes: '',
-        riverActions: '',
+        riverAction: '',
         riverHeroRange: '{}',
         riverVillainRange: '{}',
         flopCards_1: '',
@@ -46,7 +46,7 @@ export const PokerHandProvider = ({ children }) => {
         flopCards_3: '',
         turnCard: '',
         riverCard: '',
-        villainPosition: 9
+        villainPosition: '9'
     });
 
     const [pokerHandList, setPokerHandList] = useState([]);
@@ -58,22 +58,113 @@ export const PokerHandProvider = ({ children }) => {
         }));
 
 
-        console.log({pokerHand});
+
     };
 
-    const createPokerHand = async () => {
+    const createPokerHandDB = async () => {
 
-        console.log('test createhand - contextpokerhand');
 
         if (!pokerHand.handTitle.trim()) {
+
             return { success: false, error: 'Hand title cannot be empty.' };
         }
+
+        const newHandId = Date.now();
 
         try {
 
             const result = await client.graphql({
                 query: createHandMutation,
-                variables: { input: pokerHand }
+                variables: { input: {
+                        id: newHandId,
+                        playerId: pokerHand.playerId,
+                        tableType: pokerHand.tableType,
+                        handTags: pokerHand.handTags, // Asegúrate de que esto sea un array vacío
+                        heroPosition: pokerHand.heroPosition,
+                        handTitle: pokerHand.handTitle,
+                        myHand_1: pokerHand.myHand_1,
+                        myHand_2: pokerHand.myHand_2,
+                        preflopNotes: pokerHand.preflopNotes,
+                        preflopAction: pokerHand.preflopAction,
+                        preflopHeroRange: pokerHand.preflopHeroRange,
+                        preflopVillainRange: pokerHand.preflopVillainRange,
+                        flopNotes: pokerHand.flopNotes,
+                        flopAction: pokerHand.flopAction,
+                        flopHeroRange: pokerHand.flopHeroRange,
+                        flopVillainRange: pokerHand.flopVillainRange,
+                        turnNotes: pokerHand.turnNotes,
+                        turnAction: pokerHand.turnAction,
+                        turnHeroRange: pokerHand.turnHeroRange,
+                        turnVillainRange: pokerHand.turnVillainRange,
+                        riverNotes: pokerHand.riverNotes,
+                        riverAction: pokerHand.riverAction,
+                        riverHeroRange: pokerHand.riverHeroRange,
+                        riverVillainRange: pokerHand.riverVillainRange,
+                        flopCards_1: pokerHand.flopCards_1,
+                        flopCards_2: pokerHand.flopCards_2,
+                        flopCards_3: pokerHand.flopCards_3,
+                        turnCard: pokerHand.turnCard,
+                        riverCard: pokerHand.riverCard,
+                        villainPosition: pokerHand.villainPosition
+
+                    } }
+            });
+            updatePokerHand('id', newHandId);
+            return { success: true, data: result };
+
+        } catch (error) {
+
+            return { success: false, error: error.message };
+        }
+    };
+
+    const updatePokerHandDB = async () => {
+
+
+
+        if (!pokerHand.handTitle.trim()) {
+
+            return { success: false, error: 'Hand title cannot be empty.' };
+        }
+
+
+
+        try {
+
+            const result = await client.graphql({
+                query: updateHandMutation,
+                variables: { input: {
+                        id: pokerHand.id,
+                        playerId: pokerHand.playerId,
+                        tableType: pokerHand.tableType,
+                        handTags: pokerHand.handTags, // Asegúrate de que esto sea un array vacío
+                        heroPosition: pokerHand.heroPosition,
+                        handTitle: pokerHand.handTitle,
+                        myHand_1: pokerHand.myHand_1,
+                        myHand_2: pokerHand.myHand_2,
+                        preflopNotes: pokerHand.preflopNotes,
+                        preflopAction: pokerHand.preflopAction,
+                        preflopHeroRange: pokerHand.preflopHeroRange,
+                        preflopVillainRange: pokerHand.preflopVillainRange,
+                        flopNotes: pokerHand.flopNotes,
+                        flopAction: pokerHand.flopAction,
+                        flopHeroRange: pokerHand.flopHeroRange,
+                        flopVillainRange: pokerHand.flopVillainRange,
+                        turnNotes: pokerHand.turnNotes,
+                        turnAction: pokerHand.turnAction,
+                        turnHeroRange: pokerHand.turnHeroRange,
+                        turnVillainRange: pokerHand.turnVillainRange,
+                        riverNotes: pokerHand.riverNotes,
+                        riverAction: pokerHand.riverAction,
+                        riverHeroRange: pokerHand.riverHeroRange,
+                        riverVillainRange: pokerHand.riverVillainRange,
+                        flopCards_1: pokerHand.flopCards_1,
+                        flopCards_2: pokerHand.flopCards_2,
+                        flopCards_3: pokerHand.flopCards_3,
+                        turnCard: pokerHand.turnCard,
+                        riverCard: pokerHand.riverCard,
+                        villainPosition: pokerHand.villainPosition
+                } }
             });
             return { success: true, data: result };
         } catch (error) {
@@ -95,7 +186,7 @@ export const PokerHandProvider = ({ children }) => {
     };
 
     return (
-        <PokerHandContext.Provider value={{ pokerHand,pokerHandList,createPokerHand, updatePokerHand, fetchPokerHands, setPokerHand }}>
+        <PokerHandContext.Provider value={{ pokerHand,pokerHandList,createPokerHandDB, updatePokerHandDB, updatePokerHand, fetchPokerHands, setPokerHand }}>
             {children}
         </PokerHandContext.Provider>
     );
