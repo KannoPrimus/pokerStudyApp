@@ -9,8 +9,8 @@ function CardModal({ isOpen, onSelectCard  }) {
     const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']; // Ejemplo de rangos
     const suitColors = {
         '♠': '#808080', // Gris plomo
-        '♣': '#008000', // Verde
-        '♥': '#ff1405', // Rojo
+        '♣': '#25C6A2', // Verde
+        '♥': '#C62549', // Rojo
         '♦': '#5e4fff'  // Azul
     };
 

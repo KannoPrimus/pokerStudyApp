@@ -112,7 +112,7 @@ function CardSelector({ card }) {
     let cardClass = '';
 
     // Determina el color basado en el último carácter del palo de la carta
-    const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#ff116e';
+    const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#1639A1';
     if (card === 'myHand_1' || card === 'myHand_2') {
         cardClass = 'card-container-hero';
     } else {
