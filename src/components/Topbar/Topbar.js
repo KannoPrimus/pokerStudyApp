@@ -173,7 +173,7 @@ function TopBar() {
             <input
                 type="text"
                 className="search-box"
-                placeholder="Mis manos..."
+                placeholder="Click aquí para listar tus manos o escribe para filtrar..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onFocus={() => setDropdownVisible(true)}
