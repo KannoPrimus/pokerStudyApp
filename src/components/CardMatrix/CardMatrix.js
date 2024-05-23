@@ -25,11 +25,11 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
             if (myRange == 'true') {
 
-
+console.log(pokerHand.preflopHeroRange);
 
                 switch (id) {
                     case 'Preflop':
-                        if(pokerHand.preflopHeroRange!="{}") {
+                        if(pokerHand.preflopHeroRange!="{}" ) {
 
                             setClickCounts(JSON.parse(pokerHand.preflopHeroRange));
                         }else setClickCounts(initialMatrix());
@@ -162,22 +162,24 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
     };
 
     const handleClear = () => {
+
+        console.log('borrar matrix');
         setClickCounts(initialMatrix());
 
         if(myRange=='true'){
 
             switch(id) {
                 case 'Preflop':
-                    updatePokerHand('preflopHeroRange', initialMatrix());
+                    updatePokerHand('preflopHeroRange', "{}");
                     break;
                 case 'Flop':
-                    updatePokerHand('flopHeroRange', initialMatrix());
+                    updatePokerHand('flopHeroRange', "{}");
                     break;
                 case 'Turn':
-                    updatePokerHand('turnHeroRange', initialMatrix());
+                    updatePokerHand('turnHeroRange', "{}");
                     break;
                 case 'River':
-                    updatePokerHand('riverHeroRange', initialMatrix());
+                    updatePokerHand('riverHeroRange', "{}");
                     break;
                 default:
                     break;
@@ -187,16 +189,16 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
             switch(id) {
                 case 'Preflop':
-                    updatePokerHand('preflopVillainRange', initialMatrix());
+                    updatePokerHand('preflopVillainRange', "{}");
                     break;
                 case 'Flop':
-                    updatePokerHand('flopVillainRange', initialMatrix());
+                    updatePokerHand('flopVillainRange', "{}");
                     break;
                 case 'Turn':
-                    updatePokerHand('turnVillainRange', initialMatrix());
+                    updatePokerHand('turnVillainRange', "{}");
                     break;
                 case 'River':
-                    updatePokerHand('riverVillainRange', initialMatrix());
+                    updatePokerHand('riverVillainRange', "{}");
                     break;
                 default:
                     break;

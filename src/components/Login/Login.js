@@ -168,8 +168,8 @@ export function Login() {
                             <div className="details">
                                 <Text fontSize="3rem" color="white" fontWeight="bold">Poker Study App</Text>
                                 <Text fontSize="1.25rem">
-                                    En Poker Study App, nuestra misión es proporcionar una plataforma simple pero poderosa
-                                    que facilite el aprendizaje y la mejora continua en el juego de poker. Creemos en la importancia de la educación
+                                    Es una plataforma simple pero poderosa
+                                    que facilita el aprendizaje y la mejora continua en el juego de poker. Creemos en la importancia de la educación
                                     y la práctica inteligente para alcanzar la maestría en el poker.
 
                                 </Text>
@@ -286,7 +286,21 @@ export function Login() {
                 columnEnd="-1"
                 height="100%"
             >
-                <div id="nav3" style={{height:'100%',color:'white', padding: '2rem'}}> Nav 3</div>
+                <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '2rem' }}>
+                    <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
+                        {[
+                            { plan: "Mensual", price: "25 USD", description: "Acceso completo por un mes" },
+                            { plan: "Semestral", price: "90 USD", description: "Acceso completo por seis meses" },
+                            { plan: "Anual", price: "120 USD", description: "Acceso completo por un año" },
+                        ].map((item, index) => (
+                            <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #ccc" borderRadius="10px" backgroundColor="#f9f9f9">
+                                <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>
+                                <Text fontSize="1.25rem" color="#192831" marginTop="0.5rem">{item.price}</Text>
+                                <Text fontSize="1rem" textAlign="center" marginTop="0.5rem"color= 'black'>{item.description}</Text>
+                            </Flex>
+                        ))}
+                    </Grid>
+                </div>
             </Card>
             <Card
                 padding="0px"
