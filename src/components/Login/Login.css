@@ -5,3 +5,42 @@
     padding: 20px; /* Opcional: espacio interior del formulario */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
 }
+
+.container-portada {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/PSA - Poker Study App.jpg);
+    background-size: 150%;
+    animation: movimiento 15s infinite linear alternate;
+    position:relative;
+}
+
+@keyframes movimiento {
+    from{
+        background-position: bottom left;
+    }to{
+             background-position: top right;
+         }
+}
+
+.capa-gradient{
+    width: 100%;
+    height: 100%;
+    position : absolute;
+    background: -webkit-linear-gradient(left, #192831, rgb(25, 81, 255)) ;
+    opacity: 0.5;
+}
+
+.container-details{
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    color:white;
+    padding:150px;
+}
+
+.details{
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 150px;
+}
