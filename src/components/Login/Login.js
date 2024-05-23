@@ -293,9 +293,9 @@ export function Login() {
                             { plan: "Semestral", price: "90 USD", description: "Acceso completo por seis meses" },
                             { plan: "Anual", price: "120 USD", description: "Acceso completo por un año" },
                         ].map((item, index) => (
-                            <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #ccc" borderRadius="10px" backgroundColor="#f9f9f9">
+                            <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
                                 <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>
-                                <Text fontSize="1.25rem" color="#192831" marginTop="0.5rem">{item.price}</Text>
+                                <Text fontSize="1.25rem" fontWeight="bold" color="#039370" marginTop="0.5rem">{item.price}</Text>
                                 <Text fontSize="1rem" textAlign="center" marginTop="0.5rem"color= 'black'>{item.description}</Text>
                             </Flex>
                         ))}

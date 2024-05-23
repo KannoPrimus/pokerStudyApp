@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardMatrix/CardMatrix.js" afterPath="$PROJECT_DIR$/src/components/CardMatrix/CardMatrix.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="171" column="48" lean-forward="false" selection-start-line="171" selection-start-column="48" selection-end-line="171" selection-end-column="48" />
+            <state relative-caret-position="569">
+              <caret line="297" column="75" lean-forward="false" selection-start-line="297" selection-start-column="75" selection-end-line="297" selection-end-column="75" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#828#888#0" expanded="true" />
@@ -54,18 +53,18 @@
       <file leaf-file-name="Topbar.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Topbar.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Topbar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-128">
-              <caret line="175" column="25" lean-forward="false" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
+            <state relative-caret-position="1130">
+              <caret line="213" column="58" lean-forward="false" selection-start-line="213" selection-start-column="58" selection-end-line="213" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -128,8 +127,8 @@
         <option value="$PROJECT_DIR$/src/components/Login/BackgroundVideo.css" />
         <option value="$PROJECT_DIR$/src/components/Login/BackgroundVideo.js" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.css" />
-        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/components/CardMatrix/CardMatrix.js" />
+        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
       </list>
     </option>
   </component>
@@ -338,7 +337,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715826074854</updated>
       <workItem from="1715826076719" duration="144581000" />
-      <workItem from="1716391415946" duration="22848000" />
+      <workItem from="1716391415946" duration="23197000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1715828076834</created>
@@ -424,11 +423,18 @@
       <option name="project" value="LOCAL" />
       <updated>1716440752237</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fulll avances:&#10;Diseño&#10;Contexto Pokerhand&#10;Funcionalidad para actualizar estructura de datos de la mano en el contexto pokerHandContext">
+      <created>1716441776149</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716441776149</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167429000" />
+    <option name="totallyTimeSpent" value="167778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -836,17 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="171" column="48" lean-forward="false" selection-start-line="171" selection-start-column="48" selection-end-line="171" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#828#888#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CardMatrix/CardMatrix.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
@@ -858,19 +853,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.css">
+    <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="1130">
+          <caret line="213" column="58" lean-forward="false" selection-start-line="213" selection-start-column="58" selection-end-line="213" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="175" column="25" lean-forward="false" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
+        <state relative-caret-position="374">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="297" column="75" lean-forward="false" selection-start-line="297" selection-start-column="75" selection-end-line="297" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#828#888#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
