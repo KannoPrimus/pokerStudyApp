@@ -25,7 +25,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
 
             if (myRange == 'true') {
 
-console.log(pokerHand.preflopHeroRange);
+
 
                 switch (id) {
                     case 'Preflop':
@@ -163,7 +163,7 @@ console.log(pokerHand.preflopHeroRange);
 
     const handleClear = () => {
 
-        console.log('borrar matrix');
+
         setClickCounts(initialMatrix());
 
         if(myRange=='true'){

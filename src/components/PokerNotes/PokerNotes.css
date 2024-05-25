@@ -3,14 +3,15 @@
     color: #dcdcdc; /* Texto en un gris claro para contraste */
     font-family: 'Roboto', sans-serif; /* Tipografía moderna y legible */
     font-size: 12px; /* Tamaño adecuado para la lectura */
-    padding: 20px; /* Espacio interior para una mejor estructura */
+    padding: 10px; /* Espacio interior para una mejor estructura */
     border-radius: 5px; /* Bordes redondeados sutiles */
     box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Sombra para profundidad */
-    margin: 10px 0; /* Margen para separar de otros elementos */
+    margin: 5px 0; /* Margen para separar de otros elementos */
     border: 1px solid #333; /* Borde sutil */
     line-height: 1.5; /* Espaciado de línea para facilitar la lectura */
     outline: none; /* Remover el borde al enfocar */
-    height:300px;
+    height:400%;
+    width: 100%;
 }
 
 .poker-notes:focus {

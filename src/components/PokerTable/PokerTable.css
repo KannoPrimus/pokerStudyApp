@@ -11,7 +11,8 @@
     position: relative;
     width: 250px;
     height: 150px;
-    background: #0E8E6C;
+    background: transparent;/*#0E8E6C;*/
+    border: 1px solid #f9f9f9;
     border-radius: 50% / 55%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     display: flex;

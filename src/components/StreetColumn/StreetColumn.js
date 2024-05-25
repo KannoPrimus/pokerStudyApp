@@ -3,6 +3,7 @@ import CardSelector from '../CardSelector/CardSelector'; // Asegúrate de que la
 import CardMatrix from '../CardMatrix/CardMatrix';
 import PokerTable from '../PokerTable/PokerTable';
 import PokerNotes from '../PokerNotes/PokerNotes';
+import PokerActions from '../PokerActions/PokerActions';
 import './StreetColumn.css';
 
 function StreetColumn({ streetName, myRange, rivalRange, notes }) {
@@ -37,6 +38,7 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
                 {streetName === 'River' && <CardSelector card="riverCard"/>}
             </div>
             <div className="streetInfo">
+                <div className="section"><PokerActions id={streetName}/></div>
                 <div className="section"><PokerNotes id={streetName}/></div>
                 <span className="title">Rango Hero</span>
                 <div className="section"><CardMatrix id={streetName} myRange="true" />
