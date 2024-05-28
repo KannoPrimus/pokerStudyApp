@@ -1,0 +1,129 @@
+.poker-actions-container {
+    position: relative;
+    color: white;
+    font-weight: bold;
+}
+
+
+select {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 10px;
+    width: 130px;
+    max-height: 200px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+select.modern-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height:10px;
+}
+
+select.modern-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+select.modern-scrollbar::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+
+button {
+    padding: 4px 6px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.poker-actions-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-action {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-action select {
+    margin-right: 10px;
+}
+
+.add-action button {
+    padding: 5px 10px;
+}
+
+.actions-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #32414A;
+}
+
+.correct-action {
+    background-color: #4CAF50;
+    border-color: #c3e6cb;
+}
+
+.optional-action {
+    background-color: #ffd60d;
+    border-color: #ffeeba;
+color:#333;
+}
+
+.mark-correct-button {
+    margin-left: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.mark-correct-button:hover {
+    background-color: #218838;
+}
+
+.mark-optional-button {
+    margin-left: 5px;
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.mark-optional-button:hover {
+    background-color: #e0a800;
+}
+
+.remove-tag-button {
+    margin-left: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.remove-tag-button:hover {
+    background-color: #c82333;
+}

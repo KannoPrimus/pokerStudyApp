@@ -10,7 +10,7 @@ const suitColors = {
     '♦': '#5e4fff'  // Azul para Diamantes
 };
 
-function CardSelector({ card }) {
+function CardSelector({ card , trainer , currentHand}) {
     const [selectedCard, setSelectedCard] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
@@ -45,7 +45,9 @@ function CardSelector({ card }) {
     }, [pokerHand, card]);
 
     const handleCardClick = () => {
-        setIsModalOpen(true);
+        console.log(trainer);
+        if(trainer==='false')
+            setIsModalOpen(true);
     };
 
     const handleCardSelect = (selCard) => {
@@ -113,7 +115,7 @@ function CardSelector({ card }) {
 
     // Determina el color basado en el último carácter del palo de la carta
     const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#1639A1';
-    if (card === 'myHand_1' || card === 'myHand_2') {
+    if (card === 'myHand_1' || card === 'myHand_2' || card==='trainerCard') {
         cardClass = 'card-container-hero';
     } else {
         cardClass = 'card-container';

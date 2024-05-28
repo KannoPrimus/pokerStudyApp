@@ -1,0 +1,138 @@
+/* PokerTable.css */
+/* MainContent.css */
+
+.poker-trainer-container {
+    display: flex;            /* Utiliza Flexbox para el layout horizontal */
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    padding-top: 0px;            /* Añade espacio alrededor del contenedor para evitar que los elementos toquen los bordes externos */
+    gap: 0px;                /* Añade un espacio entre cada columna */
+    height: 100%;            /*  Ajusta la altura según sea necesario */
+    width: 80%;
+    padding-left: 250px;
+}
+
+
+
+
+.trainer-poker-table {
+    position: relative;
+    width: 950px;
+    height: 350px;
+    background: transparent;/*#0E8E6C;*/
+    border: 1px solid #f9f9f9;
+    border-radius: 175px ;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* PokerTable.css - Añade estos estilos al archivo existente */
+
+.trainer-table-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Asegúrate de que el selector se sitúe por encima de otros elementos */
+}
+
+
+.trainer-player-seat {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Suave transición para los cambios de color */
+    box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.5); /* Sombra para darle volumen */
+}
+
+
+/* Ajustes específicos para la ubicación de los asientos en el modo 6-max */
+.trainer-player-seat-0 { top: 80%; left: 5%; transform: translate(-50%, -50%);} /*UTG*/
+.trainer-player-seat-1 { top: 30%; left: 5%; transform: translate(-50%, -50%); } /*MP*/
+.trainer-player-seat-2 { top: 30%; right: 5%; transform: translate(50%, -50%); } /*CO*/
+.trainer-player-seat-3 { top: 80%; right: 5%; transform: translate(50%, -50%);  border: #ffdd55 2px solid; }/*BU*/
+.trainer-player-seat-4 { bottom: -25%; right: 15%; transform: translate(-50%, -50%); border: #747bff 2px solid; }/*SB*/
+.trainer-player-seat-5 { bottom: -25%; left: 15%; transform: translate(50%, -50%); border: #747bff 2px solid; }/*BB*/
+
+/* Ajustes para la ubicación de los asientos adicionales en el modo 9-max */
+.trainer-player-seat-6 { bottom: 65%; left: 25%; transform: translate(-50%, -50%); }/*MP2*/
+.trainer-player-seat-7 { bottom: 70%; left: 50%; transform: translate(-50%, -50%); }/*MP3*/
+.trainer-player-seat-8 { bottom: 65%; right: 25%; transform: translate(50%, -50%); }/*HJ*/
+
+.trainer-seat-text {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    width: 100%;
+}
+
+.trainer-legend {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trainer-legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color:#fff;
+}
+
+.trainer-legend-color {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.trainer-board-cards-hero {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.trainer-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom:100px;
+}
+
+.trainer-controls button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.trainer-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.trainer-controls button:not(:disabled):hover {
+    background-color: #0056b3;
+}
+
+.villainAction{
+    color: white;
+}

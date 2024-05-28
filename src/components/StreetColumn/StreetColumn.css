@@ -41,7 +41,7 @@
     gap: 10px; /* Espacio entre los selectores de cartas */
     background: #33333;
     margin-bottom: 5px;
-    height: 60px !important;
+    height: 80px !important;
 }
 
 /* Estilos específicos para los botones de cartas si es necesario */

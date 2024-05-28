@@ -18,17 +18,17 @@
 }
 
 .card-container-hero {
-    width: 30px;
-    height: 50px;
+    width: 50px;
+    height: 70px;
     color:#fff;
-    border: 1px solid white;
+    border: 2px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 22px;
     cursor: pointer;
     background-color: #ffffff; /* Fondo blanco o ajusta según el diseño de tus cartas */
-    border-radius: 3px; /* Esquinas redondeadas */
+    border-radius: 5px; /* Esquinas redondeadas */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
     text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
     transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para efectos */

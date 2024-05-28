@@ -21,21 +21,21 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
                         <div>
                             <div className="title">Mi mano</div>
                             <div className="board-cards-hero">
-                                <CardSelector  card="myHand_1"/>
-                                <CardSelector  card="myHand_2"/>
+                                <CardSelector  card="myHand_1"  trainer="false"/>
+                                <CardSelector  card="myHand_2"  trainer="false"/>
                             </div>
                         </div>
                     </>
                         )}
                 {streetName === 'Flop' && (
                     <>
-                        <CardSelector card="flopCards_1"/>
-                        <CardSelector card="flopCards_2"/>
-                        <CardSelector card="flopCards_3"/>
+                        <CardSelector card="flopCards_1" trainer="false"/>
+                        <CardSelector card="flopCards_2" trainer="false"/>
+                        <CardSelector card="flopCards_3" trainer="false"/>
                     </>
                 )}
-                {streetName === 'Turn' && <CardSelector card="turnCard"/>}
-                {streetName === 'River' && <CardSelector card="riverCard"/>}
+                {streetName === 'Turn' && <CardSelector card="turnCard" trainer="false"/>}
+                {streetName === 'River' && <CardSelector card="riverCard" trainer="false"/>}
             </div>
             <div className="streetInfo">
                 <div className="section"><PokerActions id={streetName}/></div>
