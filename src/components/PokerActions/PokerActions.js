@@ -32,8 +32,7 @@ function PokerActions({ id }) {
         else {
 
             if(typeof pokerHand[`${phase}Action`] == "string"){
-                console.log(phase);
-                console.log(pokerHand[`${phase}Action`]);
+
                 const jsonString = pokerHand[`${phase}Action`]
 
                     .replace(/(\w+)=/g, '"$1":')
@@ -53,17 +52,15 @@ function PokerActions({ id }) {
                 const cleanedJsonString = jsonString
                    .replace(/:"(\w+ [^,{}]+)"/g, ':\"$1\"');
 
-                console.log(cleanedJsonString);
+
 
                 const array = JSON.parse(jsonString);
 
-                console.log('Array:');
-                console.log(array);
+
 
                 try{
                     setActions(array);
-                    console.log('Actions:');
-                    console.log( actions);
+
                 }catch{
                     console.log( "empty object");
                 }
@@ -107,11 +104,11 @@ function PokerActions({ id }) {
 
         const newActions = actions.map((action, i) => {
 
-            console.log(action.player);
+
 
             if (i === index && action.player === 'Hero') {
 
-                console.log(action.isCorrect);
+
                 if(action.isCorrect==='true')
                     return { ...action, isCorrect: 'false' };
                 else

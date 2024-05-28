@@ -30,18 +30,22 @@ function PokerTrainer({sequence}) {
     useEffect(() => {
         const filtered = pokerHandList.filter(hand => hand.handTitle.toLowerCase().includes(sequence.toLowerCase()));
         setFilteredHands(filtered);
+
         if (filtered.length > 0) {
+            setActions([]);
             setCurrentHand(filtered[0]);
             setCurrentHandIndex(0);
+            setMySeat('');
+            setRivalSeat('');
         }
+
+
     }, [sequence, pokerHandList]);
 
 
     useEffect(() => {
 
         if (currentHand) {
-
-
 
             setMySeat(currentHand.heroPosition);
             setRivalSeat(currentHand.villainPosition);

@@ -41,6 +41,7 @@ function Sidebar({mode, setMode, sequence, setSequence}) {
     const handleTitleChange = e => {
         setTitle(e.target.value);
         setSequence(e.target.value);
+
     };
 
     const handleTitleBlur = () => {
