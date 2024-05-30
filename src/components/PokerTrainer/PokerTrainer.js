@@ -25,6 +25,7 @@ function PokerTrainer({sequence}) {
     const [currentPlayer, setCurrentPlayer] = useState('');
     const [score, setScore] = useState(0);
     const [totalActions, setTotalActions] = useState(0);
+    const [chips, setChips] = useState([]); // Nuevo estado para las fichas
 
 
 
@@ -42,7 +43,7 @@ function PokerTrainer({sequence}) {
         setFinishHand('false');
         setScore(0); // Reset score for the new hand
         setTotalActions(0); // Reset score for the new hand
-
+        setChips([]); // Reset chips when new sequence is loaded
 
         if (filtered.length > 0) {
             setActions([]);
@@ -180,6 +181,7 @@ function PokerTrainer({sequence}) {
             setFinishHand('false');
             setScore(0); // Reset score for the new hand
             setTotalActions(0); // Reset score for the new hand
+            setChips([]); // Reset chips when new sequence is loaded
         }
 
     };
@@ -196,6 +198,7 @@ function PokerTrainer({sequence}) {
             setFinishHand('false');
             setScore(0); // Reset score for the new hand
             setTotalActions(0); // Reset score for the new hand
+            setChips([]); // Reset chips when new sequence is loaded
         }
     };
 
@@ -238,6 +241,11 @@ function PokerTrainer({sequence}) {
 
         if (action.action.includes('FOLD')) {
             setFinishHand('true');
+        }
+
+        // Add chips for BET, RAISE, or ALL-IN actions
+        if (['BET', 'RAISE', 'ALL-IN','OR','CALL'].some(keyword => action.action.includes(keyword))) {
+            setChips(prevChips => [...prevChips, action.action]);
         }
 
         const nextActionIndex = actions.findIndex((act, idx) => act.player !== currentPlayer && idx > actionIndex);
@@ -335,6 +343,12 @@ function PokerTrainer({sequence}) {
                         {(streetName === 'turn' || streetName === 'river') && <CardSelector card="turnCard" trainer="true"/>}
                         {streetName === 'river' && <CardSelector card="riverCard" trainer="true"/>}
                     </div>
+                    <div className="chips-container">
+                        {chips.map((chip, index) => (
+                            <div key={index} className="chip">
+                            </div>
+                        ))}
+                    </div>
                     <div className="trainer-legend">
                         <div className="trainer-legend-item">
                             <span className="trainer-legend-color" style={{ backgroundColor: '#4CAF50' }}></span>
@@ -345,6 +359,8 @@ function PokerTrainer({sequence}) {
                             <span>Villain</span>
                         </div>
                     </div>
+
+
                 </div>
             </div>
             <div className="trainer-controls-2">

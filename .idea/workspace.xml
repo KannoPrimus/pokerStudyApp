@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/chips.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js" afterPath="$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js" />
       <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
       <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="392" column="18" lean-forward="true" selection-start-line="392" selection-start-column="18" selection-end-line="392" selection-end-column="18" />
+            <state relative-caret-position="357">
+              <caret line="246" column="48" lean-forward="false" selection-start-line="246" selection-start-column="48" selection-end-line="246" selection-end-column="48" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -57,8 +54,8 @@
       <file leaf-file-name="PokerTrainer.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="235" column="53" lean-forward="false" selection-start-line="235" selection-start-column="53" selection-end-line="235" selection-end-column="53" />
+            <state relative-caret-position="450">
+              <caret line="280" column="13" lean-forward="false" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -178,6 +175,12 @@
               <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
@@ -359,7 +362,7 @@
       <workItem from="1715826076719" duration="144581000" />
       <workItem from="1716391415946" duration="76603000" />
       <workItem from="1716843524125" duration="159000" />
-      <workItem from="1716898132034" duration="49105000" />
+      <workItem from="1716898132034" duration="51923000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1715828076834</created>
@@ -487,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1716933989764</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Incorporacion de trainer:&#10;- Script de la mano ejecutable paso a paso&#10;- botonera de acciones para Hero &#10;- Mensaje de accion de villano&#10;- Navegacion &quot;adelante/atras&quot; por las manos de la secuencia">
+      <created>1717047174621</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717047174621</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270448000" />
+    <option name="totallyTimeSpent" value="273266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -927,16 +937,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="235" column="53" lean-forward="false" selection-start-line="235" selection-start-column="53" selection-end-line="235" selection-end-column="53" />
+        <state relative-caret-position="450">
+          <caret line="280" column="13" lean-forward="false" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="392" column="18" lean-forward="true" selection-start-line="392" selection-start-column="18" selection-end-line="392" selection-end-column="18" />
+        <state relative-caret-position="357">
+          <caret line="246" column="48" lean-forward="false" selection-start-line="246" selection-start-column="48" selection-end-line="246" selection-end-column="48" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
