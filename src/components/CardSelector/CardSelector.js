@@ -118,7 +118,10 @@ function CardSelector({ card , trainer , currentHand}) {
     if (card === 'myHand_1' || card === 'myHand_2' || card==='trainerCard') {
         cardClass = 'card-container-hero';
     } else {
-        cardClass = 'card-container';
+        if(trainer==='true')
+            cardClass = 'card-container-trainer';
+            else
+                cardClass = 'card-container';
     }
 
     return (

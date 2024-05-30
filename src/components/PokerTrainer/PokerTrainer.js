@@ -6,7 +6,7 @@ import './PokerTrainer.css';
 
 function PokerTrainer({sequence}) {
     const { signOut, user } = useAuthenticator();
-    const { pokerHand, setPokerHand , pokerHandList, fetchPokerHands  } = useContext(PokerHandContext);
+    const { pokerHand, setPokerHand , pokerHandList, fetchPokerHands , resetPokerHand  } = useContext(PokerHandContext);
     const [filteredHands, setFilteredHands] = useState([]);
     const [maxPlayers, setMaxPlayers] = useState(6);
     const [mySeat, setMySeat] = useState(9);
@@ -21,6 +21,12 @@ function PokerTrainer({sequence}) {
     const playerPositions9Max = ['UTG', 'MP', 'CO', 'BU', 'SB', 'BB', 'MP2', 'MP3', 'HJ'];
     const [finishHand,setFinishHand] =useState('false');
     const [actionIndex, setActionIndex] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+    const [currentPlayer, setCurrentPlayer] = useState('');
+    const [score, setScore] = useState(0);
+    const [totalActions, setTotalActions] = useState(0);
+
+
 
     useEffect(() => {
         fetchPokerHands(user.username);
@@ -30,6 +36,13 @@ function PokerTrainer({sequence}) {
     useEffect(() => {
         const filtered = pokerHandList.filter(hand => hand.handTitle.toLowerCase().includes(sequence.toLowerCase()));
         setFilteredHands(filtered);
+        setStreetName('preflop');
+        resetPokerHand();
+        setActionIndex(0);
+        setFinishHand('false');
+        setScore(0); // Reset score for the new hand
+        setTotalActions(0); // Reset score for the new hand
+
 
         if (filtered.length > 0) {
             setActions([]);
@@ -37,7 +50,17 @@ function PokerTrainer({sequence}) {
             setCurrentHandIndex(0);
             setMySeat('');
             setRivalSeat('');
-        }
+        } else {
+
+            console.log(sequence);
+
+            if(sequence!=='') {
+                setShowModal(true);
+                setTimeout(() => {
+                    setShowModal(false);
+                }, 3000);
+            }
+    }
 
 
     }, [sequence, pokerHandList]);
@@ -52,6 +75,7 @@ function PokerTrainer({sequence}) {
             setMaxPlayers(currentHand.tableType);
             setPokerHand(currentHand);
             setActionIndex(0);
+
 
             if(currentHand[`${streetName}Action`]=="{}")
                 setActions([]);
@@ -82,6 +106,8 @@ function PokerTrainer({sequence}) {
 
                     try{
                         setActions(array);
+                        setCurrentPlayer(array[0].player)
+
                     }catch{
                         console.log( "empty object");
                     }
@@ -101,19 +127,19 @@ function PokerTrainer({sequence}) {
             setRivalSeat(currentHand.villainPosition);
             setMaxPlayers(currentHand.tableType);
             setPokerHand(currentHand);
+
         }
 
     }, [pokerHand,streetName]);
 
     useEffect(() => {
 
-
-
         if (currentHand) {
             setMySeat(currentHand.heroPosition);
             setRivalSeat(currentHand.villainPosition);
             setMaxPlayers(currentHand.tableType);
             setPokerHand(currentHand);
+
         }
 
         if(maxPlayers.toString()=='9')
@@ -124,17 +150,22 @@ function PokerTrainer({sequence}) {
     }, [mySeat,rivalSeat,maxPlayers,setCurrentPositions,streetName]);
 
 
-
     const getSeatStyle = (index) => {
+        let style = {};
 
         if (index == mySeat) {
-
-            return { backgroundColor: '#4CAF50' };
+            style.backgroundColor = '#4CAF50';
         } else if (index == rivalSeat) {
-
-            return { backgroundColor: '#FF5722' };
+            style.backgroundColor = '#FF5722';
         }
-        return {};
+
+        if (index == mySeat && currentPlayer == 'Hero') {
+            style = { ...style, animation: 'glow 1s infinite' };
+        } else if (index == rivalSeat && currentPlayer == 'Villain') {
+            style = { ...style, animation: 'glow 1s infinite' };
+        }
+
+        return style;
     };
 
     const handleNextHand = () => {
@@ -147,7 +178,10 @@ function PokerTrainer({sequence}) {
             setStreetName('preflop');
             setResponses({}); // Reiniciar respuestas
             setFinishHand('false');
+            setScore(0); // Reset score for the new hand
+            setTotalActions(0); // Reset score for the new hand
         }
+
     };
 
     const handlePreviousHand = () => {
@@ -160,72 +194,108 @@ function PokerTrainer({sequence}) {
             setStreetName('preflop');
             setResponses({}); // Reiniciar respuestas
             setFinishHand('false');
+            setScore(0); // Reset score for the new hand
+            setTotalActions(0); // Reset score for the new hand
         }
     };
 
-    // Filtrar acciones del Hero para la calle específica (Flop)
-    const heroActions = actions.filter(action => /*action.player === 'Hero' &&*/ action.street.toLowerCase() === streetName);
 
-    const handleActionClick = (action,arr) => {
+    const getCurrentButtons = (actions, currentIndex) => {
+        if (!actions || actions.length === 0 || currentIndex >= actions.length) {
+            return [];
+        }
 
-        // Registrar la acción seleccionada en el estado de respuestas
-        setResponses(prevResponses => ({
-            ...prevResponses,
-            [streetName]: [...(prevResponses[streetName] || []), action]
-        }));
+        const currentPlayer = actions[currentIndex].player;
+        const currentButtons = [];
 
+        for (let i = currentIndex; i < actions.length; i++) {
+            if (actions[i].player === currentPlayer) {
+                currentButtons.push(actions[i]);
+            } else {
+                break;
+            }
+        }
 
-        // Lógica para manejar el clic en el botón de acción
-        console.log(`Action clicked: ${action.action}`);
-        console.log(currentAction.player+ ' - '+arr );
-        // Aquí puedes agregar la lógica que desees realizar al hacer clic en una acción
-        // Avanzar a la siguiente etapa del juego
-        if (actionIndex < actions.length - 1) {
-            setActionIndex(actionIndex + arr);
+        return currentButtons;
+    };
+
+    const handleActionClick = (action) => {
+
+        if(currentPlayer==='Hero') {
+
+            setResponses(prevResponses => ({
+                ...prevResponses,
+                [streetName]: [...(prevResponses[streetName] || []), action]
+            }));
+
+            setTotalActions(prevTotalActions => prevTotalActions + 1);
+
+            // Update the score
+            if (action.isCorrect === 'true') {
+                setScore(prevScore => prevScore + 1);
+            }
+        }
+
+        if (action.action.includes('FOLD')) {
+            setFinishHand('true');
+        }
+
+        const nextActionIndex = actions.findIndex((act, idx) => act.player !== currentPlayer && idx > actionIndex);
+        if (nextActionIndex !== -1) {
+
+            setActionIndex(nextActionIndex);
+            setCurrentPlayer(actions[nextActionIndex].player);
+
+            if(actions[nextActionIndex].action.search('FOLD')>-1)
+                setFinishHand('true');
 
         } else {
+
             if (streetName === 'preflop') {
-                setStreetName('flop');
-
+                    setStreetName('flop');
             } else if (streetName === 'flop') {
-                setStreetName('turn');
-
+                    setStreetName('turn');
             } else if (streetName === 'turn') {
-                setStreetName('river');
-
+                    setStreetName('river');
             } else if (streetName === 'river') {
-                // Opcional: puedes definir una lógica para cuando se llegue al final del River
-                console.log('Reached the end of the stages');
                 setFinishHand('true');
             }
-        }
-    };
-
-    const handleNext = () => {
-        // Avanzar al siguiente índice de acción
-        if (actionIndex < actions.length - 1) {
-            setActionIndex(actionIndex + 1);
-        } else {
-            // Avanzar a la siguiente etapa del juego
-            if (streetName === 'preflop') {
-                setStreetName('flop');
-            } else if (streetName === 'flop') {
-                setStreetName('turn');
-            } else if (streetName === 'turn') {
-                setStreetName('river');
-            }
             setActionIndex(0);
+            setCurrentPlayer('');
+
         }
     };
 
-    const currentAction = actions[actionIndex];
+
+    const currentAction = actions[actionIndex] || null;
+    const currentButtons = getCurrentButtons(actions, actionIndex);
+
+    const isCorrectResponse = (response, street) => {
+        return response.isCorrect === 'true' && response.street.toLowerCase() === street;
+    };
+
+    const getScoreColor = (percentage) => {
+        const hue = (percentage * 1.2).toString(10); // Scale percentage to hue value (0-120)
+        return `hsl(${hue}, 100%, 50%)`; // Convert hue to HSL color
+    };
+
+    const scorePercentage = Math.round((score / totalActions) * 100) || 0;
+    const scoreColor = getScoreColor(scorePercentage);
 
     return (
+        <div className="poker-trainer-container-wrapper">
         <div className="poker-trainer-container">
-            <div className="trainer-controls">
-                <button onClick={handlePreviousHand} disabled={currentHandIndex === 0}>Anterior</button>
-                <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length - 1}>Siguiente</button>
+            <div className="trainer-controls-1">
+                <button onClick={handlePreviousHand} disabled={currentHandIndex === 0}>Mano Anterior</button>
+                <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length - 1}>Mano Siguiente</button>
             </div>
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <p>No se encontraron manos para entrenar en la secuencia {sequence}.</p>
+                    </div>
+                </div>
+            )}
             <div className="trainer-poker-table">
                 {currentPositions.map((position, index) => (
                     <div
@@ -277,28 +347,52 @@ function PokerTrainer({sequence}) {
                     </div>
                 </div>
             </div>
-            <div className="trainer-controls">
-
-                {(finishHand==='false' && currentAction && currentAction.player === 'Hero' && streetName !== 'River') && (
-
-                    actions
-                        .filter(action => action.player === 'Hero' && action.street.toLowerCase() === streetName)
-                        .map((action, index,arr) => (
-
-                            <button key={index} onClick={() => handleActionClick(action,arr.length)}>
-                                {action.action.replace(/_/g,' ')}
-                            </button>
-
-                        ))
-
+            <div className="trainer-controls-2">
+                {(currentAction && finishHand === 'false' && currentPlayer === 'Hero') && (
+                    <p className="heroAction">Qué haces?</p>
                 )}
-                {(currentAction && currentAction.player === 'Villain') && (
-                    <div>
-                        <p className="villainAction">{`${currentAction.player} ${currentAction.action}`}</p>
-                        <button onClick={handleNext}>Next</button>
+                {(finishHand === 'false' && currentAction) && (
+                    currentButtons.map((action, index) => (
+                        currentPlayer === 'Hero' ? (
+                            <button key={index} onClick={() => handleActionClick(action)}>
+                                {action.action.replace(/_/g, ' ')}
+                            </button>
+                        ) : (
+                            <React.Fragment key={index}>
+                                <p className="villainAction">Villano hizo {action.action.replace(/_/g, ' ')}</p>
+                                <button onClick={() => handleActionClick(action)}>
+                                    Ok
+                                </button>
+                            </React.Fragment>
+                        )
+                    ))
+                )}
+            </div>
+
+
+        </div>
+            <div className="trainer-responses">
+                <h3>Respuestas</h3>
+                {Object.keys(responses).map(street => (
+                    <div key={street}>
+                        <h4>{street}</h4>
+                        {responses[street].map((response, index) => (
+                            <p
+                                key={index}
+                                style={{ color: isCorrectResponse(response, street) ? 'green' : 'red' }}
+                            >
+                                {response.action.replace(/_/g, ' ')}
+                            </p>
+                        ))}
+                    </div>
+                ))}
+                {finishHand === 'true' && (
+                    <div className="score" style={{ color: scoreColor }}>
+                        <h3>Puntuación:</h3> {scorePercentage}% ({score}/{totalActions} acciones correctas)
                     </div>
                 )}
             </div>
+
         </div>
     );
 }

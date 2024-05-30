@@ -13,41 +13,44 @@ import {
 const client = generateClient();
 export const PokerHandContext = createContext();
 
+const initialPokerHandState = {
+    id: '',
+    playerId: '',
+    tableType: '6',
+    handTags: '', // Asegúrate de que esto sea un array vacío
+    heroPosition: '9',
+    handTitle: '',
+    myHand_1: '',
+    myHand_2: '',
+    preflopNotes: '',
+    preflopAction: '{}',
+    preflopHeroRange: '{}',
+    preflopVillainRange: '{}',
+    flopNotes: '',
+    flopAction: '{}',
+    flopHeroRange: '{}',
+    flopVillainRange: '{}',
+    turnNotes: '',
+    turnAction: '{}',
+    turnHeroRange: '{}',
+    turnVillainRange: '{}',
+    riverNotes: '',
+    riverAction: '{}',
+    riverHeroRange: '{}',
+    riverVillainRange: '{}',
+    flopCards_1: '',
+    flopCards_2: '',
+    flopCards_3: '',
+    turnCard: '',
+    riverCard: '',
+    villainPosition: '9'
+};
+
+
 export const PokerHandProvider = ({ children }) => {
 
 
-    const [pokerHand, setPokerHand] = useState({
-        id: '',
-        playerId: '',
-        tableType: '6',
-        handTags: '', // Asegúrate de que esto sea un array vacío
-        heroPosition: '9',
-        handTitle: '',
-        myHand_1: '',
-        myHand_2: '',
-        preflopNotes: '',
-        preflopAction: '{}',
-        preflopHeroRange: '{}',
-        preflopVillainRange: '{}',
-        flopNotes: '',
-        flopAction: '{}',
-        flopHeroRange: '{}',
-        flopVillainRange: '{}',
-        turnNotes: '',
-        turnAction: '{}',
-        turnHeroRange: '{}',
-        turnVillainRange: '{}',
-        riverNotes: '',
-        riverAction: '{}',
-        riverHeroRange: '{}',
-        riverVillainRange: '{}',
-        flopCards_1: '',
-        flopCards_2: '',
-        flopCards_3: '',
-        turnCard: '',
-        riverCard: '',
-        villainPosition: '9'
-    });
+    const [pokerHand, setPokerHand] = useState(initialPokerHandState);
 
     const [pokerHandList, setPokerHandList] = useState([]);
 
@@ -59,6 +62,10 @@ export const PokerHandProvider = ({ children }) => {
 
 
 
+    };
+
+    const resetPokerHand = () => {
+        setPokerHand(initialPokerHandState);
     };
 
     const createPokerHandDB = async () => {
@@ -186,7 +193,7 @@ export const PokerHandProvider = ({ children }) => {
     };
 
     return (
-        <PokerHandContext.Provider value={{ pokerHand,pokerHandList,createPokerHandDB, updatePokerHandDB, updatePokerHand, fetchPokerHands, setPokerHand }}>
+        <PokerHandContext.Provider value={{ pokerHand,pokerHandList,createPokerHandDB, updatePokerHandDB, updatePokerHand, fetchPokerHands, setPokerHand,resetPokerHand }}>
             {children}
         </PokerHandContext.Provider>
     );

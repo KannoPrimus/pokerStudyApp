@@ -1,16 +1,25 @@
 /* PokerTable.css */
 /* MainContent.css */
+.poker-trainer-container-wrapper{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 0px;
+    overflow: hidden;
+}
 
 .poker-trainer-container {
     display: flex;            /* Utiliza Flexbox para el layout horizontal */
     flex-direction: column;
     align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
+    /*justify-content: center;  Centra verticalmente */
     padding-top: 0px;            /* Añade espacio alrededor del contenedor para evitar que los elementos toquen los bordes externos */
     gap: 0px;                /* Añade un espacio entre cada columna */
     height: 100%;            /*  Ajusta la altura según sea necesario */
-    width: 80%;
+    width: 100%;
     padding-left: 250px;
+    overflow: hidden;
 }
 
 
@@ -18,8 +27,8 @@
 
 .trainer-poker-table {
     position: relative;
-    width: 950px;
-    height: 350px;
+    width: 850px;
+    height:320px;
     background: transparent;/*#0E8E6C;*/
     border: 1px solid #f9f9f9;
     border-radius: 175px ;
@@ -34,7 +43,7 @@
 
 .trainer-table-center {
     position: absolute;
-    top: 40%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10; /* Asegúrate de que el selector se sitúe por encima de otros elementos */
@@ -45,7 +54,7 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    background: white;
+    background: #f9f9f9;
     border-radius: 50%;
     border: 1px solid #2b2b2b;
     display: flex;
@@ -61,16 +70,16 @@
 
 /* Ajustes específicos para la ubicación de los asientos en el modo 6-max */
 .trainer-player-seat-0 { top: 80%; left: 5%; transform: translate(-50%, -50%);} /*UTG*/
-.trainer-player-seat-1 { top: 30%; left: 5%; transform: translate(-50%, -50%); } /*MP*/
-.trainer-player-seat-2 { top: 30%; right: 5%; transform: translate(50%, -50%); } /*CO*/
+.trainer-player-seat-1 { top: 30%; left: 0%; transform: translate(-50%, -50%); } /*MP*/
+.trainer-player-seat-2 { top: 30%; right: 0%; transform: translate(50%, -50%); } /*CO*/
 .trainer-player-seat-3 { top: 80%; right: 5%; transform: translate(50%, -50%);  border: #ffdd55 2px solid; }/*BU*/
-.trainer-player-seat-4 { bottom: -25%; right: 15%; transform: translate(-50%, -50%); border: #747bff 2px solid; }/*SB*/
-.trainer-player-seat-5 { bottom: -25%; left: 15%; transform: translate(50%, -50%); border: #747bff 2px solid; }/*BB*/
+.trainer-player-seat-4 { bottom: -35%; right: 15%; transform: translate(-50%, -50%); border: #747bff 2px solid; }/*SB*/
+.trainer-player-seat-5 { bottom: -35%; left: 15%; transform: translate(50%, -50%); border: #747bff 2px solid; }/*BB*/
 
 /* Ajustes para la ubicación de los asientos adicionales en el modo 9-max */
-.trainer-player-seat-6 { bottom: 65%; left: 25%; transform: translate(-50%, -50%); }/*MP2*/
+.trainer-player-seat-6 { bottom: 70%; left: 25%; transform: translate(-50%, -50%); }/*MP2*/
 .trainer-player-seat-7 { bottom: 70%; left: 50%; transform: translate(-50%, -50%); }/*MP3*/
-.trainer-player-seat-8 { bottom: 65%; right: 25%; transform: translate(50%, -50%); }/*HJ*/
+.trainer-player-seat-8 { bottom: 70%; right: 25%; transform: translate(50%, -50%); }/*HJ*/
 
 .trainer-seat-text {
     position: absolute;
@@ -80,7 +89,7 @@
 }
 
 .trainer-legend {
-    margin-top: 10px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,14 +116,29 @@
     flex-direction: row;
     align-items: center;
 }
-.trainer-controls {
+.trainer-controls-1 {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom:80px;
+    border-radius: 3px;
+    gap:10px;
+
+    padding: 10px;
+    width:50%;
+}
+.trainer-controls-2 {
+    display: flex;            /* Utiliza Flexbox para el layout horizontal */
+    flex-direction: row;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
     margin-top: 100px;
-    margin-bottom:100px;
+    margin-bottom:0px;
+    padding: 10px;
+    gap:10px;
 }
 
-.trainer-controls button {
+.trainer-controls-1 button {
     margin: 0 10px;
     padding: 10px 20px;
     background-color: transparent;
@@ -122,17 +146,93 @@
     border: 1px solid #f9f9f9;
     border-radius: 5px;
     cursor: pointer;
+
 }
 
-.trainer-controls button:disabled {
+.trainer-controls-1 button:hover {
+    background-color: #0056b3; /* Color de fondo al hacer hover */
+}
+
+.trainer-controls-2 button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.trainer-controls-2 button:hover {
+    background-color: #039370; /* Color de fondo al hacer hover */
+}
+
+.trainer-controls-1 button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
-.trainer-controls button:not(:disabled):hover {
-    background-color: #0056b3;
+.trainer-controls-1 button:not(:disabled):hover {
+    background-color: #039370;
 }
 
 .villainAction{
     color: white;
+    font-weight: bold;
+}
+.heroAction{
+    color: #00ECB3;
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    background-color: #dc3545;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content {
+    font-size: 16px;
+    color: #333;
+}
+
+.trainer-responses {
+    width: 300px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #000F18;
+}
+
+.trainer-responses h3 {
+    margin-top: 0;
+    color:white;
+}
+
+.trainer-responses h4 {
+    margin-bottom: 5px;
+    color: #00ECB3;
+}
+
+.trainer-responses p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #000F18, 0 0 10px #000F18, 0 0 15px #f9f9f9, 0 0 20px #f9f9f9, 0 0 25px #f9f9f9;
+    }
+    50% {
+        box-shadow: 0 0 10px #000F18, 0 0 15px #000F18, 0 0 20px #f9f9f9, 0 0 25px #f9f9f9, 0 0 30px #f9f9f9;
+    }
+    100% {
+        box-shadow: 0 0 5px #000F18, 0 0 10px #000F18, 0 0 15px #f9f9f9, 0 0 20px #f9f9f9, 0 0 25px #f9f9f9;
+    }
 }

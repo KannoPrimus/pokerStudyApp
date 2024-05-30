@@ -49,6 +49,7 @@ function Sidebar({mode, setMode, sequence, setSequence}) {
     };
     const toggleMode = () => {
         setMode(prevMode => (prevMode === 'Estudio' ? 'Trainer' : 'Estudio'));
+        setSequence('');
     };
 
     return (
