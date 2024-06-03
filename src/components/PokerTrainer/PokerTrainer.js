@@ -344,10 +344,12 @@ function PokerTrainer({sequence}) {
                         {streetName === 'river' && <CardSelector card="riverCard" trainer="true"/>}
                     </div>
                     <div className="chips-container">
+
                         {chips.map((chip, index) => (
                             <div key={index} className="chip">
                             </div>
                         ))}
+
                     </div>
                     <div className="trainer-legend">
                         <div className="trainer-legend-item">

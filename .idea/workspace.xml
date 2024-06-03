@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="Incorporacion de trainer:&#10;- Script de la mano ejecutable paso a paso&#10;- botonera de acciones para Hero &#10;- Mensaje de accion de villano&#10;- Navegacion &quot;adelante/atras&quot; por las manos de la secuencia">
+    <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/cloudformation-template.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/cloudformation-template.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/parameters.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/parameters.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/schema.graphql" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/schema.graphql" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/stacks/Hands.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/stacks/Hands.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/schema.graphql" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/schema.graphql" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/api/pokerstudyapp/build/cloudformation-template.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/api/pokerstudyapp/build/cloudformation-template.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/root-cloudformation-stack.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" afterPath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/cloudformation-template.json" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/cloudformation-template.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/parameters.json" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/parameters.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/schema.graphql" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/schema.graphql" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/stacks/Hands.json" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/stacks/Hands.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/schema.graphql" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/schema.graphql" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/api/pokerstudyapp/build/cloudformation-template.json" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/api/pokerstudyapp/build/cloudformation-template.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/root-cloudformation-stack.json" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
+      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/index.js" afterPath="$PROJECT_DIR$/src/ui-components/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,23 +62,10 @@
       <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-714">
-              <caret line="246" column="48" lean-forward="false" selection-start-line="246" selection-start-column="48" selection-end-line="246" selection-end-column="48" />
+            <state relative-caret-position="612">
+              <caret line="351" column="0" lean-forward="false" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="279" column="22" lean-forward="true" selection-start-line="279" selection-start-column="22" selection-end-line="279" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#828#888#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,9 +74,31 @@
       <file leaf-file-name="PokerTrainer.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="280" column="13" lean-forward="false" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="13" />
+            <state relative-caret-position="637">
+              <caret line="355" column="17" lean-forward="false" selection-start-line="355" selection-start-column="17" selection-end-line="355" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardSelector.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="46" />
+              <folding>
+                <element signature="e#828#888#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,11 +162,11 @@
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
         <option value="$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" />
-        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
         <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
-        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
+        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
       </list>
     </option>
   </component>
@@ -192,6 +223,13 @@
               <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="CardSelector" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -325,7 +363,7 @@
       <workItem from="1715826076719" duration="144581000" />
       <workItem from="1716391415946" duration="76603000" />
       <workItem from="1716843524125" duration="159000" />
-      <workItem from="1716898132034" duration="89005000" />
+      <workItem from="1716898132034" duration="92613000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1715828076834</created>
@@ -467,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1717050326499</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Incorporacion de trainer:&#10;- Script de la mano ejecutable paso a paso&#10;- botonera de acciones para Hero &#10;- Mensaje de accion de villano&#10;- Navegacion &quot;adelante/atras&quot; por las manos de la secuencia">
+      <created>1717379208849</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1717379208849</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310348000" />
+    <option name="totallyTimeSpent" value="313956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -839,38 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="123" column="45" lean-forward="false" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="280" column="13" lean-forward="false" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2116">
-          <caret line="198" column="6" lean-forward="false" selection-start-line="198" selection-start-column="6" selection-end-line="198" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-145">
@@ -903,16 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714">
-          <caret line="246" column="48" lean-forward="false" selection-start-line="246" selection-start-column="48" selection-end-line="246" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -921,14 +924,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#63#0" expanded="false" />
+            <element signature="e#172#244#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="279" column="22" lean-forward="true" selection-start-line="279" selection-start-column="22" selection-end-line="279" selection-end-column="22" />
+        <state relative-caret-position="425">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="46" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
             <element signature="e#828#888#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2116">
+          <caret line="198" column="6" lean-forward="false" selection-start-line="198" selection-start-column="6" selection-end-line="198" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="351" column="0" lean-forward="false" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="355" column="17" lean-forward="false" selection-start-line="355" selection-start-column="17" selection-end-line="355" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

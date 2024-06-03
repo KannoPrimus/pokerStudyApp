@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import CardModal from '../CardModal/CardModal';
 import './CardSelector.css'; // Importa el archivo CSS aquí
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
+import {Image} from "@aws-amplify/ui-react";
+import logo from "../../assets/logoPSA_2.png";
 
 const suitColors = {
     '♠': '#808080', // Gris para Espadas
@@ -112,21 +114,27 @@ function CardSelector({ card , trainer , currentHand}) {
     };
 
     let cardClass = '';
+    let logoSize='';
 
     // Determina el color basado en el último carácter del palo de la carta
     const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#1639A1';
     if (card === 'myHand_1' || card === 'myHand_2' || card==='trainerCard') {
         cardClass = 'card-container-hero';
+        logoSize='35px';
     } else {
-        if(trainer==='true')
+        if(trainer==='true') {
             cardClass = 'card-container-trainer';
-            else
-                cardClass = 'card-container';
+            logoSize = '70px';
+        }
+            else {
+            cardClass = 'card-container';
+            logoSize = '70px';
+        }
     }
 
     return (
         <div className={cardClass} onClick={handleCardClick} onContextMenu={handleRightClick} style={{ backgroundColor }}>
-            {selectedCard || <span>🂠</span>}
+            {selectedCard || <span><Image src={logo} alt="Logo" width={logoSize} height={logoSize} opacity="0.2" /></span>}
             {isModalOpen && <CardModal isOpen={isModalOpen} onSelectCard={handleCardSelect} />}
         </div>
     );

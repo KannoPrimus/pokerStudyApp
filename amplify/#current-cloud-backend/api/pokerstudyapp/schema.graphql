@@ -1,3 +1,10 @@
+type Members @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  playerId: ID
+  memberPlan: String
+  endDate: AWSDate
+}
+
 type Hands @model @auth(rules: [{allow: private}]) {
   id: ID!
   playerId: ID

@@ -1,3 +1,12 @@
+type Members @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  playerId: ID
+  memberPlan: String
+  endDate: AWSDate
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
 type Hands @aws_iam @aws_cognito_user_pools {
   id: ID!
   playerId: ID
@@ -183,6 +192,88 @@ enum ModelSortDirection {
   DESC
 }
 
+type ModelMembersConnection @aws_iam @aws_cognito_user_pools {
+  items: [Members]!
+  nextToken: String
+}
+
+input ModelMembersFilterInput {
+  id: ModelIDInput
+  playerId: ModelIDInput
+  memberPlan: ModelStringInput
+  endDate: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelMembersFilterInput]
+  or: [ModelMembersFilterInput]
+  not: ModelMembersFilterInput
+}
+
+type Query {
+  getMembers(id: ID!): Members @aws_iam @aws_cognito_user_pools
+  listMembers(filter: ModelMembersFilterInput, limit: Int, nextToken: String): ModelMembersConnection @aws_iam @aws_cognito_user_pools
+  getHands(id: ID!): Hands @aws_iam @aws_cognito_user_pools
+  listHands(filter: ModelHandsFilterInput, limit: Int, nextToken: String): ModelHandsConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelMembersConditionInput {
+  playerId: ModelIDInput
+  memberPlan: ModelStringInput
+  endDate: ModelStringInput
+  and: [ModelMembersConditionInput]
+  or: [ModelMembersConditionInput]
+  not: ModelMembersConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateMembersInput {
+  id: ID
+  playerId: ID
+  memberPlan: String
+  endDate: AWSDate
+}
+
+input UpdateMembersInput {
+  id: ID!
+  playerId: ID
+  memberPlan: String
+  endDate: AWSDate
+}
+
+input DeleteMembersInput {
+  id: ID!
+}
+
+type Mutation {
+  createMembers(input: CreateMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
+  updateMembers(input: UpdateMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
+  deleteMembers(input: DeleteMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
+  createHands(input: CreateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+  updateHands(input: UpdateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+  deleteHands(input: DeleteHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionMembersFilterInput {
+  id: ModelSubscriptionIDInput
+  playerId: ModelSubscriptionIDInput
+  memberPlan: ModelSubscriptionStringInput
+  endDate: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionMembersFilterInput]
+  or: [ModelSubscriptionMembersFilterInput]
+}
+
+type Subscription {
+  onCreateMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["createMembers"]) @aws_iam @aws_cognito_user_pools
+  onUpdateMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["updateMembers"]) @aws_iam @aws_cognito_user_pools
+  onDeleteMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["deleteMembers"]) @aws_iam @aws_cognito_user_pools
+  onCreateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["createHands"]) @aws_iam @aws_cognito_user_pools
+  onUpdateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["updateHands"]) @aws_iam @aws_cognito_user_pools
+  onDeleteHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["deleteHands"]) @aws_iam @aws_cognito_user_pools
+}
+
 type ModelHandsConnection @aws_iam @aws_cognito_user_pools {
   items: [Hands]!
   nextToken: String
@@ -224,11 +315,6 @@ input ModelHandsFilterInput {
   and: [ModelHandsFilterInput]
   or: [ModelHandsFilterInput]
   not: ModelHandsFilterInput
-}
-
-type Query {
-  getHands(id: ID!): Hands @aws_iam @aws_cognito_user_pools
-  listHands(filter: ModelHandsFilterInput, limit: Int, nextToken: String): ModelHandsConnection @aws_iam @aws_cognito_user_pools
 }
 
 input ModelHandsConditionInput {
@@ -338,12 +424,6 @@ input DeleteHandsInput {
   id: ID!
 }
 
-type Mutation {
-  createHands(input: CreateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
-  updateHands(input: UpdateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
-  deleteHands(input: DeleteHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
-}
-
 input ModelSubscriptionHandsFilterInput {
   id: ModelSubscriptionIDInput
   playerId: ModelSubscriptionIDInput
@@ -379,10 +459,4 @@ input ModelSubscriptionHandsFilterInput {
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionHandsFilterInput]
   or: [ModelSubscriptionHandsFilterInput]
-}
-
-type Subscription {
-  onCreateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["createHands"]) @aws_iam @aws_cognito_user_pools
-  onUpdateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["updateHands"]) @aws_iam @aws_cognito_user_pools
-  onDeleteHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["deleteHands"]) @aws_iam @aws_cognito_user_pools
 }
