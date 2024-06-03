@@ -28,7 +28,7 @@ import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLightbulb, faBook, faMicrochip, faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faBook, faMicrochip, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import BackgroundVideo from './BackgroundVideo';
 import './Login.css';
 
@@ -227,10 +227,10 @@ export function Login() {
                                 border="2px solid #192831"
                                 color="#192831"
                             >
-                                <FontAwesomeIcon icon={faMicrochip} size="3x" />
+                                <FontAwesomeIcon icon={faGraduationCap} size="3x" />
                             </Flex>
-                            <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Tecnología</Text>
-                            <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Nos apalacamos en la tecnología para optimizar el tiempo y esfuerzo de los jugadores a la hora de analizar manos y sesiones de coaching.</Text>
+                            <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Entrenamiento</Text>
+                            <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Pon a prueba tu aprendizaje repasando tus manos en nuestro trainer. Además, sube el nivel de tu poker entrenando con soluciones preparadas por coaches profesionales.</Text>
                         </Flex>
                         <Flex direction="column" alignItems="center">
                             <Flex
@@ -242,10 +242,10 @@ export function Login() {
                                 border="2px solid #192831"
                                 color="#192831"
                             >
-                                <FontAwesomeIcon icon={faRobot} size="3x" />
+                                <FontAwesomeIcon icon={faMicrochip} size="3x" />
                             </Flex>
-                            <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Inteligencia Artificial</Text>
-                            <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Incorporamos asistencia de una inteligencia artificial para la revision y mejora de tus notas, incorporando insights basados en estrategias ganadoras. </Text>
+                            <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Tecnología</Text>
+                            <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Nos apalacamos en la tecnología para optimizar el tiempo y esfuerzo de los jugadores a la hora de analizar manos y sesiones de coaching.</Text>
                         </Flex>
                     </Grid>
                 </div>
@@ -289,9 +289,9 @@ export function Login() {
                 <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '2rem' }}>
                     <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
                         {[
-                            { plan: "Mensual", price: "25 USD", description: "Acceso completo por un mes" },
-                            { plan: "Semestral", price: "90 USD", description: "Acceso completo por seis meses" },
-                            { plan: "Anual", price: "120 USD", description: "Acceso completo por un año" },
+                            { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
+                            { plan: "Plan Pro", price: "5 USD / mes", description: "Acceso al módulo de bitácora de manos, y al trainer de manos propias. " },
+                            { plan: "Plan Premium", price: "49 USD / mes", description: "Acceso al módulo de bitácora de manos, al trainer de manos propias y a manos solucionadas por nuestros coaches." },
                         ].map((item, index) => (
                             <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
                                 <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>
