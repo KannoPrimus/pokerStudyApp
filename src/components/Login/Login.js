@@ -140,7 +140,7 @@ export function Login() {
 
                     <Flex gap="1rem">
                         <Link href="#nav1" color="white">
-                            <FontAwesomeIcon icon="question" /> Qué es PSA
+                            <FontAwesomeIcon icon="question" /> Qué es PSApp
                         </Link>
                         <Link href="#nav2" color="white">
                             <FontAwesomeIcon icon="star" /> Características
