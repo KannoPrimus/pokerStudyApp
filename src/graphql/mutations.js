@@ -127,3 +127,36 @@ export const deleteHands = /* GraphQL */ `
     }
   }
 `;
+
+export const createMembers = /* GraphQL */ `
+  mutation CreateMembers(
+    $input: CreateMembersInput!
+    $condition: ModelMembersConditionInput
+  ) {
+    createMembers(input: $input, condition: $condition) {
+      id
+      playerId
+      memberPlan
+      endDate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateMembers = /* GraphQL */ `
+  mutation UpdateMembers(
+    $input: UpdateMembersInput!
+    $condition: ModelMembersConditionInput
+  ) {
+    updateMembers(input: $input, condition: $condition) {
+      id
+      playerId
+      memberPlan
+      endDate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;

@@ -8,7 +8,16 @@ import './StreetColumn.css';
 
 function StreetColumn({ streetName, myRange, rivalRange, notes }) {
 
+    const [isHeroCollapsed, setIsHeroCollapsed] = useState(true);
+    const [isVillainCollapsed, setIsVillainCollapsed] = useState(true);
 
+    const toggleHeroCollapse = () => {
+        setIsHeroCollapsed(!isHeroCollapsed);
+    };
+
+    const toggleVillainCollapse = () => {
+        setIsVillainCollapsed(!isVillainCollapsed);
+    };
 
     return (
         <div className="street-column-container">
@@ -40,8 +49,15 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
             <div className="streetInfo">
                 <div className="section"><PokerActions id={streetName}/></div>
                 <div className="section"><PokerNotes id={streetName}/></div>
-                <span className="title">Rango Hero</span>
+                <div className="collapsible-section">
+                <span className="title" onClick={toggleHeroCollapse}> {isHeroCollapsed ? 'Rango Hero' : 'Ocultar Rango de HERO'} </span>
+                    {!isHeroCollapsed && (
+                        <div className="collapsible-content">
                 <div className="section"><CardMatrix id={streetName} myRange="true" />
+                </div>
+                        </div>
+                            )}
+
                 </div>
                 <span className="title">Rango Villano</span>
                 <div className="section"><CardMatrix id={streetName} myRange="false"/></div>

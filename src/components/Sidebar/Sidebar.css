@@ -34,7 +34,9 @@ position: fixed;
     box-shadow: 0 1px 0 0 rgba(0,123,255,0.5);  /* Sombra sutil para enfocar */
 }
 
-
+.txtMembershiPlan{
+    color: #007bff;
+}
 
 /* Ajustes adicionales para asegurar la consistencia visual */
 .input::placeholder {
@@ -192,4 +194,57 @@ input:checked + .slider:before {
     font-size: 19px;
     font-weight:bold;
     vertical-align: middle;
+}
+
+.modalUpsell {
+    display: block; /* Hidden by default */
+    position: relative; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent;
+
+}
+
+.modalUpsell-content {
+    font-size: medium;
+    color: #000F18;
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 5px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 15px;
+}
+
+.closeUpsell {
+
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeUpsell:hover,
+.closeUpsell:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.upgradeButton {
+    background-color: #ffd60d; /* Green */
+    border: none;
+    color: #000F18;
+    padding: 15px 32px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

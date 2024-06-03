@@ -1,6 +1,45 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateMembers = /* GraphQL */ `
+  subscription OnCreateMembers($filter: ModelSubscriptionMembersFilterInput) {
+    onCreateMembers(filter: $filter) {
+      id
+      playerId
+      memberPlan
+      endDate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateMembers = /* GraphQL */ `
+  subscription OnUpdateMembers($filter: ModelSubscriptionMembersFilterInput) {
+    onUpdateMembers(filter: $filter) {
+      id
+      playerId
+      memberPlan
+      endDate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteMembers = /* GraphQL */ `
+  subscription OnDeleteMembers($filter: ModelSubscriptionMembersFilterInput) {
+    onDeleteMembers(filter: $filter) {
+      id
+      playerId
+      memberPlan
+      endDate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateHands = /* GraphQL */ `
   subscription OnCreateHands($filter: ModelSubscriptionHandsFilterInput) {
     onCreateHands(filter: $filter) {
