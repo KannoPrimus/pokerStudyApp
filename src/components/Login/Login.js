@@ -290,7 +290,7 @@ export function Login() {
                     <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
                         {[
                             { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
-                            { plan: "Plan Pro", price: "5 USD / mes", description: "Acceso al módulo de bitácora de manos, y al trainer de manos propias. " },
+                            { plan: "Plan Pro", price: "15 USD / mes", description: "Acceso al módulo de bitácora de manos, y al trainer de manos propias. " },
                             { plan: "Plan Premium", price: "49 USD / mes", description: "Acceso al módulo de bitácora de manos, al trainer de manos propias y a manos solucionadas por nuestros coaches." },
                         ].map((item, index) => (
                             <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
