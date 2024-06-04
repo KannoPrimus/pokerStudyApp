@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;  /* Cambia la dirección del flex a vertical */
     /*height: 100%;   Ajusta según la altura deseada */
-    width: 100%;   /* Ajusta según el ancho deseado */
+    /*width: 90%;    Ajusta según el ancho deseado */
     font-size: 12px;
     align-items: center; /* Centra horizontalmente */
     justify-content: center; /* Centra verticalmente */
@@ -68,6 +68,7 @@
     overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
     padding: 0px; /* Espacio interno opcional */
     box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en las dimensiones del div */
+    width: 100%;
 }
 
 .streetInfo::-webkit-scrollbar {
@@ -106,20 +107,20 @@
 
 .collapsible-section {
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .collapsible-header {
     background-color: #f1f1f1;
-    padding: 10px;
+    padding: 0px;
     cursor: pointer;
     text-align: center;
     font-weight: bold;
-    border: 1px solid #ccc;
+
 }
 
 .collapsible-content {
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 0px;
     border-top: none;
     animation: slide-down 0.3s ease-out;
 }

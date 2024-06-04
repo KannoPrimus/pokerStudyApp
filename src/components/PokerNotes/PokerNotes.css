@@ -5,9 +5,9 @@
     font-size: 12px; /* Tamaño adecuado para la lectura */
     padding: 10px; /* Espacio interior para una mejor estructura */
     border-radius: 5px; /* Bordes redondeados sutiles */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Sombra para profundidad */
+    /*box-shadow: 0 4px 8px rgba(0,0,0,0.5);  Sombra para profundidad */
     margin: 5px 0; /* Margen para separar de otros elementos */
-    border: 1px solid #333; /* Borde sutil */
+    /*border: 1px solid #333;  Borde sutil */
     line-height: 1.5; /* Espaciado de línea para facilitar la lectura */
     outline: none; /* Remover el borde al enfocar */
     height:400%;

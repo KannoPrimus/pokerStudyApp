@@ -1,7 +1,7 @@
 /* MainContent.css */
 .MainContent {
     display: flex;            /* Utiliza Flexbox para el layout horizontal */
-    justify-content: space-between; /* Distribuye el espacio uniformemente entre columnas */
+    /* justify-content: space-between; Distribuye el espacio uniformemente entre columnas */
     align-items: flex-start;  /* Alinea las columnas al inicio verticalmente */
     padding: 0px;            /* Añade espacio alrededor del contenedor para evitar que los elementos toquen los bordes externos */
     gap: 0px;                /* Añade un espacio entre cada columna */

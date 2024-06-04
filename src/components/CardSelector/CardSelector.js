@@ -124,11 +124,11 @@ function CardSelector({ card , trainer , currentHand}) {
     } else {
         if(trainer==='true') {
             cardClass = 'card-container-trainer';
-            logoSize = '70px';
+            logoSize = '50px';
         }
             else {
             cardClass = 'card-container';
-            logoSize = '70px';
+            logoSize = '50px';
         }
     }
 

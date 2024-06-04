@@ -10,10 +10,7 @@ library.add(fas);
 
 const actionOptions = [
     "OR 2.5bb", "OR 3bb", "BET 25%", "BET 33%", "BET 50%", "BET 66%", "BET 75%", "BET 100%",
-    "OVERBET 125%", "OVERBET 150%", "OVERBET 200%", "ALL-IN", "DONK", "RAISE", "CHECK", "CHECK-CALL",
-    "CHECK-RAISE", "CHECK-FOLD", "CHECK BEHIND", "CALL", "CALL vs 33%", "CALL vs 50%", "CALL vs 75%", "CALL vs 100%",
-    "CALL vs OVERBET", "FOLD", "FOLD vs 33%", "FOLD vs 50%", "FOLD vs 75%", "FOLD vs 100%", "FOLD vs OVERBET", "RAISE",
-    "RAISE/FOLD", "RAISE/CALL", "RAISE/RAISE"
+    "OVERBET 125%", "OVERBET 150%", "OVERBET 200%", "ALL-IN", "DONK", "RAISE", "CHECK", "CALL", "FOLD", "RAISE"
 ];
 
 const playerOptions = ["Hero", "Villain"];
@@ -160,10 +157,10 @@ function PokerActions({ id }) {
                         {action.player === 'Hero' && (
                             <>
                                 <button onClick={() => handleToggleCorrect(Number(index))} className="mark-correct-button">
-                                    {action.isCorrect ==='true' ? '✓' : 'Mark Correct'}
+                                    {action.isCorrect ==='true' ? '✓' : '✓'}
                                 </button>
                                 <button onClick={() => handleToggleOptional(Number(index))} className="mark-optional-button">
-                                    {action.isOptional === 'true' ? 'Op' : 'Mark Optional'}
+                                    {action.isOptional === 'true' ? 'Op' : 'Op'}
                                 </button>
                             </>
 

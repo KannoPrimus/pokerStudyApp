@@ -50,17 +50,25 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
                 <div className="section"><PokerActions id={streetName}/></div>
                 <div className="section"><PokerNotes id={streetName}/></div>
                 <div className="collapsible-section">
-                <span className="title" onClick={toggleHeroCollapse}> {isHeroCollapsed ? 'Rango Hero' : 'Ocultar Rango de HERO'} </span>
+                <span className="title" onClick={toggleHeroCollapse}> {isHeroCollapsed ? 'Rango de Hero +' : 'Rango de Hero -'} </span>
                     {!isHeroCollapsed && (
                         <div className="collapsible-content">
-                <div className="section"><CardMatrix id={streetName} myRange="true" />
-                </div>
+                            <div className="section"><CardMatrix id={streetName} myRange="true" />
+                            </div>
                         </div>
                             )}
 
                 </div>
-                <span className="title">Rango Villano</span>
-                <div className="section"><CardMatrix id={streetName} myRange="false"/></div>
+                <div className="collapsible-section">
+                    <span className="title" onClick={toggleVillainCollapse}> {isVillainCollapsed ? 'Rango de Villano +' : 'Rango de Villano -'} </span>
+                    {!isVillainCollapsed && (
+                        <div className="collapsible-content">
+                            <div className="section"><CardMatrix id={streetName} myRange="false" />
+                            </div>
+                        </div>
+                    )}
+
+                </div>
             </div>
         </div>
     );
