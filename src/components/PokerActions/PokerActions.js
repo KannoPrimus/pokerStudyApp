@@ -39,8 +39,8 @@ console.log(pokerHand.id);
             //handleAddAction('', '');
         } else {
 
-            console.log("Debug:");
-            console.log(typeof pokerHand[`${phase}Action`]);
+            //console.log("Debug:");
+            //console.log(typeof pokerHand[`${phase}Action`]);
             if (typeof pokerHand[`${phase}Action`] === "string") {
                 const jsonString = pokerHand[`${phase}Action`]
                     .replace(/(\w+)=/g, '"$1":')
@@ -66,9 +66,9 @@ console.log(pokerHand.id);
                 }
 
                 try {
-                    console.log(array);
+
                     setActions(array);
-                    console.log(actions);
+
                 } catch {
                     console.log("empty object");
                 }
@@ -94,7 +94,7 @@ console.log(pokerHand.id);
             action: action,
             order: (actions.length + 1),
             street: id,
-            isCorrect: false,
+            isCorrect: true,
             isOptional: false
         };
         const newActions = [...actions, newAction];
@@ -189,7 +189,6 @@ console.log(pokerHand.id);
     };
 
     useEffect(() => {
-        console.log(actions.length+" - "+pokerHand.heroPosition+" - "+pokerHand.villainPosition);
 
         if (pokerHand.id==="" && actions.length === 0 && (pokerHand.heroPosition !== '9' && pokerHand.villainPosition !== '9')) {
             const inferredFirstPlayer = inferFirstPlayer();
@@ -207,20 +206,31 @@ console.log(pokerHand.id);
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: actions.length>3 ,
         adaptiveHeight: true,
         centerMode: false
     };
 
     // Only render the component if heroPosition and villainPosition are valid
-    if (pokerHand.heroPosition === 9 || pokerHand.villainPosition === 9) {
+    if (pokerHand.heroPosition === '9' || pokerHand.villainPosition === '9') {
+        return null;
+    }
+
+    if(id.toLowerCase()==='flop' && (pokerHand.flopCards_1==='' || pokerHand.flopCards_2==='' || pokerHand.flopCards_3==='') ){
+        return null;
+    }
+
+    if(id.toLowerCase()==='turn' && pokerHand.turnCard===''){
+        return null;
+    }
+
+    if(id.toLowerCase()==='river' && pokerHand.riverCard==='' ){
         return null;
     }
 
     return (
         <div className="poker-actions-container">
-            <h2>Secuencia {id}</h2>
-            <Slider {...settings} ref={sliderRef}>
+           <Slider {...settings} ref={sliderRef}>
                 {actions.map((action, index) => (
                     <div key={index} className="ActionCard">
                         <div className="playerTag">{action.player || inferPlayer(actions[index - 1]?.player)}</div>

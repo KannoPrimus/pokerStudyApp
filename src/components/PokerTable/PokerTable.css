@@ -75,12 +75,12 @@
 
 
 /* Ajustes específicos para la ubicación de los asientos en el modo 6-max */
-.player-seat-0 { top: 80%; left: 5%; transform: translate(-50%, -50%);} /*UTG*/
-.player-seat-1 { top: 30%; left: 5%; transform: translate(-50%, -50%); } /*MP*/
-.player-seat-2 { top: 30%; right: 5%; transform: translate(50%, -50%); } /*CO*/
-.player-seat-3 { top: 80%; right: 5%; transform: translate(50%, -50%);  border: #ffdd55 2px solid; }/*BU*/
-.player-seat-4 { bottom: -25%; right: 15%; transform: translate(-50%, -50%); border: #747bff 2px solid; }/*SB*/
-.player-seat-5 { bottom: -25%; left: 15%; transform: translate(50%, -50%); border: #747bff 2px solid; }/*BB*/
+.player-seat-0 { top: 50%; left: 0%; transform: translate(-50%, -50%); border: #747bff 2px solid;} /*SB*/
+.player-seat-1 { top: 5%; left: 25%; transform: translate(-50%, -50%); border: #747bff 2px solid;} /*BB*/
+.player-seat-2 { top: 5%; right: 25%; transform: translate(50%, -50%); } /*UTG*/
+.player-seat-3 { top: 50%; right: 0%; transform: translate(50%, -50%);   }/*MP*/
+.player-seat-4 { bottom: -25%; right: 10%; transform: translate(-50%, -50%);  }/*CO*/
+.player-seat-5 { bottom: -25%; left: 10%; transform: translate(50%, -50%);border: #ffdd55 2px solid; }/*BU*/
 
 /* Ajustes para la ubicación de los asientos adicionales en el modo 9-max */
 .player-seat-6 { bottom: 65%; left: 25%; transform: translate(-50%, -50%); }/*MP2*/

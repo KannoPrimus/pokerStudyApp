@@ -4,6 +4,12 @@ import { useAuthenticator } from '@aws-amplify/ui-react';
 import CardSelector  from '../CardSelector/CardSelector';
 import './PokerTrainer.css';
 
+const preflopFirstActions = ["OR_2.5bb", "OR_3bb", "ALL-IN"];
+const postflopFirstActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+
+const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
+const vsPassiveActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+
 function PokerTrainer({sequence}) {
     const { signOut, user } = useAuthenticator();
     const { pokerHand, setPokerHand , pokerHandList, fetchPokerHands , resetPokerHand  } = useContext(PokerHandContext);
@@ -17,7 +23,7 @@ function PokerTrainer({sequence}) {
     const [actions, setActions] = useState([]);  // Nuevo estado para las acciones
     const [streetName, setStreetName] = useState('preflop'); // Calle específica para las acciones
     const [responses, setResponses] = useState({});  // Estado para registrar las respuestas
-    const playerPositions6Max = ['UTG', 'MP', 'CO', 'BU', 'SB', 'BB'];
+    const playerPositions6Max = ['SB', 'BB','UTG', 'MP', 'CO', 'BU'];
     const playerPositions9Max = ['UTG', 'MP', 'CO', 'BU', 'SB', 'BB', 'MP2', 'MP3', 'HJ'];
     const [finishHand,setFinishHand] =useState('false');
     const [actionIndex, setActionIndex] = useState(0);

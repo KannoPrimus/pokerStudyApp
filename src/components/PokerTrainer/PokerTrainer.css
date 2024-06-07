@@ -81,12 +81,12 @@
 
 
 /* Ajustes específicos para la ubicación de los asientos en el modo 6-max */
-.trainer-player-seat-0 { top: 80%; left: 5%; transform: translate(-50%, -50%);} /*UTG*/
-.trainer-player-seat-1 { top: 30%; left: 0%; transform: translate(-50%, -50%); } /*MP*/
+.trainer-player-seat-0 { top: 80%; left: 5%; transform: translate(-50%, -50%);border: #747bff 2px solid;} /*UTG*/
+.trainer-player-seat-1 { top: 30%; left: 0%; transform: translate(-50%, -50%);border: #747bff 2px solid; } /*MP*/
 .trainer-player-seat-2 { top: 30%; right: 0%; transform: translate(50%, -50%); } /*CO*/
-.trainer-player-seat-3 { top: 80%; right: 5%; transform: translate(50%, -50%);  border: #ffdd55 2px solid; }/*BU*/
-.trainer-player-seat-4 { bottom: -35%; right: 15%; transform: translate(-50%, -50%); border: #747bff 2px solid; }/*SB*/
-.trainer-player-seat-5 { bottom: -35%; left: 15%; transform: translate(50%, -50%); border: #747bff 2px solid; }/*BB*/
+.trainer-player-seat-3 { top: 80%; right: 5%; transform: translate(50%, -50%); }/*BU*/
+.trainer-player-seat-4 { bottom: -35%; right: 15%; transform: translate(-50%, -50%); }/*SB*/
+.trainer-player-seat-5 { bottom: -35%; left: 15%; transform: translate(50%, -50%);  border: #ffdd55 2px solid;  }/*BB*/
 
 /* Ajustes para la ubicación de los asientos adicionales en el modo 9-max */
 .trainer-player-seat-6 { bottom: 70%; left: 25%; transform: translate(-50%, -50%); }/*MP2*/
