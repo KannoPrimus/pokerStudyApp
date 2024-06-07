@@ -305,6 +305,7 @@ function PokerTrainer({sequence}) {
                 </div>
             )}
             <div className="trainer-poker-table">
+                <div className="trainer-poker-table-inner">
                 {currentPositions.map((position, index) => (
                     <div
                         key={index}
@@ -364,6 +365,7 @@ function PokerTrainer({sequence}) {
 
 
                 </div>
+            </div>
             </div>
             <div className="trainer-controls-2">
                 {(currentAction && finishHand === 'false' && currentPlayer === 'Hero') && (

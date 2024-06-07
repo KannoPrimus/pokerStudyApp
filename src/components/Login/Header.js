@@ -27,7 +27,7 @@ export function Header() {
                         textShadow: ' 0px 0px 5px rgba(0, 0, 0, 1)' // Sombra inset
                     }}
                 >
-                    Poker Study App
+                    Poker Crushers
                     <Text
                         fontStyle="italic"
                         fontSize="1.5rem" // Agrandar el tamaño de la fuente

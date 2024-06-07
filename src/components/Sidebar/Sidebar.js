@@ -114,12 +114,15 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership }) {
                     <span className="slider round"></span>
                 </label>
             </div>
-            <span className="mode-label">Modo {mode}</span>
+            <div className="mode-label">
+            <span >Modo {mode}</span>
+            </div>
             {mode === 'Estudio' ? (
                 <div className="txtChangeMode">Clasifica tu mano</div>
             ) : (
                 <div className="txtChangeMode">Elige una secuencia</div>
             )}
+
             <select
                 id="handTitle"
                 value={handTitle}

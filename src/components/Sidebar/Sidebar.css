@@ -35,7 +35,7 @@ position: fixed;
 }
 
 .txtMembershiPlan{
-    color: #007bff;
+    color: #00ECB3;
 }
 
 /* Ajustes adicionales para asegurar la consistencia visual */
@@ -190,10 +190,11 @@ input:checked + .slider:before {
 
 /* Optional: Styling for the mode label */
 .mode-label {
-    margin-left: 10px;
+    padding-left: 10px;
     font-size: 19px;
     font-weight:bold;
     vertical-align: middle;
+    border-bottom: 1px solid #f9f9f9;
 }
 
 .modalUpsell {

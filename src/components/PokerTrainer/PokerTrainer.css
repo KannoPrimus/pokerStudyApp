@@ -22,9 +22,6 @@
     overflow: hidden;
 }
 
-
-
-
 .trainer-poker-table {
     position: relative;
     width: 850px;
@@ -33,6 +30,20 @@
     border: 1px solid #f9f9f9;
     border-radius: 175px ;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.trainer-poker-table-inner {
+    position: relative;
+    width: 800px;
+    height:270px;
+    background: transparent;/*#0E8E6C;*/
+    border: 1px solid #f9f9f9;
+    border-radius: 175px ;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;

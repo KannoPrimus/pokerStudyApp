@@ -117,7 +117,7 @@ function CardSelector({ card , trainer , currentHand}) {
     let logoSize='';
 
     // Determina el color basado en el último carácter del palo de la carta
-    const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#1639A1';
+    const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#00ECB3';
     if (card === 'myHand_1' || card === 'myHand_2' || card==='trainerCard') {
         cardClass = 'card-container-hero';
         logoSize='35px';

@@ -140,7 +140,7 @@ export function Login() {
 
                     <Flex gap="1rem">
                         <Link href="#nav1" color="white">
-                            <FontAwesomeIcon icon="question" /> Qué es PSApp
+                            <FontAwesomeIcon icon="question" /> Qué es Pkr Crushers
                         </Link>
                         <Link href="#nav2" color="white">
                             <FontAwesomeIcon icon="star" /> Características
@@ -166,7 +166,7 @@ export function Login() {
                         <div className="capa-gradient"></div>
                         <div className="container-details">
                             <div className="details">
-                                <Text fontSize="3rem" color="white" fontWeight="bold">Poker Study App</Text>
+                                <Text fontSize="3rem" color="white" fontWeight="bold">Poker Crushers</Text>
                                 <Text fontSize="1.25rem">
                                     Es una plataforma simple pero poderosa
                                     que facilita el aprendizaje y la mejora continua en el juego de poker. Creemos en la importancia de la educación

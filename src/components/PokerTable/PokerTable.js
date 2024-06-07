@@ -9,8 +9,8 @@ function PokerTable() {
     const [rivalSeat, setRivalSeat] = useState(9);
     const [currentPositions, setCurrentPositions]= useState([]);
 
-    const playerPositions6Max = ['UTG', 'MP', 'CO', 'BU', 'SB', 'BB'];
-    const playerPositions9Max = ['UTG', 'MP', 'CO', 'BU', 'SB', 'BB', 'MP2', 'MP3', 'HJ'];
+    const playerPositions6Max = ['SB', 'BB','UTG', 'MP', 'CO', 'BU'];
+    const playerPositions9Max = ['SB', 'BB','UTG', 'MP',  'MP2', 'MP3', 'HJ' , 'CO', 'BU'];
 
 
     useEffect(() => {

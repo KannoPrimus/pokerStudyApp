@@ -1,42 +1,52 @@
 import React, { useState, useEffect, useContext } from 'react';
+import Slider from "react-slick";
 import './PokerActions.css';
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 library.add(fas);
 
-const actionOptions = [
-    "OR 2.5bb", "OR 3bb", "BET 25%", "BET 33%", "BET 50%", "BET 66%", "BET 75%", "BET 100%",
-    "OVERBET 125%", "OVERBET 150%", "OVERBET 200%", "ALL-IN", "DONK", "RAISE", "CHECK", "CALL", "FOLD", "RAISE"
-];
+const preflopFirstActions = ["OR_2.5bb", "OR_3bb", "ALL-IN"];
+const postflopFirstActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
 
-const playerOptions = ["Hero", "Villain"];
+const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
+const vsPassiveActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+
 
 function PokerActions({ id }) {
     const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
     const [selectedPlayer, setSelectedPlayer] = useState('');
     const [selectedAction, setSelectedAction] = useState('');
+    const [previousAction, setPreviousAction] = useState('');
     const [actions, setActions] = useState([]);
+    const [selectedActions, setSelectedActions] = useState({});
+    const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
+    const [firstPlayer, setFirstPlayer] = useState('');
+    const sliderRef = React.useRef(null);
+
 
     useEffect(() => {
         const phase = id.toLowerCase();
+console.log(pokerHand.id);
 
-        if(pokerHand[`${phase}Action`]=="{}")
+        if (pokerHand[`${phase}Action`] === "{}") {
             setActions([]);
-        else {
+            //handleAddAction('', '');
+        } else {
 
-            if(typeof pokerHand[`${phase}Action`] == "string"){
-
+            console.log("Debug:");
+            console.log(typeof pokerHand[`${phase}Action`]);
+            if (typeof pokerHand[`${phase}Action`] === "string") {
                 const jsonString = pokerHand[`${phase}Action`]
-
                     .replace(/(\w+)=/g, '"$1":')
-                    .replace(/ /g,"_")
-                    .replace(/,_/g,",")
+                    .replace(/ /g, "_")
+                    .replace(/,_/g, ",")
                     .replace(/:"([^"]+?)"/g, (_, value) => {
-                        // Añadir comillas a los valores de cadena, y mantener booleanos y números sin comillas
                         if (value === 'true' || value === 'false' || !isNaN(value)) {
                             return `:${value}`;
                         }
@@ -44,72 +54,64 @@ function PokerActions({ id }) {
                     })
                     .replace(/:([^",{}\s]+)([,}])/g, ':\"$1\"$2');
 
-
-                // Añadir corchetes a los valores que no sean booleanos ni números
-                const cleanedJsonString = jsonString
-                   .replace(/:"(\w+ [^,{}]+)"/g, ':\"$1\"');
+                const cleanedJsonString = jsonString.replace(/:"(\w+ [^,{}]+)"/g, ':\"$1\"');
+                const array = JSON.parse(cleanedJsonString);
 
 
 
-                const array = JSON.parse(jsonString);
-
-
-
-                try{
-                    setActions(array);
-
-                }catch{
-                    console.log( "empty object");
+                try {
+                    setPreviousAction(array[0].action);
+                } catch {
+                    setPreviousAction('');
                 }
 
-            }else
-                setActions(pokerHand[`${phase}Action`]);
+                try {
+                    console.log(array);
+                    setActions(array);
+                    console.log(actions);
+                } catch {
+                    console.log("empty object");
+                }
+            }
         }
-
-
     }, [pokerHand, id]);
 
-    const handleAddAction = () => {
-        if (selectedPlayer && selectedAction) {
-            const newAction = {
-                player: selectedPlayer,
-                action: selectedAction,
-                order: (actions.length + 1),
-                street: id,
-                isCorrect: false,
-                isOptional: false
-            };
-            const newActions = [...actions, newAction];
-            setActions(newActions);
-            updatePokerHand(`${id.toLowerCase()}Action`, newActions);
-            setSelectedAction('');
-            setSelectedPlayer('');
+    const isAggressiveAction = (action) => {
+        return ["OR_2.5bb", "OR_3bb", "OR_4bb", "BET_33%", "BET_50%", "BET_75%", "BET_125%", "RAISE", "RAISE_x3", "RAISE_x5", "ALL-IN"].includes(action);
+    };
+
+    const getAvailableActions = (phase, previousAction, isFirstAction) => {
+        if (isFirstAction) {
+            return phase === "preflop" ? preflopFirstActions : postflopFirstActions;
+        } else {
+            return isAggressiveAction(previousAction) ? vsAggressiveActions : vsPassiveActions;
         }
     };
 
-    const handleRemoveAction = (index) => {
+    const handleAddAction = (player, action) => {
+        const newAction = {
+            player: player,
+            action: action,
+            order: (actions.length + 1),
+            street: id,
+            isCorrect: false,
+            isOptional: false
+        };
+        const newActions = [...actions, newAction];
+        setActions(newActions);
+        updatePokerHand(`${id.toLowerCase()}Action`, newActions);
+    };
 
+    const handleRemoveAction = (index) => {
         const newActions = actions.filter((_, i) => i !== index);
         setActions(newActions);
         updatePokerHand(`${id.toLowerCase()}Action`, newActions);
     };
 
     const handleToggleCorrect = (index) => {
-
-        console.log(typeof index);
-        console.log( index);
-
         const newActions = actions.map((action, i) => {
-
-
-
             if (i === index && action.player === 'Hero') {
-
-
-                if(action.isCorrect==='true')
-                    return { ...action, isCorrect: 'false' };
-                else
-                    return { ...action, isCorrect: 'true' };
+                return { ...action, isCorrect: !action.isCorrect };
             }
             return action;
         });
@@ -117,58 +119,125 @@ function PokerActions({ id }) {
         updatePokerHand(`${id.toLowerCase()}Action`, newActions);
     };
 
-    const handleToggleOptional = (index) => {
-        const newActions = actions.map((action, i) => {
-            if (i === index && action.player === 'Hero') {
-                if(action.isOptional==='true')
-                    return { ...action, isOptional: 'false' };
-                else
-                    return { ...action, isOptional: 'true' };
+    const handleSelectAction = (player, action, actionIndex) => {
+        let updatedActions = actions.map((act, index) => {
+            if (index === actionIndex) {
+                return { ...act, action, player };
+            }
+            return act;
+        });
+
+        const previousAction = actionIndex > 0 ? updatedActions[actionIndex - 1].action : '';
+
+        // Check if action ends the round
+        if (["CALL",  "FOLD"].includes(action)) {
+            updatedActions = updatedActions.slice(0, actionIndex + 1);
+        } else if (!(previousAction === 'CHECK' && action === 'CHECK') && actionIndex === actions.length - 1 && !["CALL", "FOLD"].includes(action)) {
+            const nextPlayer = inferPlayer(player);
+            const newAction = { player: nextPlayer, action: '', order: updatedActions.length + 1, street: id, isCorrect: false, isOptional: false };
+            updatedActions = [...updatedActions, newAction];
+        }
+
+        setActions(updatedActions);
+        updatePokerHand(`${id.toLowerCase()}Action`, updatedActions);
+
+        if(actionIndex>1)
+            sliderRef.current.slickNext();
+    };
+
+    const handleFirstPlayerSelect = (event) => {
+        setFirstPlayer(event.target.value);
+        const newActions = actions.map((action, index) => {
+            if (index === 0) {
+                return { ...action, player: event.target.value };
             }
             return action;
         });
         setActions(newActions);
-        updatePokerHand(`${id.toLowerCase()}Action`, newActions);
     };
+
+    const inferPlayer = (previousPlayer) => {
+        return previousPlayer === "Hero" ? "Villain" : "Hero";
+    };
+
+    const inferFirstPlayer = () => {
+        const positions = ["SB", "BB", "UTG", "MP", "CO", "BU"];
+
+        const heroPositionIndex = pokerHand.heroPosition;
+        const villainPositionIndex = pokerHand.villainPosition;
+
+        // Heads-up logic SB vs BB
+        if (positions.length === 2) {
+            if (heroPositionIndex < villainPositionIndex && heroPositionIndex <= 1 && villainPositionIndex <= 1) {
+                return "Hero";
+            } else {
+                return "Villain";
+            }
+        }
+
+        // 6-max logic
+        const inPositionPlayer = heroPositionIndex > villainPositionIndex ? "Hero" : "Villain";
+        const outOfPositionPlayer = inPositionPlayer === "Hero" ? "Villain" : "Hero";
+
+        // Preflop, player out of position acts first
+        if (id.toLowerCase() === "preflop") {
+            return inPositionPlayer;
+        }
+
+        // Postflop, player in position acts last
+        return outOfPositionPlayer;
+    };
+
+    useEffect(() => {
+        console.log(actions.length+" - "+pokerHand.heroPosition+" - "+pokerHand.villainPosition);
+
+        if (pokerHand.id==="" && actions.length === 0 && (pokerHand.heroPosition !== '9' && pokerHand.villainPosition !== '9')) {
+            const inferredFirstPlayer = inferFirstPlayer();
+            setFirstPlayer(inferredFirstPlayer);
+            handleAddAction(inferredFirstPlayer, '');
+            console.log("debug2");
+        }
+    }, [pokerHand.heroPosition, pokerHand.villainPosition]);
+
+
+
+    const settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        adaptiveHeight: true,
+        centerMode: false
+    };
+
+    // Only render the component if heroPosition and villainPosition are valid
+    if (pokerHand.heroPosition === 9 || pokerHand.villainPosition === 9) {
+        return null;
+    }
 
     return (
         <div className="poker-actions-container">
-           Secuencia {id}
-            <div className="add-action">
-                <select value={selectedPlayer} onChange={(e) => setSelectedPlayer(e.target.value)} className="modern-scrollbar">
-                    <option value="">Select Player</option>
-                    {playerOptions.map((player, index) => (
-                        <option key={index} value={player}>{player}</option>
-                    ))}
-                </select>
-                <select value={selectedAction} onChange={(e) => setSelectedAction(e.target.value)} className="modern-scrollbar">
-                    <option value="">Select Action</option>
-                    {actionOptions.map((action, index) => (
-                        <option key={index} value={action}>{action}</option>
-                    ))}
-                </select>
-                <button onClick={handleAddAction}>+</button>
-            </div>
-            <div className="actions-list">
+            <h2>Secuencia {id}</h2>
+            <Slider {...settings} ref={sliderRef}>
                 {actions.map((action, index) => (
-                    <div key={index} className={`tag ${action.isCorrect ==='true' ? 'correct-action' : ''} ${action.isOptional ==='true' ? 'optional-action' : ''}`}>
-                        {action.order}. {action.player}: {action.action}
-
-                        {action.player === 'Hero' && (
-                            <>
-                                <button onClick={() => handleToggleCorrect(Number(index))} className="mark-correct-button">
-                                    {action.isCorrect ==='true' ? '✓' : '✓'}
-                                </button>
-                                <button onClick={() => handleToggleOptional(Number(index))} className="mark-optional-button">
-                                    {action.isOptional === 'true' ? 'Op' : 'Op'}
-                                </button>
-                            </>
-
-                        )}
-                        <button onClick={() => handleRemoveAction(Number(index))} className="remove-tag-button">x</button>
+                    <div key={index} className="ActionCard">
+                        <div className="playerTag">{action.player || inferPlayer(actions[index - 1]?.player)}</div>
+                        <ul className="actions-list">
+                            {getAvailableActions(id.toLowerCase(), index > 0 ? actions[index - 1].action : '', index === 0).map((actionOption, actionIndex) => (
+                                <li
+                                    key={`${action.order}-${actionIndex}`}
+                                    className={action.action === actionOption ? 'selected' : ''}
+                                    onClick={() => handleSelectAction(index === 0 ? firstPlayer : inferPlayer(actions[index - 1]?.player), actionOption, index)}
+                                >
+                                    {actionOption.replace(/_/g, ' ')}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 ))}
-            </div>
+            </Slider>
         </div>
     );
 }

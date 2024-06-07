@@ -155,14 +155,14 @@ function TopBar({ mode }) {
             />
             <Text
                 width="220px"
-                fontSize="2rem" // Agrandar el tamaño de la fuente
+                fontSize="1rem" // Agrandar el tamaño de la fuente
                 fontWeight="bold"
                 color="white"
                 style={{
                     textShadow: '0px 0px 5px rgba(0, 0, 0, 1)' // Sombra inset
                 }}
             >
-                PSApp
+                Poker Crushers
             </Text>
 
             {mode === "Estudio" && (
