@@ -163,7 +163,6 @@ function App() {
                         {mode === 'Estudio' ? <MainContent membership={membership}/> : <PokerTrainer sequence={sequence} stake={stake} membership={membership}/>}
 
                     </div>
-                    <Tutorial />
                 </div>
             );
 
