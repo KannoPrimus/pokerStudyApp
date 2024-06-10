@@ -12,6 +12,7 @@ import { generateClient } from "aws-amplify/api";
 import {listMembers, getMembers, listHands as listHandsQuery} from "./graphql/queries";
 import {createMembers, updateMembers} from "./graphql/mutations";
 import {isBefore, parseISO} from "date-fns";
+import Tutorial from './components/About/Tutorial';
 
 const client = generateClient();
 
@@ -162,7 +163,7 @@ function App() {
                         {mode === 'Estudio' ? <MainContent membership={membership}/> : <PokerTrainer sequence={sequence} stake={stake} membership={membership}/>}
 
                     </div>
-
+                    <Tutorial />
                 </div>
             );
 
