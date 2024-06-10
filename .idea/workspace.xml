@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.css" afterPath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.css" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PokerActions.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PokerActions.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
@@ -92,31 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2686">
-              <caret line="168" column="100" lean-forward="false" selection-start-line="168" selection-start-column="100" selection-end-line="168" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextCarousel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Login/TextCarousel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+            <state relative-caret-position="391">
+              <caret line="142" column="75" lean-forward="false" selection-start-line="142" selection-start-column="75" selection-end-line="142" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -170,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/Login/Header.js" />
-        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/components/PokerTable/PokerTable.js" />
         <option value="$PROJECT_DIR$/src/components/PokerTable/PokerTable.css" />
         <option value="$PROJECT_DIR$/src/components/CardMatrix/CardMatrix.js" />
@@ -189,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/components/About/Tutorial.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.css" />
+        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
       </list>
     </option>
   </component>
@@ -242,6 +221,13 @@
               <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
@@ -382,7 +368,7 @@
       <workItem from="1716843524125" duration="159000" />
       <workItem from="1716898132034" duration="119051000" />
       <workItem from="1717513394495" duration="38255000" />
-      <workItem from="1717677396328" duration="80384000" />
+      <workItem from="1717677396328" duration="80471000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1715828076834</created>
@@ -608,11 +594,18 @@
       <option name="project" value="LOCAL" />
       <updated>1717992239760</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Nuevo modelo de gestion de acciones:&#10;- Auto infiere el jugador que habla primero&#10;- Diferencia entre acciones del primer jugador por calle y luego dependiendo de si la accion anterior es agresiva o pasiva&#10;- Auto scroll a la ultima card&#10;- Eliminacion de acciones desde la q cambia hasta la ultima">
+      <created>1717993298658</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717993298658</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459033000" />
+    <option name="totallyTimeSpent" value="459120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -1023,25 +1016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="164" column="26" lean-forward="false" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="26" />
-          <folding>
-            <element signature="e#24#76#0" expanded="true" />
-            <element signature="e#330#396#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2686">
-          <caret line="168" column="100" lean-forward="false" selection-start-line="168" selection-start-column="100" selection-end-line="168" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -1054,22 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/TextCarousel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1088,6 +1046,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="116" column="24" lean-forward="false" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="164" column="26" lean-forward="false" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="26" />
+          <folding>
+            <element signature="e#24#76#0" expanded="true" />
+            <element signature="e#330#396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/TextCarousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="142" column="75" lean-forward="false" selection-start-line="142" selection-start-column="75" selection-end-line="142" selection-end-column="75" />
           <folding />
         </state>
       </provider>
