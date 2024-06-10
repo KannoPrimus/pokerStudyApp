@@ -52,6 +52,9 @@ export default function HandsCreateForm(props) {
     riverCard: "",
     villainPosition: "",
     riverVillainRange: "",
+    stake: "",
+    share: "",
+    description: "",
   };
   const [playerId, setPlayerId] = React.useState(initialValues.playerId);
   const [tableType, setTableType] = React.useState(initialValues.tableType);
@@ -114,6 +117,11 @@ export default function HandsCreateForm(props) {
   const [riverVillainRange, setRiverVillainRange] = React.useState(
     initialValues.riverVillainRange
   );
+  const [stake, setStake] = React.useState(initialValues.stake);
+  const [share, setShare] = React.useState(initialValues.share);
+  const [description, setDescription] = React.useState(
+    initialValues.description
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setPlayerId(initialValues.playerId);
@@ -145,6 +153,9 @@ export default function HandsCreateForm(props) {
     setRiverCard(initialValues.riverCard);
     setVillainPosition(initialValues.villainPosition);
     setRiverVillainRange(initialValues.riverVillainRange);
+    setStake(initialValues.stake);
+    setShare(initialValues.share);
+    setDescription(initialValues.description);
     setErrors({});
   };
   const validations = {
@@ -177,6 +188,9 @@ export default function HandsCreateForm(props) {
     riverCard: [],
     villainPosition: [],
     riverVillainRange: [],
+    stake: [],
+    share: [],
+    description: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -233,6 +247,9 @@ export default function HandsCreateForm(props) {
           riverCard,
           villainPosition,
           riverVillainRange,
+          stake,
+          share,
+          description,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -324,6 +341,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.playerId ?? value;
@@ -376,6 +396,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.tableType ?? value;
@@ -428,6 +451,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.handTags ?? value;
@@ -480,6 +506,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.heroPosition ?? value;
@@ -532,6 +561,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.handTitle ?? value;
@@ -584,6 +616,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.myHand_1 ?? value;
@@ -636,6 +671,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.myHand_2 ?? value;
@@ -688,6 +726,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.preflopNotes ?? value;
@@ -740,6 +781,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.preflopAction ?? value;
@@ -792,6 +836,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.preflopHeroRange ?? value;
@@ -844,6 +891,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.preflopVillainRange ?? value;
@@ -898,6 +948,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.flopNotes ?? value;
@@ -950,6 +1003,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.flopAction ?? value;
@@ -1002,6 +1058,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.flopHeroRange ?? value;
@@ -1054,6 +1113,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.flopVillainRange ?? value;
@@ -1106,6 +1168,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.turnNotes ?? value;
@@ -1158,6 +1223,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.turnAction ?? value;
@@ -1210,6 +1278,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.turnHeroRange ?? value;
@@ -1262,6 +1333,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.turnVillainRange ?? value;
@@ -1314,6 +1388,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.riverNotes ?? value;
@@ -1366,6 +1443,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.riverAction ?? value;
@@ -1418,6 +1498,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.riverHeroRange ?? value;
@@ -1470,6 +1553,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.flopCards_1 ?? value;
@@ -1522,6 +1608,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.flopCards_3 ?? value;
@@ -1574,6 +1663,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.flopCards_2 ?? value;
@@ -1626,6 +1718,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.turnCard ?? value;
@@ -1678,6 +1773,9 @@ export default function HandsCreateForm(props) {
               riverCard: value,
               villainPosition,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.riverCard ?? value;
@@ -1730,6 +1828,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition: value,
               riverVillainRange,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.villainPosition ?? value;
@@ -1782,6 +1883,9 @@ export default function HandsCreateForm(props) {
               riverCard,
               villainPosition,
               riverVillainRange: value,
+              stake,
+              share,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.riverVillainRange ?? value;
@@ -1797,6 +1901,171 @@ export default function HandsCreateForm(props) {
         errorMessage={errors.riverVillainRange?.errorMessage}
         hasError={errors.riverVillainRange?.hasError}
         {...getOverrideProps(overrides, "riverVillainRange")}
+      ></TextField>
+      <TextField
+        label="Stake"
+        isRequired={false}
+        isReadOnly={false}
+        value={stake}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              myHand_1,
+              myHand_2,
+              preflopNotes,
+              preflopAction,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopAction,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnAction,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverAction,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+              stake: value,
+              share,
+              description,
+            };
+            const result = onChange(modelFields);
+            value = result?.stake ?? value;
+          }
+          if (errors.stake?.hasError) {
+            runValidationTasks("stake", value);
+          }
+          setStake(value);
+        }}
+        onBlur={() => runValidationTasks("stake", stake)}
+        errorMessage={errors.stake?.errorMessage}
+        hasError={errors.stake?.hasError}
+        {...getOverrideProps(overrides, "stake")}
+      ></TextField>
+      <TextField
+        label="Share"
+        isRequired={false}
+        isReadOnly={false}
+        value={share}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              myHand_1,
+              myHand_2,
+              preflopNotes,
+              preflopAction,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopAction,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnAction,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverAction,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+              stake,
+              share: value,
+              description,
+            };
+            const result = onChange(modelFields);
+            value = result?.share ?? value;
+          }
+          if (errors.share?.hasError) {
+            runValidationTasks("share", value);
+          }
+          setShare(value);
+        }}
+        onBlur={() => runValidationTasks("share", share)}
+        errorMessage={errors.share?.errorMessage}
+        hasError={errors.share?.hasError}
+        {...getOverrideProps(overrides, "share")}
+      ></TextField>
+      <TextField
+        label="Description"
+        isRequired={false}
+        isReadOnly={false}
+        value={description}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              tableType,
+              handTags,
+              heroPosition,
+              handTitle,
+              myHand_1,
+              myHand_2,
+              preflopNotes,
+              preflopAction,
+              preflopHeroRange,
+              preflopVillainRange,
+              flopNotes,
+              flopAction,
+              flopHeroRange,
+              flopVillainRange,
+              turnNotes,
+              turnAction,
+              turnHeroRange,
+              turnVillainRange,
+              riverNotes,
+              riverAction,
+              riverHeroRange,
+              flopCards_1,
+              flopCards_3,
+              flopCards_2,
+              turnCard,
+              riverCard,
+              villainPosition,
+              riverVillainRange,
+              stake,
+              share,
+              description: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.description ?? value;
+          }
+          if (errors.description?.hasError) {
+            runValidationTasks("description", value);
+          }
+          setDescription(value);
+        }}
+        onBlur={() => runValidationTasks("description", description)}
+        errorMessage={errors.description?.errorMessage}
+        hasError={errors.description?.hasError}
+        {...getOverrideProps(overrides, "description")}
       ></TextField>
       <Flex
         justifyContent="space-between"

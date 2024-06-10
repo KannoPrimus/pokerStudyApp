@@ -38,6 +38,9 @@ type Hands @aws_iam @aws_cognito_user_pools {
   riverCard: String
   villainPosition: String
   riverVillainRange: String
+  stake: String
+  share: String
+  description: String
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -310,6 +313,9 @@ input ModelHandsFilterInput {
   riverCard: ModelStringInput
   villainPosition: ModelStringInput
   riverVillainRange: ModelStringInput
+  stake: ModelStringInput
+  share: ModelStringInput
+  description: ModelStringInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelHandsFilterInput]
@@ -347,6 +353,9 @@ input ModelHandsConditionInput {
   riverCard: ModelStringInput
   villainPosition: ModelStringInput
   riverVillainRange: ModelStringInput
+  stake: ModelStringInput
+  share: ModelStringInput
+  description: ModelStringInput
   and: [ModelHandsConditionInput]
   or: [ModelHandsConditionInput]
   not: ModelHandsConditionInput
@@ -385,6 +394,9 @@ input CreateHandsInput {
   riverCard: String
   villainPosition: String
   riverVillainRange: String
+  stake: String
+  share: String
+  description: String
 }
 
 input UpdateHandsInput {
@@ -418,6 +430,9 @@ input UpdateHandsInput {
   riverCard: String
   villainPosition: String
   riverVillainRange: String
+  stake: String
+  share: String
+  description: String
 }
 
 input DeleteHandsInput {
@@ -455,6 +470,9 @@ input ModelSubscriptionHandsFilterInput {
   riverCard: ModelSubscriptionStringInput
   villainPosition: ModelSubscriptionStringInput
   riverVillainRange: ModelSubscriptionStringInput
+  stake: ModelSubscriptionStringInput
+  share: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
   createdAt: ModelSubscriptionStringInput
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionHandsFilterInput]

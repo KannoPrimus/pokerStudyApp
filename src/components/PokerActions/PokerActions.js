@@ -32,7 +32,6 @@ function PokerActions({ id }) {
 
     useEffect(() => {
         const phase = id.toLowerCase();
-console.log(pokerHand.id);
 
         if (pokerHand[`${phase}Action`] === "{}") {
             setActions([]);
@@ -40,8 +39,8 @@ console.log(pokerHand.id);
         } else {
 
             //console.log("Debug:");
-            //console.log(typeof pokerHand[`${phase}Action`]);
-            if (typeof pokerHand[`${phase}Action`] === "string") {
+            //console.log(pokerHand[`${phase}Action`]);
+            if (typeof pokerHand[`${phase}Action`] === "string" ) {
                 const jsonString = pokerHand[`${phase}Action`]
                     .replace(/(\w+)=/g, '"$1":')
                     .replace(/ /g, "_")
@@ -53,6 +52,7 @@ console.log(pokerHand.id);
                         return `:"${value}"`;
                     })
                     .replace(/:([^",{}\s]+)([,}])/g, ':\"$1\"$2');
+
 
                 const cleanedJsonString = jsonString.replace(/:"(\w+ [^,{}]+)"/g, ':\"$1\"');
                 const array = JSON.parse(cleanedJsonString);
@@ -97,8 +97,10 @@ console.log(pokerHand.id);
             isCorrect: true,
             isOptional: false
         };
+
         const newActions = [...actions, newAction];
         setActions(newActions);
+        //console.log(actions);
         updatePokerHand(`${id.toLowerCase()}Action`, newActions);
     };
 
@@ -134,7 +136,7 @@ console.log(pokerHand.id);
             updatedActions = updatedActions.slice(0, actionIndex + 1);
         } else if (!(previousAction === 'CHECK' && action === 'CHECK') && actionIndex === actions.length - 1 && !["CALL", "FOLD"].includes(action)) {
             const nextPlayer = inferPlayer(player);
-            const newAction = { player: nextPlayer, action: '', order: updatedActions.length + 1, street: id, isCorrect: false, isOptional: false };
+            const newAction = { player: nextPlayer, action: 'NONE', order: updatedActions.length + 1, street: id, isCorrect: true, isOptional: false };
             updatedActions = [...updatedActions, newAction];
         }
 
@@ -145,16 +147,7 @@ console.log(pokerHand.id);
             sliderRef.current.slickNext();
     };
 
-    const handleFirstPlayerSelect = (event) => {
-        setFirstPlayer(event.target.value);
-        const newActions = actions.map((action, index) => {
-            if (index === 0) {
-                return { ...action, player: event.target.value };
-            }
-            return action;
-        });
-        setActions(newActions);
-    };
+
 
     const inferPlayer = (previousPlayer) => {
         return previousPlayer === "Hero" ? "Villain" : "Hero";
@@ -193,8 +186,8 @@ console.log(pokerHand.id);
         if (pokerHand.id==="" && actions.length === 0 && (pokerHand.heroPosition !== '9' && pokerHand.villainPosition !== '9')) {
             const inferredFirstPlayer = inferFirstPlayer();
             setFirstPlayer(inferredFirstPlayer);
-            handleAddAction(inferredFirstPlayer, '');
-            console.log("debug2");
+            handleAddAction(inferredFirstPlayer, 'NONE');
+            console.log(inferredFirstPlayer);
         }
     }, [pokerHand.heroPosition, pokerHand.villainPosition]);
 
@@ -212,21 +205,7 @@ console.log(pokerHand.id);
     };
 
     // Only render the component if heroPosition and villainPosition are valid
-    if (pokerHand.heroPosition === '9' || pokerHand.villainPosition === '9') {
-        return null;
-    }
-
-    if(id.toLowerCase()==='flop' && (pokerHand.flopCards_1==='' || pokerHand.flopCards_2==='' || pokerHand.flopCards_3==='') ){
-        return null;
-    }
-
-    if(id.toLowerCase()==='turn' && pokerHand.turnCard===''){
-        return null;
-    }
-
-    if(id.toLowerCase()==='river' && pokerHand.riverCard==='' ){
-        return null;
-    }
+    //console.log(pokerHand.heroPosition+' - '+pokerHand.villainPosition);
 
     return (
         <div className="poker-actions-container">

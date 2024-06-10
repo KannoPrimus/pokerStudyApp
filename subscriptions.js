@@ -73,6 +73,9 @@ export const onCreateHands = /* GraphQL */ `
       riverCard
       villainPosition
       riverVillainRange
+      stake
+      share
+      description
       createdAt
       updatedAt
       __typename
@@ -112,6 +115,9 @@ export const onUpdateHands = /* GraphQL */ `
       riverCard
       villainPosition
       riverVillainRange
+      stake
+      share
+      description
       createdAt
       updatedAt
       __typename
@@ -151,6 +157,9 @@ export const onDeleteHands = /* GraphQL */ `
       riverCard
       villainPosition
       riverVillainRange
+      stake
+      share
+      description
       createdAt
       updatedAt
       __typename

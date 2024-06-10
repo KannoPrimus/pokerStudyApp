@@ -10,9 +10,9 @@ const postflopFirstActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125
 const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
 const vsPassiveActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
 
-function PokerTrainer({sequence}) {
+function PokerTrainer({sequence , stake, membership}) {
     const { signOut, user } = useAuthenticator();
-    const { pokerHand, setPokerHand , pokerHandList, fetchPokerHands , resetPokerHand  } = useContext(PokerHandContext);
+    const { pokerHand, setPokerHand , pokerHandList, fetchPokerHandsTrainer , resetPokerHand, resetPokerHandList  } = useContext(PokerHandContext);
     const [filteredHands, setFilteredHands] = useState([]);
     const [maxPlayers, setMaxPlayers] = useState(6);
     const [mySeat, setMySeat] = useState(9);
@@ -32,16 +32,20 @@ function PokerTrainer({sequence}) {
     const [score, setScore] = useState(0);
     const [totalActions, setTotalActions] = useState(0);
     const [chips, setChips] = useState([]); // Nuevo estado para las fichas
-
-
+    const [firstPlayer, setFirstPlayer] = useState('');
 
     useEffect(() => {
-        fetchPokerHands(user.username);
+        resetPokerHand();
 
     }, []);
 
+
     useEffect(() => {
-        const filtered = pokerHandList.filter(hand => hand.handTitle.toLowerCase().includes(sequence.toLowerCase()));
+
+
+
+        const filtered = pokerHandList;//.filter(hand => (hand.share.toLowerCase().includes('true')));
+
         setFilteredHands(filtered);
         setStreetName('preflop');
         resetPokerHand();
@@ -52,16 +56,18 @@ function PokerTrainer({sequence}) {
         setChips([]); // Reset chips when new sequence is loaded
 
         if (filtered.length > 0) {
+
             setActions([]);
             setCurrentHand(filtered[0]);
             setCurrentHandIndex(0);
             setMySeat('');
             setRivalSeat('');
+
+
         } else {
 
-            console.log(sequence);
 
-            if(sequence!=='') {
+            if(sequence!=='' || stake!=='') {
                 setShowModal(true);
                 setTimeout(() => {
                     setShowModal(false);
@@ -70,7 +76,7 @@ function PokerTrainer({sequence}) {
     }
 
 
-    }, [sequence, pokerHandList]);
+    }, [pokerHandList]);
 
 
     useEffect(() => {
@@ -110,6 +116,8 @@ function PokerTrainer({sequence}) {
                         .replace(/:"(\w+ [^,{}]+)"/g, ':\"$1\"');
 
                     const array = JSON.parse(jsonString);
+
+
 
                     try{
                         setActions(array);
@@ -209,11 +217,14 @@ function PokerTrainer({sequence}) {
     };
 
 
+
+
     const getCurrentButtons = (actions, currentIndex) => {
         if (!actions || actions.length === 0 || currentIndex >= actions.length) {
             return [];
         }
 
+        console.log(actions);
         const currentPlayer = actions[currentIndex].player;
         const currentButtons = [];
 
@@ -225,8 +236,42 @@ function PokerTrainer({sequence}) {
             }
         }
 
-        return currentButtons;
+        let referenceActions = [];
+
+        // Determine which array to use based on the current street and action
+        if (streetName === 'preflop') {
+            referenceActions = preflopFirstActions;
+        } else if (vsAggressiveActions.includes(currentAction.action)) {
+            referenceActions = vsAggressiveActions;
+        } else if (vsPassiveActions.includes(currentAction.action)) {
+            referenceActions = vsPassiveActions;
+        }
+
+        if (currentPlayer === 'Hero') {
+
+            for (let i = 0; i < referenceActions.length; i++) {
+
+
+                if(referenceActions[i]!==currentButtons[0].action) {
+
+                    let newButton = {
+                        player: 'Hero',
+                        action: referenceActions[i],
+                        order: (i + 2),
+                        street: streetName,
+                        isCorrect: false,
+                        isOptional: false
+                    };
+                    currentButtons.push(newButton);
+                }
+            }
+        }
+
+        console.log(currentButtons);
+        return currentButtons.sort(() => Math.random() - 0.5);
     };
+
+
 
     const handleActionClick = (action) => {
 
@@ -238,6 +283,8 @@ function PokerTrainer({sequence}) {
             }));
 
             setTotalActions(prevTotalActions => prevTotalActions + 1);
+
+            console.log(action);
 
             // Update the score
             if (action.isCorrect === 'true') {
@@ -284,6 +331,7 @@ function PokerTrainer({sequence}) {
     const currentAction = actions[actionIndex] || null;
     const currentButtons = getCurrentButtons(actions, actionIndex);
 
+
     const isCorrectResponse = (response, street) => {
         return response.isCorrect === 'true' && response.street.toLowerCase() === street;
     };
@@ -296,12 +344,14 @@ function PokerTrainer({sequence}) {
     const scorePercentage = Math.round((score / totalActions) * 100) || 0;
     const scoreColor = getScoreColor(scorePercentage);
 
+
+
     return (
         <div className="poker-trainer-container-wrapper">
         <div className="poker-trainer-container">
             <div className="trainer-controls-1">
                 <button onClick={handlePreviousHand} disabled={currentHandIndex === 0}>Mano Anterior</button>
-                <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length - 1}>Mano Siguiente</button>
+                <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length-1}>Mano Siguiente</button>
             </div>
             {showModal && (
                 <div className="modal">

@@ -68,6 +68,9 @@ export const getHands = /* GraphQL */ `
       riverCard
       villainPosition
       riverVillainRange
+      stake
+      share
+      description
       createdAt
       updatedAt
       __typename
@@ -112,6 +115,9 @@ export const listHands = /* GraphQL */ `
         riverCard
         villainPosition
         riverVillainRange
+        stake
+        share
+        description
         createdAt
         updatedAt
         __typename

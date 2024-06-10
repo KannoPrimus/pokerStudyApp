@@ -30,16 +30,17 @@ function TopBar({ mode }) {
     const [showLoader, setShowLoader] = useState(false);
     const dropdownRef = useRef(null);
 
-    const playerPositions6Max = ['UTG', 'MP', 'CO', 'BU', 'SB', 'BB'];
-    const playerPositions9Max = ['UTG', 'MP', 'CO', 'BU', 'SB', 'BB', 'MP2', 'MP3', 'HJ'];
+    const playerPositions6Max = ['SB', 'BB','UTG', 'MP', 'CO', 'BU'];
+    const playerPositions9Max = ['SB', 'BB','UTG', 'MP',  'MP2', 'MP3', 'HJ' , 'CO', 'BU'];
 
     useEffect(() => {
         updatePokerHand('playerId', user.username);
     }, []);
 
     useEffect(() => {
-        fetchPokerHands(user.username);
-    }, []);
+        if(mode==='Estudio')
+            fetchPokerHands(user.username);
+    }, [mode]);
 
     useEffect(() => {
         if (searchTerm) {
@@ -49,7 +50,7 @@ function TopBar({ mode }) {
             setFilteredHands([]);
             setDropdownVisible(false);
         }
-    }, [searchTerm, pokerHandList]);
+    }, [searchTerm]);
 
     const handleSelectHand = (hand) => {
         setSearchTerm('');
@@ -58,6 +59,7 @@ function TopBar({ mode }) {
     };
 
     const handleClickSearchBox = () => {
+
         setFilteredHands(pokerHandList);
         setDropdownVisible(true);
     };
@@ -94,7 +96,7 @@ function TopBar({ mode }) {
     const handleUpdateHand = async () => {
         updatePokerHand('playerId', user.username);
         const response = await updatePokerHandDB();
-        console.log(response.success);
+        //console.log(response.success);
         if (!response.success) {
             setModalMessage(response.error);
             setIsError(true);

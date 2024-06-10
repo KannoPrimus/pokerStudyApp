@@ -229,9 +229,9 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
     const getColor = (count) => {
         switch (count) {
 
-            case 1: return '#99ff99';
-            case 2: return '#ffff99';
-            case 3: return '#ff9999';
+            case 1: return '#16974b';
+            case 2: return '#ffd60d';
+            case 3: return '#ff116e';
             case 4: return '#818280';
             default: return 'transparent';
         }

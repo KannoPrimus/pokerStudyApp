@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
-import './Sidebar.css'; // Ensure to have a CSS file with appropriate styles
+import './Sidebar.css';
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import {createMembers, updateMembers} from "../../graphql/mutations";
+import { createMembers, updateMembers } from "../../graphql/mutations";
 import { generateClient } from "aws-amplify/api";
-import { addMonths, format ,parseISO, isBefore} from 'date-fns';
+import { addMonths, format } from 'date-fns';
 
 const client = generateClient();
 
@@ -30,31 +30,85 @@ const pokerSequences = [
     'Cold call IP'
 ];
 
+const pokerStakes = [
+    'NL2',
+    'NL5',
+    'NL10',
+    'NL25',
+    'NL50',
+    'NL100',
+    'NL200',
+    'NL400+',
+];
+
+const handSources = [
+    { value: 'playerHands', label: 'Mis manos' },
+    { value: 'sharedHands', label: 'Crushers del nivel' }
+];
+
 library.add(fas);
 
-function Sidebar({ mode, setMode, sequence, setSequence, membership }) {
-    const [handTitle, setTitle] = useState('');
+function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setStake }) {
+    const [handTitle, setHandTitle] = useState('');
+    const [handStake, setHandStake] = useState('');
+    const [description, setDescription] = useState('');
+    const [isShareable, setIsShareable] = useState(false);
     const [showUpsellModal, setShowUpsellModal] = useState(false);
     const [isUpgraded, setIsUpgraded] = useState(false);
-    const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
+    const [handSource, setHandSource] = useState('playerHands');
+    const { pokerHand, updatePokerHand, resetPokerHand, fetchPokerHandsTrainer,fetchPokerHands } = useContext(PokerHandContext);
     const { user, signOut } = useAuthenticator();
 
-
     useEffect(() => {
-        setTitle(pokerHand.handTitle);
-    }, [pokerHand]);
+        if (pokerHand.handTitle) {
+            setHandTitle(pokerHand.handTitle);
+            setHandStake(pokerHand.stake);
+            setDescription(pokerHand.description);
+            setIsShareable(pokerHand.share);
+        }
+    }, [pokerHand.id]);
 
     useEffect(() => {
         updatePokerHand('handTitle', handTitle);
     }, [handTitle]);
 
+    useEffect(() => {
+        updatePokerHand('stake', handStake);
+    }, [handStake]);
+
+    useEffect(() => {
+        updatePokerHand('description', description);
+    }, [description]);
+
+    useEffect(() => {
+        updatePokerHand('share', isShareable);
+    }, [isShareable]);
+
+    useEffect(() => {
+        setHandTitle('');
+        setHandStake('');
+    }, [mode]);
+
     const handleTitleChange = (e) => {
-        setTitle(e.target.value);
+        setHandTitle(e.target.value);
         setSequence(e.target.value);
     };
 
-    const handleTitleBlur = () => {
-        updatePokerHand('handTitle', handTitle);
+    const handleStakeChange = (e) => {
+        setHandStake(e.target.value);
+        setStake(e.target.value);
+    };
+
+    const handleDescriptionChange = (e) => {
+        setDescription(e.target.value);
+    };
+
+    const handleShareableChange = (e) => {
+        setIsShareable(e.target.checked);
+    };
+
+    const handleHandSourceChange = (e) => {
+        setHandSource(e.target.value);
     };
 
     const toggleMode = () => {
@@ -62,48 +116,49 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership }) {
             setShowUpsellModal(true);
         } else {
             setMode((prevMode) => (prevMode === 'Estudio' ? 'Trainer' : 'Estudio'));
-            setSequence('');
-
+            //resetPokerHand();
         }
     };
 
     const closeModal = () => {
         setShowUpsellModal(false);
-        setIsUpgraded(false); // Reset the upgrade state
+        setIsUpgraded(false);
         window.location.reload();
     };
 
-    const handleUpgrade = () => {
+    const handleUpgrade = async () => {
         setIsUpgraded(true);
-
         const endDate = format(addMonths(new Date(), 3), "yyyy-MM-dd") + "Z";
 
         try {
-            const updateMembership = async (playerId) => {
-                const newMembers = await client.graphql({
-                    query: updateMembers,
-                    variables: {
-                        input: {
-                            "id": playerId,
-                            "playerId": playerId,
-                            "memberPlan": "PRO",
-                            "endDate": endDate
-                        }
+            await client.graphql({
+                query: updateMembers,
+                variables: {
+                    input: {
+                        "id": user.username,
+                        "playerId": user.username,
+                        "memberPlan": "PRO",
+                        "endDate": endDate
                     }
-                });
-            };
-
-            updateMembership(user.username);
-        }
-        catch{
+                }
+            });
+        } catch {
             console.log('Error updating');
         }
+    };
+
+    const loadHands = () => {
+        const share = handSource === 'sharedHands';
+        if(handSource === 'sharedHands')
+            fetchPokerHandsTrainer(handStake, handTitle, share);
+        else
+            fetchPokerHands(user.username,handStake, handTitle, share);
     };
 
     return (
         <div className="sidebar">
             <div className="mode-switch">
-                <h2 className="txtMembershiPlan">Plan: {membership} </h2>
+                <h2 className="txtMembershipPlan">Plan: {membership} </h2>
                 <span className="txtChangeMode">Cambiar modo </span>
                 <label className="switch">
                     <input
@@ -115,29 +170,78 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership }) {
                 </label>
             </div>
             <div className="mode-label">
-            <span >Modo {mode}</span>
+                <span>Modo {mode}</span>
             </div>
             {mode === 'Estudio' ? (
-                <div className="txtChangeMode">Clasifica tu mano</div>
+                <></>
             ) : (
-                <div className="txtChangeMode">Elige una secuencia</div>
-            )}
+                <>
 
+                    <div className="txtChangeMode">Elige una fuente de manos</div>
+                    <select
+                        id="handSource"
+                        value={handSource}
+                        onChange={handleHandSourceChange}
+                        className="input"
+                    >
+                        {handSources.map((source, index) => (
+                            <option key={index} value={source.value}>{source.label}</option>
+                        ))}
+                    </select>
+
+                </>
+            )}
+            <div className="txtChangeMode">Elige un spot</div>
             <select
                 id="handTitle"
                 value={handTitle}
                 onChange={handleTitleChange}
                 className="input"
             >
-                <option value="" disabled>
-                    Secuencia
-                </option>
+                <option value="" disabled>Secuencia</option>
                 {pokerSequences.map((sequence, index) => (
-                    <option key={index} value={sequence}>
-                        {sequence}
-                    </option>
+                    <option key={index} value={sequence}>{sequence}</option>
                 ))}
             </select>
+            <div className="txtChangeMode">Elige un stake</div>
+            <select
+                id="handStake"
+                value={handStake}
+                onChange={handleStakeChange}
+                className="input"
+            >
+                <option value="" disabled>Stake</option>
+                {pokerStakes.map((stake, index) => (
+                    <option key={index} value={stake}>{stake}</option>
+                ))}
+            </select>
+            {mode === 'Estudio' ? (
+                <>
+                    <textarea
+                        id="description"
+                        value={description}
+                        onChange={handleDescriptionChange}
+                        placeholder="Escribe una descripción..."
+                        rows="4"
+                        className="input"
+                    />
+                    {membership === 'COACH' && (
+                        <div className="shareable-checkbox">
+                            <input
+                                type="checkbox"
+                                id="isShareable"
+                                checked={isShareable}
+                                onChange={handleShareableChange}
+                            />
+                            <label htmlFor="isShareable">¿Se puede compartir?</label>
+                        </div>
+                    )}
+                </>
+            ) : (
+                <button className="loadHandsButton" onClick={loadHands}>
+                    Cargar manos
+                </button>
+            )}
             <button className="logOutButton" onClick={signOut}>
                 <FontAwesomeIcon icon="door-open" /> Salir
             </button>
@@ -158,7 +262,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded }) {
                 {isUpgraded ? (
                     <>
                         <h2>¡Felicidades!</h2>
-                        <FontAwesomeIcon icon="gift" size="3x"/>
+                        <FontAwesomeIcon icon="gift" size="3x" />
                         <p>Has ganado una membresía PRO por 3 meses.</p>
                     </>
                 ) : (

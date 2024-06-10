@@ -16,12 +16,13 @@ position: fixed;
     width: calc(100% - 16px);
     padding: 8px;
     margin: 8px 0;
-    background-color: #1a1a1a;  /* Asegúrate de que coincida con el color de fondo de la barra lateral */
+    background-color: #32414A;  /* Asegúrate de que coincida con el color de fondo de la barra lateral */
     color: #fff;
     border: none;
     border-bottom: 2px solid #555;  /* Borde inferior visible */
-    border-radius: 0;
+    border-radius: 5px;
     transition: border-bottom-color 0.3s ease, box-shadow 0.3s ease;  /* Transiciones suaves */
+    resize: none;
 }
 
 .input:hover {
@@ -50,61 +51,6 @@ position: fixed;
     color: #ffffff;
 }
 
-/* Lista de sugerencias */
-.suggestions {
-    list-style-type: none;
-    padding: 10px;
-    margin: 0;
-    background-color: #2b2b2b;  /* Un fondo oscuro más elegante */
-    border: 1px solid #444;  /* Un borde más sutil y oscuro */
-    position: absolute;
-    width: calc(100% - 16px);  /* Ajuste para margen */
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);  /* Sombra más prominente y moderna */
-    border-radius: 4px;  /* Bordes redondeados para un look más moderno */
-    overflow: hidden;  /* Oculta cualquier contenido que se desborde */
-}
-
-/* Elementos individuales de sugerencia */
-.suggestionItem {
-    padding: 10px;
-    cursor: pointer;
-    color: #fff;  /* Texto claro para mejor legibilidad */
-    font-family: 'Roboto', sans-serif;  /* Consistencia en la tipografía */
-    transition: background-color 0.3s ease;  /* Transición más suave al cambiar el fondo */
-}
-
-.suggestionItem:hover, .suggestionItem:focus {
-    background-color: #3a3a3a;  /* Un cambio sutil al pasar el ratón o enfocar */
-}
-
-
-/* Contenedor de tags existentes */
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.tag {
-    background-color: #50C878;  /* Fondo más oscuro para los tags */
-    color: #fff;  /* Texto claro */
-    padding: 5px ;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-    height:25px;
-}
-
-.tag button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    color: #fff;  /* Icono claro */
-    margin-left: 5px;
-    text-align: right;
-}
 
 
 /* Transiciones para una experiencia de usuario más fluida */
@@ -195,6 +141,7 @@ input:checked + .slider:before {
     font-weight:bold;
     vertical-align: middle;
     border-bottom: 1px solid #f9f9f9;
+    color: #00ECB3;
 }
 
 .modalUpsell {

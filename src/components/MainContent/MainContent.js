@@ -2,7 +2,7 @@ import React from 'react';
 import StreetColumn from '../StreetColumn/StreetColumn';
 import './MainContent.css';
 
-function MainContent() {
+function MainContent({membership}) {
     const streets = ['Preflop', 'Flop', 'Turn', 'River'];
     return (
         <div className="MainContent">

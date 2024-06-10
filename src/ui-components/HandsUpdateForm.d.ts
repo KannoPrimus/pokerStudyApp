@@ -51,6 +51,9 @@ export declare type HandsUpdateFormInputValues = {
     riverCard?: string;
     villainPosition?: string;
     riverVillainRange?: string;
+    stake?: string;
+    share?: string;
+    description?: string;
 };
 export declare type HandsUpdateFormValidationValues = {
     playerId?: ValidationFunction<string>;
@@ -82,6 +85,9 @@ export declare type HandsUpdateFormValidationValues = {
     riverCard?: ValidationFunction<string>;
     villainPosition?: ValidationFunction<string>;
     riverVillainRange?: ValidationFunction<string>;
+    stake?: ValidationFunction<string>;
+    share?: ValidationFunction<string>;
+    description?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type HandsUpdateFormOverridesProps = {
@@ -115,6 +121,9 @@ export declare type HandsUpdateFormOverridesProps = {
     riverCard?: PrimitiveOverrideProps<TextFieldProps>;
     villainPosition?: PrimitiveOverrideProps<TextFieldProps>;
     riverVillainRange?: PrimitiveOverrideProps<TextFieldProps>;
+    stake?: PrimitiveOverrideProps<TextFieldProps>;
+    share?: PrimitiveOverrideProps<TextFieldProps>;
+    description?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type HandsUpdateFormProps = React.PropsWithChildren<{
     overrides?: HandsUpdateFormOverridesProps | undefined | null;

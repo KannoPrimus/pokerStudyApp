@@ -27,6 +27,7 @@ function App() {
         const [endDateMembership, setEndDateMembership] = useState('')
         const [loading, setLoading] = useState(true); // State for loading
         const [membership, setMembership] = useState('');
+        const [stake, setStake] = useState('');
 
 
 
@@ -155,8 +156,10 @@ function App() {
                             sequence={sequence}
                             setSequence={setSequence}
                             membership={membership}
+                            stake={stake}
+                            setStake={setStake}
                         />
-                        {mode === 'Estudio' ? <MainContent/> : <PokerTrainer sequence={sequence}/>}
+                        {mode === 'Estudio' ? <MainContent membership={membership}/> : <PokerTrainer sequence={sequence} stake={stake} membership={membership}/>}
 
                     </div>
 

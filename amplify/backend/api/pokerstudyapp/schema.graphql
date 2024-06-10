@@ -36,5 +36,8 @@ type Hands @model @auth(rules: [{allow: private}]) {
   riverCard: String
   villainPosition: String
   riverVillainRange: String
+  stake: String
+  share: String
+  description: String
 }
  

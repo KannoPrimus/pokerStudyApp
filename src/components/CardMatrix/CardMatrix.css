@@ -5,7 +5,7 @@
     margin: 5px;
     user-select: none; /* Aplica también al contenedor para asegurar */
     cursor: pointer;
-    background: #f9f9f9;
+    background: #32414A;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -16,7 +16,7 @@
 
 .cell {
     padding: 3px;
-    border: 1px solid #ddd;
+    border: 0.5px solid #ddd;
     text-align: center;
     width: 22px;
     height: 22px;
@@ -27,14 +27,15 @@
     font-weight: bold;
     user-select: none; /* Evita la selección de texto */
     cursor: pointer;
-    color:#333;
+    color:#f9f9f9;
+    background: #192831;
 }
 
 /* Agrega esto a tu archivo CSS global o directamente en el componente con etiquetas de estilo */
 /* Estilo para el botón con ícono */
 .button-clear-matrix {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: transparent;
+    color: #f9f9f9;
     border: none;
     padding: 0px;
     border-radius: 5px; /* Hace el botón redondo */
@@ -44,6 +45,9 @@
     height: 25px;
 }
 
-
+.button-clear-matrix:hover {
+    background-color: #00ECB3;
+    color: #333;
+}
 
 

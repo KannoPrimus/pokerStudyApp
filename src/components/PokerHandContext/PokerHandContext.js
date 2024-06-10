@@ -43,7 +43,10 @@ const initialPokerHandState = {
     flopCards_3: '',
     turnCard: '',
     riverCard: '',
-    villainPosition: '9'
+    villainPosition: '9',
+    stake: '',
+    description: '',
+    share: false
 };
 
 
@@ -68,10 +71,14 @@ export const PokerHandProvider = ({ children }) => {
         setPokerHand(initialPokerHandState);
     };
 
+    const resetPokerHandList = () => {
+        setPokerHandList([]);
+    };
+
     const createPokerHandDB = async () => {
 
 
-        if (!pokerHand.handTitle.trim()) {
+        if (!pokerHand.handTitle.trim() || !pokerHand.stake.trim()) {
 
             return { success: false, error: 'El titulo o descripción no puede estar en blanco' };
         }
@@ -112,7 +119,10 @@ export const PokerHandProvider = ({ children }) => {
                         flopCards_3: pokerHand.flopCards_3,
                         turnCard: pokerHand.turnCard,
                         riverCard: pokerHand.riverCard,
-                        villainPosition: pokerHand.villainPosition
+                        villainPosition: pokerHand.villainPosition,
+                        stake: pokerHand.stake,
+                        description: pokerHand.description,
+                        share: pokerHand.share
 
                     } }
             });
@@ -129,7 +139,7 @@ export const PokerHandProvider = ({ children }) => {
 
 
 
-        if (!pokerHand.handTitle.trim()) {
+        if (!pokerHand.handTitle.trim() || !pokerHand.stake.trim()) {
 
             return { success: false, error: 'El titulo o descripción no puede estar en blanco' };
         }
@@ -170,7 +180,10 @@ export const PokerHandProvider = ({ children }) => {
                         flopCards_3: pokerHand.flopCards_3,
                         turnCard: pokerHand.turnCard,
                         riverCard: pokerHand.riverCard,
-                        villainPosition: pokerHand.villainPosition
+                        villainPosition: pokerHand.villainPosition,
+                        stake: pokerHand.stake,
+                        description: pokerHand.description,
+                        share: pokerHand.share
                 } }
             });
             return { success: true, data: result };
@@ -180,20 +193,63 @@ export const PokerHandProvider = ({ children }) => {
         }
     };
 
-    const fetchPokerHands = async (playerId) => {
+    const fetchPokerHands = async (playerId=null, stake = null, handTitle = null) => {
         try {
+            const filter = {  };
+
+            if (playerId) {
+                filter.playerId = { eq: playerId };
+            }
+            if (stake) {
+                filter.stake = { eq: stake };
+            }
+            if (handTitle) {
+                filter.handTitle = { eq: handTitle };
+            }
+
             const result = await client.graphql({
                 query: listHandsQuery,
-                variables: { filter: { playerId: { eq: playerId } } }
+                variables: { filter }
             });
+
+
             setPokerHandList(result.data.listHands.items);
         } catch (error) {
             console.log(error);
         }
     };
 
+    const fetchPokerHandsTrainer = async ( stake = null, handTitle = null, share) => {
+        try {
+            const filter = {};
+
+            if (stake) {
+                filter.stake = { eq: stake };
+            }
+            if (handTitle) {
+                filter.handTitle = { eq: handTitle };
+            }
+
+
+            filter.share = { eq: share };
+
+
+            //console.log(filter);
+
+            const result = await client.graphql({
+                query: listHandsQuery,
+                variables: { filter }
+            });
+            //console.log(result);
+            setPokerHandList(result.data.listHands.items);
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
-        <PokerHandContext.Provider value={{ pokerHand,pokerHandList,createPokerHandDB, updatePokerHandDB, updatePokerHand, fetchPokerHands, setPokerHand,resetPokerHand }}>
+        <PokerHandContext.Provider value={{ pokerHand,pokerHandList,createPokerHandDB, updatePokerHandDB, updatePokerHand, fetchPokerHands,fetchPokerHandsTrainer, resetPokerHandList, setPokerHand,resetPokerHand }}>
             {children}
         </PokerHandContext.Provider>
     );
