@@ -270,8 +270,8 @@ export function Login() {
 
 
                             <Text fontSize="1.25rem">
-                                Nos esforzamos por ser la herramienta preferida por jugadores de poker de todos los niveles para anotar,
-                                revisar y analizar sus manos. Con una interfaz intuitiva y funciones eficientes, ayudamos a los jugadores
+                                Nos esforzamos por ser la herramienta preferida por jugadores de poker de todos los niveles. Facilitamos la labor de anotar,
+                                revisar y analizar sus manos con una interfaz intuitiva y funciones que hacen el proceso eficiente. Ayudamos a los jugadores
                                 a maximizar su potencial a través del estudio constante y la retroalimentación constructiva durante las sesiones
                                 de coaching o el análisis de videos de otros jugadores.
                             </Text>
