@@ -169,7 +169,7 @@ export function Login() {
                                 <Text fontSize="3rem" color="white" fontWeight="bold">Poker Crushers</Text>
                                 <Text fontSize="1.25rem">
                                     Es una plataforma simple pero poderosa
-                                    que facilita el aprendizaje y la mejora continua en el juego de poker. Creemos en la importancia de la educación
+                                    que facilita el aprendizaje y la mejora continua en el juego. Creemos en la importancia de la educación
                                     y la práctica inteligente para alcanzar la maestría en el poker.
 
                                 </Text>
