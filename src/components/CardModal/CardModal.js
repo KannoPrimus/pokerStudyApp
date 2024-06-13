@@ -1,12 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './CardModal.css'; // Asegúrate de que el archivo CSS está correctamente importado
 
-function CardModal({ isOpen, onSelectCard, cardSet }) {
+function CardModal({ isOpen, onSelectCard, cardSet, onClose }) {
     const [selectedCards, setSelectedCards] = useState([]);
+    const modalContentRef = useRef(null);
 
     useEffect(() => {
         setSelectedCards([]);
     }, [cardSet, isOpen]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (modalContentRef.current && !modalContentRef.current.contains(event.target)) {
+                onClose();
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen, onClose]);
 
     if (!isOpen) return null;
 
@@ -38,7 +57,7 @@ function CardModal({ isOpen, onSelectCard, cardSet }) {
 
     return (
         <div className="modal-overlay">
-            <div className="modal-content">
+            <div className="modal-content" ref={modalContentRef}>
                 {suits.map(suit => (
                     <div key={suit} style={{ display: 'flex', flexDirection: 'row' }}>
                         {ranks.map(rank => {
