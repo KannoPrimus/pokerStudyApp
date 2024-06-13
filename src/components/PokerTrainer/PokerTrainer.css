@@ -47,7 +47,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    background-image: url('../../assets/logoPSA_2.png');
+    background-size: 100px 100px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* PokerTable.css - Añade estos estilos al archivo existente */

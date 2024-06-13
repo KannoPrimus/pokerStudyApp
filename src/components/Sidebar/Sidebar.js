@@ -191,18 +191,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
                 </>
             )}
-            <div className="txtChangeMode">Elige un spot</div>
-            <select
-                id="handTitle"
-                value={handTitle}
-                onChange={handleTitleChange}
-                className="input"
-            >
-                <option value="" disabled>Secuencia</option>
-                {pokerSequences.map((sequence, index) => (
-                    <option key={index} value={sequence}>{sequence}</option>
-                ))}
-            </select>
             <div className="txtChangeMode">Elige un stake</div>
             <select
                 id="handStake"
@@ -215,6 +203,19 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     <option key={index} value={stake}>{stake}</option>
                 ))}
             </select>
+            <div className="txtChangeMode">Elige un spot</div>
+            <select
+                id="handTitle"
+                value={handTitle}
+                onChange={handleTitleChange}
+                className="input"
+            >
+                <option value="" disabled>Secuencia</option>
+                {pokerSequences.map((sequence, index) => (
+                    <option key={index} value={sequence}>{sequence}</option>
+                ))}
+            </select>
+
             {mode === 'Estudio' ? (
                 <>
                     <textarea
