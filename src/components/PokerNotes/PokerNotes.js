@@ -98,6 +98,7 @@ function PokerNotes({ id }) {
         const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
         const endpoint = 'https://api.openai.com/v1/chat/completions'; // Updated endpoint
         const handData = generateHandData();
+        console.log(process.env.REACT_APP_OPENAI_API_KEY);
 
         const filter = {};
         filter.handTitle = { eq: handData.hand.title };
