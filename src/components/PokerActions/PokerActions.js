@@ -60,7 +60,7 @@ function PokerActions({ id }) {
 
                 try {
                     setActions(array);
-
+console.log(array);
                 } catch {
                     console.log("empty object");
 
@@ -116,6 +116,9 @@ function PokerActions({ id }) {
     };
 
     const handleSelectAction = (player, action, actionIndex) => {
+
+
+
         let updatedActions = actions.map((act, index) => {
             if (index === actionIndex) {
                 return { ...act, action, player };
@@ -123,12 +126,16 @@ function PokerActions({ id }) {
             return act;
         });
 
+
+
         const previousAction = actionIndex > 0 ? updatedActions[actionIndex - 1].action : '';
 
         // Check if action ends the round
         if (["CALL", "FOLD"].includes(action)) {
+
             updatedActions = updatedActions.slice(0, actionIndex + 1);
         } else if (!(previousAction === 'CHECK' && action === 'CHECK') && actionIndex === actions.length - 1 && !["CALL", "FOLD"].includes(action)) {
+
             const nextPlayer = inferPlayer(player);
             const newAction = { player: nextPlayer, action: 'NONE', order: updatedActions.length + 1, street: id, isCorrect: true, isOptional: false };
             updatedActions = [...updatedActions, newAction];
@@ -196,9 +203,7 @@ function PokerActions({ id }) {
 
     useEffect(() => {
 
-
         if (actions.length === 0 ) {
-            console.log('debug1');
             const inferredFirstPlayer = inferFirstPlayer();
             setFirstPlayer(inferredFirstPlayer);
             handleAddAction(inferredFirstPlayer, 'NONE');
@@ -207,16 +212,13 @@ function PokerActions({ id }) {
             const nextStreet = getNextStreet(id);
             if (nextStreet) {
 
-                console.log('debug2');
-
                 const inferredFirstPlayer = nextStreet === "preflop" ? inferFirstPlayer() : inferPostflopFirstPlayer();
                 updatePokerHand(`${nextStreet}Action`, [{ player: inferredFirstPlayer, action: 'NONE', order: 1, street: nextStreet, isCorrect: true, isOptional: false }]);
             }
         } else {
 
-
-            console.log('debug3');
-            console.log(actions);
+            const inferredFirstPlayer = inferFirstPlayer();
+            setFirstPlayer(inferredFirstPlayer);
             // This useEffect ensures that actions are updated when player positions change
             const updatedActions = actions.map((action, index) => {
                 const player = index === 0 ? inferFirstPlayer() : inferPlayer(actions[index - 1]?.player);
@@ -226,7 +228,7 @@ function PokerActions({ id }) {
         }
     }, [pokerHand.heroPosition, pokerHand.villainPosition]);
 
-  /* useEffect(() => {
+  useEffect(() => {
 
         if (pokerHand.heroPosition===9 || pokerHand.villainPosition===9) { // Only reset actions if it's not the initial load
             // Reset actions when player positions change
@@ -241,7 +243,7 @@ function PokerActions({ id }) {
 
             resetActions();
         }
-    }, [pokerHand.heroPosition, pokerHand.villainPosition]);*/
+    }, [pokerHand.heroPosition, pokerHand.villainPosition]);
 
     const getNextStreet = (currentStreet) => {
         const streets = ["preflop", "flop", "turn", "river"];
