@@ -15,9 +15,9 @@ button {
     font-size: 12px;
 }
 
-button:hover {
+/*button:hover {
     background-color: #0056b3;
-}
+}*/
 
 .poker-actions-container {
     display: flex;

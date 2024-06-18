@@ -56,7 +56,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     const [showUpsellModal, setShowUpsellModal] = useState(false);
     const [isUpgraded, setIsUpgraded] = useState(false);
     const [handSource, setHandSource] = useState('playerHands');
-    const { pokerHand, updatePokerHand, resetPokerHand, fetchPokerHandsTrainer,fetchPokerHands } = useContext(PokerHandContext);
+    const { pokerHand, updatePokerHand, resetPokerHand, fetchPokerHandsTrainer, fetchPokerHands } = useContext(PokerHandContext);
     const { user, signOut } = useAuthenticator();
 
     useEffect(() => {
@@ -64,7 +64,9 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             setHandTitle(pokerHand.handTitle);
             setHandStake(pokerHand.stake);
             setDescription(pokerHand.description);
-            setIsShareable(pokerHand.share);
+            setIsShareable(pokerHand.share.toLowerCase?.() === 'true');
+
+
         }
     }, [pokerHand.id]);
 
@@ -81,7 +83,8 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     }, [description]);
 
     useEffect(() => {
-        updatePokerHand('share', isShareable);
+       updatePokerHand('share', isShareable);
+
     }, [isShareable]);
 
     useEffect(() => {
@@ -105,18 +108,21 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     const handleShareableChange = (e) => {
         setIsShareable(e.target.checked);
+        updatePokerHand('share', isShareable);
     };
 
     const handleHandSourceChange = (e) => {
         setHandSource(e.target.value);
     };
 
-    const toggleMode = () => {
-        if (membership === 'BASIC') {
-            setShowUpsellModal(true);
-        } else {
-            setMode((prevMode) => (prevMode === 'Estudio' ? 'Trainer' : 'Estudio'));
-            //resetPokerHand();
+    const changeMode = (newMode) => {
+        if (newMode !== mode) {
+            if ((newMode === 'Trainer' || newMode === 'Estadisticas')&& membership === 'BASIC') {
+                setShowUpsellModal(true);
+            } else {
+                setMode(newMode);
+                resetPokerHand();
+            }
         }
     };
 
@@ -149,34 +155,55 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     const loadHands = () => {
         const share = handSource === 'sharedHands';
-        if(handSource === 'sharedHands')
+        if (handSource === 'sharedHands')
             fetchPokerHandsTrainer(handStake, handTitle, share);
         else
-            fetchPokerHands(user.username,handStake, handTitle, share);
+            fetchPokerHands(user.username, handStake, handTitle, share);
     };
 
     return (
         <div className="sidebar">
             <div className="mode-switch">
                 <h2 className="txtMembershipPlan">Plan: {membership} </h2>
-                <span className="txtChangeMode">Cambiar modo </span>
-                <label className="switch">
-                    <input
-                        type="checkbox"
-                        checked={mode === 'Trainer'}
-                        onChange={toggleMode}
-                    />
-                    <span className="slider round"></span>
-                </label>
+                <div className="button-group">
+                    <div className="tooltip">
+                        <button
+                            className={`mode-button-study ${mode === 'Estudio' ? 'active' : ''}`}
+                            onClick={() => changeMode('Estudio')}
+                        >
+                            <FontAwesomeIcon icon="graduation-cap" size="1x" />
+                        </button>
+                        <span className="tooltip-text">Estudio</span>
+                    </div>
+                    <div className="tooltip">
+                        <button
+                            className={`mode-button-trainer ${mode === 'Trainer' ? 'active' : ''}`}
+                            onClick={() => changeMode('Trainer')}
+                        >
+                            <FontAwesomeIcon icon="dumbbell" size="1x" />
+                        </button>
+                        <span className="tooltip-text">Trainer</span>
+                    </div>
+                    <div className="tooltip">
+                        <button
+                            className={`mode-button-stats ${mode === 'Estadisticas' ? 'active' : ''}`}
+                            onClick={() => changeMode('Estadisticas')}
+                        >
+                            <FontAwesomeIcon icon="chart-simple" size="1x" />
+                        </button>
+                        <span className="tooltip-text">Estadísticas</span>
+                    </div>
+                </div>
             </div>
+
+
             <div className="mode-label">
                 <span>Modo {mode}</span>
             </div>
             {mode === 'Estudio' ? (
-                <></>
-            ) : (
+                <div className="txtMembershiPlan">Descripción de la mano:</div>
+            ) : mode === 'Trainer' ? (
                 <>
-
                     <div className="txtChangeMode">Elige una fuente de manos</div>
                     <select
                         id="handSource"
@@ -188,9 +215,11 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                             <option key={index} value={source.value}>{source.label}</option>
                         ))}
                     </select>
-
                 </>
+            ) : (
+                <></>
             )}
+
             <div className="txtChangeMode">Elige un stake</div>
             <select
                 id="handStake"
@@ -215,7 +244,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     <option key={index} value={sequence}>{sequence}</option>
                 ))}
             </select>
-
             {mode === 'Estudio' ? (
                 <>
                     <textarea
@@ -238,11 +266,11 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                         </div>
                     )}
                 </>
-            ) : (
+            ) : mode === 'Trainer' ? (
                 <button className="loadHandsButton" onClick={loadHands}>
                     Cargar manos
                 </button>
-            )}
+            ) : null}
             <button className="logOutButton" onClick={signOut}>
                 <FontAwesomeIcon icon="door-open" /> Salir
             </button>
@@ -268,9 +296,9 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded }) {
                     </>
                 ) : (
                     <>
-                        <h2>Mejora a PRO</h2>
+                        <h2>Modo PRO</h2>
                         <p>Obtén acceso a funciones avanzadas por solo</p> <h3>USD 5 / mes</h3>
-                        <button className="upgradeButton" onClick={onUpgrade}>Mejorar ahora</button>
+                        <button className="upgradeButton" onClick={onUpgrade}>Comprar</button>
                     </>
                 )}
             </div>

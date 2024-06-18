@@ -75,7 +75,7 @@ function CardModal({ isOpen, onSelectCard, cardSet, onClose }) {
                                     style={{
                                         margin: '5px',
                                         backgroundColor: suitColors[suit],
-                                        border: isSelected ? '2px solid black' : 'none'
+                                        border: isSelected ? '2px solid yellow' : '2px solid white'
                                     }}
                                 >
                                     {card}

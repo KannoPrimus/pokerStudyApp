@@ -59,7 +59,7 @@ position: fixed;
 }
 
 .logOutButton{
-    margin-top:100%;
+    margin-top:10px;
     border: none;
     border-radius: 25px;
     background-color: #039370;
@@ -195,4 +195,93 @@ input:checked + .slider:before {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.mode-button-study {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+}
+
+.mode-button-study.active {
+    background-color: #00ECB3;
+}
+
+.mode-button-trainer {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+}
+
+.mode-button-trainer.active {
+    background-color: #00ECB3;
+}
+
+.mode-button-stats {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+}
+
+.mode-button-stats.active {
+    background-color: #00ECB3;
+}
+
+.mode-label {
+    margin-bottom: 20px;
+}
+
+.tooltip {
+z-index: 2000;
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    font-size: small;
+    border-radius: 6px;
+    padding: 3px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%; /* Position above the button */
+    left: 90%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }

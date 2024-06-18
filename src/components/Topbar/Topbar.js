@@ -28,6 +28,8 @@ function TopBar({ mode }) {
     const [isError, setIsError] = useState(false);
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [showLoader, setShowLoader] = useState(false);
+    const [confirmResetVisible, setConfirmResetVisible] = useState(false); // Estado para el modal de confirmación
+
     const dropdownRef = useRef(null);
 
     const playerPositions6Max = ['SB', 'BB','UTG', 'MP', 'CO', 'BU'];
@@ -44,7 +46,10 @@ function TopBar({ mode }) {
 
     useEffect(() => {
         if (searchTerm) {
-            setFilteredHands(pokerHandList.filter(hand => hand.handTitle.toLowerCase().includes(searchTerm.toLowerCase())));
+            setFilteredHands(pokerHandList.filter(hand =>
+                hand.handTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                hand.description.toLowerCase().includes(searchTerm.toLowerCase())
+            ));
             setDropdownVisible(true);
         } else {
             setFilteredHands([]);
@@ -59,7 +64,6 @@ function TopBar({ mode }) {
     };
 
     const handleClickSearchBox = () => {
-
         setFilteredHands(pokerHandList);
         setDropdownVisible(true);
     };
@@ -96,7 +100,6 @@ function TopBar({ mode }) {
     const handleUpdateHand = async () => {
         updatePokerHand('playerId', user.username);
         const response = await updatePokerHandDB();
-        //console.log(response.success);
         if (!response.success) {
             setModalMessage(response.error);
             setIsError(true);
@@ -117,9 +120,14 @@ function TopBar({ mode }) {
     };
 
     const handleResetHand = () => {
+        setConfirmResetVisible(true); // Mostrar el modal de confirmación
+    };
+
+    const handleConfirmReset = async (saveHand) => {
+        if (saveHand) {
+            await handleUpdateHand(); // Guardar la mano antes de recargar
+        }
         window.location.reload();
-        setShowLoader(true);
-        setTimeout(() => {}, 5000);
     };
 
     const getPositionText = (index, tableType) => {
@@ -161,7 +169,7 @@ function TopBar({ mode }) {
                 fontWeight="bold"
                 color="white"
                 style={{
-                    textShadow: '0px 0px 5px rgba(0, 0, 0, 1)' // Sombra inset
+                    textShadow: '0px 0px 5px rgba(0, 0, 0, 1)', marginTop:'15px' // Sombra inset
                 }}
             >
                 Poker Crushers
@@ -223,11 +231,12 @@ function TopBar({ mode }) {
                             ))}
                         </ul>
                     )}
-                    {pokerHand?.id ? (
+                    {pokerHand?.id && pokerHand.playerId === user.username && (
                         <button className="nav-button" onClick={handleUpdateHand}>
                             <FontAwesomeIcon icon="floppy-disk" /> Guardar Mano
                         </button>
-                    ) : (
+                    )}
+                    {!pokerHand?.id && (
                         <button className="nav-button" onClick={handleCreateHand}>
                             <FontAwesomeIcon icon="floppy-disk" /> Guardar Mano
                         </button>
@@ -235,8 +244,20 @@ function TopBar({ mode }) {
                     {modalMessage && <div className={`modal ${isError ? 'error' : 'success'}`}>{modalMessage}</div>}
                 </>
             )}
+
+            {confirmResetVisible && (
+                <>
+                    <div className="modal-overlay"></div> {/* Superposición detrás del modal */}
+                    <div className="modal-confirm">
+                        <p>¿Desea guardar la mano antes de crear una nueva?</p>
+                        <button onClick={() => handleConfirmReset(true)}>Sí</button>
+                        <button onClick={() => handleConfirmReset(false)}>No</button>
+                    </div>
+                </>
+            )}
         </div>
     );
+
 }
 
 export default TopBar;

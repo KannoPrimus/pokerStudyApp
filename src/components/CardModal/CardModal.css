@@ -16,7 +16,7 @@
 
 
 .modal-content {
-    background: white;
+    background: #000F18;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -32,7 +32,7 @@
     padding: 4px 8px; /* Padding para mantener el contenido centrado */
     margin: 5px;
     background-color: #f8f8f8; /* Color de fondo ligero para el botón */
-    border: 1px solid #ccc; /* Bordes sutiles */
+    border: 5px solid #fff; /* Bordes sutiles */
     border-radius: 4px; /* Esquinas ligeramente redondeadas */
     cursor: pointer; /* Cursor en forma de puntero para indicar que es clickeable */
     display: flex;
@@ -44,4 +44,16 @@
 .button-card:hover {
     background-color: #e0e0e0; /* Cambio de color al pasar el mouse */
     transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+/* CardModal.css */
+.button-card:active {
+    border: 2px solid yellow;
+    border-color: yellow; /* Cambia el color del borde a amarillo al hacer clic */
+}
+
+/* Estilo para el botón seleccionado */
+.button-card.selected {
+    border: 2px solid yellow;
+    border-color: yellow; /* Mantiene el borde amarillo para el botón seleccionado */
 }

@@ -73,7 +73,7 @@ function PokerTrainer({sequence , stake, membership}) {
                     setShowModal(false);
                 }, 3000);
             }
-    }
+        }
 
 
     }, [pokerHandList]);
@@ -224,7 +224,7 @@ function PokerTrainer({sequence , stake, membership}) {
             return [];
         }
 
-        console.log(actions);
+
         const currentPlayer = actions[currentIndex].player;
         const currentButtons = [];
 
@@ -267,7 +267,7 @@ function PokerTrainer({sequence , stake, membership}) {
             }
         }
 
-        console.log(currentButtons);
+
         return currentButtons.sort(() => Math.random() - 0.5);
     };
 
@@ -313,11 +313,11 @@ function PokerTrainer({sequence , stake, membership}) {
         } else {
 
             if (streetName === 'preflop') {
-                    setStreetName('flop');
+                setStreetName('flop');
             } else if (streetName === 'flop') {
-                    setStreetName('turn');
+                setStreetName('turn');
             } else if (streetName === 'turn') {
-                    setStreetName('river');
+                setStreetName('river');
             } else if (streetName === 'river') {
                 setFinishHand('true');
             }
@@ -348,105 +348,109 @@ function PokerTrainer({sequence , stake, membership}) {
 
     return (
         <div className="poker-trainer-container-wrapper">
-        <div className="poker-trainer-container">
-            <div className="trainer-controls-1">
-                <button onClick={handlePreviousHand} disabled={currentHandIndex === 0}>Mano Anterior</button>
-                <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length-1}>Mano Siguiente</button>
-            </div>
-            {showModal && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <p>No se encontraron manos para entrenar en la secuencia {sequence}.</p>
-                    </div>
+            <div className="poker-trainer-container">
+                <div className="trainer-controls-1">
+                    <button onClick={handlePreviousHand} disabled={currentHandIndex === 0}>Mano Anterior</button>
+                    <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length-1}>Mano Siguiente</button>
                 </div>
-            )}
-            <div className="trainer-poker-table">
-                <div className="trainer-poker-table-inner">
-                {currentPositions.map((position, index) => (
-                    <div
-                        key={index}
-                        className={`trainer-player-seat trainer-player-seat-${index}`}
-                        style={getSeatStyle(index)}
-                    >
-                        <div className="trainer-seat-text">{position}</div>
-                        {index == mySeat && currentHand ? (
-                            <div className="trainer-board-cards-hero">
-                                <CardSelector card="myHand_1" trainer="true"/>
-                                <CardSelector card="myHand_2"  trainer="true"/>
-                            </div>
-                        ) : index == rivalSeat && currentHand ? (
-                            <div className="trainer-board-cards-hero">
-                                <CardSelector card="trainerCard"  trainer="true"/>
-                                <CardSelector card="trainerCard"  trainer="true"/>
-                            </div>
-                        ) : (
-                            <div className="trainer-board-cards-hidden">
-                                {
-                                    /* Esconder las cartas de los demás jugadores */}
-                            </div>
-                        )}
-                    </div>
-                ))}
-                <div className="trainer-table-center">
-                    <div className="board-cards section ">
-                        {/* Renderizar CardSelectors basado en el streetName */}
-                        {(streetName === 'flop' || streetName === 'turn' || streetName === 'river') && (
-                            <>
-                                <CardSelector card="flopCards_1" trainer="true"/>
-                                <CardSelector card="flopCards_2" trainer="true"/>
-                                <CardSelector card="flopCards_3" trainer="true"/>
-                            </>
-                        )}
-                        {(streetName === 'turn' || streetName === 'river') && <CardSelector card="turnCard" trainer="true"/>}
-                        {streetName === 'river' && <CardSelector card="riverCard" trainer="true"/>}
-                    </div>
-                    <div className="chips-container">
+                {showModal && (
+                    <div className="modal">
 
-                        {chips.map((chip, index) => (
-                            <div key={index} className="chip">
+                            <p>No se encontraron manos para entrenar en la secuencia {sequence} para el nivel {stake}.</p>
+
+                    </div>
+                )}
+                <div className="trainer-poker-table">
+                    <div className="trainer-poker-table-inner">
+                        {currentPositions.map((position, index) => (
+                            <div
+                                key={index}
+                                className={`trainer-player-seat trainer-player-seat-${index}`}
+                                style={getSeatStyle(index)}
+                            >
+                                <div className="trainer-seat-text">{position}</div>
+                                {index == mySeat && currentHand ? (
+                                    <div className="trainer-board-cards-hero">
+                                        <CardSelector card="myHand_1" trainer="true"/>
+                                        <CardSelector card="myHand_2"  trainer="true"/>
+                                    </div>
+                                ) : index == rivalSeat && currentHand ? (
+                                    <div className="trainer-board-cards-hero">
+                                        <CardSelector card="trainerCard"  trainer="true"/>
+                                        <CardSelector card="trainerCard"  trainer="true"/>
+                                    </div>
+                                ) : (
+                                    <div className="trainer-board-cards-hidden">
+                                        {
+                                            /* Esconder las cartas de los demás jugadores */}
+                                    </div>
+
+                                )}
+                                {position === 'BU' && (
+                                    <button className="dealer-button">D</button>
+                                )}
                             </div>
                         ))}
+                        <div className="trainer-table-center">
+                            <div className="board-cards section ">
+                                {/* Renderizar CardSelectors basado en el streetName */}
+                                {(streetName === 'flop' || streetName === 'turn' || streetName === 'river') && (
+                                    <>
+                                        <CardSelector card="flopCards_1" trainer="true"/>
+                                        <CardSelector card="flopCards_2" trainer="true"/>
+                                        <CardSelector card="flopCards_3" trainer="true"/>
+                                    </>
+                                )}
+                                {(streetName === 'turn' || streetName === 'river') && <CardSelector card="turnCard" trainer="true"/>}
+                                {streetName === 'river' && <CardSelector card="riverCard" trainer="true"/>}
+                            </div>
+                            <div className="chips-container">
 
-                    </div>
-                    <div className="trainer-legend">
-                        <div className="trainer-legend-item">
-                            <span className="trainer-legend-color" style={{ backgroundColor: '#4CAF50' }}></span>
-                            <span>Hero</span>
+                                {chips.map((chip, index) => (
+                                    <div key={index} className="chip">
+                                    </div>
+                                ))}
+
+                            </div>
+                            <div className="trainer-legend">
+                                <div className="trainer-legend-item">
+                                    <span className="trainer-legend-color" style={{ backgroundColor: '#4CAF50' }}></span>
+                                    <span>Hero</span>
+                                </div>
+                                <div className="trainer-legend-item">
+                                    <span className="trainer-legend-color" style={{ backgroundColor: '#FF5722' }}></span>
+                                    <span>Villain</span>
+                                </div>
+                            </div>
+
+
                         </div>
-                        <div className="trainer-legend-item">
-                            <span className="trainer-legend-color" style={{ backgroundColor: '#FF5722' }}></span>
-                            <span>Villain</span>
-                        </div>
                     </div>
-
-
                 </div>
-            </div>
-            </div>
-            <div className="trainer-controls-2">
-                {(currentAction && finishHand === 'false' && currentPlayer === 'Hero') && (
-                    <p className="heroAction">Qué haces?</p>
-                )}
-                {(finishHand === 'false' && currentAction) && (
-                    currentButtons.map((action, index) => (
-                        currentPlayer === 'Hero' ? (
-                            <button key={index} onClick={() => handleActionClick(action)}>
-                                {action.action.replace(/_/g, ' ')}
-                            </button>
-                        ) : (
-                            <React.Fragment key={index}>
-                                <p className="villainAction">Villano hizo {action.action.replace(/_/g, ' ')}</p>
-                                <button onClick={() => handleActionClick(action)}>
-                                    Ok
+                <div className="trainer-controls-2">
+                    {(currentAction && finishHand === 'false' && currentPlayer === 'Hero') && (
+                        <p className="heroAction">Qué haces?</p>
+                    )}
+                    {(finishHand === 'false' && currentAction) && (
+                        currentButtons.map((action, index) => (
+                            currentPlayer === 'Hero' ? (
+                                <button key={index} onClick={() => handleActionClick(action)}>
+                                    {action.action.replace(/_/g, ' ')}
                                 </button>
-                            </React.Fragment>
-                        )
-                    ))
-                )}
+                            ) : (
+                                <React.Fragment key={index}>
+                                    <p className="villainAction">Villano hizo {action.action.replace(/_/g, ' ')}</p>
+                                    <button onClick={() => handleActionClick(action)}>
+                                        Ok
+                                    </button>
+                                </React.Fragment>
+                            )
+                        ))
+                    )}
+                </div>
+
+
             </div>
-
-
-        </div>
             <div className="trainer-responses">
                 <h3>Respuestas</h3>
                 {Object.keys(responses).map(street => (
@@ -474,4 +478,3 @@ function PokerTrainer({sequence , stake, membership}) {
 }
 
 export default PokerTrainer;
-
