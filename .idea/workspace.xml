@@ -2,85 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.init.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.auth.1.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.auth.1.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.init.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.getMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.getMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.getMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.getMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.listMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.listMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.listMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Query.listMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/stacks/Members.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.init.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.createMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.auth.1.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.deleteMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.auth.1.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.init.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Mutation.updateMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.getMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.getMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.getMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.getMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.listMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.listMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.listMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Query.listMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onCreateMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onDeleteMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.auth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.postAuth.1.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.req.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/resolvers/Subscription.onUpdateMembers.res.vtl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/stacks/Members.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui-components/MembersCreateForm.d.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui-components/MembersCreateForm.jsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui-components/MembersUpdateForm.d.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui-components/MembersUpdateForm.jsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.env" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" afterPath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,11 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PokerActions.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PokerActions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+            <state relative-caret-position="-17">
+              <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="81" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -104,8 +41,8 @@
       <file leaf-file-name="PokerNotes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="49" lean-forward="false" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
                 <element signature="e#328#388#0" expanded="true" />
@@ -118,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="185" column="26" lean-forward="true" selection-start-line="184" selection-start-column="24" selection-end-line="185" selection-end-column="26" />
+              <caret line="185" column="26" lean-forward="false" selection-start-line="184" selection-start-column="24" selection-end-line="185" selection-end-column="26" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -130,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+              <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -151,8 +88,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -167,8 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/About/About.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/Login/SignInHeader.js" />
         <option value="$PROJECT_DIR$/src/components/Login/SignInFooter.js" />
         <option value="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/schema.graphql" />
@@ -214,8 +149,12 @@
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
         <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css" />
-        <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config-overrides.js" />
+        <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -258,17 +197,6 @@
             <path>
               <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -402,7 +330,7 @@
       <workItem from="1716843524125" duration="159000" />
       <workItem from="1716898132034" duration="119051000" />
       <workItem from="1717513394495" duration="38255000" />
-      <workItem from="1717677396328" duration="134400000" />
+      <workItem from="1717677396328" duration="136614000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1715828076834</created>
@@ -691,11 +619,18 @@
       <option name="project" value="LOCAL" />
       <updated>1718714813904</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary=" Al apretar NUevaMano preguntar por guardar primero&#10; Checkbox de compartir mano no esta guardando&#10; Agregar Chat GPT para sugerencias de notas&#10; Restringir Edicion para manos compartidas&#10; Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10; Ajustar color de fondo de Range matrix&#10; Agregar a buscador la descripcion de la mano&#10; Otros Bugs">
+      <created>1718715134146</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1718715134146</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513049000" />
+    <option name="totallyTimeSpent" value="515263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -705,7 +640,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37772927" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37772927" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -713,7 +648,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15351813" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15351813" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -753,7 +688,8 @@
     <MESSAGE value="Nuevo modelo de gestion de acciones:&#10;- correccion tamaño de fuente de las cartas para que no se salgan del marco de la carta&#10;- Mejora en la manera de seleccion de cartas del modo estudio, multi cartas apra Hole cards y FLop Cards" />
     <MESSAGE value="- Salir del selector de cartas con un click fuera del modal" />
     <MESSAGE value="  Al apretar “NUevaMano” preguntar por guardar primero&#10;  Checkbox de compartir mano no esta guardando&#10;  Agregar Chat GPT para sugerencias de notas&#10;  Restringir Edicion para manos compartidas&#10;  Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10;  Ajustar color de fondo de Range matrix&#10;  Agregar a buscador la descripcion de la mano&#10;  Otros Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="  Al apretar “NUevaMano” preguntar por guardar primero&#10;  Checkbox de compartir mano no esta guardando&#10;  Agregar Chat GPT para sugerencias de notas&#10;  Restringir Edicion para manos compartidas&#10;  Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10;  Ajustar color de fondo de Range matrix&#10;  Agregar a buscador la descripcion de la mano&#10;  Otros Bugs" />
+    <MESSAGE value=" Al apretar NUevaMano preguntar por guardar primero&#10; Checkbox de compartir mano no esta guardando&#10; Agregar Chat GPT para sugerencias de notas&#10; Restringir Edicion para manos compartidas&#10; Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10; Ajustar color de fondo de Range matrix&#10; Agregar a buscador la descripcion de la mano&#10; Otros Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Al apretar NUevaMano preguntar por guardar primero&#10; Checkbox de compartir mano no esta guardando&#10; Agregar Chat GPT para sugerencias de notas&#10; Restringir Edicion para manos compartidas&#10; Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10; Ajustar color de fondo de Range matrix&#10; Agregar a buscador la descripcion de la mano&#10; Otros Bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -768,34 +704,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Login/SignInFooter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/Footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Footer/EmailModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Footer/Modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -953,14 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1143,7 +1043,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+          <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1159,17 +1059,57 @@
     <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="185" column="26" lean-forward="true" selection-start-line="184" selection-start-column="24" selection-end-line="185" selection-end-column="26" />
+          <caret line="185" column="26" lean-forward="false" selection-start-line="184" selection-start-column="24" selection-end-line="185" selection-end-column="26" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-overrides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="49" lean-forward="false" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
           <folding>
             <element signature="e#0#71#0" expanded="true" />
             <element signature="e#328#388#0" expanded="true" />
@@ -1177,10 +1117,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="81" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="81" />
           <folding />
         </state>
       </provider>

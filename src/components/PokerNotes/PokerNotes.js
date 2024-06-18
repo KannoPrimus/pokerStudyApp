@@ -7,6 +7,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import {listHands as listHandsQuery} from "../../graphql/queries";
 import { generateClient } from "aws-amplify/api";
+
 library.add(fas);
 
 const playerPositions6Max = ['SB', 'BB','UTG', 'MP', 'CO', 'BU'];
@@ -94,7 +95,7 @@ function PokerNotes({ id }) {
 
     const fetchOpenAIResponse = async () => {
         setLoading(true);
-        const API_KEY = 'sk-proj-CbvFLec6ejeEoaaJ2iwkT3BlbkFJhkAg1WMPU3MvCK7JzNJU';
+        const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
         const endpoint = 'https://api.openai.com/v1/chat/completions'; // Updated endpoint
         const handData = generateHandData();
 
