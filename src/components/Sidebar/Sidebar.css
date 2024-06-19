@@ -23,6 +23,8 @@ position: fixed;
     border-radius: 5px;
     transition: border-bottom-color 0.3s ease, box-shadow 0.3s ease;  /* Transiciones suaves */
     resize: none;
+    font-size: small;
+
 }
 
 .input:hover {

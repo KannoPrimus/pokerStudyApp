@@ -4,6 +4,8 @@
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" afterPath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" afterPath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +16,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PokerActions.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PokerActions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="119" column="7" lean-forward="false" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="7" />
+            <state relative-caret-position="26">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PokerNotes.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="212" column="55" lean-forward="false" selection-start-line="212" selection-start-column="55" selection-end-line="212" selection-end-column="55" />
+              <folding>
+                <marker date="1718765967536" expanded="true" signature="7764:7957" ph="..." />
+                <marker date="1718765967536" expanded="true" signature="8200:8503" ph="..." />
+                <marker date="1718765967536" expanded="true" signature="8299:8407" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sidebar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,14 +114,14 @@
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.css" />
         <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
-        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
         <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config-overrides.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
+        <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
       </list>
     </option>
   </component>
@@ -143,6 +169,33 @@
               <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="PokerActions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="PokerNotes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -593,11 +646,18 @@
       <option name="project" value="LOCAL" />
       <updated>1718721417820</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Orden de jugadores en preflop, se cambia al seleccionar la accion">
+      <created>1718739572543</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1718739572543</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521246000" />
+    <option name="totallyTimeSpent" value="530037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -609,9 +669,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17358078" sideWeight="0.5021322" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17358078" sideWeight="0.5021322" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17358078" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17358078" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -680,7 +740,8 @@
     <MESSAGE value="- Salir del selector de cartas con un click fuera del modal" />
     <MESSAGE value="  Al apretar “NUevaMano” preguntar por guardar primero&#10;  Checkbox de compartir mano no esta guardando&#10;  Agregar Chat GPT para sugerencias de notas&#10;  Restringir Edicion para manos compartidas&#10;  Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10;  Ajustar color de fondo de Range matrix&#10;  Agregar a buscador la descripcion de la mano&#10;  Otros Bugs" />
     <MESSAGE value=" Al apretar NUevaMano preguntar por guardar primero&#10; Checkbox de compartir mano no esta guardando&#10; Agregar Chat GPT para sugerencias de notas&#10; Restringir Edicion para manos compartidas&#10; Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10; Ajustar color de fondo de Range matrix&#10; Agregar a buscador la descripcion de la mano&#10; Otros Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Al apretar NUevaMano preguntar por guardar primero&#10; Checkbox de compartir mano no esta guardando&#10; Agregar Chat GPT para sugerencias de notas&#10; Restringir Edicion para manos compartidas&#10; Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10; Ajustar color de fondo de Range matrix&#10; Agregar a buscador la descripcion de la mano&#10; Otros Bugs" />
+    <MESSAGE value="Orden de jugadores en preflop, se cambia al seleccionar la accion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Orden de jugadores en preflop, se cambia al seleccionar la accion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -989,14 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="286" column="0" lean-forward="false" selection-start-line="285" selection-start-column="14" selection-end-line="286" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -1029,25 +1082,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config-overrides.js" />
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="81" lean-forward="true" selection-start-line="0" selection-start-column="81" selection-end-line="0" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="123" column="14" lean-forward="true" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1062,11 +1100,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="78" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="119" column="7" lean-forward="false" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="7" />
+        <state relative-caret-position="26">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="212" column="55" lean-forward="false" selection-start-line="212" selection-start-column="55" selection-end-line="212" selection-end-column="55" />
+          <folding>
+            <marker date="1718765967536" expanded="true" signature="7764:7957" ph="..." />
+            <marker date="1718765967536" expanded="true" signature="8200:8503" ph="..." />
+            <marker date="1718765967536" expanded="true" signature="8299:8407" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

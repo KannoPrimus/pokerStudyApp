@@ -60,7 +60,7 @@ function PokerActions({ id }) {
 
                 try {
                     setActions(array);
-console.log(array);
+
                 } catch {
                     console.log("empty object");
 
