@@ -203,12 +203,14 @@ function TopBar({ mode }) {
                                         <div className="player-positions">
                                             {hand.tableType} max
                                         </div>
+                                        <div className="desciptionTopbarhand">{hand.description}</div>
                                     </div>
                                     <div className="hand-details">
                                         <div className="hand-cards">
                                             <strong>Player's Hand:</strong>
                                             <div className="card" style={{ color: getSuitColor(hand.myHand_1) }}>{hand.myHand_1}</div>
                                             <div className="card" style={{ color: getSuitColor(hand.myHand_2) }}>{hand.myHand_2}</div>
+
                                         </div>
                                         <div className="flop-turn-river">
                                             <div className="hand-cards">
