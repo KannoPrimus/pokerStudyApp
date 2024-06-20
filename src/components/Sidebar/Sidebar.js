@@ -65,8 +65,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             setHandStake(pokerHand.stake);
             setDescription(pokerHand.description);
             setIsShareable(pokerHand.share.toLowerCase?.() === 'true');
-
-
         }
     }, [pokerHand.id]);
 
@@ -83,8 +81,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     }, [description]);
 
     useEffect(() => {
-       updatePokerHand('share', isShareable);
-
+        updatePokerHand('share', isShareable);
     }, [isShareable]);
 
     useEffect(() => {
@@ -112,12 +109,17 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     };
 
     const handleHandSourceChange = (e) => {
-        setHandSource(e.target.value);
+        const selectedSource = e.target.value;
+        if (selectedSource === 'sharedHands' && membership === 'BASIC') {
+            setShowUpsellModal(true);
+        } else {
+            setHandSource(selectedSource);
+        }
     };
 
     const changeMode = (newMode) => {
         if (newMode !== mode) {
-            if ((newMode === 'Trainer' || newMode === 'Estadisticas')&& membership === 'BASIC') {
+            if ((newMode === 'Trainer' || newMode === 'Estadisticas') && membership === 'BASIC') {
                 setShowUpsellModal(true);
             } else {
                 setMode(newMode);
@@ -134,7 +136,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     const handleUpgrade = async () => {
         setIsUpgraded(true);
-        const endDate = format(addMonths(new Date(), 3), "yyyy-MM-dd") + "Z";
+        const endDate = format(addMonths(new Date(), 1), "yyyy-MM-dd") + "Z";
 
         try {
             await client.graphql({
@@ -195,7 +197,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     </div>
                 </div>
             </div>
-
 
             <div className="mode-label">
                 <span>Modo {mode}</span>
@@ -292,12 +293,12 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded }) {
                     <>
                         <h2>¡Felicidades!</h2>
                         <FontAwesomeIcon icon="gift" size="3x" />
-                        <p>Has ganado una membresía PRO por 3 meses.</p>
+                        <p>Has ganado una membresía PRO por 1 mes.</p>
                     </>
                 ) : (
                     <>
                         <h2>Modo PRO</h2>
-                        <p>Obtén acceso a funciones avanzadas por solo</p> <h3>USD 5 / mes</h3>
+                        <p>Obtén acceso a funciones avanzadas por solo</p> <h3>USD 49 / mes</h3>
                         <button className="upgradeButton" onClick={onUpgrade}>Comprar</button>
                     </>
                 )}

@@ -57,6 +57,10 @@ button {
     float:right;
     position:relative;
 }
+.chatGPT-note:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 .tooltip-gpt {
     z-index: 2000;

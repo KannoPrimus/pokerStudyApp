@@ -5,20 +5,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import {listHands as listHandsQuery} from "../../graphql/queries";
+import { listHands as listHandsQuery } from "../../graphql/queries";
 import { generateClient } from "aws-amplify/api";
 
 library.add(fas);
 
-const playerPositions6Max = ['SB', 'BB','UTG', 'MP', 'CO', 'BU'];
+const playerPositions6Max = ['SB', 'BB', 'UTG', 'MP', 'CO', 'BU'];
 const client = generateClient();
 
-function PokerNotes({ id }) {
+function PokerNotes({ id, membership }) {
     const noteRef = useRef(null);
     const [savedNote, setSavedNote] = useState('');
     const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
     const [response, setResponse] = useState('');
     const [loading, setLoading] = useState(false);
+
+
 
     useEffect(() => {
         switch (id) {
@@ -69,16 +71,15 @@ function PokerNotes({ id }) {
             hand: {
                 title: pokerHand.handTitle,
                 description: pokerHand.description,
-                hero_cards: pokerHand.myHand_1+pokerHand.myHand_2,
+                hero_cards: pokerHand.myHand_1 + pokerHand.myHand_2,
                 villain_position: playerPositions6Max[pokerHand.villainPosition],
                 hero_position: playerPositions6Max[pokerHand.heroPosition],
                 streets: {
                     preflop: {
                         actions: pokerHand.preflopAction
-
                     },
                     flop: {
-                        cards: pokerHand.flopCards_1+pokerHand.flopCards_2+pokerHand.flopCards_3,
+                        cards: pokerHand.flopCards_1 + pokerHand.flopCards_2 + pokerHand.flopCards_3,
                         actions: pokerHand.flopAction
                     },
                     turn: {
@@ -102,7 +103,6 @@ function PokerNotes({ id }) {
 
         const filter = {};
         filter.handTitle = { eq: handData.hand.title };
-        //filter.share = {eq: 'true'};
 
         const result = await client.graphql({
             query: listHandsQuery,
@@ -112,53 +112,50 @@ function PokerNotes({ id }) {
         console.log(result);
         console.log(JSON.stringify(result.data.listHands.items, null, 2));
 
-
         const prompt = `
-    Eres un asistente virtual que pueda analizar manos de póker basándose SOLO en ejemplos almacenados en una base de datos, para entregar la accion precisa que debe hacer Hero. La audiencia objetivo son tanto jugadores recreacionales como profesionales.
+            Eres un asistente virtual que pueda analizar manos de póker basándose SOLO en ejemplos almacenados en una base de datos, para entregar la accion precisa que debe hacer Hero. La audiencia objetivo son tanto jugadores recreacionales como profesionales.
 
-    Requisitos Específicos:
-    1. Análisis de Manos: El asistente debe ser capaz de analizar las manos de póker considerando:
-        - Las posiciones relativas de Hero y el Villano (in position o out of position).
-        - Las cartas del board (las cartas comunitarias).
-        - Las acciones previas del Villano.
+            Requisitos Específicos:
+            1. Análisis de Manos: El asistente debe ser capaz de analizar las manos de póker considerando:
+                - Las posiciones relativas de Hero y el Villano (in position o out of position).
+                - Las cartas del board (las cartas comunitarias).
+                - Las acciones previas del Villano.
 
-    Desafíos y Consideraciones:
-        - El asistente debe inferir correctamente la posición de Hero vs la del Villano para asegurar la coherencia en las recomendaciones.
-        - Evaluar y comparar las decisiones posibles en contextos diferentes (in position vs out of position).
+            Desafíos y Consideraciones:
+                - El asistente debe inferir correctamente la posición de Hero vs la del Villano para asegurar la coherencia en las recomendaciones.
+                - Evaluar y comparar las decisiones posibles en contextos diferentes (in position vs out of position).
 
-    Ejemplo de Manos:
-        - ${JSON.stringify(result.data.listHands.items, null, 2)}
+            Ejemplo de Manos:
+                - ${JSON.stringify(result.data.listHands.items, null, 2)}
 
-    Tareas del Asistente:
-        - Analizar los ejemplos de manos proporcionados y contestar en funcion de lo que aprende de ellas
-        - Sugerir tamaños de apuesta
-        - Generar notas MUY resumidas y específicas sobre las posibles acciones de Hero.
-        - Contestar sin preambulos
-        - Contestar sin considerar cartas ni acciones de calles posteriores
-        - El asistente debe retornar la accion precisa y concisa de Hero considerando las acciones del Villano.
-        - EL asistente debe contestar sin preambulos 
-        - El asistente debe sugerir acciones para HERO
-        - No es necesario comentar acerca de las posiciones en que se encuentran los jugadore
-        - No es necesario comentrar el titulo de la mano
-    `;
+            Tareas del Asistente:
+                - Analizar los ejemplos de manos proporcionados y contestar en funcion de lo que aprende de ellas
+                - Sugerir tamaños de apuesta
+                - Generar notas MUY resumidas y específicas sobre las posibles acciones de Hero.
+                - Contestar sin preambulos
+                - Contestar sin considerar cartas ni acciones de calles posteriores
+                - El asistente debe retornar la accion precisa y concisa de Hero considerando las acciones del Villano.
+                - EL asistente debe contestar sin preambulos 
+                - El asistente debe sugerir acciones para HERO
+                - No es necesario comentar acerca de las posiciones en que se encuentran los jugadore
+                - No es necesario comentrar el titulo de la mano
+        `;
 
         const data = {
             model: "gpt-3.5-turbo",
             messages: [
                 {
                     role: "system",
-                    //content: `Eres un asistente especializado en estrategia de poker. Siempre provee una respuesta directa y concisa sin dar ningun preambulo. Respondes siempre en español.Basa tu analisis y sugerencias en estas manos y la informacion que puedes inferir de ellas: \\n\\nSimilar Hands:\\n${JSON.stringify(result.data.listHands.items, null, 2)}`
                     content: prompt
                 },
                 {
                     role: "user",
                     content: `Que tengo que hacer en la calle de ${id} en esta mano :\n\nHand Data:\n${JSON.stringify(handData, null, 2)}`
                 }
-
             ],
             max_tokens: 100, // Limiting the tokens
             temperature: 0.3, // Setting the temperature
-            top_p:0.2
+            top_p: 0.2
         };
 
         try {
@@ -179,7 +176,7 @@ function PokerNotes({ id }) {
 
             const result = await res.json();
             setResponse(result.choices[0].message.content);
-            setSavedNote(pokerHand[`${id.toLowerCase()}Notes`]+' - **ChatGPT: '+result.choices[0].message.content);
+            setSavedNote(pokerHand[`${id.toLowerCase()}Notes`] + ' - **ChatGPT: ' + result.choices[0].message.content);
         } catch (error) {
             console.error('Error fetching OpenAI response:', error);
         } finally {
@@ -189,7 +186,6 @@ function PokerNotes({ id }) {
 
     return (
         <div style={{ position: 'relative', color: 'white', fontWeight: 'bold' }}>
-
             <FontAwesomeIcon icon="clipboard" /> Notas {id}
 
             <div
@@ -207,7 +203,7 @@ function PokerNotes({ id }) {
             />
 
             <div className="tooltip-gpt">
-                <button className="chatGPT-note" onClick={fetchOpenAIResponse} disabled={loading}>
+                <button className="chatGPT-note" onClick={fetchOpenAIResponse} disabled={loading || membership === 'BASIC'}>
                     {loading ? 'Loading...' : (<FontAwesomeIcon icon="robot" />)}
                 </button>
                 <span className="tooltip-text">ChatGPT (Experimental)</span>

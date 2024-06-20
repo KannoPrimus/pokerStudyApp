@@ -13,6 +13,7 @@ function MainContent({membership}) {
                               myRange="22+, AJs+, AJo+"
                               rivalRange="30% - TT+, AQ+"
                               notes="Rival tiende a bluffear en flops secos"
+                              membership={membership}
                 />
             ))}
         </div>

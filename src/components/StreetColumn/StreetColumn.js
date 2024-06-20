@@ -6,7 +6,7 @@ import PokerNotes from '../PokerNotes/PokerNotes';
 import PokerActions from '../PokerActions/PokerActions';
 import './StreetColumn.css';
 
-function StreetColumn({ streetName, myRange, rivalRange, notes }) {
+function StreetColumn({ streetName, myRange, rivalRange, notes, membership }) {
 
     const [isHeroCollapsed, setIsHeroCollapsed] = useState(true);
     const [isVillainCollapsed, setIsVillainCollapsed] = useState(true);
@@ -48,7 +48,7 @@ function StreetColumn({ streetName, myRange, rivalRange, notes }) {
             </div>
             <div className="streetInfo">
                 <div className="section"><PokerActions id={streetName}/></div>
-                <div className="section"><PokerNotes id={streetName}/></div>
+                <div className="section"><PokerNotes id={streetName} membership={membership}/></div>
                 <div className="collapsible-section">
                 <span className="title" onClick={toggleHeroCollapse}> {isHeroCollapsed ? 'Rango de Hero +' : 'Rango de Hero -'} </span>
                     {!isHeroCollapsed && (
