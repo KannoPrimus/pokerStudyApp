@@ -205,7 +205,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                 <div className="txtMembershiPlan">Descripción de la mano:</div>
             ) : mode === 'Trainer' ? (
                 <>
-                    <div className="txtChangeMode">Elige una fuente de manos</div>
+                    <div className="txtChangeMode">Fuente de manos</div>
                     <select
                         id="handSource"
                         value={handSource}
@@ -221,7 +221,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                 <></>
             )}
 
-            <div className="txtChangeMode">Elige un stake</div>
+            <div className="txtChangeMode">Stake</div>
             <select
                 id="handStake"
                 value={handStake}
@@ -233,7 +233,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     <option key={index} value={stake}>{stake}</option>
                 ))}
             </select>
-            <div className="txtChangeMode">Elige un spot</div>
+            <div className="txtChangeMode">Spot</div>
             <select
                 id="handTitle"
                 value={handTitle}
@@ -263,7 +263,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                                 checked={isShareable}
                                 onChange={handleShareableChange}
                             />
-                            <label htmlFor="isShareable">¿Se puede compartir?</label>
+                            <label htmlFor="isShareable">¿Compartir?</label>
                         </div>
                     )}
                 </>

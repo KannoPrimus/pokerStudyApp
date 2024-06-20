@@ -150,7 +150,6 @@
     margin-bottom:80px;
     border-radius: 3px;
     gap:10px;
-
     padding: 10px;
     width:50%;
 }
@@ -163,12 +162,14 @@
     margin-bottom:0px;
     padding: 10px;
     gap:10px;
+
 }
 
 .trainer-controls-1 button {
     margin: 0 10px;
     padding: 10px 20px;
-    background-color: transparent;
+    backgroundcolor: #00ECB3;
+    font-weight: bolder;
     color: white;
     border: 1px solid #f9f9f9;
     border-radius: 5px;
@@ -183,7 +184,8 @@
 .trainer-controls-2 button {
     margin: 0 10px;
     padding: 10px 20px;
-    background-color: transparent;
+    backgroundcolor: #00ECB3;
+    font-weight: bolder;
     color: white;
     border: 1px solid #f9f9f9;
     border-radius: 5px;
@@ -233,9 +235,19 @@
 .trainer-responses {
     width: 300px;
     margin-left: 20px;
-    padding: 10px;
+    padding-top:20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     background-color: #000F18;
 }
+
+.trainer-responses-container{
+    border: 1px solid #f9f9f9;
+    height: 100%;
+    padding-left: 5px ;
+}
+
 
 .trainer-responses h3 {
     margin-top: 0;

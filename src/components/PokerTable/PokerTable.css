@@ -13,7 +13,7 @@
     height: 150px;
     background: transparent;/*#0E8E6C;*/
     border: 1px solid #f9f9f9;
-    border-radius: 50% / 55%;
+    border-radius: 75px ;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     display: flex;
     align-items: center;

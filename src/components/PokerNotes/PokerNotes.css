@@ -63,7 +63,6 @@ button {
 }
 
 .tooltip-gpt {
-    z-index: 2000;
     position: relative;
     display: inline-block;
 }
