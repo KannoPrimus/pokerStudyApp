@@ -411,7 +411,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             </div>
             <div className="trainer-responses">
                 <div className="trainer-responses-container">
-                    <h3>Respuestas</h3>
+                    <h3>Resultado:</h3>
                     {Object.keys(responses).map(street => (
                         <div key={street}>
                             <h4>{street}</h4>
@@ -426,9 +426,17 @@ function PokerTrainer({ sequence, stake, membership }) {
                         </div>
                     ))}
                     {finishHand === 'true' && (
-                        <div className="score" style={{ color: scoreColor }}>
-                            <h3>Puntuación:</h3> {scorePercentage}% ({score}/{totalActions} acciones correctas)
-                        </div>
+                        <>
+                            <div className="score" style={{ color: scoreColor }}>
+                                <h3>Puntuación:</h3> {scorePercentage}% ({score}/{totalActions} acciones correctas)
+
+                            </div>
+                            <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.preflopNotes}}></div>
+                                <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.flopNotes}}></div>
+                                    <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.turnNotes}}></div>
+                                        <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.riverNotes}}></div>
+
+                        </>
                     )}
                 </div>
             </div>

@@ -246,6 +246,7 @@
     border: 1px solid #f9f9f9;
     height: 100%;
     padding-left: 5px ;
+    border-radius: 5px;
 }
 
 
@@ -262,6 +263,12 @@
 .trainer-responses p {
     margin: 5px 0;
     font-weight: bold;
+}
+
+.handNotes-trainer{
+    margin-top:10px;
+    color: #f9f9f9;
+    font-size: 12px;
 }
 
 @keyframes glow {
