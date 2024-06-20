@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Header.js" afterPath="$PROJECT_DIR$/src/components/Login/Header.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.js" afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css" afterPath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" afterPath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.js" afterPath="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,11 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardSelector.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CardSelector.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="582">
               <caret line="138" column="88" lean-forward="false" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="184" column="31" lean-forward="false" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -127,7 +130,6 @@
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.css" />
         <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.css" />
-        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config-overrides.js" />
@@ -143,6 +145,7 @@
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
+        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
       </list>
     </option>
   </component>
@@ -202,14 +205,7 @@
               <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="CardSelector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="PokerNotes" type="462c0819:PsiDirectoryNode" />
+              <item name="PokerTrainer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -674,11 +670,18 @@
       <option name="project" value="LOCAL" />
       <updated>1718765991097</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Orden de jugadores en preflop, se cambia al seleccionar la accion">
+      <created>1718844276085</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1718844276085</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="537097000" />
+    <option name="totallyTimeSpent" value="538159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -1010,13 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="360" column="26" lean-forward="true" selection-start-line="360" selection-start-column="26" selection-end-line="360" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
@@ -1149,6 +1145,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="138" column="88" lean-forward="false" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="184" column="31" lean-forward="false" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
           <folding />
         </state>
       </provider>

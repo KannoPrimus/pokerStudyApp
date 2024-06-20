@@ -180,6 +180,11 @@ function PokerTrainer({sequence , stake, membership}) {
             style = { ...style, animation: 'glow 1s infinite' };
         }
 
+        // Establecer opacidad al 50% para los asientos no involucrados
+        if (index != mySeat && index != rivalSeat) {
+            style.opacity = 0.3;
+        }
+
         return style;
     };
 
