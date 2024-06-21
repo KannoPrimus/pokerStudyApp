@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="Se agregaa">
+    <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerStats/PokerStats.css" afterPath="$PROJECT_DIR$/src/components/PokerStats/PokerStats.css" />
       <change beforePath="$PROJECT_DIR$/src/components/PokerStats/PokerStats.js" afterPath="$PROJECT_DIR$/src/components/PokerStats/PokerStats.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,43 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PokerActions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
+      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PokerStats.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/PokerStats/PokerStats.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PokerStats.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/PokerStats/PokerStats.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PokerTrainer.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="259" column="18" lean-forward="true" selection-start-line="259" selection-start-column="11" selection-end-line="259" selection-end-column="18" />
+            <state relative-caret-position="321">
+              <caret line="247" column="21" lean-forward="true" selection-start-line="247" selection-start-column="21" selection-end-line="247" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -121,7 +87,6 @@
         <option value="$PROJECT_DIR$/src/components/MainContent/MainContent.js" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
-        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.css" />
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
         <option value="$PROJECT_DIR$/src/components/PokerTable/PokerTable.css" />
@@ -131,6 +96,7 @@
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.css" />
         <option value="$PROJECT_DIR$/src/components/PokerStats/PokerStats.css" />
         <option value="$PROJECT_DIR$/src/components/PokerStats/PokerStats.js" />
+        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
       </list>
     </option>
   </component>
@@ -212,6 +178,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="PokerTrainer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -346,13 +319,6 @@
       <workItem from="1716898132034" duration="119051000" />
       <workItem from="1717513394495" duration="38255000" />
       <workItem from="1717677396328" duration="136904000" />
-    </task>
-    <task id="LOCAL-00004" summary="Fulll avances:&#10;Diseño&#10;Contexto Pokerhand&#10;Funcionalidad para actualizar estructura de datos de la mano en el contexto pokerHandContext">
-      <created>1716259131566</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1716259131566</updated>
     </task>
     <task id="LOCAL-00005" summary="Fulll avances:&#10;Diseño&#10;Contexto Pokerhand&#10;Funcionalidad para actualizar estructura de datos de la mano en el contexto pokerHandContext">
       <created>1716343581895</created>
@@ -690,11 +656,18 @@
       <option name="project" value="LOCAL" />
       <updated>1718903701605</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Se agrega recuadro de spots y tipo de boards con las acciones mas comunes de los crushers">
+      <created>1719004141340</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1719004141342</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="575489000" />
+    <option name="totallyTimeSpent" value="576145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -782,7 +755,8 @@
     <MESSAGE value="Correccion de funcionamiento del trainer&#10;Detiene la mano en cuanto se selecciona una accion errornea para evitar qtener que controlar infinitos arboles de acciones&#10;Se controla el cierre de laaccion cuandoel villano nos va AllIn&#10;Cuando recibimos un ALL IN solo mostramos botones de CALL o FOLD" />
     <MESSAGE value="Correccion de funcionamiento del trainer&#10;Se agregan las notas al resultado de la mano entrenada" />
     <MESSAGE value="Se agrega descriptcion a las manos del dropdown del topbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega descriptcion a las manos del dropdown del topbar" />
+    <MESSAGE value="Se agrega recuadro de spots y tipo de boards con las acciones mas comunes de los crushers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega recuadro de spots y tipo de boards con las acciones mas comunes de los crushers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1077,14 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="207" column="52" lean-forward="false" selection-start-line="207" selection-start-column="52" selection-end-line="207" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/TextCarousel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1133,14 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
@@ -1159,13 +1117,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerStats/PokerStats.js">
+    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="476">
+          <caret line="259" column="18" lean-forward="false" selection-start-line="259" selection-start-column="11" selection-end-line="259" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,10 +1133,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css">
+    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="259" column="18" lean-forward="true" selection-start-line="259" selection-start-column="11" selection-end-line="259" selection-end-column="18" />
+        <state relative-caret-position="119">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerStats/PokerStats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="247" column="21" lean-forward="true" selection-start-line="247" selection-start-column="21" selection-end-line="247" selection-end-column="21" />
           <folding />
         </state>
       </provider>

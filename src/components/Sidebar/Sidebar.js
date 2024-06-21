@@ -220,7 +220,8 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             ) : (
                 <></>
             )}
-
+            {mode !== 'Estadisticas' ? (
+                <>
             <div className="txtChangeMode">Stake</div>
             <select
                 id="handStake"
@@ -245,6 +246,10 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     <option key={index} value={sequence}>{sequence}</option>
                 ))}
             </select>
+                    </>
+                ) : (
+                <></>
+                )}
             {mode === 'Estudio' ? (
                 <>
                     <textarea

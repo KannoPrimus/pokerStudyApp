@@ -198,6 +198,7 @@ function PokerStats({ sequence, stake, membership }) {
 
 
     return (
+
         <div className="poker-stats-wrapper">
             {loading ? (
                 <p>Loading...</p>
