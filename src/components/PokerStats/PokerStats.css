@@ -1,0 +1,116 @@
+
+/*
+.poker-stats-wrapper {
+    margin-top:60px;
+    margin-left: 280px;
+}
+
+.poker-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.poker-stats-table th, .poker-stats-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.poker-stats-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+.action-div {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+}
+*/
+
+.poker-stats-wrapper {
+    padding: 20px;
+    color: white;
+    margin-top:60px;
+    margin-left: 280px;
+    background: #192831;
+    height: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+}
+
+.poker-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.poker-stats-table th, .poker-stats-table td {
+    padding-left: 10px;
+    text-align: center;
+}
+
+.action-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+
+}
+
+.action-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    width: 70px;
+    height: 40px;
+    margin-left:3px;
+}
+
+.action-div-action{
+    font-weight: bolder;
+    text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+    font-size: 12px;
+}
+
+.action-div-freq{
+    font-weight: bold;
+    text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+    font-size: 10px;
+}
+
+.action-div.allin {
+    background-color: #8B0000;
+}
+
+.action-div.raise {
+    background-color: #FF6347;
+}
+
+.action-div.bet33 {
+    background-color: #FF6347;
+}
+.action-div.bet50 {
+    background-color: #e2583f;
+}
+.action-div.bet75 {
+    background-color: #c74d37;
+}
+.action-div.bet125 {
+    background-color: #ba4834;
+}
+
+.action-div.fold {
+    background-color: #4682B4;
+}
+
+.action-div.call {
+     background-color: #16974b;
+ }
+
+.action-div.check {
+    background-color: #16c86b;
+}
