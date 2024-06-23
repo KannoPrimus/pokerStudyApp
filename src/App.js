@@ -127,15 +127,7 @@ function App() {
             <div className="App">
                 <Topbar mode={mode} />
                 <div className="content">
-                    <Sidebar
-                        mode={mode}
-                        setMode={setMode}
-                        sequence={sequence}
-                        setSequence={setSequence}
-                        membership={membership}
-                        stake={stake}
-                        setStake={setStake}
-                    />
+
                     {(() => {
                         switch (mode) {
                             case 'Estudio':
@@ -148,6 +140,15 @@ function App() {
                                 return null;
                         }
                     })()}
+                    <Sidebar
+                        mode={mode}
+                        setMode={setMode}
+                        sequence={sequence}
+                        setSequence={setSequence}
+                        membership={membership}
+                        stake={stake}
+                        setStake={setStake}
+                    />
                 </div>
             </div>
         );

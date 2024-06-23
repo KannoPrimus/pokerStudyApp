@@ -195,8 +195,8 @@ function PokerTrainer({ sequence, stake, membership }) {
 
         for (let i = currentIndex; i < actions.length; i++) {
 
-            if (actions[i].action === "NONE")
-                break;
+           // if (actions[i].action === "NONE")
+            //    break;
 
             if (actions[i].player === currentPlayer) {
                 currentButtons.push(actions[i]);
@@ -245,6 +245,7 @@ function PokerTrainer({ sequence, stake, membership }) {
              newCurrentButtons = currentButtons;
         }
 
+
         return newCurrentButtons.sort(() => Math.random() - 0.5);
     };
 
@@ -264,7 +265,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             }
         }
 
-        if (action.action.includes('FOLD')) {
+        if (action.action.includes('FOLD') || action.action.includes('NONE')) {
             setFinishHand('true');
         }
 
@@ -283,10 +284,17 @@ function PokerTrainer({ sequence, stake, membership }) {
             setActionIndex(nextActionIndex);
             setCurrentPlayer(actions[nextActionIndex].player);
 
+
+
             if (actions[nextActionIndex].action.search('FOLD') > -1) {
                 setFinishHand('true');
             }
         } else {
+
+            console.log(actions);
+            console.log(nextActionIndex);
+            console.log(streetName);
+
             if (streetName === 'preflop') {
                 setStreetName('flop');
             } else if (streetName === 'flop') {

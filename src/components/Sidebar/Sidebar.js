@@ -1,3 +1,5 @@
+// Sidebar.js
+
 import React, { useState, useEffect, useContext } from 'react';
 import './Sidebar.css';
 import { useAuthenticator } from '@aws-amplify/ui-react';
@@ -9,6 +11,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { createMembers, updateMembers } from "../../graphql/mutations";
 import { generateClient } from "aws-amplify/api";
 import { addMonths, format } from 'date-fns';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 const client = generateClient();
 
@@ -222,34 +225,34 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             )}
             {mode !== 'Estadisticas' ? (
                 <>
-            <div className="txtChangeMode">Stake</div>
-            <select
-                id="handStake"
-                value={handStake}
-                onChange={handleStakeChange}
-                className="input"
-            >
-                <option value="" disabled>Stake</option>
-                {pokerStakes.map((stake, index) => (
-                    <option key={index} value={stake}>{stake}</option>
-                ))}
-            </select>
-            <div className="txtChangeMode">Spot</div>
-            <select
-                id="handTitle"
-                value={handTitle}
-                onChange={handleTitleChange}
-                className="input"
-            >
-                <option value="" disabled>Secuencia</option>
-                {pokerSequences.map((sequence, index) => (
-                    <option key={index} value={sequence}>{sequence}</option>
-                ))}
-            </select>
-                    </>
-                ) : (
+                    <div className="txtChangeMode">Stake</div>
+                    <select
+                        id="handStake"
+                        value={handStake}
+                        onChange={handleStakeChange}
+                        className="input"
+                    >
+                        <option value="" disabled>Stake</option>
+                        {pokerStakes.map((stake, index) => (
+                            <option key={index} value={stake}>{stake}</option>
+                        ))}
+                    </select>
+                    <div className="txtChangeMode">Spot</div>
+                    <select
+                        id="handTitle"
+                        value={handTitle}
+                        onChange={handleTitleChange}
+                        className="input"
+                    >
+                        <option value="" disabled>Secuencia</option>
+                        {pokerSequences.map((sequence, index) => (
+                            <option key={index} value={sequence}>{sequence}</option>
+                        ))}
+                    </select>
+                </>
+            ) : (
                 <></>
-                )}
+            )}
             {mode === 'Estudio' ? (
                 <>
                     <textarea
@@ -277,11 +280,12 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     Cargar manos
                 </button>
             ) : null}
-            <button className="logOutButton" onClick={signOut}>
-                <FontAwesomeIcon icon="door-open" /> Salir
-            </button>
+
             {showUpsellModal && (
-                <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} />
+                <>
+                    <div className="overlay-upsell" onClick={closeModal}></div>
+                    <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} />
+                </>
             )}
         </div>
     );
@@ -303,8 +307,34 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded }) {
                 ) : (
                     <>
                         <h2>Modo PRO</h2>
-                        <p>Obtén acceso a funciones avanzadas por solo</p> <h3>USD 49 / mes</h3>
-                        <button className="upgradeButton" onClick={onUpgrade}>Comprar</button>
+                        <p style={{fontSize:'12px'}}>Obtén acceso a funciones avanzadas por solo</p> <h3 style={{textDecoration: 'line-through',color:'#ccc'}}>USD 49 / mes</h3><h3  style={{color:'#00ECB3'}}>USD 4.99 / mes</h3>
+                        <p style={{fontSize:'12px'}}>Oferta especial por lanzamiento.</p>
+                        <p style={{fontSize:'12px'}}>Oferta especial por lanzamiento.</p>
+                        <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
+                            <PayPalButtons
+
+                                createOrder={(data, actions)=>{
+                                    return actions.order.create({
+                                        purchase_units: [
+                                            {
+                                                description: "",
+                                                amount: {
+                                                    value: 4.99
+                                                }
+                                            }
+                                        ]
+                                    })
+                                }
+
+                                }
+                                onApprove={ async(data,actions)=>{
+                                    const order = await actions.order?.capture()
+                                    console.log("order",order);
+                                    onUpgrade();
+                                }
+                                }
+                            />
+                        </PayPalScriptProvider>
                     </>
                 )}
             </div>

@@ -50,4 +50,43 @@
     color: #333;
 }
 
+.tooltip-matrix {
+    z-index: 2000;
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-matrix .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #213547;
+    color: #fff;
+    text-align: center;
+    font-size: small;
+    border-radius: 6px;
+    padding: 3px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 105%; /* Position above the button */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-matrix .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #213547 transparent transparent transparent;
+}
+
+.tooltip-matrix:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
 

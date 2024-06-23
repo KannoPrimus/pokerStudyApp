@@ -243,7 +243,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
             <button className="button-clear-matrix" onClick={handleClear} title="Limpiar Matriz">
                 <FontAwesomeIcon icon="eraser" />
             </button>
-
+            <div className="tooltip-matrix">
             {ranks.map((rank1, i) => (
                 <div key={i} className="row">
                     {ranks.map((rank2, j) => (
@@ -255,6 +255,9 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
                     ))}
                 </div>
             ))}
+                <span className="tooltip-text"><h5>Tips:</h5><div>Click en celda para colorear.</div><div>  Multiples clicks para cambiar de color. </div><div>  Mantener botón derecho para colorear una zona.</div>  </span>
+
+            </div>
         </div>
     );
 }

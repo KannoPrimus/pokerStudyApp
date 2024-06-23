@@ -318,7 +318,7 @@ export function Login() {
                                     <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>
                                     <Text fontSize="1.25rem" fontWeight="bold" color="#039370" marginTop="0.5rem">{item.price}</Text>
                                     <Text fontSize="1rem" textAlign="center" marginTop="0.5rem"color= 'black'>{item.description}</Text>
-                                    <button onClick={scrollToNav4}>Subscribirme</button>
+                                    <button onClick={scrollToNav4}>Ingresar</button>
                                 </Flex>
                             ))}
                         </Grid>

@@ -40,21 +40,25 @@
     outline: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    background: #192831;
+    color:white;
 }
 
 .search-box:focus {
-    border-color: #007bff;
+    border-color: #00ECB3;
     box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
 
 .dropdown-menu {
     position: absolute;
     top: 45px;
-    left: 25%;
-    width: 50%;
+    left: 0%;
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
     max-height: 93vh;
     overflow-y: auto;
-    background-color: rgba(0, 0, 0, 0.3);;
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
     animation: fadeIn 0.3s ease-in-out;
     transition: max-height 0.3s ease-in-out;
@@ -78,13 +82,13 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    background-color: #eaeaea;
+    background-color: #192831;
     border-radius: 10px;
     color:white;
 }
 
 .dropdown-menu li:hover {
-    background-color: #5AF8D7;
+    background-color: #213547;
     color: white;
     border-radius: 10px;
     margin: 2px;
@@ -131,12 +135,12 @@
 
     font-weight: bold;
     margin-bottom: 5px;
-    color:#192831;
+    color:#f9f9f9;
 }
 
 .hand-details {
     font-size: 12px;
-    color: #192831;
+    color: #f9f9f9;
 }
 
 .hand-details div {
