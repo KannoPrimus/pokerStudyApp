@@ -309,7 +309,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded }) {
                         <h2>Modo PRO</h2>
                         <p style={{fontSize:'12px'}}>Obtén acceso a funciones avanzadas por solo</p> <h3 style={{textDecoration: 'line-through',color:'#ccc'}}>USD 49 / mes</h3><h3  style={{color:'#00ECB3'}}>USD 4.99 / mes</h3>
                         <p style={{fontSize:'12px'}}>Oferta especial por lanzamiento.</p>
-                        <p style={{fontSize:'12px'}}>¿Otros medios de pago?, escribenos a: info@pokerstudyapp.com </p>
+                        <p style={{fontSize:'12px'}}>¿Otros medios de pago?, escribenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a> </p>
                         <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
                             <PayPalButtons
 
