@@ -170,7 +170,7 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '2rem' }}>
+                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '8rem' }}>
                         <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div>
                                 <Text fontSize="2rem" style={{color: '#00ECB3',fontWeight:'bold'}} >
@@ -230,7 +230,7 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav2" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '2rem' }}>
+                    <div id="nav2" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '8rem' }}>
                         <Grid templateColumns="repeat(4, 1fr)" gap="2rem">
                             <Flex direction="column" alignItems="center">
                                 <Flex
@@ -301,12 +301,12 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '2rem' }}>
+                    <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '8rem' }}>
                         <Text fontSize="2rem" style={{color: '#00ECB3',fontWeight:'bold'}} >
                             ¡Suscribete y Gana!
                         </Text>
                         <Text fontSize="1.25rem" style={{color: '#333',fontWeight:'bold',marginBottom:'20px'}}>
-                            Accede a las estrategias y entrenamientos que te harán destacar en la mesa. Suscríbete hoy y conviértete en el jugador que siempre has querido ser.
+                            Accede a las herramientas, estrategias y entrenamientos que te harán destacar en la mesa. Suscríbete hoy y conviértete en el jugador que siempre has querido ser.
                         </Text>
                         <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
                             {[

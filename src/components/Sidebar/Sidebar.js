@@ -169,7 +169,11 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     return (
         <div className="sidebar">
             <div className="mode-switch">
+                <button className="logout-button" onClick={signOut}>
+                    <FontAwesomeIcon icon="right-from-bracket" size="1x" /> Logout
+                </button>
                 <h2 className="txtMembershipPlan">Plan: {membership} </h2>
+
                 <div className="button-group">
                     <div className="tooltip">
                         <button
