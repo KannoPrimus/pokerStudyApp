@@ -170,7 +170,7 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '8rem' }}>
+                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '8rem',textAlign:'justify' }}>
                         <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div>
                                 <Text fontSize="2rem" style={{color: '#00ECB3',fontWeight:'bold'}} >
@@ -208,16 +208,16 @@ export function Login() {
                                     height="200px"
                                     borderRadius="10px"
                                 />
-                                <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3', fontWeight:'bold'}}>
+                                <Text fontSize="1.25rem" style={{marginTop:'50px', color: '#00ECB3', fontWeight:'bold'}}>
                                     Transforma tu Juego Hoy
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px',paddingLeft:'150px',paddingRight:'150px'}}>
+                                <Text fontSize="1.25rem" style={{marginTop:'10px',paddingLeft:'50px',paddingRight:'50px',textAlign:'justify'}}>
                                     Únete a PokerCrushers.pro y comienza a estudiar, entrenar y ganar como un verdadero crusher. No esperes más, regístrate ahora y lleva tu juego al siguiente nivel.
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3', fontWeight:'bold'}}>
+                                <Text fontSize="1.25rem" style={{marginTop:'50px', color: '#00ECB3', fontWeight:'bold'}}>
                                     ¿Estás listo para dominar el poker?
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px',paddingLeft:'150px',paddingRight:'150px'}}>
+                                <Text fontSize="1.25rem" style={{marginTop:'10px',paddingLeft:'50px',paddingRight:'50px',textAlign:'justify'}}>
                                     No te conformes con ser un jugador promedio. Con PokerCrushers.pro, aprenderás a adaptarte y a superar a tus oponentes con estrategias probadas. Inscríbete ahora y empieza a ganar.
                                 </Text>
                             </div>
