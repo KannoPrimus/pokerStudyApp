@@ -58,6 +58,9 @@ function TopBar({ mode }) {
     }, [searchTerm]);
 
     const handleSelectHand = (hand) => {
+
+
+
         setSearchTerm('');
         setPokerHand(hand);
         setDropdownVisible(false);

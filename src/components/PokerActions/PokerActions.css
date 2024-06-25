@@ -187,3 +187,30 @@ color:#333;
 .slick-prev:before, .slick-next:before{
     color: #00ECB3;
 }
+
+.remove-action-btn {
+    position: relative;
+    top: 0px;
+    padding:0px;
+    left: 45px;
+    background: none;
+    border: none;
+    color: White;
+    font-size: 15px;
+    cursor: pointer;
+    margin:0px;
+    height:10px;
+}
+.remove-action-btn:hover {
+    position: relative;
+    padding:0px;
+    top: 0px;
+    left: 45px;
+    background: none;
+    border: none;
+    color: #00ECB3;
+    font-size: 15px;
+    cursor: pointer;
+    margin:0px;
+    height:10px;
+}

@@ -68,7 +68,7 @@ function PokerActions({ id }) {
             }
         }
 
-
+console.log('Init',pokerHand);
     }, [pokerHand, id]);
 
     const isAggressiveAction = (action) => {
@@ -117,7 +117,7 @@ function PokerActions({ id }) {
 
     const handleSelectAction = (player, action, actionIndex) => {
 
-
+        console.log('Actions',actions);
 
         let updatedActions = actions.map((act, index) => {
             if (index === actionIndex) {
@@ -126,7 +126,7 @@ function PokerActions({ id }) {
             return act;
         });
 
-
+    console.log('Updated Actions',updatedActions);
 
         const previousAction = actionIndex > 0 ? updatedActions[actionIndex - 1].action : '';
 
@@ -207,13 +207,15 @@ function PokerActions({ id }) {
             const inferredFirstPlayer = inferFirstPlayer();
             setFirstPlayer(inferredFirstPlayer);
             handleAddAction(inferredFirstPlayer, 'NONE');
-        } else if (actions.length > 0 && ["CALL", "FOLD"].includes(actions[actions.length - 1].action)) {
-
+        } else if (actions.length == 1 && ["CALL", "FOLD"].includes(actions[actions.length - 1].action)) {
+            console.log('Prev Act',actions[actions.length - 1].action);
             const nextStreet = getNextStreet(id);
             if (nextStreet) {
-
+                console.log('Street',id);
+                console.log('nextStreet',nextStreet);
                 const inferredFirstPlayer = nextStreet === "preflop" ? inferFirstPlayer() : inferPostflopFirstPlayer();
-                updatePokerHand(`${nextStreet}Action`, [{ player: inferredFirstPlayer, action: 'NONE', order: 1, street: nextStreet, isCorrect: true, isOptional: false }]);
+                updatePokerHand(`${nextStreet}Action`, "[{player="+ inferredFirstPlayer+", action=NONE, order=1, street="+nextStreet+", isCorrect=true, isOptional=false}]");
+                console.log('pokerhand',pokerHand);
             }
         } else {
 
@@ -238,7 +240,7 @@ function PokerActions({ id }) {
                 const inferredFirstPlayer = inferFirstPlayer();
                 setFirstPlayer(inferredFirstPlayer);
                 setActions([{ player: inferredFirstPlayer, action: 'NONE', order: 1, street: id, isCorrect: true, isOptional: false }]);
-                updatePokerHand(`${id.toLowerCase()}Action`, [{ player: inferredFirstPlayer, action: 'NONE', order: 1, street: id, isCorrect: true, isOptional: false }]);
+                updatePokerHand(`${id.toLowerCase()}Action`, "[{player="+ inferredFirstPlayer+", action=NONE, order=1, street="+id+", isCorrect=true, isOptional=false}]");
             };
 
             resetActions();
@@ -258,8 +260,9 @@ function PokerActions({ id }) {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: actions.length > 3,
-        adaptiveHeight: true,
-        centerMode: false
+        adaptiveHeight: false,
+        centerMode: false,
+        initialSlide: actions.length
     };
 
     return (
@@ -267,7 +270,15 @@ function PokerActions({ id }) {
             <Slider {...settings} ref={sliderRef}>
                 {actions.map((action, index) => (
                     <div key={index} className="ActionCard">
-                        <div className="playerTag">{action.player || inferPlayer(actions[index - 1]?.player)}</div>
+
+                        <div className="playerTag">{action.player || inferPlayer(actions[index - 1]?.player)} {index !== 0 && (
+                            <button
+                                className="remove-action-btn"
+                                onClick={() => handleRemoveAction(index)}
+                            >
+                                &times;
+                            </button>
+                        )}</div>
                         <ul className="actions-list">
                             {getAvailableActions(id.toLowerCase(), index > 0 ? actions[index - 1].action : '', index === 0).map((actionOption, actionIndex) => (
                                 <li

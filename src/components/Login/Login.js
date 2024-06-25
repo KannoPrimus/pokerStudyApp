@@ -52,9 +52,14 @@ const messages = [
 export function Login() {
     const { tokens } = useTheme();
     const nav4Ref = useRef(null);
+    const nav1_3Ref = useRef(null);
 
     const scrollToNav4 = () => {
         nav4Ref.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const scrollToNav1_3 = () => {
+        nav1_3Ref.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     const myTheme = createTheme({
@@ -147,21 +152,26 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav0" style={{ height: '100%', color: '#333', backgroundColor: '#fff'}}>
-                        <div className="container-portada">
-                            <div className="capa-gradient"></div>
+                    <div id="nav0" style={{ height: '100%', color: '#333', backgroundColor: '#0d1926'}} >
+                        <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div className="container-details">
                                 <div className="details">
-                                    <Text fontSize="3rem" color="white" fontWeight="bold">Conviértete en un Crusher del Poker </Text>
-                                    <Text fontSize="1.25rem">
+                                    <Text fontSize="6rem" color="white" fontWeight="bold">Conviértete en un Crusher del Poker </Text>
+                                    <Text fontSize="1.5rem">
                                         No juegues como una máquina, juega como los pro.
                                     </Text>
-                                    <Text fontSize="1.25rem">
+                                    <Text fontSize="1.5rem">
                                         Aprende, entrena y domina las adaptaciones explotativas que utilizan los mejores jugadores de poker online.
                                     </Text>
+
                                 </div>
+                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
-                        </div>
+                            <div className="container-portada">
+                                <div className="capa-gradient"></div>
+
+                            </div>
+                        </Grid>
                     </div>
                 </Card>
                 <Card
@@ -170,15 +180,102 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '8rem',textAlign:'justify' }}>
+                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'left' }}>
                         <Grid templateColumns="1fr 1fr" gap="2rem">
+                            <div style={{textAlign:'center'}}>
+                                <Image
+                                    src={splashMision}
+                                    width="100%"
+                                    height="200px"
+                                    borderRadius="10px"
+                                />
+
+                            </div>
                             <div>
-                                <Text fontSize="2rem" style={{color: '#00ECB3',fontWeight:'bold'}} >
-                                    Por Qué Elegir PokerCrushers.pro
+                                <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
+                                    Por qué Elegir PokerCrushers.pro
                                 </Text>
-                                <Text fontSize="1.25rem">
+                                <Text fontSize="1.25rem" style={{color: '#333'}}>
                                     Deja de seguir estrategias genéricas... PokerCrushers.pro te enseña las adaptaciones reales que utilizan los mejores jugadores para "aplastar" a sus oponentes en el poker online. Aquí no solo aprenderás teoría; aprenderás a ganar.
                                 </Text>
+                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
+                            </div>
+
+                        </Grid>
+                    </div>
+                </Card>
+                <Card
+                    padding="0px"
+                    columnStart="1"
+                    columnEnd="-1"
+                    height="100%"
+                >
+                    <div id="nav1_1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'justify' }}>
+                        <Grid templateColumns="1fr 1fr" gap="2rem">
+                            <div>
+                                <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
+                                    Transforma tu Juego Hoy
+                                </Text>
+                                <Text fontSize="1.25rem" style={{color: '#333',marginTop:'10px',textAlign:'justify'}}>
+                                    Únete a PokerCrushers.pro y comienza a estudiar, entrenar y ganar como un verdadero crusher. No esperes más, regístrate ahora y lleva tu juego al siguiente nivel.
+                                </Text>
+                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
+                            </div>
+                            <div style={{textAlign:'center'}}>
+                                <Image
+                                    src={splashMision}
+                                    width="100%"
+                                    height="200px"
+                                    borderRadius="10px"
+                                />
+
+                            </div>
+                        </Grid>
+                    </div>
+                </Card>
+                <Card
+                    padding="0px"
+                    columnStart="1"
+                    columnEnd="-1"
+                    height="100%"
+                >
+                    <div id="nav1_2" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'left' }}>
+                        <Grid templateColumns="1fr 1fr" gap="2rem">
+                            <div style={{textAlign:'center'}}>
+                                <Image
+                                    src={splashMision}
+                                    width="100%"
+                                    height="200px"
+                                    borderRadius="10px"
+                                />
+
+                            </div>
+                            <div>
+                                <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
+                                             ¿Estás listo para dominar el poker?
+                                </Text>
+                                <Text fontSize="1.25rem" style={{color: '#333',marginTop:'10px',textAlign:'justify'}}>
+                                    No te conformes con ser un jugador promedio. Con PokerCrushers.pro, aprenderás a adaptarte y a superar a tus oponentes con estrategias probadas. Inscríbete ahora y empieza a ganar.
+                                </Text>
+                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
+                            </div>
+
+                        </Grid>
+                    </div>
+                </Card>
+                <Card
+                    padding="0px"
+                    columnStart="1"
+                    columnEnd="-1"
+                    height="100%"
+                >
+                    <div id="nav1_3" ref={nav1_3Ref} style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '8rem',textAlign:'justify' }}>
+                        <Grid templateColumns="1fr 1fr" gap="2rem">
+                            <div>
+
                                 <Text fontSize="1.5rem" style={{marginTop:'10px',fontWeight:'bold'}}>
                                     Beneficios Clave:
                                 </Text>
@@ -200,6 +297,7 @@ export function Login() {
                                 <Text fontSize="1.25rem" style={{marginTop:'10px'}}>
                                     Registra y organiza todo lo que aprendes en tus sesiones de coaching. Nunca más olvides una estrategia o un detalle importante.
                                 </Text>
+                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
                             <div style={{textAlign:'center'}}>
                                 <Image
@@ -208,18 +306,6 @@ export function Login() {
                                     height="200px"
                                     borderRadius="10px"
                                 />
-                                <Text fontSize="1.25rem" style={{marginTop:'50px', color: '#00ECB3', fontWeight:'bold'}}>
-                                    Transforma tu Juego Hoy
-                                </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px',paddingLeft:'50px',paddingRight:'50px',textAlign:'justify'}}>
-                                    Únete a PokerCrushers.pro y comienza a estudiar, entrenar y ganar como un verdadero crusher. No esperes más, regístrate ahora y lleva tu juego al siguiente nivel.
-                                </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'50px', color: '#00ECB3', fontWeight:'bold'}}>
-                                    ¿Estás listo para dominar el poker?
-                                </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px',paddingLeft:'50px',paddingRight:'50px',textAlign:'justify'}}>
-                                    No te conformes con ser un jugador promedio. Con PokerCrushers.pro, aprenderás a adaptarte y a superar a tus oponentes con estrategias probadas. Inscríbete ahora y empieza a ganar.
-                                </Text>
                             </div>
                         </Grid>
                     </div>
@@ -230,7 +316,7 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav2" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '8rem' }}>
+                    <div id="nav2" style={{ height: '100%', color: 'black', backgroundColor: '#f1f1f1', padding: '8rem' }}>
                         <Grid templateColumns="repeat(4, 1fr)" gap="2rem">
                             <Flex direction="column" alignItems="center">
                                 <Flex
