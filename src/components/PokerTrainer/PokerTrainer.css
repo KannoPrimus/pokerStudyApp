@@ -24,43 +24,46 @@
 
 .trainer-poker-table {
     position: relative;
-    width: 850px;
-    height:350px;
-    background: transparent;/*#0E8E6C;*/
-    border: 1px solid #f9f9f9;
-    border-radius: 175px ;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    width: 950px;
+    height:450px;
+    background: #333333;
+    border: 1px solid #333;
+    border-radius: 45% / 50% ;
+    box-shadow: 0 44px 88px rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .trainer-poker-table-inner {
     position: relative;
-    width: 800px;
-    height:300px;
+    width: 920px;
+    height:420px;
     background: transparent;/*#0E8E6C;*/
-    border: 1px solid #f9f9f9;
-    border-radius: 175px ;
-    box-shadow: inset 0 4px 8px rgba(0,0,0,0.5);
+    border: 1px solid #333333;
+    border-radius: 45% / 50%;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.9);
+    box-shadow: 0 44px 88px rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../../assets/logoPSA_2.png');
-    background-size: 100px 100px;
+    background-image:
+            url('../../assets/logoPSA_3.png');
+    background-size: 150px ;
     background-position: center;
     background-repeat: no-repeat;
+    top:-5px;
 }
 
 .trainer-poker-table-inner::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 175px ;
+    border-radius: 45% / 50% ;
     background-color: rgba(0, 15, 24, 0.8); /* Ajusta el color y la opacidad */
     pointer-events: none; /* Permite que el contenido debajo sea interactivo */
 }
@@ -78,10 +81,10 @@
 
 .trainer-player-seat {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 60px;
     background: #213547;
-    border-radius: 50%;
+    border-radius: 50px;
     border: 1px solid #f9f9f9;
     color:#f9f9f9;
     display: flex;
@@ -96,12 +99,12 @@
 
 
 /* Ajustes específicos para la ubicación de los asientos en el modo 6-max */
-.trainer-player-seat-0 { top: 50%; left: 0%; transform: translate(-50%, -50%);border: #747bff 2px solid;} /*SB*/
-.trainer-player-seat-1 { top: -10%; left: 27%; transform: translate(-50%, -50%);border: #747bff 2px solid; } /*BB*/
-.trainer-player-seat-2 { top: -10%; right: 27%; transform: translate(50%, -50%); } /*UTG*/
-.trainer-player-seat-3 { top: 50%; right: 0%; transform: translate(50%, -50%); }/*MP*/
-.trainer-player-seat-4 { bottom: -45%; right: 15%; transform: translate(-50%, -50%); }/*CO*/
-.trainer-player-seat-5 { bottom: -45%; left: 15%; transform: translate(50%, -50%);  border: #ffdd55 2px solid;  }/*BU*/
+.trainer-player-seat-0 { top: 5%; left: 5%; transform: translate(-50%, -50%);border: #747bff 2px solid;} /*SB*/
+.trainer-player-seat-1 { top: -10%; left: 50%; transform: translate(-50%, -50%);border: #747bff 2px solid; } /*BB*/
+.trainer-player-seat-2 { top: 5%; right: 5%; transform: translate(50%, -50%); } /*UTG*/
+.trainer-player-seat-3 { bottom: -5%; right: -2%; transform: translate(50%, -50%); }/*MP*/
+.trainer-player-seat-4 { bottom: -28%; right: 33%; transform: translate(-50%, -50%); }/*CO*/
+.trainer-player-seat-5 { bottom: -5%; left: -18%; transform: translate(50%, -50%);  border: #ffdd55 2px solid;  }/*BU*/
 
 /* Ajustes para la ubicación de los asientos adicionales en el modo 9-max */
 .trainer-player-seat-6 { bottom: 70%; left: 25%; transform: translate(-50%, -50%); }/*MP2*/
@@ -110,7 +113,7 @@
 
 .trainer-seat-text {
     position: absolute;
-    top: 20%;
+    top: 5%;
     text-align: center;
     width: 100%;
 }
@@ -207,7 +210,7 @@
 }
 
 .villainAction{
-    color: white;
+    color: Yellow;
     font-weight: bold;
 }
 .heroAction{
@@ -426,7 +429,7 @@ top:-35px;
     font-weight: bold;
     padding: 10px 15px;
     position: absolute;
-    top: -30px;
+    top: -90px;
     right: -10px;
     box-shadow: 0 2px 4px rgb(185, 178, 7);
     background: radial-gradient(circle, #FFD700 20%, #FFC107 80%);
@@ -438,3 +441,6 @@ top:-35px;
     width: 30px;
 }
 
+.trainer-board-cards-hidden{
+    padding-top:20px;
+}

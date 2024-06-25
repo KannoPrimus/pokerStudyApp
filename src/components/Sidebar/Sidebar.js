@@ -170,7 +170,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
         <div className="sidebar">
             <div className="mode-switch">
                 <button className="logout-button" onClick={signOut}>
-                    <FontAwesomeIcon icon="right-from-bracket" size="1x" /> Logout
+                    <FontAwesomeIcon icon="right-from-bracket" size="1x" /> Salir
                 </button>
                 <h2 className="txtMembershipPlan">Plan: {membership} </h2>
 

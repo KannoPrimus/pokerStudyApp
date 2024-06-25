@@ -1,5 +1,5 @@
 import { Flex, Image, useTheme, View, Text } from "@aws-amplify/ui-react";
-import logo from '../../assets/logoPSA_2.png';
+import logo from '../../assets/logoPSA_3.png';
 
 export function Header() {
     const { tokens } = useTheme();
@@ -27,7 +27,6 @@ export function Header() {
                         textShadow: ' 0px 0px 5px rgba(0, 0, 0, 1)' // Sombra inset
                     }}
                 >
-                    Poker Crushers
                     <Text
                         fontStyle="italic"
                         fontSize="1.5rem" // Agrandar el tamaño de la fuente

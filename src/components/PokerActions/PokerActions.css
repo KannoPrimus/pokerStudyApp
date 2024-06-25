@@ -151,7 +151,7 @@ color:#333;
 .actions-list {
     list-style-type: none;
     padding-left: 0px;
-    height:90px;
+    height:98px;
     margin-top:0px;
 
 }
@@ -184,4 +184,6 @@ color:#333;
     border-radius: 4px;
 }
 
-
+.slick-prev:before, .slick-next:before{
+    color: #00ECB3;
+}

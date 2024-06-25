@@ -7,7 +7,7 @@ import { listHands as listHandsQuery } from "../../graphql/queries";
 
 const client = generateClient();
 const playerPositions6Max = ['SB', 'BB', 'UTG', 'MP', 'CO', 'BU'];
-const posibleActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN", "CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+const posibleActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN", "CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
 
 function PokerStats({ sequence, stake, membership }) {
     const { signOut, user } = useAuthenticator();
@@ -147,7 +147,7 @@ function PokerStats({ sequence, stake, membership }) {
     };
 
     const processActions = (actions) => {
-        const actionCounts = { 'FOLD': 0,'CHECK': 0, 'CALL': 0, 'RAISE_x3': 0, 'RAISE_x5': 0,  'BET_33%': 0, 'BET_50%': 0, 'BET_75%': 0, 'BET_125%': 0, 'ALL_IN': 0 };
+        const actionCounts = { 'FOLD': 0,'CHECK': 0, 'CALL': 0, 'RAISE_x3': 0, 'RAISE_x5': 0,  'BET_25%': 0,  'BET_33%': 0, 'BET_50%': 0, 'BET_75%': 0, 'BET_125%': 0, 'ALL_IN': 0 };
         let totalActions = 0;
 
         console.log(actions);

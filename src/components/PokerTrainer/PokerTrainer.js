@@ -5,10 +5,10 @@ import CardSelector from '../CardSelector/CardSelector';
 import './PokerTrainer.css';
 
 const preflopFirstActions = ["OR_2.5bb", "OR_3bb", "ALL-IN"];
-const postflopFirstActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+const postflopFirstActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
 
 const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
-const vsPassiveActions = ["CHECK", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+const vsPassiveActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
 
 function PokerTrainer({ sequence, stake, membership }) {
     const { signOut, user } = useAuthenticator();
@@ -147,7 +147,7 @@ function PokerTrainer({ sequence, stake, membership }) {
         }
 
         if (index != mySeat && index != rivalSeat) {
-            style.opacity = 0.3;
+            style.opacity = 1;
         }
 
         return style;
@@ -357,6 +357,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                                     </div>
                                 ) : (
                                     <div className="trainer-board-cards-hidden">
+                                        FOLDED
                                     </div>
                                 )}
                                 {position === 'BU' && (
@@ -439,6 +440,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                                 <h3>Puntuación:</h3> {scorePercentage}% ({score}/{totalActions} acciones correctas)
 
                             </div>
+                            <text style={{paddingTop:'20px',color:'white'}}>Notas: </text>
                             <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.preflopNotes}}></div>
                                 <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.flopNotes}}></div>
                                     <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.turnNotes}}></div>
