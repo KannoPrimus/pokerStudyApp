@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/logoPSA_3.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" afterPath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,18 +17,8 @@
       <file leaf-file-name="PokerActions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="222" column="48" lean-forward="true" selection-start-line="222" selection-start-column="48" selection-end-line="222" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PokerActions.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="190" column="20" lean-forward="false" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
+            <state relative-caret-position="170">
+              <caret line="210" column="12" lean-forward="false" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -350,13 +340,6 @@
       <workItem from="1716898132034" duration="119051000" />
       <workItem from="1717513394495" duration="38255000" />
       <workItem from="1717677396328" duration="136904000" />
-    </task>
-    <task id="LOCAL-00013" summary="Fulll avances:&#10;Diseño&#10;Contexto Pokerhand&#10;Funcionalidad para actualizar estructura de datos de la mano en el contexto pokerHandContext">
-      <created>1716441776149</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1716441776149</updated>
     </task>
     <task id="LOCAL-00014" summary="Fulll avances:&#10;Diseño&#10;Contexto Pokerhand&#10;Funcionalidad para actualizar estructura de datos de la mano en el contexto pokerHandContext">
       <created>1716442131529</created>
@@ -694,11 +677,18 @@
       <option name="project" value="LOCAL" />
       <updated>1719353325484</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Fix de poker actions, no se estaban cargando bien las acciones cuando se seleccionaba una mano.&#10;Se corrige funcion  que evalua las acciones que hay en la calle anterior dejando solo que sea valida cuando hay una sola accione en la calle actual y la calle anterior termina en CALL o FOLD">
+      <created>1719353405212</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1719353405212</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="622067000" />
+    <option name="totallyTimeSpent" value="623296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -1210,6 +1200,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="190" column="20" lean-forward="false" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1221,18 +1219,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="190" column="20" lean-forward="false" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="222" column="48" lean-forward="true" selection-start-line="222" selection-start-column="48" selection-end-line="222" selection-end-column="48" />
+        <state relative-caret-position="170">
+          <caret line="210" column="12" lean-forward="false" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
           <folding />
         </state>
       </provider>

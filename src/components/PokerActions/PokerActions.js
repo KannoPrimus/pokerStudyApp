@@ -208,14 +208,13 @@ console.log('Init',pokerHand);
             setFirstPlayer(inferredFirstPlayer);
             handleAddAction(inferredFirstPlayer, 'NONE');
         } else if (actions.length == 1 && ["CALL", "FOLD"].includes(actions[actions.length - 1].action)) {
-            console.log('Prev Act',actions[actions.length - 1].action);
+
             const nextStreet = getNextStreet(id);
             if (nextStreet) {
-                console.log('Street',id);
-                console.log('nextStreet',nextStreet);
+
                 const inferredFirstPlayer = nextStreet === "preflop" ? inferFirstPlayer() : inferPostflopFirstPlayer();
                 updatePokerHand(`${nextStreet}Action`, "[{player="+ inferredFirstPlayer+", action=NONE, order=1, street="+nextStreet+", isCorrect=true, isOptional=false}]");
-                console.log('pokerhand',pokerHand);
+
             }
         } else {
 
