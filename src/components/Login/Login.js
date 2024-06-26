@@ -19,6 +19,7 @@ import { SignInHeader } from "./SignInHeader";
 import { SignInFooter } from "./SignInFooter";
 import splash from "../../assets/imagenLogin.png";
 import splashMision from "../../assets/imagenLogin_mision.png";
+import home1 from "../../assets/home_1.png";
 import logo from "../../assets/logoPSA_2.png";
 import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -184,9 +185,9 @@ export function Login() {
                         <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div style={{textAlign:'center'}}>
                                 <Image
-                                    src={splashMision}
+                                    src={home1}
                                     width="100%"
-                                    height="200px"
+
                                     borderRadius="10px"
                                 />
 
@@ -397,8 +398,8 @@ export function Login() {
                         <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
                             {[
                                 { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
-                                { plan: "Plan Pro", price: "49 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
-                                //{ plan: "Plan Premium", price: "49 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
+                                { plan: "Plan Pro", price: "4.9 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias" },
+                                { plan: "Plan Premium", price: "49 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
                             ].map((item, index) => (
                                 <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
                                     <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>
