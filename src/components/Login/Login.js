@@ -18,8 +18,11 @@ import { Footer as Footerweb } from "../Footer/Footer";
 import { SignInHeader } from "./SignInHeader";
 import { SignInFooter } from "./SignInFooter";
 import splash from "../../assets/imagenLogin.png";
-import splashMision from "../../assets/imagenLogin_mision.png";
+import splashMision from "../../assets/Poker Crushers - Study mode.jpg";
+import splashMision2 from "../../assets/Poker Crushers - Trainer mode.jpg";
 import home1 from "../../assets/home_1.png";
+import home2 from "../../assets/home_2.png";
+import home3 from "../../assets/home_3.png";
 import logo from "../../assets/logoPSA_2.png";
 import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -169,7 +172,7 @@ export function Login() {
                                 <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
                             <div className="container-portada">
-                                <div className="capa-gradient"></div>
+
 
                             </div>
                         </Grid>
@@ -186,7 +189,7 @@ export function Login() {
                             <div style={{textAlign:'center'}}>
                                 <Image
                                     src={home1}
-                                    width="100%"
+                                    width="80%"
 
                                     borderRadius="10px"
                                 />
@@ -226,9 +229,9 @@ export function Login() {
                             </div>
                             <div style={{textAlign:'center'}}>
                                 <Image
-                                    src={splashMision}
-                                    width="100%"
-                                    height="200px"
+                                    src={home2}
+
+                                    height="80%"
                                     borderRadius="10px"
                                 />
 
@@ -246,9 +249,9 @@ export function Login() {
                         <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div style={{textAlign:'center'}}>
                                 <Image
-                                    src={splashMision}
-                                    width="100%"
-                                    height="200px"
+                                    src={home3}
+
+                                    height="80%"
                                     borderRadius="10px"
                                 />
 
@@ -277,14 +280,14 @@ export function Login() {
                         <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div>
 
-                                <Text fontSize="1.5rem" style={{marginTop:'10px',fontWeight:'bold'}}>
+                                <Text fontSize="6rem" style={{marginTop:'10px',fontWeight:'bold'}}>
                                     Beneficios Clave:
                                 </Text>
                                 <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3'}}>
-                                    1. Estrategias Reales de los Mejores Jugadores:
+                                    1. Registro Estructurado de tus Coachings:
                                 </Text>
                                 <Text fontSize="1.25rem" style={{marginTop:'10px'}}>
-                                    Aprende directamente de las manos y adaptaciones que utilizan los crushers en cada nivel de juego. Con PokerCrushers.pro, estarás un paso adelante de la competencia.
+                                    Registra y organiza todo lo que aprendes en tus sesiones de coaching. Nunca más olvides una estrategia o un detalle importante.
                                 </Text>
                                 <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3'}}>
                                     2. Entrenamiento Práctico y Efectivo:
@@ -293,19 +296,23 @@ export function Login() {
                                     Repasa y entrena tus manos en nuestro replayer avanzado, adaptando las estrategias a tu propio estilo de juego y mejorando con cada sesión.
                                 </Text>
                                 <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3'}}>
-                                    3. Registro Estructurado de tus Coachings:
+                                    3. Estrategias Reales de los Mejores Jugadores:
                                 </Text>
                                 <Text fontSize="1.25rem" style={{marginTop:'10px'}}>
-                                    Registra y organiza todo lo que aprendes en tus sesiones de coaching. Nunca más olvides una estrategia o un detalle importante.
+                                    Aprende directamente de las manos y adaptaciones que utilizan los crushers en cada nivel de juego. Con PokerCrushers.pro, estarás un paso adelante de la competencia.
                                 </Text>
+
+
                                 <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
-                            <div style={{textAlign:'center'}}>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                 <Image
                                     src={splashMision}
-                                    width="100%"
-                                    height="200px"
-                                    borderRadius="10px"
+                                    style={{ width: '100%', borderRadius: '10px' }}
+                                />
+                                <Image
+                                    src={splashMision2}
+                                    style={{ width: '100%', borderRadius: '10px', marginTop: '-50px', marginLeft: '120px' }} // Ajusta marginLeft según sea necesario
                                 />
                             </div>
                         </Grid>
