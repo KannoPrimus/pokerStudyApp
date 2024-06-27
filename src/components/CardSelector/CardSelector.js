@@ -155,7 +155,7 @@ function CardSelector({ card , trainer , currentHand}) {
     };
 
     return (
-        <div className={cardClass} onClick={handleCardClick} onContextMenu={handleRightClick} style={{ backgroundColor }} title="Bot">
+        <div className={cardClass} onClick={handleCardClick} onContextMenu={handleRightClick} style={{ backgroundColor }} title="Tip: botón derecha para limpiar la carta">
             {selectedCard || <span><Image src={logo} alt="Logo" width={logoSize} height={logoSize} opacity="0.2" /></span>}
             {isModalOpen && <CardModal isOpen={isModalOpen} onSelectCard={handleCardSelect} cardSet={cardSet} onClose={handleCloseModal}/>}
         </div>

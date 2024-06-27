@@ -1,5 +1,5 @@
 import { Flex, Image, useTheme, View, Text } from "@aws-amplify/ui-react";
-import logo from '../../assets/logoPSA_3.png';
+import logo2 from '../../assets/logoPSA_3.png';
 
 export function Header() {
     const { tokens } = useTheme();
@@ -16,7 +16,7 @@ export function Header() {
                 <Image
                     height="250px"
                     alt="Poker Study App Logo"
-                    src={logo}
+                    src={logo2}
                     padding={tokens.space.medium}
                 />
                 <Text

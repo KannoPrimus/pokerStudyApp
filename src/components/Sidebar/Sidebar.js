@@ -113,7 +113,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     const handleHandSourceChange = (e) => {
         const selectedSource = e.target.value;
-        if (selectedSource === 'sharedHands' && membership === 'BASIC') {
+        if (selectedSource === 'sharedHands' && (membership === 'BASIC' || membership === 'PRO')) {
             setShowUpsellModal(true);
         } else {
             setHandSource(selectedSource);
@@ -122,7 +122,8 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     const changeMode = (newMode) => {
         if (newMode !== mode) {
-            if ((newMode === 'Trainer' || newMode === 'Estadisticas') && membership === 'BASIC') {
+            if ((newMode === 'Trainer' && membership === 'BASIC') || (newMode === 'Estadisticas' && membership === 'BASIC') || (newMode === 'Estadisticas' && membership === 'PRO')) {
+
                 setShowUpsellModal(true);
             } else {
                 setMode(newMode);
@@ -134,7 +135,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     const closeModal = () => {
         setShowUpsellModal(false);
         setIsUpgraded(false);
-        window.location.reload();
+        //window.location.reload();
     };
 
     const handleUpgrade = async () => {
@@ -288,14 +289,15 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             {showUpsellModal && (
                 <>
                     <div className="overlay-upsell" onClick={closeModal}></div>
-                    <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} />
+                    <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} membership={membership}/>
                 </>
             )}
         </div>
     );
 }
 
-function UpsellModal({ onClose, onUpgrade, isUpgraded }) {
+
+function UpsellModal({ onClose, onUpgrade, isUpgraded, membership }) {
     return (
         <div className="modalUpsell">
             <div className="modalUpsell-content">
@@ -309,41 +311,73 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded }) {
                         <p>Has ganado una membresía PRO por 1 mes.</p>
                     </>
                 ) : (
-                    <>
-                        <h2>Modo PRO</h2>
-                        <p style={{fontSize:'12px'}}>Obtén acceso a funciones avanzadas por solo</p> <h3 style={{textDecoration: 'line-through',color:'#ccc'}}>USD 49 / mes</h3><h3  style={{color:'#00ECB3'}}>USD 4.99 / mes</h3>
-                        <p style={{fontSize:'12px'}}>Oferta especial por lanzamiento.</p>
-                        <p style={{fontSize:'12px'}}>¿Otros medios de pago?, escribenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a> </p>
-                        <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
-                            <PayPalButtons
-
-                                createOrder={(data, actions)=>{
-                                    return actions.order.create({
-                                        purchase_units: [
-                                            {
-                                                description: "",
-                                                amount: {
-                                                    value: 4.99
+                    <div className="plan-container">
+                        {(membership === 'BASIC' || membership === 'FREE') && (
+                            <div className="plan-crusher-pro">
+                                <h2>Modo PRO</h2>
+                                <p style={{ fontSize: '12px' }}>Obtén acceso al Trainer</p>
+                                <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 9.99 / mes</h3>
+                                <h3 style={{ color: '#00ECB3' }}>USD 4.99 / mes</h3>
+                                <p style={{ fontSize: '12px' }}>Oferta especial por lanzamiento.</p>
+                                <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
+                                <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
+                                    <PayPalButtons
+                                        createOrder={(data, actions) => {
+                                            return actions.order.create({
+                                                purchase_units: [
+                                                    {
+                                                        description: "Modo PRO",
+                                                        amount: {
+                                                            value: '4.99'
+                                                        }
+                                                    }
+                                                ]
+                                            });
+                                        }}
+                                        onApprove={async (data, actions) => {
+                                            const order = await actions.order?.capture();
+                                            console.log("order", order);
+                                            onUpgrade();
+                                        }}
+                                    />
+                                </PayPalScriptProvider>
+                            </div>
+                        )}
+                        <div className="plan-crusher-premium">
+                            <h2>Modo PREMIUM</h2>
+                            <p style={{ fontSize: '12px' }}>Obtén acceso al Trainer</p>
+                            <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 99.99 / mes</h3>
+                            <h3 style={{ color: '#00ECB3' }}>USD 49.99 / mes</h3>
+                            <p style={{ fontSize: '12px' }}>Oferta especial por lanzamiento.</p>
+                            <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
+                            <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
+                                <PayPalButtons
+                                    createOrder={(data, actions) => {
+                                        return actions.order.create({
+                                            purchase_units: [
+                                                {
+                                                    description: "Modo PREMIUM",
+                                                    amount: {
+                                                        value: '49.99'
+                                                    }
                                                 }
-                                            }
-                                        ]
-                                    })
-                                }
-
-                                }
-                                onApprove={ async(data,actions)=>{
-                                    const order = await actions.order?.capture()
-                                    console.log("order",order);
-                                    onUpgrade();
-                                }
-                                }
-                            />
-                        </PayPalScriptProvider>
-                    </>
+                                            ]
+                                        });
+                                    }}
+                                    onApprove={async (data, actions) => {
+                                        const order = await actions.order?.capture();
+                                        console.log("order", order);
+                                        onUpgrade();
+                                    }}
+                                />
+                            </PayPalScriptProvider>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>
     );
 }
+
 
 export default Sidebar;

@@ -151,9 +151,10 @@ input:checked + .slider:before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centramos el modal */
-    z-index: 10000; /* Nos aseguramos de que esté por encima de otros elementos */
-    width: 100%;
-    max-width: 400px; /* Ancho máximo del modal */
+    z-index: 30000; /* Nos aseguramos de que esté por encima de otros elementos */
+
+    min-width: 400px;
+    /*width: auto;  Ancho máximo del modal */
     padding: 20px; /* Añadimos un padding para el contenido */
     background-color: white; /* Color de fondo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de elevación */
@@ -172,8 +173,8 @@ input:checked + .slider:before {
 
 .closeUpsell {
     position: absolute; /* Absoluto para estar en la esquina */
-    top: 10px;
-    right: 10px;
+    top: -5px;
+    right: -5px;
     font-size: 20px; /* Tamaño de fuente mayor */
     cursor: pointer; /* Cambiamos el cursor para indicar que es clickeable */
 }
@@ -297,4 +298,26 @@ z-index: 2000;
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+.plan-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.plan-crusher-pro, .plan-crusher-premium {
+    border: 2px solid;
+    padding: 10px;
+    width: auto;
+    margin: 2%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.plan-crusher-pro {
+    border-color: #00ECB3;
+}
+
+.plan-crusher-premium {
+    border-color: #FF5733;
 }

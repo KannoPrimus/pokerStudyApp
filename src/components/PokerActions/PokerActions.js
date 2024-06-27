@@ -68,7 +68,7 @@ function PokerActions({ id }) {
             }
         }
 
-console.log('Init',pokerHand);
+
     }, [pokerHand, id]);
 
     const isAggressiveAction = (action) => {

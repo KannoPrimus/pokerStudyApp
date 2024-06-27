@@ -23,7 +23,7 @@ import splashMision2 from "../../assets/Poker Crushers - Trainer mode.jpg";
 import home1 from "../../assets/home_1.png";
 import home2 from "../../assets/home_2.png";
 import home3 from "../../assets/home_3.png";
-import logo from "../../assets/logoPSA_2.png";
+import logo from "../../assets/logoPSA_3.png";
 import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
@@ -131,8 +131,12 @@ export function Login() {
                 >
                     <Flex justifyContent="space-between" alignItems="center" padding="1rem" backgroundColor={tokens.colors.font.primary.value}>
                         <div style={{ display: 'flex', justifyContent: 'center'}}>
-                            <Image src={logo} alt="Logo" width="80px" height="80px" />
-                            <Text fontSize="3rem" color="white" fontWeight="bold">PokerCrushers.pro</Text>
+                            <Image src={logo} alt="Logo"  height="80px" />
+                            <Text fontSize="3rem" color="white" fontWeight="bold" fontStyle="italic" paddingLeft="25px"
+                                  style={{
+                                      textShadow: '0px 0px 5px rgba(255, 255, 255, 0.8)' // Sombra inset
+                                  }}
+                            > PokerCrushers.pro</Text>
                         </div>
                         <Flex gap="1rem">
                             <Link href="#nav1" color="white">
@@ -215,7 +219,7 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1_1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'justify' }}>
+                    <div id="nav1_1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'left' }}>
                         <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div>
                                 <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
@@ -397,7 +401,7 @@ export function Login() {
                 >
                     <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '8rem' }}>
                         <Text fontSize="2rem" style={{color: '#00ECB3',fontWeight:'bold'}} >
-                            ¡Suscribete y Gana!
+                            ¡Ingresa, Estudia  y Gana!
                         </Text>
                         <Text fontSize="1.25rem" style={{color: '#333',fontWeight:'bold',marginBottom:'20px'}}>
                             Accede a las herramientas, estrategias y entrenamientos que te harán destacar en la mesa. Suscríbete hoy y conviértete en el jugador que siempre has querido ser.
@@ -405,8 +409,8 @@ export function Login() {
                         <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
                             {[
                                 { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
-                                { plan: "Plan Pro", price: "4.9 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias" },
-                                { plan: "Plan Premium", price: "49 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
+                                { plan: "Plan Pro", price: "9.9 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias" },
+                                { plan: "Plan Premium", price: "99.99 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
                             ].map((item, index) => (
                                 <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
                                     <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>

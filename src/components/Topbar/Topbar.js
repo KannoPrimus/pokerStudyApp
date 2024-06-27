@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Flex, Image, useTheme, View, Text } from "@aws-amplify/ui-react";
 import './Topbar.css'; // Asegúrate de crear este archivo CSS
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
-import logo from '../../assets/logoPSA_3.png';
+import logo2 from '../../assets/logoPSA_3.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa los estilos necesarios de FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -164,18 +164,19 @@ function TopBar({ mode }) {
             <Image
                 height="50px"
                 alt="Poker Study App Logo"
-                src={logo}
+                src={logo2}
             />
             <Text
                 width="220px"
                 fontSize="1rem" // Agrandar el tamaño de la fuente
                 fontWeight="bold"
                 color="white"
+                fontStyle="italic"
                 style={{
-                    textShadow: '0px 0px 5px rgba(0, 0, 0, 1)', marginTop:'15px' // Sombra inset
+                    textShadow: '0px 0px 15px rgba(255, 255, 255, 1)', marginTop:'12px',paddingLeft:'25px' // Sombra inset
                 }}
             >
-                Poker Crushers
+                PokerCrushers.pro
             </Text>
 
             {mode === "Estudio" && (
