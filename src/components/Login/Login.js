@@ -20,6 +20,7 @@ import { SignInFooter } from "./SignInFooter";
 import splash from "../../assets/imagenLogin.png";
 import splashMision from "../../assets/Poker Crushers - Study mode.jpg";
 import splashMision2 from "../../assets/Poker Crushers - Trainer mode.jpg";
+import pokerplayer from "../../assets/pokerplayer_crusher.png";
 import home1 from "../../assets/home_1.png";
 import home2 from "../../assets/home_2.png";
 import home3 from "../../assets/home_3.png";
@@ -175,8 +176,13 @@ export function Login() {
                                 </div>
                                 <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
-                            <div className="container-portada">
+                            <div style={{textAlign:'center'}}>
+                                <Image
+                                    src={pokerplayer}
+                                    width="80%"
 
+                                    borderRadius="10px"
+                                />
 
                             </div>
                         </Grid>
