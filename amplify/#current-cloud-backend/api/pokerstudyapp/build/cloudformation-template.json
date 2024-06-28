@@ -308,6 +308,82 @@
                 ]
             }
         },
+        "Trainings": {
+            "Type": "AWS::CloudFormation::Stack",
+            "Properties": {
+                "TemplateURL": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            "https://s3.",
+                            {
+                                "Ref": "AWS::Region"
+                            },
+                            ".",
+                            {
+                                "Ref": "AWS::URLSuffix"
+                            },
+                            "/",
+                            {
+                                "Ref": "S3DeploymentBucket"
+                            },
+                            "/",
+                            {
+                                "Ref": "S3DeploymentRootKey"
+                            },
+                            "/stacks/Trainings.json"
+                        ]
+                    ]
+                },
+                "Parameters": {
+                    "DynamoDBModelTableReadIOPS": {
+                        "Ref": "DynamoDBModelTableReadIOPS"
+                    },
+                    "DynamoDBModelTableWriteIOPS": {
+                        "Ref": "DynamoDBModelTableWriteIOPS"
+                    },
+                    "DynamoDBBillingMode": {
+                        "Ref": "DynamoDBBillingMode"
+                    },
+                    "DynamoDBEnablePointInTimeRecovery": {
+                        "Ref": "DynamoDBEnablePointInTimeRecovery"
+                    },
+                    "DynamoDBEnableServerSideEncryption": {
+                        "Ref": "DynamoDBEnableServerSideEncryption"
+                    },
+                    "referencetotransformerrootstackenv10C5A902Ref": {
+                        "Ref": "env"
+                    },
+                    "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+                        "Fn::GetAtt": [
+                            "GraphQLAPI",
+                            "ApiId"
+                        ]
+                    },
+                    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+                        "Fn::GetAtt": [
+                            "GraphQLAPINONEDS95A13CF0",
+                            "Name"
+                        ]
+                    },
+                    "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+                        "Ref": "S3DeploymentBucket"
+                    },
+                    "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+                        "Ref": "S3DeploymentRootKey"
+                    },
+                    "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
+                        "Ref": "authRoleName"
+                    },
+                    "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
+                        "Ref": "unauthRoleName"
+                    }
+                }
+            },
+            "DependsOn": [
+                "GraphQLAPITransformerSchema3CB2AE18"
+            ]
+        },
         "Members": {
             "Type": "AWS::CloudFormation::Stack",
             "Properties": {
@@ -360,23 +436,59 @@
                             "ApiId"
                         ]
                     },
-                    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
-                        "Fn::GetAtt": [
-                            "GraphQLAPINONEDS95A13CF0",
-                            "Name"
-                        ]
-                    },
                     "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
                         "Ref": "S3DeploymentBucket"
                     },
                     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
                         "Ref": "S3DeploymentRootKey"
                     },
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId": {
+                        "Fn::GetAtt": [
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId": {
+                        "Fn::GetAtt": [
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+                        ]
+                    },
                     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
                         "Ref": "authRoleName"
                     },
                     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
                         "Ref": "unauthRoleName"
+                    },
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId": {
+                        "Fn::GetAtt": [
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId": {
+                        "Fn::GetAtt": [
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId": {
+                        "Fn::GetAtt": [
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId": {
+                        "Fn::GetAtt": [
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId": {
+                        "Fn::GetAtt": [
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
+                        ]
                     }
                 }
             },
@@ -442,16 +554,16 @@
                     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
                         "Ref": "S3DeploymentRootKey"
                     },
-                    "referencetotransformerrootstackMembersNestedStackMembersNestedStackResource5B4B7AA6OutputstransformerrootstackMembersQuerygetMembersauth0FunctionQuerygetMembersauth0FunctionAppSyncFunction0B9B7B54FunctionId": {
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId": {
                         "Fn::GetAtt": [
-                            "Members",
-                            "Outputs.transformerrootstackMembersQuerygetMembersauth0FunctionQuerygetMembersauth0FunctionAppSyncFunction0B9B7B54FunctionId"
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackMembersNestedStackMembersNestedStackResource5B4B7AA6OutputstransformerrootstackMembersQuerygetMemberspostAuth0FunctionQuerygetMemberspostAuth0FunctionAppSyncFunction3AAE3A1EFunctionId": {
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId": {
                         "Fn::GetAtt": [
-                            "Members",
-                            "Outputs.transformerrootstackMembersQuerygetMemberspostAuth0FunctionQuerygetMemberspostAuth0FunctionAppSyncFunction3AAE3A1EFunctionId"
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
                         ]
                     },
                     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -460,34 +572,34 @@
                     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
                         "Ref": "unauthRoleName"
                     },
-                    "referencetotransformerrootstackMembersNestedStackMembersNestedStackResource5B4B7AA6OutputstransformerrootstackMembersMutationcreateMembersinit0FunctionMutationcreateMembersinit0FunctionAppSyncFunction484F0317FunctionId": {
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId": {
                         "Fn::GetAtt": [
-                            "Members",
-                            "Outputs.transformerrootstackMembersMutationcreateMembersinit0FunctionMutationcreateMembersinit0FunctionAppSyncFunction484F0317FunctionId"
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackMembersNestedStackMembersNestedStackResource5B4B7AA6OutputstransformerrootstackMembersMutationcreateMembersauth0FunctionMutationcreateMembersauth0FunctionAppSyncFunction015BEDCFFunctionId": {
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId": {
                         "Fn::GetAtt": [
-                            "Members",
-                            "Outputs.transformerrootstackMembersMutationcreateMembersauth0FunctionMutationcreateMembersauth0FunctionAppSyncFunction015BEDCFFunctionId"
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackMembersNestedStackMembersNestedStackResource5B4B7AA6OutputstransformerrootstackMembersMutationupdateMembersinit0FunctionMutationupdateMembersinit0FunctionAppSyncFunction03BFBAF4FunctionId": {
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId": {
                         "Fn::GetAtt": [
-                            "Members",
-                            "Outputs.transformerrootstackMembersMutationupdateMembersinit0FunctionMutationupdateMembersinit0FunctionAppSyncFunction03BFBAF4FunctionId"
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackMembersNestedStackMembersNestedStackResource5B4B7AA6OutputstransformerrootstackMembersSubscriptiononCreateMembersauth0FunctionSubscriptiononCreateMembersauth0FunctionAppSyncFunction8FDCA137FunctionId": {
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId": {
                         "Fn::GetAtt": [
-                            "Members",
-                            "Outputs.transformerrootstackMembersSubscriptiononCreateMembersauth0FunctionSubscriptiononCreateMembersauth0FunctionAppSyncFunction8FDCA137FunctionId"
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackMembersNestedStackMembersNestedStackResource5B4B7AA6OutputstransformerrootstackMembersSubscriptionOnCreateMembersDataResolverFnSubscriptionOnCreateMembersDataResolverFnAppSyncFunctionFC79006EFunctionId": {
+                    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId": {
                         "Fn::GetAtt": [
-                            "Members",
-                            "Outputs.transformerrootstackMembersSubscriptionOnCreateMembersDataResolverFnSubscriptionOnCreateMembersDataResolverFnAppSyncFunctionFC79006EFunctionId"
+                            "Trainings",
+                            "Outputs.transformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
                         ]
                     }
                 }
@@ -539,6 +651,7 @@
             "DependsOn": [
                 "GraphQLAPI",
                 "GraphQLAPITransformerSchema3CB2AE18",
+                "Trainings",
                 "Members",
                 "Hands"
             ]

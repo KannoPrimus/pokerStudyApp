@@ -1,3 +1,10 @@
+type Trainings @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  handId: ID
+  playerId: ID
+  score: Float
+}
+
 type Members @model @auth(rules: [{allow: private}]) {
   id: ID!
   playerId: ID

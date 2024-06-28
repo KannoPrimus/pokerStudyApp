@@ -154,6 +154,7 @@ input:checked + .slider:before {
     z-index: 30000; /* Nos aseguramos de que esté por encima de otros elementos */
 
     min-width: 400px;
+    max-width: 800px;
     /*width: auto;  Ancho máximo del modal */
     padding: 20px; /* Añadimos un padding para el contenido */
     background-color: white; /* Color de fondo */

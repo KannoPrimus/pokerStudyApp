@@ -24,7 +24,7 @@ import pokerplayer from "../../assets/pokerplayer_crusher.png";
 import home1 from "../../assets/home_1.png";
 import home2 from "../../assets/home_2.png";
 import home3 from "../../assets/home_3.png";
-import logo from "../../assets/logoPSA_3.png";
+import logo from "../../assets/logoPSA_soloPica.png";
 import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
@@ -174,13 +174,12 @@ export function Login() {
                                     </Text>
 
                                 </div>
-                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{marginBottom:'50px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
-                            <div style={{textAlign:'center'}}>
+                            <div style={{textAlign:'center',paddingTop:'100px'}}>
                                 <Image
                                     src={pokerplayer}
                                     width="80%"
-
                                     borderRadius="10px"
                                 />
 
@@ -416,7 +415,7 @@ export function Login() {
                             {[
                                 { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
                                 { plan: "Plan Pro", price: "9.99 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias" },
-                                { plan: "Plan Premium", price: "99.99 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
+                                { plan: "Plan Premium", price: "49.99 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
                             ].map((item, index) => (
                                 <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
                                     <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>

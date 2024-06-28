@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Flex, Image, useTheme, View, Text } from "@aws-amplify/ui-react";
 import './Topbar.css'; // Asegúrate de crear este archivo CSS
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
-import logo2 from '../../assets/logoPSA_3.png';
+import logo2 from '../../assets/logoPSA_soloPica.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Importa los estilos necesarios de FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
