@@ -1,6 +1,6 @@
 /* Estilos generales del sidebar */
 .sidebar {
-    width: 250px;
+    width: 350px;
     padding: 20px;
     background-color: #000F18;  /* Cambio a un color más oscuro */
     color: #ffffff;  /* Texto blanco para mejor contraste */
@@ -320,5 +320,5 @@ z-index: 2000;
 }
 
 .plan-crusher-premium {
-    border-color: #FF5733;
+    border-color: #00ECB3;
 }

@@ -10,6 +10,7 @@ type Members @model @auth(rules: [{allow: private}]) {
   playerId: ID
   memberPlan: String
   endDate: AWSDate
+  skipTutorial: String
 }
 
 type Hands @model @auth(rules: [{allow: private}]) {

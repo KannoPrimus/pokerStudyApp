@@ -5,11 +5,12 @@ export function Header() {
     const { tokens } = useTheme();
 
     return (
-        <View as="header" backgroundColor={tokens.colors.background.primary}>
+        <View as="header" backgroundColor="#192831">
             <Flex
                 direction="column"
                 justifyContent="center"
                 alignItems="center"
+                backgroundColor="#192831"
                 padding={tokens.space.large}
                 gap={tokens.space.medium}
             >

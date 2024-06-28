@@ -18,7 +18,7 @@
     gap: 0px;                /* Añade un espacio entre cada columna */
     height: 100%;            /*  Ajusta la altura según sea necesario */
     width: 100%;
-    padding-left: 250px;
+    padding-left: 360px;
     overflow: hidden;
 }
 
@@ -162,7 +162,7 @@
     flex-direction: row;
     align-items: center; /* Centra horizontalmente */
     justify-content: center; /* Centra verticalmente */
-    margin-top: 100px;
+    margin-top: 180px;
     margin-bottom:0px;
     padding: 10px;
     gap:10px;
@@ -171,12 +171,12 @@
 
 .trainer-controls-1 button {
     margin: 0 10px;
-    padding: 10px 20px;
+    padding: 0px 20px;
     backgroundcolor: #00ECB3;
     font-weight: bolder;
     color: white;
     border: 1px solid #f9f9f9;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 
 }

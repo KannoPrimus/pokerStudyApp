@@ -147,6 +147,7 @@ export const createMembers = /* GraphQL */ `
       playerId
       memberPlan
       endDate
+      skipTutorial
       createdAt
       updatedAt
       __typename
@@ -163,6 +164,7 @@ export const updateMembers = /* GraphQL */ `
       playerId
       memberPlan
       endDate
+      skipTutorial
       createdAt
       updatedAt
       __typename

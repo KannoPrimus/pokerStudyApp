@@ -99,6 +99,7 @@ export const getMembers = /* GraphQL */ `
       playerId
       memberPlan
       endDate
+      skipTutorial
       createdAt
       updatedAt
       __typename
@@ -117,6 +118,7 @@ export const listMembers = /* GraphQL */ `
         playerId
         memberPlan
         endDate
+        skipTutorial
         createdAt
         updatedAt
         __typename

@@ -12,6 +12,7 @@ import { createMembers, updateMembers } from "../../graphql/mutations";
 import { generateClient } from "aws-amplify/api";
 import { addMonths, format } from 'date-fns';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import PokerTable from '../PokerTable/PokerTable';
 
 const client = generateClient();
 
@@ -210,7 +211,10 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                 <span>Modo {mode}</span>
             </div>
             {mode === 'Estudio' ? (
+                <>
                 <div className="txtMembershiPlan">Descripción de la mano:</div>
+                <PokerTable />
+                    </>
             ) : mode === 'Trainer' ? (
                 <>
                     <div className="txtChangeMode">Fuente de manos</div>
@@ -235,7 +239,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                         id="handStake"
                         value={handStake}
                         onChange={handleStakeChange}
-                        className="input"
+                        className="input Stake"
                     >
                         <option value="" disabled>Stake</option>
                         {pokerStakes.map((stake, index) => (
@@ -247,7 +251,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                         id="handTitle"
                         value={handTitle}
                         onChange={handleTitleChange}
-                        className="input"
+                        className="input Spot"
                     >
                         <option value="" disabled>Secuencia</option>
                         {pokerSequences.map((sequence, index) => (
@@ -260,13 +264,14 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             )}
             {mode === 'Estudio' ? (
                 <>
+
                     <textarea
                         id="description"
                         value={description}
                         onChange={handleDescriptionChange}
                         placeholder="Escribe una descripción..."
                         rows="4"
-                        className="input"
+                        className="input Description"
                     />
                     {membership === 'COACH' && (
                         <div className="shareable-checkbox">

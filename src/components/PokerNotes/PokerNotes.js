@@ -76,19 +76,19 @@ function PokerNotes({ id, membership }) {
                 hero_position: playerPositions6Max[pokerHand.heroPosition],
                 streets: {
                     preflop: {
-                        actions: pokerHand.preflopAction
+                        //actions: pokerHand.preflopAction
                     },
                     flop: {
                         cards: pokerHand.flopCards_1 + pokerHand.flopCards_2 + pokerHand.flopCards_3,
-                        actions: pokerHand.flopAction
+                        //actions: pokerHand.flopAction
                     },
                     turn: {
                         cards: pokerHand.turnCard,
-                        actions: pokerHand.turnAction
+                        //actions: pokerHand.turnAction
                     },
                     river: {
                         cards: pokerHand.riverCard,
-                        actions: pokerHand.riverAction
+                        //actions: pokerHand.riverAction
                     }
                 }
             }
@@ -185,7 +185,7 @@ function PokerNotes({ id, membership }) {
     };
 
     return (
-        <div style={{ position: 'relative', color: 'white', fontWeight: 'bold' }}>
+        <div  style={{ position: 'relative', color: 'white', fontWeight: 'bold' }}>
             <FontAwesomeIcon icon="clipboard" /> Notas {id}
 
             <div

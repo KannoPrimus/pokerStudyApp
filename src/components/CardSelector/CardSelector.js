@@ -74,7 +74,7 @@ function CardSelector({ card , trainer , currentHand}) {
     };
 
     const handleCardSelect = (selectedCards) => {
-        console.log(selectedCards);
+
         setIsModalOpen(false);
 
         if (cardSet === 'holeCards') {
@@ -139,7 +139,7 @@ function CardSelector({ card , trainer , currentHand}) {
     const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#192831';
     if (card === 'myHand_1' || card === 'myHand_2' || card === 'trainerCard') {
         cardClass = 'card-container-hero';
-        logoSize='35px';
+        logoSize='50px';
     } else {
         if(trainer === 'true') {
             cardClass = 'card-container-trainer';

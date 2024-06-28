@@ -32,8 +32,15 @@ function PokerActions({ id }) {
     useEffect(() => {
         const phase = id.toLowerCase();
 
+
+
         if (pokerHand[`${phase}Action`] === "{}") {
+            console.log(pokerHand);
             setActions([]);
+            const inferredFirstPlayer = inferFirstPlayer();
+            setFirstPlayer(inferredFirstPlayer);
+            setActions([{ player: inferredFirstPlayer, action: 'NONE', order: 1, street: id, isCorrect: true, isOptional: false }]);
+            updatePokerHand(`${id.toLowerCase()}Action`, "[{player="+ inferredFirstPlayer+", action=NONE, order=1, street="+id+", isCorrect=true, isOptional=false}]");
         } else {
             if (typeof pokerHand[`${phase}Action`] === "string") {
                 const jsonString = pokerHand[`${phase}Action`]
@@ -126,7 +133,7 @@ function PokerActions({ id }) {
             return act;
         });
 
-    console.log('Updated Actions',updatedActions);
+
 
         const previousAction = actionIndex > 0 ? updatedActions[actionIndex - 1].action : '';
 

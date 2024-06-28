@@ -20,13 +20,13 @@ function StreetColumn({ streetName, myRange, rivalRange, notes, membership }) {
     };
 
     return (
-        <div className="street-column-container">
+        <div className={`street-column-container street-${streetName}`}>
 
-            <div className="board-cards section ">
+            <div className="board-cards section">
                 {/* Renderizar CardSelectors basado en el streetName */}
                 {streetName === 'Preflop' && (
                     <>
-                        <PokerTable />
+
                         <div>
                             <div className="title">Mi mano</div>
                             <div className="board-cards-hero">

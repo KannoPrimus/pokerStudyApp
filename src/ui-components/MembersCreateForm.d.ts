@@ -25,11 +25,13 @@ export declare type MembersCreateFormInputValues = {
     playerId?: string;
     memberPlan?: string;
     endDate?: string;
+    skipTutorial?: string;
 };
 export declare type MembersCreateFormValidationValues = {
     playerId?: ValidationFunction<string>;
     memberPlan?: ValidationFunction<string>;
     endDate?: ValidationFunction<string>;
+    skipTutorial?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type MembersCreateFormOverridesProps = {
@@ -37,6 +39,7 @@ export declare type MembersCreateFormOverridesProps = {
     playerId?: PrimitiveOverrideProps<TextFieldProps>;
     memberPlan?: PrimitiveOverrideProps<TextFieldProps>;
     endDate?: PrimitiveOverrideProps<TextFieldProps>;
+    skipTutorial?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type MembersCreateFormProps = React.PropsWithChildren<{
     overrides?: MembersCreateFormOverridesProps | undefined | null;

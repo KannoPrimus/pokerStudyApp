@@ -26,21 +26,27 @@ export default function MembersCreateForm(props) {
     playerId: "",
     memberPlan: "",
     endDate: "",
+    skipTutorial: "",
   };
   const [playerId, setPlayerId] = React.useState(initialValues.playerId);
   const [memberPlan, setMemberPlan] = React.useState(initialValues.memberPlan);
   const [endDate, setEndDate] = React.useState(initialValues.endDate);
+  const [skipTutorial, setSkipTutorial] = React.useState(
+    initialValues.skipTutorial
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setPlayerId(initialValues.playerId);
     setMemberPlan(initialValues.memberPlan);
     setEndDate(initialValues.endDate);
+    setSkipTutorial(initialValues.skipTutorial);
     setErrors({});
   };
   const validations = {
     playerId: [],
     memberPlan: [],
     endDate: [],
+    skipTutorial: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -71,6 +77,7 @@ export default function MembersCreateForm(props) {
           playerId,
           memberPlan,
           endDate,
+          skipTutorial,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -136,6 +143,7 @@ export default function MembersCreateForm(props) {
               playerId: value,
               memberPlan,
               endDate,
+              skipTutorial,
             };
             const result = onChange(modelFields);
             value = result?.playerId ?? value;
@@ -162,6 +170,7 @@ export default function MembersCreateForm(props) {
               playerId,
               memberPlan: value,
               endDate,
+              skipTutorial,
             };
             const result = onChange(modelFields);
             value = result?.memberPlan ?? value;
@@ -189,6 +198,7 @@ export default function MembersCreateForm(props) {
               playerId,
               memberPlan,
               endDate: value,
+              skipTutorial,
             };
             const result = onChange(modelFields);
             value = result?.endDate ?? value;
@@ -202,6 +212,33 @@ export default function MembersCreateForm(props) {
         errorMessage={errors.endDate?.errorMessage}
         hasError={errors.endDate?.hasError}
         {...getOverrideProps(overrides, "endDate")}
+      ></TextField>
+      <TextField
+        label="Skip tutorial"
+        isRequired={false}
+        isReadOnly={false}
+        value={skipTutorial}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              playerId,
+              memberPlan,
+              endDate,
+              skipTutorial: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.skipTutorial ?? value;
+          }
+          if (errors.skipTutorial?.hasError) {
+            runValidationTasks("skipTutorial", value);
+          }
+          setSkipTutorial(value);
+        }}
+        onBlur={() => runValidationTasks("skipTutorial", skipTutorial)}
+        errorMessage={errors.skipTutorial?.errorMessage}
+        hasError={errors.skipTutorial?.hasError}
+        {...getOverrideProps(overrides, "skipTutorial")}
       ></TextField>
       <Flex
         justifyContent="space-between"

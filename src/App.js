@@ -27,6 +27,7 @@ function App() {
     const [loading, setLoading] = useState(true); // State for loading
     const [membership, setMembership] = useState('');
     const [stake, setStake] = useState('');
+    const [skipTutorial, setSkipTutorial] = useState('false');
 
     useEffect(() => {
         const fetchMembership = async (playerId) => {
@@ -40,6 +41,8 @@ function App() {
                 if (userMembership) {
                     setHasMembership(true);
                     setEndDateMembership(userMembership.endDate);
+                    console.log(userMembership.skipTutorial);
+                    setSkipTutorial(userMembership.skipTutorial);
                 } else {
                     const createBasicMembership = async (playerId) => {
                         const newMembers = await client.graphql({
@@ -49,7 +52,8 @@ function App() {
                                     "id": playerId,
                                     "playerId": playerId,
                                     "memberPlan": "BASIC",
-                                    "endDate": "9999-01-01Z"
+                                    "endDate": "9999-01-01Z",
+                                    "skipTutorial":"false"
                                 }
                             }
                         });
@@ -150,6 +154,7 @@ function App() {
                         setStake={setStake}
                     />
                 </div>
+            <Tutorial skipTutorial={skipTutorial}/>
             </div>
         );
     }

@@ -7,8 +7,8 @@
     gap: 0px;                /* Añade un espacio entre cada columna */
     /*height: 100%;              Ajusta la altura según sea necesario */
     width: 100%;
-    left:250px;
-    padding-left: 280px;
+    left:350px;
+    padding-left: 355px;
 }
 
 /* Aplica el borde derecho a todas las columnas excepto la última */

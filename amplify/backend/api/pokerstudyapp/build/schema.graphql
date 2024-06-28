@@ -12,6 +12,7 @@ type Members @aws_iam @aws_cognito_user_pools {
   playerId: ID
   memberPlan: String
   endDate: AWSDate
+  skipTutorial: String
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -304,6 +305,7 @@ input ModelMembersFilterInput {
   playerId: ModelIDInput
   memberPlan: ModelStringInput
   endDate: ModelStringInput
+  skipTutorial: ModelStringInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelMembersFilterInput]
@@ -315,6 +317,7 @@ input ModelMembersConditionInput {
   playerId: ModelIDInput
   memberPlan: ModelStringInput
   endDate: ModelStringInput
+  skipTutorial: ModelStringInput
   and: [ModelMembersConditionInput]
   or: [ModelMembersConditionInput]
   not: ModelMembersConditionInput
@@ -327,6 +330,7 @@ input CreateMembersInput {
   playerId: ID
   memberPlan: String
   endDate: AWSDate
+  skipTutorial: String
 }
 
 input UpdateMembersInput {
@@ -334,6 +338,7 @@ input UpdateMembersInput {
   playerId: ID
   memberPlan: String
   endDate: AWSDate
+  skipTutorial: String
 }
 
 input DeleteMembersInput {
@@ -345,6 +350,7 @@ input ModelSubscriptionMembersFilterInput {
   playerId: ModelSubscriptionIDInput
   memberPlan: ModelSubscriptionStringInput
   endDate: ModelSubscriptionStringInput
+  skipTutorial: ModelSubscriptionStringInput
   createdAt: ModelSubscriptionStringInput
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionMembersFilterInput]

@@ -21,7 +21,7 @@ const suitColors = {
 
 function TopBar({ mode }) {
     const { signOut, user } = useAuthenticator();
-    const { pokerHand, createPokerHandDB, updatePokerHandDB, updatePokerHand, pokerHandList, fetchPokerHands, setPokerHand } = useContext(PokerHandContext);
+    const { pokerHand, createPokerHandDB, updatePokerHandDB, updatePokerHand, pokerHandList, fetchPokerHands, setPokerHand, resetPokerHand } = useContext(PokerHandContext);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredHands, setFilteredHands] = useState([]);
     const [modalMessage, setModalMessage] = useState('');
@@ -130,7 +130,8 @@ function TopBar({ mode }) {
         if (saveHand) {
             await handleUpdateHand(); // Guardar la mano antes de recargar
         }
-        window.location.reload();
+        resetPokerHand();
+        setConfirmResetVisible(false);
     };
 
     const getPositionText = (index, tableType) => {
@@ -238,12 +239,12 @@ function TopBar({ mode }) {
                         </ul>
                     )}
                     {pokerHand?.id && pokerHand.playerId === user.username && (
-                        <button className="nav-button" onClick={handleUpdateHand}>
+                        <button className="nav-button save-button" onClick={handleUpdateHand}>
                             <FontAwesomeIcon icon="floppy-disk" /> Guardar Mano
                         </button>
                     )}
                     {!pokerHand?.id && (
-                        <button className="nav-button" onClick={handleCreateHand}>
+                        <button className="nav-button save-button" onClick={handleCreateHand}>
                             <FontAwesomeIcon icon="floppy-disk" /> Guardar Mano
                         </button>
                     )}

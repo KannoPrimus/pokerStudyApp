@@ -366,6 +366,12 @@ function PokerTrainer({ sequence, stake, membership }) {
                             </div>
                         ))}
                         <div className="trainer-table-center">
+                            <div className="chips-container">
+                                {chips.map((chip, index) => (
+                                    <div key={index} className="chip">
+                                    </div>
+                                ))}
+                            </div>
                             <div className="board-cards section ">
                                 {(streetName === 'flop' || streetName === 'turn' || streetName === 'river') && (
                                     <>
@@ -377,12 +383,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                                 {(streetName === 'turn' || streetName === 'river') && <CardSelector card="turnCard" trainer="true" />}
                                 {streetName === 'river' && <CardSelector card="riverCard" trainer="true" />}
                             </div>
-                            <div className="chips-container">
-                                {chips.map((chip, index) => (
-                                    <div key={index} className="chip">
-                                    </div>
-                                ))}
-                            </div>
+
                             <div className="trainer-legend">
                                 <div className="trainer-legend-item">
                                     <span className="trainer-legend-color" style={{ backgroundColor: '#4CAF50' }}></span>
