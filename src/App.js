@@ -74,7 +74,7 @@ function App() {
 
         if (user) {
             fetchMembership(user.username);
-            console.log('App:', skipTutorial);
+            //console.log('App:', skipTutorial);
         } else {
             setLoading(false);
         }

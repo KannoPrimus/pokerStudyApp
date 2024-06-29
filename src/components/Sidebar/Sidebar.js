@@ -98,7 +98,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     useEffect(() => {
 
-        console.log('Sidebar:',skipTutorialMember);
+        //console.log('Sidebar:',skipTutorialMember);
     }, []);
 
 

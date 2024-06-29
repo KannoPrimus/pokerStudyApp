@@ -277,7 +277,7 @@ const Tutorial = ({skipTutorial}) => {
     };
 
     if (skipTutorial==='false'){
-        console.log('Tutorial:',skipTutorial);
+        //console.log('Tutorial:',skipTutorial);
         return (
             <div>
                 <Joyride
