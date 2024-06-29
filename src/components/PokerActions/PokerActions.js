@@ -35,7 +35,7 @@ function PokerActions({ id }) {
 
 
         if (pokerHand[`${phase}Action`] === "{}") {
-            console.log(pokerHand);
+
             setActions([]);
             const inferredFirstPlayer = inferFirstPlayer();
             setFirstPlayer(inferredFirstPlayer);

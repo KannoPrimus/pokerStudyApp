@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Joyride, { ACTIONS, EVENTS, STATUS } from 'react-joyride';
 
-const Tutorial = (skipTutorial) => {
+const Tutorial = ({skipTutorial}) => {
     const [run, setRun] = useState(false);
     const [steps, setSteps] = useState([]);
 
@@ -277,6 +277,7 @@ const Tutorial = (skipTutorial) => {
     };
 
     if (skipTutorial==='false'){
+        console.log('Tutorial:',skipTutorial);
         return (
             <div>
                 <Joyride

@@ -3,40 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/parameters.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/parameters.json" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/schema.graphql" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/build/schema.graphql" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/schema.graphql" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/pokerstudyapp/schema.graphql" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/awscloudformation/build/root-cloudformation-stack.json" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" afterPath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/parameters.json" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/parameters.json" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/schema.graphql" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/build/schema.graphql" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/schema.graphql" afterPath="$PROJECT_DIR$/amplify/backend/api/pokerstudyapp/schema.graphql" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/awscloudformation/build/root-cloudformation-stack.json" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/root-cloudformation-stack.json" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/build/root-cloudformation-stack.json" />
       <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change beforePath="$PROJECT_DIR$/src/components/About/Tutorial.js" afterPath="$PROJECT_DIR$/src/components/About/Tutorial.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Header.js" afterPath="$PROJECT_DIR$/src/components/Login/Header.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.css" afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.css" />
       <change beforePath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" afterPath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" afterPath="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerTable/PokerTable.css" afterPath="$PROJECT_DIR$/src/components/PokerTable/PokerTable.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.css" afterPath="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.js" afterPath="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Topbar/Topbar.js" afterPath="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/mutations.js" afterPath="$PROJECT_DIR$/src/graphql/mutations.js" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/queries.js" afterPath="$PROJECT_DIR$/src/graphql/queries.js" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/MembersCreateForm.d.ts" afterPath="$PROJECT_DIR$/src/ui-components/MembersCreateForm.d.ts" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/MembersCreateForm.jsx" afterPath="$PROJECT_DIR$/src/ui-components/MembersCreateForm.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/MembersUpdateForm.d.ts" afterPath="$PROJECT_DIR$/src/ui-components/MembersUpdateForm.d.ts" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/MembersUpdateForm.jsx" afterPath="$PROJECT_DIR$/src/ui-components/MembersUpdateForm.jsx" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,11 +18,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
+      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2941">
-              <caret line="373" column="34" lean-forward="false" selection-start-line="373" selection-start-column="34" selection-end-line="373" selection-end-column="34" />
+            <state relative-caret-position="1070">
+              <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+              <folding>
+                <element signature="e#15#78#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PokerActions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-902">
+              <caret line="75" column="43" lean-forward="true" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sidebar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="509">
+              <caret line="148" column="18" lean-forward="false" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -111,11 +114,9 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.css" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
-        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
         <option value="$PROJECT_DIR$/src/components/MainContent/MainContent.css" />
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" />
         <option value="$PROJECT_DIR$/src/components/PokerTable/PokerTable.css" />
-        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.css" />
         <option value="$PROJECT_DIR$/src/components/PokerNotes/PokerNotes.js" />
         <option value="$PROJECT_DIR$/src/components/StreetColumn/StreetColumn.js" />
@@ -123,12 +124,14 @@
         <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
         <option value="$PROJECT_DIR$/src/graphql/mutations.js" />
         <option value="$PROJECT_DIR$/src/graphql/queries.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/components/About/Tutorial.js" />
         <option value="$PROJECT_DIR$/src/components/Login/Header.js" />
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
+        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
+        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/About/Tutorial.js" />
       </list>
     </option>
   </component>
@@ -190,7 +193,21 @@
               <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="CardSelector" type="462c0819:PsiDirectoryNode" />
+              <item name="About" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="PokerActions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokerstudyapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pokerstudyapp" type="b2602c69:ProjectViewProjectNode" />
@@ -329,14 +346,7 @@
       <workItem from="1716898132034" duration="119051000" />
       <workItem from="1717513394495" duration="38255000" />
       <workItem from="1717677396328" duration="136904000" />
-      <workItem from="1719492814111" duration="47384000" />
-    </task>
-    <task id="LOCAL-00023" summary="Incorporacion de trainer:&#10;- Fix de aparicion de cartas&#10;- fix de aparicion de fichas y apariencia de acumulacion&#10;- se agrega logo en dorso de las cartas">
-      <created>1717413792253</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1717413792253</updated>
+      <workItem from="1719492814111" duration="52852000" />
     </task>
     <task id="LOCAL-00024" summary="Incorporacion de trainer:&#10;- Fix de aparicion de cartas&#10;- fix de aparicion de fichas y apariencia de acumulacion&#10;- se agrega logo en dorso de las cartas">
       <created>1717413992757</created>
@@ -674,14 +684,22 @@
       <option name="project" value="LOCAL" />
       <updated>1719539130056</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Se mueve mesa de seleccion de posicion al sidebar&#10;Se implementa tutorial guiado&#10;Se fixea bug y elimina el paso de refresh completo al iniciar una nueva mano">
+      <created>1719613624132</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1719613624132</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="685700000" />
+    <option name="totallyTimeSpent" value="691168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -696,7 +714,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24733475" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24733475" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -726,7 +744,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Incorporacion de trainer:&#10;- Fix de aparicion de cartas&#10;- fix de aparicion de fichas y apariencia de acumulacion&#10;- se agrega logo en dorso de las cartas" />
     <MESSAGE value="Incorporacion de trainer:&#10;- Se agrega control de membresia&#10;- Se agrega control de upsell (3 meses gratis)&#10;- Se agrega control de downgrade cdo se alcanza la fecha end Date de la membresia" />
     <MESSAGE value="Nuevo modelo de gestion de acciones:&#10;- Auto infiere el jugador que habla primero&#10;- Diferencia entre acciones del primer jugador por calle y luego dependiendo de si la accion anterior es agresiva o pasiva&#10;- Auto scroll a la ultima card&#10;- Eliminacion de acciones desde la q cambia hasta la ultima" />
     <MESSAGE value="Nuevo modelo de gestion de acciones:&#10;- correccion bug de inferencia de jugadores y posiciones" />
@@ -751,7 +768,8 @@
     <MESSAGE value="cambio en el favicon" />
     <MESSAGE value="cambio en el precio en landing" />
     <MESSAGE value="se cambia foto portada por poker player crusheandola" />
-    <option name="LAST_COMMIT_MESSAGE" value="se cambia foto portada por poker player crusheandola" />
+    <MESSAGE value="Se mueve mesa de seleccion de posicion al sidebar&#10;Se implementa tutorial guiado&#10;Se fixea bug y elimina el paso de refresh completo al iniciar una nueva mano" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se mueve mesa de seleccion de posicion al sidebar&#10;Se implementa tutorial guiado&#10;Se fixea bug y elimina el paso de refresh completo al iniciar una nueva mano" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -761,7 +779,7 @@
           <line>6</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1013,14 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -1102,17 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="156" column="48" lean-forward="false" selection-start-line="156" selection-start-column="48" selection-end-line="156" selection-end-column="48" />
-          <folding>
-            <element signature="e#24#75#0" expanded="false" />
-            <element signature="e#330#396#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1120,22 +1119,6 @@
           <folding>
             <element signature="e#0#74#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/About/Tutorial.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="278" column="29" lean-forward="false" selection-start-line="278" selection-start-column="29" selection-end-line="278" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphql/mutations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="166" column="18" lean-forward="false" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1155,22 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2878">
-          <caret line="273" column="52" lean-forward="false" selection-start-line="273" selection-start-column="52" selection-end-line="273" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="42" column="167" lean-forward="false" selection-start-line="42" selection-start-column="167" selection-end-line="42" selection-end-column="167" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1184,6 +1151,56 @@
         <state relative-caret-position="2941">
           <caret line="373" column="34" lean-forward="false" selection-start-line="373" selection-start-column="34" selection-end-line="373" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="148" column="18" lean-forward="false" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/mutations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="172" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-902">
+          <caret line="75" column="43" lean-forward="true" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/About/Tutorial.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1700">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1070">
+          <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+          <folding>
+            <element signature="e#15#78#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

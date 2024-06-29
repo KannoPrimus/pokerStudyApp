@@ -39,9 +39,10 @@ function App() {
 
                 const userMembership = result.data.getMembers;
                 if (userMembership) {
+
                     setHasMembership(true);
                     setEndDateMembership(userMembership.endDate);
-                    console.log(userMembership.skipTutorial);
+                    setMembership(userMembership.memberPlan);
                     setSkipTutorial(userMembership.skipTutorial);
                 } else {
                     const createBasicMembership = async (playerId) => {
@@ -63,7 +64,8 @@ function App() {
                     setMembership('BASIC');
                 }
 
-                setMembership(userMembership.memberPlan);
+
+
             } catch (error) {
                 console.error('Error fetching membership:', error);
                 setLoading(false);
@@ -72,6 +74,7 @@ function App() {
 
         if (user) {
             fetchMembership(user.username);
+            console.log('App:', skipTutorial);
         } else {
             setLoading(false);
         }
@@ -107,9 +110,9 @@ function App() {
                 } catch {
                     console.log('Error updating');
                 }
-            } else {
-                console.log("endDate es mayor o igual que hoy");
-            }
+            } //else {
+              //  console.log("endDate es mayor o igual que hoy");
+            //}
         }
     }, [membership]);
 
@@ -127,7 +130,8 @@ function App() {
     }
 
     if (membership !== '') {
-        return (
+
+          return (
             <div className="App">
                 <Topbar mode={mode} />
                 <div className="content">
@@ -152,6 +156,7 @@ function App() {
                         membership={membership}
                         stake={stake}
                         setStake={setStake}
+                        skipTutorialMember={skipTutorial}
                     />
                 </div>
             <Tutorial skipTutorial={skipTutorial}/>

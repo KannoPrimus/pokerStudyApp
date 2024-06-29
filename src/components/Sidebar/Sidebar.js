@@ -52,7 +52,7 @@ const handSources = [
 
 library.add(fas);
 
-function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setStake }) {
+function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setStake, skipTutorialMember }) {
     const [handTitle, setHandTitle] = useState('');
     const [handStake, setHandStake] = useState('');
     const [description, setDescription] = useState('');
@@ -60,8 +60,10 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     const [showUpsellModal, setShowUpsellModal] = useState(false);
     const [isUpgraded, setIsUpgraded] = useState(false);
     const [handSource, setHandSource] = useState('playerHands');
+    const [skipTutorial, setSkipTutorial] = useState(skipTutorialMember.toLowerCase?.() === 'true'); // Nuevo estado
     const { pokerHand, updatePokerHand, resetPokerHand, fetchPokerHandsTrainer, fetchPokerHands } = useContext(PokerHandContext);
     const { user, signOut } = useAuthenticator();
+
 
     useEffect(() => {
         if (pokerHand.handTitle) {
@@ -69,6 +71,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             setHandStake(pokerHand.stake);
             setDescription(pokerHand.description);
             setIsShareable(pokerHand.share.toLowerCase?.() === 'true');
+
         }
     }, [pokerHand.id]);
 
@@ -92,6 +95,13 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
         setHandTitle('');
         setHandStake('');
     }, [mode]);
+
+    useEffect(() => {
+
+        console.log('Sidebar:',skipTutorialMember);
+    }, []);
+
+
 
     const handleTitleChange = (e) => {
         setHandTitle(e.target.value);
@@ -168,12 +178,47 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             fetchPokerHands(user.username, handStake, handTitle, share);
     };
 
+    const handleSkipTutorialChange = (e) => {
+        setSkipTutorial(e.target.checked);
+
+        try {
+            const updateMembership = async (playerId) => {
+                const newMembers = await client.graphql({
+                    query: updateMembers,
+                    variables: {
+                        input: {
+                            "id": playerId,
+                            "skipTutorial": e.target.checked
+                        }
+                    }
+                });
+            };
+
+            updateMembership(user.username);
+        } catch {
+            console.log('Error updating');
+        }
+    };
+
     return (
         <div className="sidebar">
             <div className="mode-switch">
-                <button className="logout-button" onClick={signOut}>
+                <div className="switch-container">
+                    <button className="logout-button" onClick={signOut}>
                     <FontAwesomeIcon icon="right-from-bracket" size="1x" /> Salir
                 </button>
+                    <span className="switch-label">Saltar tutorial</span>
+                    <label className="switch">
+                        <input
+                            type="checkbox"
+                            checked={skipTutorial}
+                            onChange={handleSkipTutorialChange}
+                        />
+                        <span className="slider"></span>
+                    </label>
+
+                </div>
+
                 <h2 className="txtMembershipPlan">Plan: {membership} </h2>
 
                 <div className="button-group">
@@ -212,9 +257,9 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             </div>
             {mode === 'Estudio' ? (
                 <>
-                <div className="txtMembershiPlan">Descripción de la mano:</div>
-                <PokerTable />
-                    </>
+                    <div className="txtMembershiPlan">Descripción de la mano:</div>
+                    <PokerTable />
+                </>
             ) : mode === 'Trainer' ? (
                 <>
                     <div className="txtChangeMode">Fuente de manos</div>
@@ -301,7 +346,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     );
 }
 
-
 function UpsellModal({ onClose, onUpgrade, isUpgraded, membership }) {
     return (
         <div className="modalUpsell">
@@ -383,6 +427,5 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership }) {
         </div>
     );
 }
-
 
 export default Sidebar;

@@ -89,12 +89,22 @@ padding:5px;
     font-style: italic;
 }
 
+/* Sidebar.css */
+
+/* Add this CSS for the switch */
+.switch-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    flex-direction: row;
+    gap:10px;
+}
+
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 25px;
-
+    width: 34px;
+    height: 20px;
 }
 
 .switch input {
@@ -104,7 +114,6 @@ padding:5px;
 }
 
 .slider {
-
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -113,28 +122,33 @@ padding:5px;
     bottom: 0;
     background-color: #ccc;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 20px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 18px;
-    width: 18px;
-    left: 4px;
-    bottom: 4px;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
     background-color: white;
     transition: .4s;
     border-radius: 50%;
 }
 
 input:checked + .slider {
-    background-color: #039370;
+    background-color: #2196F3;
 }
 
 input:checked + .slider:before {
-    transform: translateX(15px);
+    transform: translateX(14px);
 }
+
+.switch-label {
+    margin-left: 80px;
+}
+
 
 /* Optional: Styling for the mode label */
 .mode-label {
