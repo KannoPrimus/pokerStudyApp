@@ -569,7 +569,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                     <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length - 1}><FontAwesomeIcon icon="forward" size="1x" /></button>
                     <div className="statsHud">
                         <div className="tooltip"><FontAwesomeIcon icon="gamepad" size="1x" /><text> {trainedHands.length}</text><span className="tooltip-text">Jugadas</span></div>
-                        <div className="tooltip"><FontAwesomeIcon icon="trophy" size="1x" /><text> {trainedHands.filter(hand => hand.score >= 75).length}</text><span className="tooltip-text">Ganadas</span></div>
+                        <div className="tooltip"><FontAwesomeIcon icon="trophy" size="1x" /><text> {trainedHands.filter(hand => hand.score >= 75).length}</text><span className="tooltip-text">Correctas</span></div>
                         <div className="tooltip"><FontAwesomeIcon icon="fire-flame-curved" size="1x" /><text> {streakHands.length}</text><span className="tooltip-text">Racha</span></div>
                     </div>
                 </div>

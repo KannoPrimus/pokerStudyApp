@@ -150,7 +150,11 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
         //window.location.reload();
     };
 
-    const handleUpgrade = async () => {
+    const activaMembresia = () => {
+        window.location.reload();
+    };
+
+    const handleUpgrade = async (level) => {
         setIsUpgraded(true);
         const endDate = format(addMonths(new Date(), 1), "yyyy-MM-dd") + "Z";
 
@@ -161,7 +165,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     input: {
                         "id": user.username,
                         "playerId": user.username,
-                        "memberPlan": "PRO",
+                        "memberPlan": level,
                         "endDate": endDate
                     }
                 }
@@ -358,14 +362,14 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             {showUpsellModal && (
                 <>
                     <div className="overlay-upsell" onClick={closeModal}></div>
-                    <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} membership={membership} />
+                    <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} membership={membership} activaMembresia={activaMembresia} />
                 </>
             )}
         </div>
     );
 }
 
-function UpsellModal({ onClose, onUpgrade, isUpgraded, membership }) {
+function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembresia}) {
     return (
         <div className="modalUpsell">
             <div className="modalUpsell-content">
@@ -375,8 +379,11 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership }) {
                 {isUpgraded ? (
                     <>
                         <h2>¡Felicidades!</h2>
-                        <FontAwesomeIcon icon="gift" size="3x" />
-                        <p>Has ganado una membresía PRO por 1 mes.</p>
+                        <FontAwesomeIcon icon="handshake" size="3x" />
+                        <p>Has activado tu membresía por 1 mes.</p>
+                        <button className="activar-membresia" onClick={activaMembresia}>
+                            <FontAwesomeIcon icon="filter-circle-xmark" size="1x" /> Acceder
+                        </button>
                     </>
                 ) : (
                     <div className="plan-container">
@@ -405,7 +412,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership }) {
                                         onApprove={async (data, actions) => {
                                             const order = await actions.order?.capture();
                                             console.log("order", order);
-                                            onUpgrade();
+                                            onUpgrade('PRO');
                                         }}
                                     />
                                 </PayPalScriptProvider>
@@ -435,7 +442,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership }) {
                                     onApprove={async (data, actions) => {
                                         const order = await actions.order?.capture();
                                         console.log("order", order);
-                                        onUpgrade();
+                                        onUpgrade('PREMIUM');
                                     }}
                                 />
                             </PayPalScriptProvider>
