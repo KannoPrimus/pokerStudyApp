@@ -155,7 +155,7 @@
     border-radius: 3px;
     gap:10px;
     padding: 10px;
-    width:50%;
+    width:60%;
 }
 .trainer-controls-2 {
     display: flex;            /* Utiliza Flexbox para el layout horizontal */
@@ -192,7 +192,7 @@
 .trainer-controls-2 button {
     margin: 0 10px;
     padding: 10px 20px;
-    backgroundcolor: #00ECB3;
+    background-color: #00ECB3;
     font-weight: bolder;
     color: white;
     border: 1px solid #f9f9f9;
@@ -448,4 +448,20 @@ top:-35px;
 
 .trainer-board-cards-hidden{
     padding-top:20px;
+}
+
+.statsHud{
+    margin: 0 10px;
+    padding-left:10px;
+    background-color: transparent;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
 }

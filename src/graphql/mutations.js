@@ -171,3 +171,36 @@ export const updateMembers = /* GraphQL */ `
     }
   }
 `;
+
+export const createTrainings = /* GraphQL */ `
+  mutation CreateTrainings(
+    $input: CreateTrainingsInput!
+    $condition: ModelTrainingsConditionInput
+  ) {
+    createTrainings(input: $input, condition: $condition) {
+      id
+      handId
+      playerId
+      score
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateTrainings = /* GraphQL */ `
+  mutation UpdateTrainings(
+    $input: UpdateTrainingsInput!
+    $condition: ModelTrainingsConditionInput
+  ) {
+    updateTrainings(input: $input, condition: $condition) {
+      id
+      handId
+      playerId
+      score
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;

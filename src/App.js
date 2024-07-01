@@ -8,12 +8,13 @@ import PokerTrainer from './components/PokerTrainer/PokerTrainer';
 import PokerStats from './components/PokerStats/PokerStats';
 import './App.css';
 import "@aws-amplify/ui-react/styles.css";
-import { useAuthenticator } from '@aws-amplify/ui-react';
+import { useAuthenticator, Image } from '@aws-amplify/ui-react';
 import { generateClient } from "aws-amplify/api";
 import { listMembers, getMembers, listHands as listHandsQuery } from "./graphql/queries";
 import { createMembers, updateMembers } from "./graphql/mutations";
 import { isBefore, parseISO } from "date-fns";
 import Tutorial from './components/About/Tutorial';
+import logo2 from './assets/logoPSA_soloPica.png';
 
 const client = generateClient();
 
@@ -119,6 +120,11 @@ function App() {
     if (loading) {
         return (
             <div className="loading-container">
+                <Image
+                    height="50px"
+                    alt="Poker Study App Logo"
+                    src={logo2}
+                />
                 <div className="spinner"></div>
                 <p className="loading-text">Loading...</p>
             </div>

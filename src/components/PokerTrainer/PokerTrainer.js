@@ -1,14 +1,23 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
-import { useAuthenticator } from '@aws-amplify/ui-react';
+import { useAuthenticator,Text } from '@aws-amplify/ui-react';
 import CardSelector from '../CardSelector/CardSelector';
 import './PokerTrainer.css';
+import { createTrainings } from "../../graphql/mutations";
+import {listHands as listHandsQuery, listTrainings} from "../../graphql/queries";
+import { generateClient } from "aws-amplify/api";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 const preflopFirstActions = ["OR_2.5bb", "OR_3bb", "ALL-IN"];
 const postflopFirstActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
 
 const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
 const vsPassiveActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+
+const client = generateClient();
 
 function PokerTrainer({ sequence, stake, membership }) {
     const { signOut, user } = useAuthenticator();
@@ -32,15 +41,101 @@ function PokerTrainer({ sequence, stake, membership }) {
     const [score, setScore] = useState(0);
     const [totalActions, setTotalActions] = useState(0);
     const [chips, setChips] = useState([]);
-    const [firstPlayer, setFirstPlayer] = useState('');
+    const [trainedHands, setTrainedHands] = useState([]);
+    const [streakHands, setStreakHands] = useState([]);
+    const [pot, setPot] = useState(1.5);
 
 
     useEffect(() => {
         resetPokerHand();
+
+
     }, []);
 
     useEffect(() => {
-        const filtered = pokerHandList;
+
+        if(finishHand==='true'){
+
+            try {
+
+                const createTraining = async (handId, playerId, score) => {
+                    const newTraining = await client.graphql({
+                        query: createTrainings,
+                        variables: {
+                            input: {
+                                "handId": handId,
+                                "playerId": playerId,
+                                "score": score,
+                                }
+                        }
+                    });
+                };
+
+                //console.log('Save training',currentHand.id + ' ' + user.username+ ' ' + scorePercentage);
+                createTraining(currentHand.id ,user.username, scorePercentage);
+
+
+
+            } catch (error) {
+                console.error('Error saving Training:', error);
+            }
+
+            try {
+
+                const fetchTrainingStats = async (playerId=null) => {
+                    try {
+                        const filter = {  };
+
+                        if (playerId) {
+                            filter.playerId = { eq: playerId };
+                        }
+
+
+                        const result = await client.graphql({
+                            query: listTrainings,
+                            variables: { filter }
+                        });
+
+                        setTrainedHands ( result.data.listTrainings.items);
+
+                    } catch (error) {
+                        console.log(error);
+                    }
+                };
+
+                fetchTrainingStats(user.username);
+
+                const getScoreStreak = (hands) => {
+
+                    const sortedHands = hands.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
+                    let streak = [];
+                    for (let i = sortedHands.length - 1; i >= 0; i--) {
+                        if (sortedHands[i].score === 100) {
+
+                            streak.unshift(sortedHands[i]);
+                        } else {
+                            break;
+                        }
+                    }
+                    return streak;
+                };
+
+                setStreakHands (getScoreStreak(trainedHands));
+
+
+            } catch (error) {
+                console.error('Error saving Training:', error);
+            }
+
+
+
+        }
+
+    }, [finishHand]);
+
+    useEffect(() => {
+        const filtered = pokerHandList.sort(() => Math.random() - 0.5);
         setFilteredHands(filtered);
         setStreetName('preflop');
         resetPokerHand();
@@ -49,6 +144,8 @@ function PokerTrainer({ sequence, stake, membership }) {
         setScore(0);
         setTotalActions(0);
         setChips([]);
+        setResponses({});
+        setPot(1.5);
 
         if (filtered.length > 0) {
             setActions([]);
@@ -56,6 +153,9 @@ function PokerTrainer({ sequence, stake, membership }) {
             setCurrentHandIndex(0);
             setMySeat('');
             setRivalSeat('');
+
+
+
         } else {
             if (sequence !== '' || stake !== '') {
                 setShowModal(true);
@@ -73,6 +173,54 @@ function PokerTrainer({ sequence, stake, membership }) {
             setMaxPlayers(currentHand.tableType);
             setPokerHand(currentHand);
             setActionIndex(0);
+
+            try {
+
+                const fetchTrainingStats = async (playerId=null) => {
+                    try {
+                        const filter = {  };
+
+                        if (playerId) {
+                            filter.playerId = { eq: playerId };
+                        }
+
+
+                        const result = await client.graphql({
+                            query: listTrainings,
+                            variables: { filter }
+                        });
+
+                        setTrainedHands ( result.data.listTrainings.items);
+
+                    } catch (error) {
+                        console.log(error);
+                    }
+                };
+
+                fetchTrainingStats(user.username);
+
+                const getScoreStreak = (hands) => {
+
+                    const sortedHands = hands.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
+                    let streak = [];
+                    for (let i = sortedHands.length - 1; i >= 0; i--) {
+                        if (sortedHands[i].score === 100) {
+
+                            streak.unshift(sortedHands[i]);
+                        } else {
+                            break;
+                        }
+                    }
+                    return streak;
+                };
+
+                setStreakHands (getScoreStreak(trainedHands));
+
+
+            } catch (error) {
+                console.error('Error saving Training:', error);
+            }
 
             if (currentHand[`${streetName}Action`] == "{}")
                 setActions([]);
@@ -114,6 +262,8 @@ function PokerTrainer({ sequence, stake, membership }) {
             setMaxPlayers(currentHand.tableType);
             setPokerHand(currentHand);
         }
+
+
     }, [pokerHand, streetName]);
 
     useEffect(() => {
@@ -166,6 +316,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             setScore(0);
             setTotalActions(0);
             setChips([]);
+            setPot(1.5);
         }
     };
 
@@ -182,7 +333,78 @@ function PokerTrainer({ sequence, stake, membership }) {
             setScore(0);
             setTotalActions(0);
             setChips([]);
+            setPot(1.5);
         }
+    };
+
+    const resetHand = () => {
+        setMySeat(currentHand.heroPosition);
+        setRivalSeat(currentHand.villainPosition);
+        setStreetName('preflop');
+        setResponses({});
+        setFinishHand('false');
+        setScore(0);
+        setTotalActions(0);
+        setChips([]);
+        setActionIndex(0);
+        setCurrentPlayer('Hero');
+        setPot(1.5);
+    };
+
+    const calculatePot = (action) => {
+        let newPot = pot;
+        const potWithoutBB = pot; // Excluding the initial 1.5bb pot
+
+        if (action.action.includes('OR')) {
+            const amount = parseFloat(action.action.split('_')[1].replace('bb', ''));
+            newPot += amount;
+        } else if (action.action.includes('BET')) {
+            const percentage = parseFloat(action.action.split('_')[1].replace('%', '')) / 100;
+            newPot += potWithoutBB * percentage;
+        } else if (action.action.includes('RAISE')) {
+            const multiplier = parseFloat(action.action.split('_')[1].replace('x', ''));
+            const previousBet = actions[actionIndex - 1];
+            if (previousBet && previousBet.action.includes('BET') ) {
+                const percentage = parseFloat(previousBet.action.split('_')[1].replace('%', '')) / 100;
+                newPot += potWithoutBB * percentage * multiplier;
+            }else if(previousBet && previousBet.action.includes('OR')){
+                const amount = parseFloat(previousBet.action.split('_')[1].replace('bb', ''));
+
+                newPot += (amount * multiplier);
+            }
+
+        } else if (action.action === 'CALL') {
+
+
+            const previousBet = actions[actionIndex - 1];
+            const previousBet2 = actions[actionIndex - 2];
+
+            console.log('call',previousBet);
+            if (previousBet && (previousBet.action.includes('BET') || previousBet.action.includes('OR') || previousBet.action.includes('RAISE'))) {
+                if (previousBet.action.includes('OR')) {
+                    const amount = parseFloat(previousBet.action.split('_')[1].replace('bb', ''));
+                    newPot += amount;
+                }
+                else if (previousBet.action.includes('BET')) {
+                    const percentage = parseFloat(previousBet.action.split('_')[1].replace('%', '')) / 100;
+                    newPot += potWithoutBB * percentage;
+                } else if (previousBet.action.includes('RAISE')) {
+                    const multiplier = parseFloat(previousBet.action.split('_')[1].replace('x', ''));
+                    const betAction = actions.find(act => act.action.includes('BET'));
+                    if (betAction) {
+                        const percentage = parseFloat(betAction.action.split('_')[1].replace('%', '')) / 100;
+                        newPot += potWithoutBB * percentage * multiplier;
+                    }else{
+                        newPot += (parseFloat(previousBet2.action.split('_')[1].replace('bb', ''))*multiplier)
+                    }
+
+
+
+                }
+            }
+        }
+
+        setPot(parseFloat(newPot.toFixed(1)));
     };
 
     const getCurrentButtons = (actions, currentIndex) => {
@@ -208,7 +430,13 @@ function PokerTrainer({ sequence, stake, membership }) {
         let referenceActions = [];
 
         if (streetName === 'preflop') {
-            referenceActions = preflopFirstActions;
+
+            console.log(currentIndex);
+
+            if(currentIndex!=1)
+                referenceActions = preflopFirstActions;
+            else
+                referenceActions = vsAggressiveActions;
         } else if (vsAggressiveActions.includes(currentAction.action)) {
             referenceActions = vsAggressiveActions;
         } else if (vsPassiveActions.includes(currentAction.action)) {
@@ -250,6 +478,9 @@ function PokerTrainer({ sequence, stake, membership }) {
     };
 
     const handleActionClick = (action) => {
+
+        calculatePot(action);
+
         if (currentPlayer === 'Hero') {
             setResponses(prevResponses => ({
                 ...prevResponses,
@@ -264,6 +495,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                 setFinishHand('true');
             }
         }
+
 
         if (action.action.includes('FOLD') || action.action.includes('NONE')) {
             setFinishHand('true');
@@ -291,9 +523,6 @@ function PokerTrainer({ sequence, stake, membership }) {
             }
         } else {
 
-            console.log(actions);
-            console.log(nextActionIndex);
-            console.log(streetName);
 
             if (streetName === 'preflop') {
                 setStreetName('flop');
@@ -324,12 +553,20 @@ function PokerTrainer({ sequence, stake, membership }) {
     const scorePercentage = Math.round((score / totalActions) * 100) || 0;
     const scoreColor = getScoreColor(scorePercentage);
 
+
+
     return (
         <div className="poker-trainer-container-wrapper">
             <div className="poker-trainer-container">
                 <div className="trainer-controls-1">
-                    <button onClick={handlePreviousHand} disabled={currentHandIndex === 0}>Mano Anterior</button>
-                    <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length - 1}>Mano Siguiente</button>
+                    <button onClick={handlePreviousHand} disabled={currentHandIndex === 0}><FontAwesomeIcon icon="backward" size="1x" /></button>
+                    <text style={{color:'#f9f9f9'}}>{currentHandIndex+1} / {filteredHands.length}</text>
+                    <button onClick={handleNextHand} disabled={currentHandIndex === filteredHands.length - 1}><FontAwesomeIcon icon="forward" size="1x" /></button>
+                    <div className="statsHud">
+                        <div className="tooltip"><FontAwesomeIcon icon="gamepad" size="1x" /><text> {trainedHands.length}</text><span className="tooltip-text">Jugadas</span></div>
+                        <div className="tooltip"><FontAwesomeIcon icon="trophy" size="1x" /><text> {trainedHands.filter(hand => hand.score >= 75).length}</text><span className="tooltip-text">Ganadas</span></div>
+                        <div className="tooltip"><FontAwesomeIcon icon="fire-flame-curved" size="1x" /><text> {streakHands.length}</text><span className="tooltip-text">Racha</span></div>
+                    </div>
                 </div>
                 {showModal && (
                     <div className="modal">
@@ -371,6 +608,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                                     <div key={index} className="chip">
                                     </div>
                                 ))}
+
                             </div>
                             <div className="board-cards section ">
                                 {(streetName === 'flop' || streetName === 'turn' || streetName === 'river') && (
@@ -393,6 +631,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                                     <span className="trainer-legend-color" style={{ backgroundColor: '#FF5722' }}></span>
                                     <span>Villain</span>
                                 </div>
+                                Pot: {pot} bb
                             </div>
                         </div>
                     </div>
@@ -401,7 +640,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                     {(currentAction && finishHand === 'false' && currentPlayer === 'Hero') && (
                         <p className="heroAction">Qué haces?</p>
                     )}
-                    {(finishHand === 'false' && currentAction) && (
+                    {(finishHand === 'false' && currentAction) ? (
                         currentButtons.map((action, index) => (
                             currentPlayer === 'Hero' ? (
                                 <button key={index} onClick={() => handleActionClick(action)}>
@@ -416,32 +655,37 @@ function PokerTrainer({ sequence, stake, membership }) {
                                 </React.Fragment>
                             )
                         ))
+                    ) : (
+                        <button onClick={resetHand}>Volver a jugar <FontAwesomeIcon icon="rotate-left" size="1x" /></button>
                     )}
                 </div>
             </div>
             <div className="trainer-responses">
                 <div className="trainer-responses-container">
-                    <h3>Resultado:</h3>
+                    <h3>Spot: {currentHand ? currentHand.handTitle : ''}</h3>
+                    <h4>Acciones:</h4>
                     {Object.keys(responses).map(street => (
                         <div key={street}>
-                            <h4>{street}</h4>
+
                             {responses[street].map((response, index) => (
                                 <p
                                     key={index}
-                                    style={{ color: isCorrectResponse(response, street) ? 'green' : 'red' }}
+                                    style={{ marginRight:'5px',color:'#f9f9f9', backgroundColor: isCorrectResponse(response, street) ? '#4caf50' : 'red', border:'1px solid #f9f9f9', width:'auto', padding:'3px',borderRadius:'5px' }}
                                 >
-                                    {response.action.replace(/_/g, ' ')}
+                                    {street}: {response.action.replace(/_/g, ' ')} {isCorrectResponse(response, street) ? <FontAwesomeIcon icon="check" size="1x" /> : <FontAwesomeIcon icon="xmark" size="1x" />}
                                 </p>
                             ))}
                         </div>
                     ))}
                     {finishHand === 'true' && (
                         <>
-                            <div className="score" style={{ color: scoreColor }}>
-                                <h3>Puntuación:</h3> {scorePercentage}% ({score}/{totalActions} acciones correctas)
+                            <div className="score" style={{ color: scoreColor, fontSize:'20px',fontWeight:'bold' }}>
+                                Score: {scorePercentage}%
 
                             </div>
-                            <text style={{paddingTop:'20px',color:'white'}}>Notas: </text>
+                            <Text style={{paddingTop:'5px',color:'white'}}>({score}/{totalActions} acciones correctas)</Text>
+
+                            <Text style={{paddingTop:'20px',color:'white'}}>Notas: </Text>
                             <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.preflopNotes}}></div>
                                 <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.flopNotes}}></div>
                                     <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.turnNotes}}></div>

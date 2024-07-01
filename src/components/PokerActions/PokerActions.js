@@ -124,7 +124,7 @@ function PokerActions({ id }) {
 
     const handleSelectAction = (player, action, actionIndex) => {
 
-        console.log('Actions',actions);
+        //console.log('Actions',actions);
 
         let updatedActions = actions.map((act, index) => {
             if (index === actionIndex) {

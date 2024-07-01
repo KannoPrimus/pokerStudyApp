@@ -128,3 +128,38 @@ export const listMembers = /* GraphQL */ `
     }
   }
 `;
+
+export const getTrainings = /* GraphQL */ `
+  query GetTrainings($id: ID!) {
+    getTrainings(id: $id) {
+      id
+      handId
+      playerId
+      score
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listTrainings = /* GraphQL */ `
+  query ListTrainings(
+    $filter: ModelTrainingsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTrainings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        handId
+        playerId
+        score
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;

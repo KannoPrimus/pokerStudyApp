@@ -61,6 +61,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     const [isUpgraded, setIsUpgraded] = useState(false);
     const [handSource, setHandSource] = useState('playerHands');
     const [skipTutorial, setSkipTutorial] = useState(skipTutorialMember.toLowerCase?.() === 'true'); // Nuevo estado
+    const [filterActive, setFilterActive] = useState(false); // Nuevo estado para el filtro
     const { pokerHand, updatePokerHand, resetPokerHand, fetchPokerHandsTrainer, fetchPokerHands } = useContext(PokerHandContext);
     const { user, signOut } = useAuthenticator();
 
@@ -92,16 +93,16 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     }, [isShareable]);
 
     useEffect(() => {
+
         setHandTitle('');
         setHandStake('');
+
     }, [mode]);
 
     useEffect(() => {
 
         //console.log('Sidebar:',skipTutorialMember);
     }, []);
-
-
 
     const handleTitleChange = (e) => {
         setHandTitle(e.target.value);
@@ -175,7 +176,19 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
         if (handSource === 'sharedHands')
             fetchPokerHandsTrainer(handStake, handTitle, share);
         else
-            fetchPokerHands(user.username, handStake, handTitle, share);
+            fetchPokerHands(user.username, handStake, handTitle);
+
+        setHandTitle('');
+        setHandStake('');
+        setFilterActive(true); // Activar el filtro
+    };
+
+    const loadAllHands = () => {
+        fetchPokerHands(user.username);
+
+        setHandTitle('');
+        setHandStake('');
+        setFilterActive(false); // Desactivar el filtro
     };
 
     const handleSkipTutorialChange = (e) => {
@@ -205,8 +218,8 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             <div className="mode-switch">
                 <div className="switch-container">
                     <button className="logout-button" onClick={signOut}>
-                    <FontAwesomeIcon icon="right-from-bracket" size="1x" /> Salir
-                </button>
+                        <FontAwesomeIcon icon="right-from-bracket" size="1x" /> Salir
+                    </button>
                     <span className="switch-label">Saltar tutorial</span>
                     <label className="switch">
                         <input
@@ -216,7 +229,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                         />
                         <span className="slider"></span>
                     </label>
-
                 </div>
 
                 <h2 className="txtMembershipPlan">Plan: {membership} </h2>
@@ -309,7 +321,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             )}
             {mode === 'Estudio' ? (
                 <>
-
                     <textarea
                         id="description"
                         value={description}
@@ -331,15 +342,23 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     )}
                 </>
             ) : mode === 'Trainer' ? (
-                <button className="loadHandsButton" onClick={loadHands}>
-                    Cargar manos
-                </button>
+                <>
+                    {!filterActive ? (
+                        <button className="loadHandsButton" onClick={loadHands}>
+                            <FontAwesomeIcon icon="filter" size="1x" /> Filtrar manos
+                        </button>
+                    ) : (
+                        <button className="loadHandsButton" onClick={loadAllHands}>
+                            <FontAwesomeIcon icon="filter-circle-xmark" size="1x" /> Borrar filtro
+                        </button>
+                    )}
+                </>
             ) : null}
 
             {showUpsellModal && (
                 <>
                     <div className="overlay-upsell" onClick={closeModal}></div>
-                    <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} membership={membership}/>
+                    <UpsellModal onClose={closeModal} onUpgrade={handleUpgrade} isUpgraded={isUpgraded} membership={membership} />
                 </>
             )}
         </div>
