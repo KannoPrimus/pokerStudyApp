@@ -44,7 +44,7 @@ function PokerTrainer({ sequence, stake, membership }) {
     const [trainedHands, setTrainedHands] = useState([]);
     const [streakHands, setStreakHands] = useState([]);
     const [pot, setPot] = useState(1.5);
-
+    const [bet, setBet] = useState(0);
 
     useEffect(() => {
         resetPokerHand();
@@ -357,19 +357,26 @@ function PokerTrainer({ sequence, stake, membership }) {
 
         if (action.action.includes('OR')) {
             const amount = parseFloat(action.action.split('_')[1].replace('bb', ''));
+            console.log('OR', newPot+' - '+ amount);
+            setBet(amount);
             newPot += amount;
         } else if (action.action.includes('BET')) {
             const percentage = parseFloat(action.action.split('_')[1].replace('%', '')) / 100;
+            console.log('BET', newPot+' - '+ potWithoutBB * percentage);
+            setBet(potWithoutBB * percentage);
             newPot += potWithoutBB * percentage;
         } else if (action.action.includes('RAISE')) {
             const multiplier = parseFloat(action.action.split('_')[1].replace('x', ''));
             const previousBet = actions[actionIndex - 1];
             if (previousBet && previousBet.action.includes('BET') ) {
                 const percentage = parseFloat(previousBet.action.split('_')[1].replace('%', '')) / 100;
-                newPot += potWithoutBB * percentage * multiplier;
+                console.log('RAISE BET', newPot+' - '+ bet *  multiplier);
+                setBet(bet *  multiplier);
+                newPot += bet * multiplier;
             }else if(previousBet && previousBet.action.includes('OR')){
                 const amount = parseFloat(previousBet.action.split('_')[1].replace('bb', ''));
-
+                console.log('RAISE OR', newPot+' - '+ amount * multiplier);
+                setBet(amount *  multiplier);
                 newPot += (amount * multiplier);
             }
 
@@ -430,8 +437,6 @@ function PokerTrainer({ sequence, stake, membership }) {
         let referenceActions = [];
 
         if (streetName === 'preflop') {
-
-            console.log(currentIndex);
 
             if(currentIndex!=1)
                 referenceActions = preflopFirstActions;

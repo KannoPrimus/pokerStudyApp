@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" afterPath="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
       <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/mutations.js" afterPath="$PROJECT_DIR$/src/graphql/mutations.js" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/queries.js" afterPath="$PROJECT_DIR$/src/graphql/queries.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +17,8 @@
       <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="397" column="34" lean-forward="false" selection-start-line="397" selection-start-column="34" selection-end-line="397" selection-end-column="34" />
+            <state relative-caret-position="663">
+              <caret line="381" column="0" lean-forward="true" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -339,14 +333,7 @@
       <workItem from="1716898132034" duration="119051000" />
       <workItem from="1717513394495" duration="38255000" />
       <workItem from="1717677396328" duration="136904000" />
-      <workItem from="1719492814111" duration="74932000" />
-    </task>
-    <task id="LOCAL-00026" summary="Incorporacion de trainer:&#10;- Se agrega control de membresia&#10;- Se agrega control de upsell (3 meses gratis)&#10;- Se agrega control de downgrade cdo se alcanza la fecha end Date de la membresia">
-      <created>1717448200776</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1717448200776</updated>
+      <workItem from="1719492814111" duration="77889000" />
     </task>
     <task id="LOCAL-00027" summary="Incorporacion de trainer:&#10;- Se agrega control de membresia&#10;- Se agrega control de upsell (3 meses gratis)&#10;- Se agrega control de downgrade cdo se alcanza la fecha end Date de la membresia">
       <created>1717467833357</created>
@@ -684,11 +671,18 @@
       <option name="project" value="LOCAL" />
       <updated>1719625458896</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Ajustes mayores a trainer:&#10;&#10; logicas para calcular pozo&#10; logicas para calcular estadisticas&#10; mejora en visualizacion de resultados&#10; Mejora en filtro de manos para entrenar">
+      <created>1719803309568</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1719803309568</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="713248000" />
+    <option name="totallyTimeSpent" value="716205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -737,7 +731,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nuevo modelo de gestion de acciones:&#10;- correccion bug de inferencia de jugadores y posiciones" />
     <MESSAGE value="Nuevo modelo de gestion de acciones:&#10;- correccion tamaño de fuente de las cartas para que no se salgan del marco de la carta&#10;- Mejora en la manera de seleccion de cartas del modo estudio, multi cartas apra Hole cards y FLop Cards" />
     <MESSAGE value="- Salir del selector de cartas con un click fuera del modal" />
     <MESSAGE value="  Al apretar “NUevaMano” preguntar por guardar primero&#10;  Checkbox de compartir mano no esta guardando&#10;  Agregar Chat GPT para sugerencias de notas&#10;  Restringir Edicion para manos compartidas&#10;  Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10;  Ajustar color de fondo de Range matrix&#10;  Agregar a buscador la descripcion de la mano&#10;  Otros Bugs" />
@@ -762,7 +755,8 @@
     <MESSAGE value="Se mueve mesa de seleccion de posicion al sidebar&#10;Se implementa tutorial guiado&#10;Se fixea bug y elimina el paso de refresh completo al iniciar una nueva mano" />
     <MESSAGE value="Manejo desde sidebar para habilitar y deshabilitar el tutorial." />
     <MESSAGE value="Ajustes menores a trainer, se da diseño a trainer-controls-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes menores a trainer, se da diseño a trainer-controls-2" />
+    <MESSAGE value="Ajustes mayores a trainer:&#10;&#10; logicas para calcular pozo&#10; logicas para calcular estadisticas&#10; mejora en visualizacion de resultados&#10; Mejora en filtro de manos para entrenar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustes mayores a trainer:&#10;&#10; logicas para calcular pozo&#10; logicas para calcular estadisticas&#10; mejora en visualizacion de resultados&#10; Mejora en filtro de manos para entrenar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1209,8 +1203,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="397" column="34" lean-forward="false" selection-start-line="397" selection-start-column="34" selection-end-line="397" selection-end-column="34" />
+        <state relative-caret-position="663">
+          <caret line="381" column="0" lean-forward="true" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
