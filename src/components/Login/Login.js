@@ -170,7 +170,7 @@ export function Login() {
                                         No juegues como una máquina, juega como los pro.
                                     </Text>
                                     <Text fontSize="1.5rem">
-                                        Aprende, entrena y domina las adaptaciones explotativas que utilizan los mejores jugadores de poker online.
+                                        Estudia, entrena y domina las adaptaciones explotativas que utilizan los mejores jugadores de poker online.
                                     </Text>
 
                                 </div>
