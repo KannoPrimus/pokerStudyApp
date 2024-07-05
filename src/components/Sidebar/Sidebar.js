@@ -65,14 +65,12 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     const { pokerHand, updatePokerHand, resetPokerHand, fetchPokerHandsTrainer, fetchPokerHands } = useContext(PokerHandContext);
     const { user, signOut } = useAuthenticator();
 
-
     useEffect(() => {
         if (pokerHand.handTitle) {
             setHandTitle(pokerHand.handTitle);
             setHandStake(pokerHand.stake);
             setDescription(pokerHand.description);
             setIsShareable(pokerHand.share.toLowerCase?.() === 'true');
-
         }
     }, [pokerHand.id]);
 
@@ -93,14 +91,11 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     }, [isShareable]);
 
     useEffect(() => {
-
         setHandTitle('');
         setHandStake('');
-
     }, [mode]);
 
     useEffect(() => {
-
         //console.log('Sidebar:',skipTutorialMember);
     }, []);
 
@@ -135,7 +130,6 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     const changeMode = (newMode) => {
         if (newMode !== mode) {
             if ((newMode === 'Trainer' && membership === 'BASIC') || (newMode === 'Estadisticas' && membership === 'BASIC') || (newMode === 'Estadisticas' && membership === 'PRO')) {
-
                 setShowUpsellModal(true);
             } else {
                 setMode(newMode);
@@ -215,6 +209,10 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
         } catch {
             console.log('Error updating');
         }
+    };
+
+    const openPokerCrushers = () => {
+        window.open("https://insigh.to/b/poker-crushers", "_blank");
     };
 
     return (
@@ -358,6 +356,10 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     )}
                 </>
             ) : null}
+
+            <div className="poker-crushers-button" onClick={openPokerCrushers}>
+                <FontAwesomeIcon icon="list-check" size="1x" /> Sugerencias
+            </div>
 
             {showUpsellModal && (
                 <>

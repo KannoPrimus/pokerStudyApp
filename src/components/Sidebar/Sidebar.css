@@ -336,3 +336,22 @@ z-index: 2000;
 .plan-crusher-premium {
     border-color: #00ECB3;
 }
+
+/* Añadir un nuevo estilo para el botón Poker Crushers */
+.poker-crushers-button {
+    background-color: #ffd60d; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Alinear el texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar el botón como un bloque en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Margen alrededor del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+    position: absolute; /* Posicionar absolutamente */
+    bottom: 56px; /* 16 píxeles desde el fondo del contenedor */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar para centrar */
+}
