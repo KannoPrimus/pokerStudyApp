@@ -414,12 +414,12 @@ export function Login() {
                         <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
                             {[
                                 { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
-                                { plan: "Plan Pro", price: "9.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA\nTrainer de manos propias" },
-                                { plan: "Plan Premium", price: "49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA \nTrainer de manos propias\nSoluciones y estadísticas de manos de crushers" },
+                                { plan: "Plan Pro", price: "$9.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA\nTrainer de manos propias" },
+                                { plan: "Plan Premium", price: "$49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA \nTrainer de manos propias\nSoluciones y estadísticas de manos de crushers" },
                             ].map((item, index) => (
-                                <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
-                                    <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>
-                                    <Text fontSize="1.25rem" fontWeight="bold" color="#039370" marginTop="0.5rem">{item.price}</Text>
+                                <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan=='Plan Básico' ? '#fffede' : "#f9f9f9"}>
+                                    <Text fontSize="1.5rem" fontWeight="bold" color= "#000">{item.plan}</Text>
+                                    <Text fontSize="1.25rem" fontWeight="bold" color={item.plan=='Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
                                     <Text fontSize="1rem" textAlign="center" marginTop="0.5rem"color= 'black'  style={{ whiteSpace: 'pre-line' }}>{item.description}</Text>
                                     <button onClick={scrollToNav4}>Ingresar</button>
                                 </Flex>
