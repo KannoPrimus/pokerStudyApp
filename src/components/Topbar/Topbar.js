@@ -45,10 +45,17 @@ function TopBar({ mode }) {
     }, [mode]);
 
     useEffect(() => {
-        if (searchTerm) {
+        console.log(searchTerm);
+        console.log(pokerHandList);
+
+        if (searchTerm!='') {
+
             setFilteredHands(pokerHandList.filter(hand =>
-                hand.handTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                hand.description.toLowerCase().includes(searchTerm.toLowerCase())
+                (
+                    hand.handTitle.toLowerCase().includes(searchTerm.toLowerCase())
+                    ||
+                    (hand.description ? hand.description.toLowerCase().includes(searchTerm.toLowerCase()): false)
+                )
             ));
             setDropdownVisible(true);
         } else {

@@ -166,13 +166,13 @@ export function Login() {
                             <div className="container-details">
                                 <div className="details">
                                     <Text fontSize="6rem" color="white" fontWeight="bold">Conviértete en un Crusher del Poker </Text>
-                                    <Text fontSize="1.5rem">
-                                        No juegues como una máquina, juega como los pro.
-                                    </Text>
+
                                     <Text fontSize="1.5rem">
                                         Estudia, entrena y domina las adaptaciones explotativas que utilizan los mejores jugadores de poker online.
                                     </Text>
-
+                                    <Text fontSize="1.5rem">
+                                        No juegues como una máquina, juega como los pro.
+                                    </Text>
                                 </div>
                                 <button style={{marginBottom:'50px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
@@ -209,7 +209,7 @@ export function Login() {
                                     Por qué Elegir PokerCrushers.pro
                                 </Text>
                                 <Text fontSize="1.25rem" style={{color: '#333'}}>
-                                    Deja de seguir estrategias genéricas... PokerCrushers.pro te enseña las adaptaciones reales que utilizan los mejores jugadores para "aplastar" a sus oponentes en el poker online. Aquí no solo aprenderás teoría; aprenderás a ganar.
+                                    Deja de seguir estrategias genéricas... PokerCrushers.pro te ayuda a estudiar y aprender las adaptaciones reales que utilizan los mejores jugadores para "aplastar" a sus oponentes en el poker online. Aquí no solo aprenderás teoría; aprenderás a ganar.
                                 </Text>
                                 <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                                 <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
@@ -228,7 +228,7 @@ export function Login() {
                         <Grid templateColumns="1fr 1fr" gap="2rem">
                             <div>
                                 <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
-                                    Transforma tu Juego Hoy
+                                    Organiza tu estudio Hoy
                                 </Text>
                                 <Text fontSize="1.25rem" style={{color: '#333',marginTop:'10px',textAlign:'justify'}}>
                                     Únete a PokerCrushers.pro y comienza a estudiar, entrenar y ganar como un verdadero crusher. No esperes más, regístrate ahora y lleva tu juego al siguiente nivel.
@@ -414,13 +414,13 @@ export function Login() {
                         <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
                             {[
                                 { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
-                                { plan: "Plan Pro", price: "9.99 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias" },
-                                { plan: "Plan Premium", price: "49.99 USD / mes", description: "Acceso al módulo de bitácora de manos, sugerencias de notas con IA, trainer de manos propias, soluciones y estadísticas de manos de crushers" },
+                                { plan: "Plan Pro", price: "9.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA\nTrainer de manos propias" },
+                                { plan: "Plan Premium", price: "49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA \nTrainer de manos propias\nSoluciones y estadísticas de manos de crushers" },
                             ].map((item, index) => (
                                 <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor="#f9f9f9">
                                     <Text fontSize="1.5rem" fontWeight="bold" color= 'black'>{item.plan}</Text>
                                     <Text fontSize="1.25rem" fontWeight="bold" color="#039370" marginTop="0.5rem">{item.price}</Text>
-                                    <Text fontSize="1rem" textAlign="center" marginTop="0.5rem"color= 'black'>{item.description}</Text>
+                                    <Text fontSize="1rem" textAlign="center" marginTop="0.5rem"color= 'black'  style={{ whiteSpace: 'pre-line' }}>{item.description}</Text>
                                     <button onClick={scrollToNav4}>Ingresar</button>
                                 </Flex>
                             ))}
