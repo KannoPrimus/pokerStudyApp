@@ -357,7 +357,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                 </>
             ) : null}
 
-            <div className="poker-crushers-button" onClick={openPokerCrushers}>
+            <div className="poker-crushers-button" style={{color:'#333',fontWeight:'bold'}} onClick={openPokerCrushers}>
                 <FontAwesomeIcon icon="list-check" size="1x" /> Sugerencias
             </div>
 
