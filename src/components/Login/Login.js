@@ -270,7 +270,7 @@ export function Login() {
                                              ¿Estás listo para dominar el poker?
                                 </Text>
                                 <Text fontSize="1.25rem" style={{color: '#333',marginTop:'10px',textAlign:'justify'}}>
-                                    No te conformes con ser un jugador promedio. Con PokerCrushers.pro, aprenderás a adaptarte y a superar a tus oponentes con estrategias probadas. Inscríbete ahora y empieza a ganar.
+                                    No te conformes con ser un jugador promedio. Con PokerCrushers.pro, aprenderás a estudiar de manera eficiente, adaptarte y superar a tus oponentes con estrategias probadas. Inscríbete ahora y empieza a ganar.
                                 </Text>
                                 <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
                                 <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
