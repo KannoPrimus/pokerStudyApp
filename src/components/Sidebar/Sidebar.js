@@ -106,7 +106,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     }, []);
 
     const handleTitleChange = (e) => {
-        console.log(handTitle);
+
         setHandTitle(e.target.value);
         setSequence(e.target.value);
     };
@@ -117,7 +117,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     };
 
     const handleDescriptionChange = (e) => {
-        console.log(description);
+
         setDescription(e.target.value);
     };
 

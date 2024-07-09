@@ -270,6 +270,8 @@ function PokerActions({ id }) {
         return currentIndex !== -1 && currentIndex < streets.length - 1 ? streets[currentIndex + 1] : null;
     };
 
+    console.log(id+'-'+actions.length);
+
     const settings = {
         dots: false,
         infinite: false,
@@ -279,7 +281,7 @@ function PokerActions({ id }) {
         arrows: actions.length > 3,
         adaptiveHeight: false,
         centerMode: false,
-        initialSlide: actions.length
+        initialSlide: actions.length>3 ? actions.length+1 : 0
     };
 
     return (
