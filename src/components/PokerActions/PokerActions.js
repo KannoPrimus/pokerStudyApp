@@ -18,7 +18,7 @@ const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
 const vsPassiveActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
 
 function PokerActions({ id }) {
-    const { pokerHand, updatePokerHand } = useContext(PokerHandContext);
+    const { pokerHand, updatePokerHand,resetPokerHand } = useContext(PokerHandContext);
     const [selectedPlayer, setSelectedPlayer] = useState('');
     const [selectedAction, setSelectedAction] = useState('');
     const [previousAction, setPreviousAction] = useState('');
@@ -32,17 +32,25 @@ function PokerActions({ id }) {
     useEffect(() => {
         const phase = id.toLowerCase();
 
-
-
         if (pokerHand[`${phase}Action`] === "{}") {
+
+
 
             setActions([]);
             const inferredFirstPlayer = inferFirstPlayer();
             setFirstPlayer(inferredFirstPlayer);
             setActions([{ player: inferredFirstPlayer, action: 'NONE', order: 1, street: id, isCorrect: true, isOptional: false }]);
             updatePokerHand(`${id.toLowerCase()}Action`, "[{player="+ inferredFirstPlayer+", action=NONE, order=1, street="+id+", isCorrect=true, isOptional=false}]");
+
+            console.log('Actions when empty',pokerHand[`${phase}Action`]);
+
         } else {
+
+
             if (typeof pokerHand[`${phase}Action`] === "string") {
+
+                console.log('Actions when not empty',pokerHand[`${phase}Action`]);
+
                 const jsonString = pokerHand[`${phase}Action`]
                     .replace(/(\w+)=/g, '"$1":')
                     .replace(/ /g, "_")
@@ -76,7 +84,7 @@ function PokerActions({ id }) {
         }
 
 
-    }, [pokerHand, id]);
+    }, [pokerHand,previousAction]);
 
     const isAggressiveAction = (action) => {
         return ["OR_2.5bb", "OR_3bb", "OR_4bb", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%", "RAISE", "RAISE_x3", "RAISE_x5", "ALL-IN"].includes(action);

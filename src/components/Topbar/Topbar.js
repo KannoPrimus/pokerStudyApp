@@ -45,8 +45,8 @@ function TopBar({ mode }) {
     }, [mode]);
 
     useEffect(() => {
-        console.log(searchTerm);
-        console.log(pokerHandList);
+        //console.log(searchTerm);
+        //console.log(pokerHandList);
 
         if (searchTerm!='') {
 
@@ -66,7 +66,7 @@ function TopBar({ mode }) {
 
     const handleSelectHand = (hand) => {
 
-
+        resetPokerHand();
 
         setSearchTerm('');
         setPokerHand(hand);

@@ -272,7 +272,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             {mode === 'Estudio' ? (
                 <>
                     <div className="txtMembershiPlan">Descripción de la mano:</div>
-                    <PokerTable />
+
                 </>
             ) : mode === 'Trainer' ? (
                 <>
@@ -293,18 +293,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             )}
             {mode !== 'Estadisticas' ? (
                 <>
-                    <div className="txtChangeMode">Stake</div>
-                    <select
-                        id="handStake"
-                        value={handStake}
-                        onChange={handleStakeChange}
-                        className="input Stake"
-                    >
-                        <option value="" disabled>Stake</option>
-                        {pokerStakes.map((stake, index) => (
-                            <option key={index} value={stake}>{stake}</option>
-                        ))}
-                    </select>
+
                     <div className="txtChangeMode">Spot</div>
                     <select
                         id="handTitle"
@@ -317,6 +306,21 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                             <option key={index} value={sequence}>{sequence}</option>
                         ))}
                     </select>
+                    <div className="txtChangeMode">Stake</div>
+                    <select
+                        id="handStake"
+                        value={handStake}
+                        onChange={handleStakeChange}
+                        className="input Stake"
+                    >
+                        <option value="" disabled>Stake</option>
+                        {pokerStakes.map((stake, index) => (
+                            <option key={index} value={stake}>{stake}</option>
+                        ))}
+                    </select>
+
+
+                    <PokerTable />
                 </>
             ) : (
                 <></>
