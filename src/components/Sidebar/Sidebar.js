@@ -71,7 +71,13 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             setHandStake(pokerHand.stake);
             setDescription(pokerHand.description);
             setIsShareable(pokerHand.share.toLowerCase?.() === 'true');
+        }else{
+            setHandTitle('');
+            setHandStake('');
+            setDescription('');
+            setIsShareable(pokerHand.share.toLowerCase?.() === 'true');
         }
+
     }, [pokerHand.id]);
 
     useEffect(() => {
@@ -100,6 +106,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     }, []);
 
     const handleTitleChange = (e) => {
+        console.log(handTitle);
         setHandTitle(e.target.value);
         setSequence(e.target.value);
     };
@@ -110,6 +117,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     };
 
     const handleDescriptionChange = (e) => {
+        console.log(description);
         setDescription(e.target.value);
     };
 

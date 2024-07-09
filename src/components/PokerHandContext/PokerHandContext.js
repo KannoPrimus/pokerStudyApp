@@ -78,7 +78,7 @@ export const PokerHandProvider = ({ children }) => {
     const createPokerHandDB = async () => {
 
 
-        if (!pokerHand.handTitle.trim() || !pokerHand.stake.trim()) {
+        if (!pokerHand.handTitle.trim() || !pokerHand.description.trim()) {
 
             return { success: false, error: 'El titulo o descripción no puede estar en blanco' };
         }
@@ -139,7 +139,7 @@ export const PokerHandProvider = ({ children }) => {
 
 
 
-        if (!pokerHand.handTitle.trim() || !pokerHand.stake.trim()) {
+        if (!pokerHand.handTitle.trim() || !pokerHand.description.trim()) {
 
             return { success: false, error: 'El titulo o descripción no puede estar en blanco' };
         }
