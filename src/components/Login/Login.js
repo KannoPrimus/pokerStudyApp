@@ -145,7 +145,7 @@ export function Login() {
                                   }}
                             > PokerCrushers.pro</Text>
                         </div>
-                        <Flex className="desktop-menu" gap="1rem">
+                        <div  className="desktop-menu" gap="1rem">
                             <Link href="#nav1" color="white">
                                 <FontAwesomeIcon icon="question" /> Por qué Poker Crushers
                             </Link>
@@ -158,7 +158,7 @@ export function Login() {
                             <Link href="#nav4" color="white">
                                 <FontAwesomeIcon icon="right-to-bracket" /> Ingresar
                             </Link>
-                        </Flex>
+                        </div>
                         <div className="mobile-menu-icon" onClick={toggleMenu}>
                             {menuOpen ? <FaTimes color="white" size="1.5rem" /> : <FaBars color="white" size="1.5rem" />}
                         </div>
@@ -333,7 +333,7 @@ export function Login() {
                                 />
                                 <Image
                                     src={splashMision2}
-                                    style={{ width: '90%', borderRadius: '10px', marginTop: '-50px', marginLeft: '120px' }} // Ajusta marginLeft según sea necesario
+                                    style={{ width: '90%', borderRadius: '10px', marginTop: '-50px', marginLeft: '100px' }} // Ajusta marginLeft según sea necesario
                                 />
                             </div>
                         </Grid>

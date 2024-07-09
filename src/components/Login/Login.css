@@ -49,6 +49,7 @@
 
 .desktop-menu {
     display: flex;
+    gap:10px;
 }
 
 .mobile-menu-icon {
