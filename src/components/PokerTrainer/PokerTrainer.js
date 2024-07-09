@@ -687,7 +687,11 @@ function PokerTrainer({ sequence, stake, membership }) {
                                 >
                                     {street}: {response.action.replace(/_/g, ' ')} {isCorrectResponse(response, street) ? <FontAwesomeIcon icon="check" size="1x" /> : <FontAwesomeIcon icon="xmark" size="1x" />}
                                 </p>
+
                             ))}
+
+
+
                         </div>
                     ))}
                     {finishHand === 'true' && (
@@ -699,9 +703,13 @@ function PokerTrainer({ sequence, stake, membership }) {
                             <Text style={{paddingTop:'5px',color:'white'}}>({score}/{totalActions} acciones correctas)</Text>
 
                             <Text style={{paddingTop:'20px',color:'white'}}>Notas: </Text>
+                            <p>Preflop</p>
                             <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.preflopNotes}}></div>
+                            <p>Flop</p>
                                 <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.flopNotes}}></div>
+                            <p>Turn</p>
                                     <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.turnNotes}}></div>
+                            <p>River</p>
                                         <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.riverNotes}}></div>
 
                         </>

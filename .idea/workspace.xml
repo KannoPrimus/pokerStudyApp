@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" afterPath="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
       <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Topbar/Topbar.js" afterPath="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4998">
-              <caret line="591" column="0" lean-forward="false" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+            <state relative-caret-position="584">
+              <caret line="711" column="36" lean-forward="false" selection-start-line="711" selection-start-column="36" selection-end-line="711" selection-end-column="36" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -30,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardSelector.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CardSelector.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="513">
@@ -130,8 +126,8 @@
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.css" />
         <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
-        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
         <option value="$PROJECT_DIR$/src/components/CardSelector/CardSelector.js" />
+        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
       </list>
     </option>
   </component>
@@ -348,14 +344,7 @@
       <workItem from="1717677396328" duration="136904000" />
       <workItem from="1719492814111" duration="84501000" />
       <workItem from="1720194276313" duration="5415000" />
-      <workItem from="1720478540032" duration="30248000" />
-    </task>
-    <task id="LOCAL-00049" summary="Se agrega opacidad a los asientos de los jugadores que no estan involucrados - trainer">
-      <created>1718847490800</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1718847490800</updated>
+      <workItem from="1720478540032" duration="31796000" />
     </task>
     <task id="LOCAL-00050" summary="Correccion de funcionamiento del trainer&#10;Detiene la mano en cuanto se selecciona una accion errornea para evitar qtener que controlar infinitos arboles de acciones&#10;Se controla el cierre de laaccion cuandoel villano nos va AllIn&#10;Cuando recibimos un ALL IN solo mostramos botones de CALL o FOLD">
       <created>1718899806431</created>
@@ -693,11 +682,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720547824652</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Fix: Bug que mostraba las cartas de villano en el trainer cuando estaba en posicion de SB">
+      <created>1720560944314</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1720560944314</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="758480000" />
+    <option name="totallyTimeSpent" value="760028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -746,7 +742,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se esconde formulario de sidebar cuando estamos en el modo estadisticas" />
     <MESSAGE value="Se agrega mejoras al modal de pago" />
     <MESSAGE value="Ajustes varios en landing Home" />
     <MESSAGE value="Ajustes varios en landing&#10;cambio de logo&#10;ajustes diseño mesa de trainer" />
@@ -771,7 +766,8 @@
     <MESSAGE value="Se agrega descripcion de la mano en detalle del trainer" />
     <MESSAGE value="Fix:&#10;- Cerrar dropdown de busqueda de manos cuando se clickea en el overlay" />
     <MESSAGE value="Fix: Titulo de pagina se superpone a boton en mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Titulo de pagina se superpone a boton en mobile" />
+    <MESSAGE value="Fix: Bug que mostraba las cartas de villano en el trainer cuando estaba en posicion de SB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Bug que mostraba las cartas de villano en el trainer cuando estaba en posicion de SB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1157,21 +1153,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4998">
-          <caret line="591" column="0" lean-forward="false" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CardSelector/CardSelector.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="711" column="36" lean-forward="false" selection-start-line="711" selection-start-column="36" selection-end-line="711" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
