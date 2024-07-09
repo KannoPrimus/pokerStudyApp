@@ -120,7 +120,7 @@ export function Login() {
             <Grid
                 columnGap="0rem"
                 rowGap="0rem"
-                templateColumns="1fr 1fr 1fr"
+                templateColumns={{ base: "1fr", medium: "1fr 1fr 1fr" }}
                 templateRows="0fr 0fr 0fr"
                 height="100%"
             >
@@ -132,7 +132,7 @@ export function Login() {
                 >
                     <Flex justifyContent="space-between" alignItems="center" padding="1rem" backgroundColor={tokens.colors.font.primary.value}>
                         <div style={{ display: 'flex', justifyContent: 'center'}}>
-                            <Image src={logo} alt="Logo"  height="80px" />
+                            <Image src={logo} alt="Logo" height="80px" />
                             <Text fontSize="3rem" color="white" fontWeight="bold" fontStyle="italic" paddingLeft="25px"
                                   style={{
                                       textShadow: '0px 0px 5px rgba(255, 255, 255, 0.8)' // Sombra inset
@@ -162,11 +162,10 @@ export function Login() {
                     height="100%"
                 >
                     <div id="nav0" style={{ height: '100%', color: '#333', backgroundColor: '#0d1926'}} >
-                        <Grid templateColumns="1fr 1fr" gap="2rem">
+                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
                             <div className="container-details">
                                 <div className="details">
-                                    <Text fontSize="6rem" color="white" fontWeight="bold">Conviértete en un Crusher del Poker </Text>
-
+                                    <Text fontSize="4rem" color="white" fontWeight="bold">Conviértete en un Crusher del Poker </Text>
                                     <Text fontSize="1.5rem">
                                         Estudia, entrena y domina las adaptaciones explotativas que utilizan los mejores jugadores de poker online.
                                     </Text>
@@ -174,15 +173,14 @@ export function Login() {
                                         No juegues como una máquina, juega como los pro.
                                     </Text>
                                 </div>
-                                <button style={{marginBottom:'50px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{ marginBottom: '50px', borderRadius: '25px', marginTop: '50px', width: '300px', height: '50px', backgroundColor: '#00ECB3', fontWeight: 'bold' }} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
-                            <div style={{textAlign:'center',paddingTop:'100px'}}>
+                            <div style={{ textAlign: 'center', paddingTop: '100px' }}>
                                 <Image
                                     src={pokerplayer}
                                     width="80%"
                                     borderRadius="10px"
                                 />
-
                             </div>
                         </Grid>
                     </div>
@@ -193,28 +191,25 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'left' }}>
-                        <Grid templateColumns="1fr 1fr" gap="2rem">
-                            <div style={{textAlign:'center'}}>
+                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
+                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
+                            <div style={{ textAlign: 'center' }}>
                                 <Image
                                     src={home1}
                                     width="80%"
-
                                     borderRadius="10px"
                                 />
-
                             </div>
                             <div>
-                                <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
+                                <Text fontSize="3rem" style={{ color: '#333', fontWeight: 'bold' }}>
                                     Por qué Elegir PokerCrushers.pro
                                 </Text>
-                                <Text fontSize="1.25rem" style={{color: '#333'}}>
+                                <Text fontSize="1.25rem" style={{ color: '#333' }}>
                                     Deja de seguir estrategias genéricas... PokerCrushers.pro te ayuda a estudiar y aprender las adaptaciones reales que utilizan los mejores jugadores para "aplastar" a sus oponentes en el poker online. Aquí no solo aprenderás teoría; aprenderás a ganar.
                                 </Text>
-                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
-                                <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
+                                <button style={{ borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#00ECB3', fontWeight: 'bold' }} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{ marginLeft: '10px', borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#fff', color: '#333', fontWeight: 'bold', border: '1px solid #333' }} onClick={scrollToNav1_3}>Más información</button>
                             </div>
-
                         </Grid>
                     </div>
                 </Card>
@@ -224,26 +219,24 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1_1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'left' }}>
-                        <Grid templateColumns="1fr 1fr" gap="2rem">
+                    <div id="nav1_1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
+                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
                             <div>
-                                <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
+                                <Text fontSize="3rem" style={{ color: '#333', fontWeight: 'bold' }}>
                                     Organiza tu estudio Hoy
                                 </Text>
-                                <Text fontSize="1.25rem" style={{color: '#333',marginTop:'10px',textAlign:'justify'}}>
+                                <Text fontSize="1.25rem" style={{ color: '#333', marginTop: '10px', textAlign: 'justify' }}>
                                     Únete a PokerCrushers.pro y comienza a estudiar, entrenar y ganar como un verdadero crusher. No esperes más, regístrate ahora y lleva tu juego al siguiente nivel.
                                 </Text>
-                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
-                                <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
+                                <button style={{ borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#00ECB3', fontWeight: 'bold' }} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{ marginLeft: '10px', borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#fff', color: '#333', fontWeight: 'bold', border: '1px solid #333' }} onClick={scrollToNav1_3}>Más información</button>
                             </div>
-                            <div style={{textAlign:'center'}}>
+                            <div style={{ textAlign: 'center' }}>
                                 <Image
                                     src={home2}
-
                                     height="80%"
                                     borderRadius="10px"
                                 />
-
                             </div>
                         </Grid>
                     </div>
@@ -254,28 +247,25 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1_2" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '8rem',textAlign:'left' }}>
-                        <Grid templateColumns="1fr 1fr" gap="2rem">
-                            <div style={{textAlign:'center'}}>
+                    <div id="nav1_2" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
+                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
+                            <div style={{ textAlign: 'center' }}>
                                 <Image
                                     src={home3}
-
                                     height="80%"
                                     borderRadius="10px"
                                 />
-
                             </div>
                             <div>
-                                <Text fontSize="5rem" style={{color: '#333',fontWeight:'bold'}} >
-                                             ¿Estás listo para dominar el poker?
+                                <Text fontSize="3rem" style={{ color: '#333', fontWeight: 'bold' }}>
+                                    ¿Estás listo para dominar el poker?
                                 </Text>
-                                <Text fontSize="1.25rem" style={{color: '#333',marginTop:'10px',textAlign:'justify'}}>
+                                <Text fontSize="1.25rem" style={{ color: '#333', marginTop: '10px', textAlign: 'justify' }}>
                                     No te conformes con ser un jugador promedio. Con PokerCrushers.pro, aprenderás a estudiar de manera eficiente, adaptarte y superar a tus oponentes con estrategias probadas. Inscríbete ahora y empieza a ganar.
                                 </Text>
-                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
-                                <button style={{marginLeft:'20px',borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#fff',color:'#333',fontWeight:'bold',border:'1px solid #333'}} onClick={scrollToNav1_3}>Más información</button>
+                                <button style={{ borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#00ECB3', fontWeight: 'bold' }} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{ marginLeft: '10px', borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#fff', color: '#333', fontWeight: 'bold', border: '1px solid #333' }} onClick={scrollToNav1_3}>Más información</button>
                             </div>
-
                         </Grid>
                     </div>
                 </Card>
@@ -285,34 +275,31 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1_3" ref={nav1_3Ref} style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '8rem',textAlign:'justify' }}>
-                        <Grid templateColumns="1fr 1fr" gap="2rem">
+                    <div id="nav1_3" ref={nav1_3Ref} style={{ height: '100%', color: '#333', backgroundColor: '#32414A', padding: '4rem 2rem', textAlign: 'justify' }}>
+                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
                             <div>
-
-                                <Text fontSize="6rem" style={{marginTop:'10px',fontWeight:'bold'}}>
+                                <Text fontSize="3rem" style={{ marginTop: '10px', fontWeight: 'bold' }}>
                                     Beneficios Clave:
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3'}}>
+                                <Text fontSize="1.25rem" style={{ marginTop: '10px', color: '#00ECB3' }}>
                                     1. Registro Estructurado de tus Coachings:
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px'}}>
+                                <Text fontSize="1.25rem" style={{ marginTop: '10px' }}>
                                     Registra y organiza todo lo que aprendes en tus sesiones de coaching. Nunca más olvides una estrategia o un detalle importante.
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3'}}>
+                                <Text fontSize="1.25rem" style={{ marginTop: '10px', color: '#00ECB3' }}>
                                     2. Entrenamiento Práctico y Efectivo:
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px'}}>
+                                <Text fontSize="1.25rem" style={{ marginTop: '10px' }}>
                                     Repasa y entrena tus manos en nuestro replayer avanzado, adaptando las estrategias a tu propio estilo de juego y mejorando con cada sesión.
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px', color: '#00ECB3'}}>
+                                <Text fontSize="1.25rem" style={{ marginTop: '10px', color: '#00ECB3' }}>
                                     3. Estrategias Reales de los Mejores Jugadores:
                                 </Text>
-                                <Text fontSize="1.25rem" style={{marginTop:'10px'}}>
+                                <Text fontSize="1.25rem" style={{ marginTop: '10px' }}>
                                     Aprende directamente de las manos y adaptaciones que utilizan los crushers en cada nivel de juego. Con PokerCrushers.pro, estarás un paso adelante de la competencia.
                                 </Text>
-
-
-                                <button style={{borderRadius:'25px', marginTop:'50px', width:'300px', height: '50px', backgroundColor: '#00ECB3',fontWeight:'bold'}} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <button style={{ borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#00ECB3', fontWeight: 'bold' }} onClick={scrollToNav4}>Crea tu cuenta</button>
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                 <Image
@@ -333,8 +320,8 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav2" style={{ height: '100%', color: 'black', backgroundColor: '#f1f1f1', padding: '8rem' }}>
-                        <Grid templateColumns="repeat(4, 1fr)" gap="2rem">
+                    <div id="nav2" style={{ height: '100%', color: 'black', backgroundColor: '#f1f1f1', padding: '4rem 2rem' }}>
+                        <Grid templateColumns={{ base: "1fr", medium: "repeat(4, 1fr)" }} gap="2rem">
                             <Flex direction="column" alignItems="center">
                                 <Flex
                                     justifyContent="center"
@@ -404,23 +391,23 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '8rem' }}>
-                        <Text fontSize="2rem" style={{color: '#00ECB3',fontWeight:'bold'}} >
-                            ¡Ingresa, Estudia  y Gana!
+                    <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '4rem 2rem' }}>
+                        <Text fontSize="2rem" style={{ color: '#00ECB3', fontWeight: 'bold' }}>
+                            ¡Ingresa, Estudia y Gana!
                         </Text>
-                        <Text fontSize="1.25rem" style={{color: '#333',fontWeight:'bold',marginBottom:'20px'}}>
+                        <Text fontSize="1.25rem" style={{ color: '#333', fontWeight: 'bold', marginBottom: '20px' }}>
                             Accede a las herramientas, estrategias y entrenamientos que te harán destacar en la mesa. Suscríbete hoy y conviértete en el jugador que siempre has querido ser.
                         </Text>
-                        <Grid templateColumns="repeat(3, 1fr)" gap="2rem">
+                        <Grid templateColumns={{ base: "1fr", medium: "repeat(3, 1fr)" }} gap="2rem">
                             {[
                                 { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
                                 { plan: "Plan Pro", price: "$9.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA\nTrainer de manos propias" },
                                 { plan: "Plan Premium", price: "$49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA \nTrainer de manos propias\nSoluciones y estadísticas de manos de crushers" },
                             ].map((item, index) => (
-                                <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan=='Plan Básico' ? '#fffede' : "#f9f9f9"}>
-                                    <Text fontSize="1.5rem" fontWeight="bold" color= "#000">{item.plan}</Text>
-                                    <Text fontSize="1.25rem" fontWeight="bold" color={item.plan=='Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
-                                    <Text fontSize="1rem" textAlign="center" marginTop="0.5rem"color= 'black'  style={{ whiteSpace: 'pre-line' }}>{item.description}</Text>
+                                <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'Plan Básico' ? '#fffede' : "#f9f9f9"}>
+                                    <Text fontSize="1.5rem" fontWeight="bold" color="#000">{item.plan}</Text>
+                                    <Text fontSize="1.25rem" fontWeight="bold" color={item.plan === 'Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
+                                    <Text fontSize="1rem" textAlign="center" marginTop="0.5rem" color='black' style={{ whiteSpace: 'pre-line' }}>{item.description}</Text>
                                     <button onClick={scrollToNav4}>Ingresar</button>
                                 </Flex>
                             ))}
@@ -434,7 +421,7 @@ export function Login() {
                     paddingTop="5rem"
                 >
                     <div id="nav4" ref={nav4Ref}>
-                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} >
+                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }}>
                             <Flex
                                 backgroundColor="#000F18"
                                 justifyContent="center"
@@ -451,7 +438,7 @@ export function Login() {
                                 </Authenticator>
                             </Flex>
                             <View height="100vh" position="relative" display={{ base: 'none', medium: 'block' }}>
-                                <div  style={{
+                                <div style={{
                                     position: 'absolute',
                                     top: 0,
                                     left: 0,
