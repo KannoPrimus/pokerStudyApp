@@ -79,7 +79,10 @@ function TopBar({ mode }) {
     };
 
     const handleClickOutside = (event) => {
-        if (dropdownRef.current && dropdownRef.current.contains(event.target)) {
+
+        console.log(event.target+' - '+dropdownRef.current);
+
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setDropdownVisible(false);
         }
     };
@@ -215,9 +218,11 @@ function TopBar({ mode }) {
                                         <div className="player-positions">
                                             {hand.tableType} max
                                         </div>
-                                        <div className="player-positions">
-                                            {hand.share}
-                                        </div>
+                                        {hand.share==='true' ?
+                                            <div className="player-positions">
+                                                <FontAwesomeIcon icon="share-nodes" beat />
+                                            </div> : ''
+                                        }
                                         <div className="desciptionTopbarhand">{hand.description}</div>
                                     </div>
                                     <div className="hand-details">

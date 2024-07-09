@@ -139,7 +139,7 @@ export function Login() {
                     <Flex justifyContent="space-between" alignItems="center" padding="1rem" backgroundColor={tokens.colors.font.primary.value}>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
                             <Image src={logo} alt="Logo" height="80px" />
-                            <Text fontSize="3rem" color="white" fontWeight="bold" fontStyle="italic" paddingLeft="25px"
+                            <Text className="appTitle" fontSize="2rem" color="white" fontWeight="bold" fontStyle="italic" paddingLeft="25px" paddingTop="10px"
                                   style={{
                                       textShadow: '0px 0px 5px rgba(255, 255, 255, 0.8)' // Sombra inset
                                   }}
