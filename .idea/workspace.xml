@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="Fix bug Poker Actions. No se cargaban las acciones al resetear nueva mano y seleccionar la misma que se estaba editando.">
+    <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.css" afterPath="$PROJECT_DIR$/src/components/Login/Login.css" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" />
@@ -30,11 +30,11 @@
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
-              <caret line="481" column="0" lean-forward="true" selection-start-line="481" selection-start-column="0" selection-end-line="481" selection-end-column="0" />
+            <state relative-caret-position="703">
+              <caret line="177" column="76" lean-forward="false" selection-start-line="177" selection-start-column="76" selection-end-line="177" selection-end-column="76" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#1091#1151#0" expanded="true" />
+                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#1101#1161#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,8 +43,8 @@
       <file leaf-file-name="Login.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
-              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="649">
+              <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,8 +174,8 @@
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
-        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.css" />
+        <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
       </list>
     </option>
   </component>
@@ -378,14 +378,7 @@
       <workItem from="1717677396328" duration="136904000" />
       <workItem from="1719492814111" duration="84501000" />
       <workItem from="1720194276313" duration="5415000" />
-      <workItem from="1720478540032" duration="3029000" />
-    </task>
-    <task id="LOCAL-00037" summary="Nuevo modelo de gestion de acciones:&#10;- correccion bug de inferencia de jugadores y posiciones">
-      <created>1718249568453</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1718249568453</updated>
+      <workItem from="1720478540032" duration="5831000" />
     </task>
     <task id="LOCAL-00038" summary="Nuevo modelo de gestion de acciones:&#10;- correccion tamaño de fuente de las cartas para que no se salgan del marco de la carta&#10;- Mejora en la manera de seleccion de cartas del modo estudio, multi cartas apra Hole cards y FLop Cards">
       <created>1718251852592</created>
@@ -723,11 +716,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720485690222</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Se aplica estilos y estructura Responsive al Landing Web">
+      <created>1720486229105</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1720486229105</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="731261000" />
+    <option name="totallyTimeSpent" value="734063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -776,7 +776,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Orden de jugadores en preflop, se cambia al seleccionar la accion" />
     <MESSAGE value="Se agrega opacidad a los asientos de los jugadores que no estan involucrados - trainer" />
     <MESSAGE value="Correccion de funcionamiento del trainer&#10;Detiene la mano en cuanto se selecciona una accion errornea para evitar qtener que controlar infinitos arboles de acciones&#10;Se controla el cierre de laaccion cuandoel villano nos va AllIn&#10;Cuando recibimos un ALL IN solo mostramos botones de CALL o FOLD" />
     <MESSAGE value="Correccion de funcionamiento del trainer&#10;Se agregan las notas al resultado de la mano entrenada" />
@@ -801,7 +800,8 @@
     <MESSAGE value="Ajustes menores al Landing" />
     <MESSAGE value="Ajuste menor al nboton de sugerencias" />
     <MESSAGE value="Fix bug Poker Actions. No se cargaban las acciones al resetear nueva mano y seleccionar la misma que se estaba editando." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug Poker Actions. No se cargaban las acciones al resetear nueva mano y seleccionar la misma que se estaba editando." />
+    <MESSAGE value="Se aplica estilos y estructura Responsive al Landing Web" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se aplica estilos y estructura Responsive al Landing Web" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1186,19 +1186,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="481" column="0" lean-forward="true" selection-start-line="481" selection-start-column="0" selection-end-line="481" selection-end-column="0" />
+        <state relative-caret-position="703">
+          <caret line="177" column="76" lean-forward="false" selection-start-line="177" selection-start-column="76" selection-end-line="177" selection-end-column="76" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#1091#1151#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#1101#1161#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="649">
+          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>

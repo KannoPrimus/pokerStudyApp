@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
     Authenticator,
     Flex,
@@ -29,7 +29,8 @@ import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLightbulb, faBook, faMicrochip, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faBook, faMicrochip, faGraduationCap, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Login.css';
 
 const components = {
@@ -58,6 +59,7 @@ export function Login() {
     const { tokens } = useTheme();
     const nav4Ref = useRef(null);
     const nav1_3Ref = useRef(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const scrollToNav4 = () => {
         nav4Ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -65,6 +67,10 @@ export function Login() {
 
     const scrollToNav1_3 = () => {
         nav1_3Ref.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
     };
 
     const myTheme = createTheme({
@@ -131,7 +137,7 @@ export function Login() {
                     top="0" width="100%"
                 >
                     <Flex justifyContent="space-between" alignItems="center" padding="1rem" backgroundColor={tokens.colors.font.primary.value}>
-                        <div style={{ display: 'flex', justifyContent: 'center'}}>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
                             <Image src={logo} alt="Logo" height="80px" />
                             <Text fontSize="3rem" color="white" fontWeight="bold" fontStyle="italic" paddingLeft="25px"
                                   style={{
@@ -139,7 +145,7 @@ export function Login() {
                                   }}
                             > PokerCrushers.pro</Text>
                         </div>
-                        <Flex gap="1rem">
+                        <Flex className="desktop-menu" gap="1rem">
                             <Link href="#nav1" color="white">
                                 <FontAwesomeIcon icon="question" /> Por qué Poker Crushers
                             </Link>
@@ -153,7 +159,26 @@ export function Login() {
                                 <FontAwesomeIcon icon="right-to-bracket" /> Ingresar
                             </Link>
                         </Flex>
+                        <div className="mobile-menu-icon" onClick={toggleMenu}>
+                            {menuOpen ? <FaTimes color="white" size="1.5rem" /> : <FaBars color="white" size="1.5rem" />}
+                        </div>
                     </Flex>
+                    {menuOpen && (
+                        <Flex className="mobile-menu" direction="column" gap="1rem" backgroundColor={tokens.colors.font.primary.value} padding="1rem">
+                            <Link href="#nav1" color="white" onClick={toggleMenu}>
+                                <FontAwesomeIcon icon="question" /> Por qué Poker Crushers
+                            </Link>
+                            <Link href="#nav2" color="white" onClick={toggleMenu}>
+                                <FontAwesomeIcon icon="star" /> Características
+                            </Link>
+                            <Link href="#nav3" color="white" onClick={toggleMenu}>
+                                <FontAwesomeIcon icon="tag" /> Precios
+                            </Link>
+                            <Link href="#nav4" color="white" onClick={toggleMenu}>
+                                <FontAwesomeIcon icon="right-to-bracket" /> Ingresar
+                            </Link>
+                        </Flex>
+                    )}
                 </Card>
                 <Card
                     padding="0px"
@@ -161,7 +186,7 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav0" style={{ height: '100%', color: '#333', backgroundColor: '#0d1926'}} >
+                    <div id="nav0" style={{ height: '100%', color: '#333', backgroundColor: '#0d1926' }} >
                         <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
                             <div className="container-details">
                                 <div className="details">
@@ -304,11 +329,11 @@ export function Login() {
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                 <Image
                                     src={splashMision}
-                                    style={{ width: '100%', borderRadius: '10px' }}
+                                    style={{ width: '90%', borderRadius: '10px' }}
                                 />
                                 <Image
                                     src={splashMision2}
-                                    style={{ width: '100%', borderRadius: '10px', marginTop: '-50px', marginLeft: '120px' }} // Ajusta marginLeft según sea necesario
+                                    style={{ width: '90%', borderRadius: '10px', marginTop: '-50px', marginLeft: '120px' }} // Ajusta marginLeft según sea necesario
                                 />
                             </div>
                         </Grid>
@@ -353,129 +378,129 @@ export function Login() {
                                 <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Entregamos un espacio estructurado y ordenado para registrar todos los consejos y aprendizajes que un jugador necesita incorporar en su juego.</Text>
                             </Flex>
                             <Flex direction="column" alignItems="center">
-                                <Flex
-                                    justifyContent="center"
-                                    alignItems="center"
-                                    width="100px"
-                                    height="100px"
-                                    borderRadius="50%"
-                                    border="2px solid #192831"
-                                    color="#192831"
-                                >
-                                    <FontAwesomeIcon icon={faGraduationCap} size="3x" />
-                                </Flex>
-                                <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Entrenamiento</Text>
-                                <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Pon a prueba tu aprendizaje repasando tus manos en nuestro trainer. Además, sube el nivel de tu poker entrenando con soluciones preparadas por coaches profesionales.</Text>
-                            </Flex>
-                            <Flex direction="column" alignItems="center">
-                                <Flex
-                                    justifyContent="center"
-                                    alignItems="center"
-                                    width="100px"
-                                    height="100px"
-                                    borderRadius="50%"
-                                    border="2px solid #192831"
-                                    color="#192831"
-                                >
-                                    <FontAwesomeIcon icon={faMicrochip} size="3x" />
-                                </Flex>
-                                <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Tecnología</Text>
-                                <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Nos apalacamos en la tecnología para optimizar el tiempo y esfuerzo de los jugadores a la hora de analizar manos y sesiones de coaching.</Text>
-                            </Flex>
-                        </Grid>
-                    </div>
-                </Card>
-                <Card
-                    padding="0px"
-                    columnStart="1"
-                    columnEnd="-1"
-                    height="100%"
-                >
-                    <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '4rem 2rem' }}>
-                        <Text fontSize="2rem" style={{ color: '#00ECB3', fontWeight: 'bold' }}>
-                            ¡Ingresa, Estudia y Gana!
-                        </Text>
-                        <Text fontSize="1.25rem" style={{ color: '#333', fontWeight: 'bold', marginBottom: '20px' }}>
-                            Accede a las herramientas, estrategias y entrenamientos que te harán destacar en la mesa. Suscríbete hoy y conviértete en el jugador que siempre has querido ser.
-                        </Text>
-                        <Grid templateColumns={{ base: "1fr", medium: "repeat(3, 1fr)" }} gap="2rem">
-                            {[
-                                { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
-                                { plan: "Plan Pro", price: "$9.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA\nTrainer de manos propias" },
-                                { plan: "Plan Premium", price: "$49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA \nTrainer de manos propias\nSoluciones y estadísticas de manos de crushers" },
-                            ].map((item, index) => (
-                                <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'Plan Básico' ? '#fffede' : "#f9f9f9"}>
-                                    <Text fontSize="1.5rem" fontWeight="bold" color="#000">{item.plan}</Text>
-                                    <Text fontSize="1.25rem" fontWeight="bold" color={item.plan === 'Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
-                                    <Text fontSize="1rem" textAlign="center" marginTop="0.5rem" color='black' style={{ whiteSpace: 'pre-line' }}>{item.description}</Text>
-                                    <button onClick={scrollToNav4}>Ingresar</button>
-                                </Flex>
-                            ))}
-                        </Grid>
-                    </div>
-                </Card>
-                <Card
-                    padding="0px"
-                    columnStart="1"
-                    columnEnd="-1"
-                    paddingTop="5rem"
-                >
-                    <div id="nav4" ref={nav4Ref}>
-                        <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }}>
                             <Flex
-                                backgroundColor="#000F18"
                                 justifyContent="center"
                                 alignItems="center"
-                                height="100vh"
+                                width="100px"
+                                height="100px"
+                                borderRadius="50%"
+                                border="2px solid #192831"
+                                color="#192831"
                             >
-                                <Authenticator components={components}>
-                                    {({ signOut, user }) => (
-                                        <main>
-                                            <h1>Hello {user.username}</h1>
-                                            <button onClick={signOut}>Salir</button>
-                                        </main>
-                                    )}
-                                </Authenticator>
+                                <FontAwesomeIcon icon={faGraduationCap} size="3x" />
                             </Flex>
-                            <View height="100vh" position="relative" display={{ base: 'none', medium: 'block' }}>
-                                <div style={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0,
-                                    width: '100%',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    height: '100vh',
-                                    color: 'white',
-                                    fontSize: '4rem',
-                                    fontWeight: 'bold',
-                                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                                    padding: '20px',
-                                    textAlign: 'center',
-                                    backgroundColor: 'rgba(0, 0, 0, 0.5)' // Background semi-transparent to improve text readability
-                                }}>
-                                    <TextCarousel messages={messages} />
-                                </div>
-                                <Image
-                                    src={splash}
-                                    width="100%"
-                                    height="100%"
-                                    objectFit="cover"
-                                />
-                            </View>
-                        </Grid>
-                    </div>
-                </Card>
-                <Card
-                    padding="0px"
-                    columnStart="1"
-                    columnEnd="-1"
-                    height="100px"
-                >
-                    <Footerweb />
-                </Card>
+                            <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Entrenamiento</Text>
+                            <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Pon a prueba tu aprendizaje repasando tus manos en nuestro trainer. Además, sube el nivel de tu poker entrenando con soluciones preparadas por coaches profesionales.</Text>
+                        </Flex>
+                        <Flex direction="column" alignItems="center">
+                            <Flex
+                                justifyContent="center"
+                                alignItems="center"
+                                width="100px"
+                                height="100px"
+                                borderRadius="50%"
+                                border="2px solid #192831"
+                                color="#192831"
+                            >
+                                <FontAwesomeIcon icon={faMicrochip} size="3x" />
+                            </Flex>
+                            <Text fontSize="1.5rem" fontWeight="bold" marginTop="1rem" color="#192831">Tecnología</Text>
+                            <Text fontSize="1rem" fontWeight="normal" marginTop="1rem" color="#192831" textAlign="center">Nos apalacamos en la tecnología para optimizar el tiempo y esfuerzo de los jugadores a la hora de analizar manos y sesiones de coaching.</Text>
+                        </Flex>
             </Grid>
-        </ThemeProvider>
-    );
+        </div>
+</Card>
+    <Card
+        padding="0px"
+        columnStart="1"
+        columnEnd="-1"
+        height="100%"
+    >
+        <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '4rem 2rem' }}>
+            <Text fontSize="2rem" style={{ color: '#00ECB3', fontWeight: 'bold' }}>
+                ¡Ingresa, Estudia y Gana!
+            </Text>
+            <Text fontSize="1.25rem" style={{ color: '#333', fontWeight: 'bold', marginBottom: '20px' }}>
+                Accede a las herramientas, estrategias y entrenamientos que te harán destacar en la mesa. Suscríbete hoy y conviértete en el jugador que siempre has querido ser.
+            </Text>
+            <Grid templateColumns={{ base: "1fr", medium: "repeat(3, 1fr)" }} gap="2rem">
+                {[
+                    { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
+                    { plan: "Plan Pro", price: "$9.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA\nTrainer de manos propias" },
+                    { plan: "Plan Premium", price: "$49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nSugerencias de notas con IA \nTrainer de manos propias\nSoluciones y estadísticas de manos de crushers" },
+                ].map((item, index) => (
+                    <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'Plan Básico' ? '#fffede' : "#f9f9f9"}>
+                        <Text fontSize="1.5rem" fontWeight="bold" color="#000">{item.plan}</Text>
+                        <Text fontSize="1.25rem" fontWeight="bold" color={item.plan === 'Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
+                        <Text fontSize="1rem" textAlign="center" marginTop="0.5rem" color='black' style={{ whiteSpace: 'pre-line' }}>{item.description}</Text>
+                        <button onClick={scrollToNav4}>Ingresar</button>
+                    </Flex>
+                ))}
+            </Grid>
+        </div>
+    </Card>
+    <Card
+        padding="0px"
+        columnStart="1"
+        columnEnd="-1"
+        paddingTop="5rem"
+    >
+        <div id="nav4" ref={nav4Ref}>
+            <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }}>
+                <Flex
+                    backgroundColor="#000F18"
+                    justifyContent="center"
+                    alignItems="center"
+                    height="100vh"
+                >
+                    <Authenticator components={components}>
+                        {({ signOut, user }) => (
+                            <main>
+                                <h1>Hello {user.username}</h1>
+                                <button onClick={signOut}>Salir</button>
+                            </main>
+                        )}
+                    </Authenticator>
+                </Flex>
+                <View height="100vh" position="relative" display={{ base: 'none', medium: 'block' }}>
+                    <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '100vh',
+                        color: 'white',
+                        fontSize: '4rem',
+                        fontWeight: 'bold',
+                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+                        padding: '20px',
+                        textAlign: 'center',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)' // Background semi-transparent to improve text readability
+                    }}>
+                        <TextCarousel messages={messages} />
+                    </div>
+                    <Image
+                        src={splash}
+                        width="100%"
+                        height="100%"
+                        objectFit="cover"
+                    />
+                </View>
+            </Grid>
+        </div>
+    </Card>
+    <Card
+        padding="0px"
+        columnStart="1"
+        columnEnd="-1"
+        height="100px"
+    >
+        <Footerweb />
+    </Card>
+</Grid>
+</ThemeProvider>
+);
 }
