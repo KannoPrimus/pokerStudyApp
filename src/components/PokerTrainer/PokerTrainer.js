@@ -45,6 +45,7 @@ function PokerTrainer({ sequence, stake, membership }) {
     const [streakHands, setStreakHands] = useState([]);
     const [pot, setPot] = useState(1.5);
     const [bet, setBet] = useState(0);
+    const [correctAnswer, setCorrectAnswer] = useState('');
 
     useEffect(() => {
         resetPokerHand();
@@ -498,6 +499,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                 setScore(prevScore => prevScore + 1);
             } else {
                 setFinishHand('true');
+
             }
         }
 
@@ -668,6 +670,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             <div className="trainer-responses">
                 <div className="trainer-responses-container">
                     <h3>Spot: {currentHand ? currentHand.handTitle : ''}</h3>
+                    <h5 style={{color:'white'}}>{currentHand ? currentHand.description : ''}</h5>
                     <h4>Acciones:</h4>
                     {Object.keys(responses).map(street => (
                         <div key={street}>

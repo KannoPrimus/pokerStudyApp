@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js" afterPath="$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="693" column="96" lean-forward="false" selection-start-line="693" selection-start-column="62" selection-end-line="693" selection-end-column="96" />
+            <state relative-caret-position="483">
+              <caret line="501" column="16" lean-forward="false" selection-start-line="501" selection-start-column="16" selection-end-line="501" selection-end-column="16" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -92,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+            <state relative-caret-position="464">
+              <caret line="337" column="34" lean-forward="false" selection-start-line="337" selection-start-column="34" selection-end-line="337" selection-end-column="34" />
               <folding>
                 <element signature="e#15#78#0" expanded="true" />
               </folding>
@@ -178,7 +178,6 @@
         <option value="$PROJECT_DIR$/src/graphql/queries.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.css" />
-        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.css" />
@@ -186,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/components/PokerActions/PokerActions.js" />
         <option value="$PROJECT_DIR$/src/components/PokerHandContext/PokerHandContext.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
       </list>
     </option>
   </component>
@@ -200,8 +200,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="14" />
-    <option name="y" value="18" />
+    <option name="x" value="8" />
+    <option name="y" value="75" />
     <option name="width" value="1918" />
     <option name="height" value="1030" />
   </component>
@@ -388,14 +388,7 @@
       <workItem from="1717677396328" duration="136904000" />
       <workItem from="1719492814111" duration="84501000" />
       <workItem from="1720194276313" duration="5415000" />
-      <workItem from="1720478540032" duration="9944000" />
-    </task>
-    <task id="LOCAL-00042" summary=" Al apretar NUevaMano preguntar por guardar primero&#10; Checkbox de compartir mano no esta guardando&#10; Agregar Chat GPT para sugerencias de notas&#10; Restringir Edicion para manos compartidas&#10; Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10; Ajustar color de fondo de Range matrix&#10; Agregar a buscador la descripcion de la mano&#10; Otros Bugs">
-      <created>1718715134146</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1718715134146</updated>
+      <workItem from="1720478540032" duration="11219000" />
     </task>
     <task id="LOCAL-00043" summary=" Al apretar NUevaMano preguntar por guardar primero&#10; Checkbox de compartir mano no esta guardando&#10; Agregar Chat GPT para sugerencias de notas&#10; Restringir Edicion para manos compartidas&#10; Cambiar color de fondo modal cartas, agregar borde blanco a las cartas y cambiar color de cartas seleccionadas (glow)&#10; Ajustar color de fondo de Range matrix&#10; Agregar a buscador la descripcion de la mano&#10; Otros Bugs">
       <created>1718718421289</created>
@@ -733,11 +726,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720492059385</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Fix bug sidebar: limpiar campos cuando se selecciona resetear a una nueva mano y se corrige validacion de titulo spot y descripcion no vacios.">
+      <created>1720493248762</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1720493248762</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="738176000" />
+    <option name="totallyTimeSpent" value="739451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -786,7 +786,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Correccion de funcionamiento del trainer&#10;Detiene la mano en cuanto se selecciona una accion errornea para evitar qtener que controlar infinitos arboles de acciones&#10;Se controla el cierre de laaccion cuandoel villano nos va AllIn&#10;Cuando recibimos un ALL IN solo mostramos botones de CALL o FOLD" />
     <MESSAGE value="Correccion de funcionamiento del trainer&#10;Se agregan las notas al resultado de la mano entrenada" />
     <MESSAGE value="Se agrega descriptcion a las manos del dropdown del topbar" />
     <MESSAGE value="Se agrega recuadro de spots y tipo de boards con las acciones mas comunes de los crushers" />
@@ -811,7 +810,8 @@
     <MESSAGE value="Fix bug Poker Actions. No se cargaban las acciones al resetear nueva mano y seleccionar la misma que se estaba editando." />
     <MESSAGE value="Se aplica estilos y estructura Responsive al Landing Web" />
     <MESSAGE value="Fix bug poker Actions: solo recalcular el primer jugador en actuar cuando cambian las posiciones o las acciones. Se estaba aplicando cuando cambiaban las cartas y estaban quedando mal el player para cada accion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug poker Actions: solo recalcular el primer jugador en actuar cuando cambian las posiciones o las acciones. Se estaba aplicando cuando cambiaban las cartas y estaban quedando mal el player para cada accion." />
+    <MESSAGE value="Fix bug sidebar: limpiar campos cuando se selecciona resetear a una nueva mano y se corrige validacion de titulo spot y descripcion no vacios." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug sidebar: limpiar campos cuando se selecciona resetear a una nueva mano y se corrige validacion de titulo spot y descripcion no vacios." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1142,27 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="693" column="96" lean-forward="false" selection-start-line="693" selection-start-column="62" selection-end-line="693" selection-end-column="96" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2929">
-          <caret line="335" column="116" lean-forward="false" selection-start-line="335" selection-start-column="116" selection-end-line="335" selection-end-column="116" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="e#1101#1161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -1207,10 +1186,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+        <state relative-caret-position="464">
+          <caret line="337" column="34" lean-forward="false" selection-start-line="337" selection-start-column="34" selection-end-line="337" selection-end-column="34" />
           <folding>
             <element signature="e#15#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2929">
+          <caret line="335" column="116" lean-forward="false" selection-start-line="335" selection-start-column="116" selection-end-line="335" selection-end-column="116" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#1101#1161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="501" column="16" lean-forward="false" selection-start-line="501" selection-start-column="16" selection-end-line="501" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>

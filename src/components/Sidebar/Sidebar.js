@@ -328,13 +328,14 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     </select>
 
 
-                    <PokerTable />
+
                 </>
             ) : (
                 <></>
             )}
             {mode === 'Estudio' ? (
                 <>
+                    <PokerTable />
                     <textarea
                         id="description"
                         value={description}
