@@ -38,18 +38,19 @@ function PokerActions({ id }) {
 
             setActions([]);
             const inferredFirstPlayer = inferFirstPlayer();
+
             setFirstPlayer(inferredFirstPlayer);
             setActions([{ player: inferredFirstPlayer, action: 'NONE', order: 1, street: id, isCorrect: true, isOptional: false }]);
             updatePokerHand(`${id.toLowerCase()}Action`, "[{player="+ inferredFirstPlayer+", action=NONE, order=1, street="+id+", isCorrect=true, isOptional=false}]");
 
-            console.log('Actions when empty',pokerHand[`${phase}Action`]);
+
 
         } else {
 
 
             if (typeof pokerHand[`${phase}Action`] === "string") {
 
-                console.log('Actions when not empty',pokerHand[`${phase}Action`]);
+
 
                 const jsonString = pokerHand[`${phase}Action`]
                     .replace(/(\w+)=/g, '"$1":')
@@ -84,7 +85,7 @@ function PokerActions({ id }) {
         }
 
 
-    }, [pokerHand,previousAction]);
+    }, [pokerHand[`${id.toLowerCase()}Action`],previousAction]);
 
     const isAggressiveAction = (action) => {
         return ["OR_2.5bb", "OR_3bb", "OR_4bb", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%", "RAISE", "RAISE_x3", "RAISE_x5", "ALL-IN"].includes(action);
@@ -217,6 +218,8 @@ function PokerActions({ id }) {
     };
 
     useEffect(() => {
+
+
 
         if (actions.length === 0 ) {
             const inferredFirstPlayer = inferFirstPlayer();
