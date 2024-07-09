@@ -79,7 +79,7 @@ function TopBar({ mode }) {
     };
 
     const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        if (dropdownRef.current && dropdownRef.current.contains(event.target)) {
             setDropdownVisible(false);
         }
     };
@@ -151,7 +151,7 @@ function TopBar({ mode }) {
     };
 
     return (
-        <div className="top-bar" ref={dropdownRef}>
+        <div className="top-bar" >
             {showLoader && (
                 <div className="overlay">
                     <Oval
@@ -205,7 +205,7 @@ function TopBar({ mode }) {
                         onClick={handleClickSearchBox}
                     />
                     {dropdownVisible && filteredHands.length > 0 && (
-                        <ul className="dropdown-menu">
+                        <ul className="dropdown-menu" ref={dropdownRef}>
                             {filteredHands.map((hand) => (
                                 <li key={hand.id} onClick={() => handleSelectHand(hand)}>
                                     <div className="hand-title">{hand.handTitle}
@@ -214,6 +214,9 @@ function TopBar({ mode }) {
                                         </div>
                                         <div className="player-positions">
                                             {hand.tableType} max
+                                        </div>
+                                        <div className="player-positions">
+                                            {hand.share}
                                         </div>
                                         <div className="desciptionTopbarhand">{hand.description}</div>
                                     </div>

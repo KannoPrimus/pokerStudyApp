@@ -160,7 +160,7 @@ function PokerActions({ id }) {
         setActions(updatedActions);
         updatePokerHand(`${id.toLowerCase()}Action`, updatedActions);
 
-        if (actionIndex > 1)
+        if (actionIndex > 2)
             sliderRef.current.slickNext();
     };
 
@@ -281,7 +281,7 @@ function PokerActions({ id }) {
         arrows: actions.length > 3,
         adaptiveHeight: false,
         centerMode: false,
-        //initialSlide: actions.length>3 ? actions.length+1 : 0
+        initialSlide: actions.length>3 ? actions.length+1 : 0
     };
 
     return (

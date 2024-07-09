@@ -142,6 +142,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             } else {
                 setMode(newMode);
                 resetPokerHand();
+                setFilterActive(false);
             }
         }
     };
