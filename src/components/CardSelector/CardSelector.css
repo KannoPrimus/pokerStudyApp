@@ -38,18 +38,38 @@
 
 }
 
-.card-container-trainer {
-    width: 85px;
-    height: 110px;
+.card-container-hero-trainer {
+    width: 55px;
+    height: 85px;
     color:#fff;
-    border: 3px solid white;
+    border: 2px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 55px;
+    font-size: 35px;
     cursor: pointer;
     background-color: #ffffff; /* Fondo blanco o ajusta según el diseño de tus cartas */
-    border-radius: 10px; /* Esquinas redondeadas */
+    border-radius: 7px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para efectos */
+    font-family: "Bookman Old Style";
+    animation: appear 0.5s ease-in-out;
+
+}
+
+.card-container-trainer {
+    width: 55px;
+    height: 85px;
+    color:#fff;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    cursor: pointer;
+    background-color: #ffffff; /* Fondo blanco o ajusta según el diseño de tus cartas */
+    border-radius: 7px; /* Esquinas redondeadas */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
     text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
     transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para efectos */

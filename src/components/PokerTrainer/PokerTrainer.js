@@ -589,12 +589,16 @@ function PokerTrainer({ sequence, stake, membership }) {
                                 style={getSeatStyle(index)}
                             >
                                 <div className="trainer-seat-text">{position}</div>
-                                {index == mySeat && currentHand ? (
+
+                                {(index == mySeat && currentHand) ? (
+
                                     <div className="trainer-board-cards-hero">
+
                                         <CardSelector card="myHand_1" trainer="true" />
                                         <CardSelector card="myHand_2" trainer="true" />
                                     </div>
-                                ) : index == rivalSeat && currentHand ? (
+                                ) : (index == rivalSeat && currentHand) ? (
+
                                     <div className="trainer-board-cards-hero">
                                         <CardSelector card="trainerCard" trainer="true" />
                                         <CardSelector card="trainerCard" trainer="true" />
@@ -671,6 +675,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                 <div className="trainer-responses-container">
                     <h3>Spot: {currentHand ? currentHand.handTitle : ''}</h3>
                     <h5 style={{color:'white'}}>{currentHand ? currentHand.description : ''}</h5>
+
                     <h4>Acciones:</h4>
                     {Object.keys(responses).map(street => (
                         <div key={street}>

@@ -14,7 +14,7 @@
     flex-direction: column;
     align-items: center; /* Centra horizontalmente */
     /*justify-content: center;  Centra verticalmente */
-    padding-top: 0px;            /* Añade espacio alrededor del contenedor para evitar que los elementos toquen los bordes externos */
+    padding-top: 40px;            /* Añade espacio alrededor del contenedor para evitar que los elementos toquen los bordes externos */
     gap: 0px;                /* Añade un espacio entre cada columna */
     height: 100%;            /*  Ajusta la altura según sea necesario */
     width: 100%;
@@ -24,8 +24,8 @@
 
 .trainer-poker-table {
     position: relative;
-    width: 950px;
-    height:450px;
+    width: 807px;
+    height:382px;
     background: #333333;
     border: 1px solid #333;
     border-radius: 45% / 50% ;
@@ -38,8 +38,8 @@
 
 .trainer-poker-table-inner {
     position: relative;
-    width: 920px;
-    height:420px;
+    width: 782px;
+    height:357px;
     background: transparent;/*#0E8E6C;*/
     border: 1px solid #333333;
     border-radius: 45% / 50%;
@@ -90,7 +90,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: normal;
     transform: translate(-50%, -50%);
     cursor: pointer;
     transition: background-color 0.3s ease; /* Suave transición para los cambios de color */
@@ -315,7 +315,7 @@
     width: 100%;
     position: relative;
     left:50%;
-top:-35px;
+top:-15px;
 }
 
 

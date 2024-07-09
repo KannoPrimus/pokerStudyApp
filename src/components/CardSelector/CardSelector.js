@@ -42,9 +42,14 @@ function CardSelector({ card , trainer , currentHand}) {
             case 'riverCard':
                 setSelectedCard(pokerHand.riverCard);
                 break;
+            case 'trainerCard':
+                setSelectedCard('');
+                break;
             default:
                 break;
         }
+
+
     }, [pokerHand, card]);
 
     const handleCardClick = () => {
@@ -137,9 +142,27 @@ function CardSelector({ card , trainer , currentHand}) {
 
     // Determina el color basado en el último carácter del palo de la carta
     const backgroundColor = selectedCard ? suitColors[selectedCard.slice(-1)] : '#192831';
-    if (card === 'myHand_1' || card === 'myHand_2' || card === 'trainerCard') {
-        cardClass = 'card-container-hero';
-        logoSize='50px';
+
+    if(trainer === 'true') {
+        cardClass = 'card-container-trainer';
+        logoSize = '50px';
+    } else {
+        cardClass = 'card-container';
+        logoSize = '50px';
+    }
+
+    /*
+    if (card === 'myHand_1' || card === 'myHand_2' || card==='trainerCard') {
+        if(trainer === 'true') {
+            if(card==='trainerCard')
+                cardClass = 'card-container-trainer';
+                else
+                cardClass = 'card-container-hero-trainer';
+                logoSize='50px';
+        } else {
+            cardClass = 'card-container-hero';
+            logoSize = '50px';
+        }
     } else {
         if(trainer === 'true') {
             cardClass = 'card-container-trainer';
@@ -148,14 +171,14 @@ function CardSelector({ card , trainer , currentHand}) {
             cardClass = 'card-container';
             logoSize = '50px';
         }
-    }
+    }*/
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
 
     return (
-        <div className={cardClass} onClick={handleCardClick} onContextMenu={handleRightClick} style={{ backgroundColor }} title="Tip: botón derecha para limpiar la carta">
+        <div className={cardClass} onClick={handleCardClick} onContextMenu={handleRightClick} style={{ backgroundColor }} >
             {selectedCard || <span><Image src={logo} alt="Logo" width={logoSize} height={logoSize} opacity="0.2" /></span>}
             {isModalOpen && <CardModal isOpen={isModalOpen} onSelectCard={handleCardSelect} cardSet={cardSet} onClose={handleCloseModal}/>}
         </div>

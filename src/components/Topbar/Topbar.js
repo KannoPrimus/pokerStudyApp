@@ -80,7 +80,6 @@ function TopBar({ mode }) {
 
     const handleClickOutside = (event) => {
 
-        console.log(event.target+' - '+dropdownRef.current);
 
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setDropdownVisible(false);
