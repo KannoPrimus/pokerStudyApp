@@ -214,3 +214,56 @@ color:#333;
     margin:0px;
     height:10px;
 }
+
+/* Archivo CSS */
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo semitransparente */
+    z-index: 1000; /* Asegúrate de que el modal esté por encima de otros elementos */
+}
+
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:#000F18;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001; /* Asegúrate de que el contenido del modal esté por encima del fondo */
+}
+
+.Modal h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color:white;
+}
+
+.Modal p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color:white;
+}
+
+.Modal button {
+    background-color: #00ECB3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Modal button:hover {
+    background-color: #FFD700;
+}
