@@ -63,7 +63,7 @@
 .streetInfo{
  margin-top:25px;
     height: 70vh;
-    overflow-y: scroll; /* Agrega una barra de desplazamiento vertical si el contenido es demasiado grande */
+    overflow-y: hidden; /* Agrega una barra de desplazamiento vertical si el contenido es demasiado grande */
     overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
     padding: 0px; /* Espacio interno opcional */
     box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en las dimensiones del div */

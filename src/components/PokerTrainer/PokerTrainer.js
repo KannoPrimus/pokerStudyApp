@@ -12,10 +12,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 const preflopFirstActions = ["OR_2.5bb", "OR_3bb", "ALL-IN"];
-const postflopFirstActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+const postflopFirstActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_60%", "BET_75%", "BET_100%", "BET_125%"];
 
 const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
-const vsPassiveActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%"];
+const vsPassiveActions = ["CHECK", "BET_25%", "BET_33%", "BET_50%", "BET_60%", "BET_75%", "BET_100%", "BET_125%"];
 
 const client = generateClient();
 
