@@ -1,59 +1,39 @@
 
-/*
-.poker-stats-wrapper {
-    margin-top:60px;
-    margin-left: 280px;
-}
-
-.poker-stats-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.poker-stats-table th, .poker-stats-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.poker-stats-table th {
-    background-color: #f2f2f2;
-    text-align: left;
-}
-.action-div {
-    display: inline-block;
-    margin: 0 5px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background-color: #f9f9f9;
-}
-*/
-
 .poker-stats-wrapper {
     padding: 20px;
     color: white;
-    margin-top:60px;
-    margin-left: 380px;
-    background: #192831;
-    height: 50%;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    margin-top:40px;
+    margin-left: 370px;
+    margin-right: 20px;
+
+    height: 100%;
+    width: 100%;
+
 }
 
 .poker-stats-table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    background: #192831;
+    margin-top:10px;
 }
 
 .poker-stats-table th, .poker-stats-table td {
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-align: center;
+}
+
+.poker-stats-table tr:hover{
+    background: #000F18;
 }
 
 .action-container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 5px;
+    /*justify-content: space-around;*/
+    margin-top: 1px;
 
 }
 
@@ -63,26 +43,33 @@
     justify-content: left;
     align-items: left;
     border-radius: 5px;
-    padding: 5px;
+    padding: 2px;
     color: white;
-    width: 70px;
-    height: 40px;
+    width: auto;
+    height: 35px;
     margin-left:3px;
 }
 
 .action-div-action{
     font-weight: bolder;
     text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
-    font-size: 12px;
+    font-size: 11px;
+}
+
+.action-div-action-ind{
+    padding-top: 7px;
+    font-weight: bolder;
+    text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+    font-size: 11px;
 }
 
 .action-div-freq{
-    font-weight: bold;
+    font-weight: normal;
     text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
     font-size: 10px;
 }
 
-.action-div.allin {
+.action-div.all-in {
     background-color: #8B0000;
 }
 
@@ -113,4 +100,70 @@
 
 .action-div.check {
     background-color: #16c86b;
+}
+
+.filters-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #000F18;
+    color: white;
+    width: auto;
+    height: 155px;
+    gap:3px;
+}
+
+/* Estilos para los inputs */
+.filters-wrapper .input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin: 8px 0;
+    background-color: #32414A;  /* Asegúrate de que coincida con el color de fondo de la barra lateral */
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #555;  /* Borde inferior visible */
+    border-radius: 5px;
+    transition: border-bottom-color 0.3s ease, box-shadow 0.3s ease;  /* Transiciones suaves */
+    resize: none;
+    font-size: small;
+
+}
+
+.filters-wrapper select option:checked {
+    color: #555;
+    background-color: #00ECB3; /* Color de fondo cuando está seleccionada */
+}
+
+.filters-wrapper .input:hover {
+    border-bottom-color: #00ECB3;  /* Cambio de color en hover también */
+}
+
+.filters-wrapper .input:focus {
+    outline: none;
+    border-bottom-color: #00ECB3;  /* Color del borde inferior cuando está enfocado */
+    box-shadow: 0 1px 0 0 rgba(0,123,255,0.5);  /* Sombra sutil para enfocar */
+}
+
+.filters-wrapper .input::-webkit-scrollbar {
+    width: 6px;
+}
+
+.filters-wrapper .input::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color del thumb más oscuro */
+    border-radius: 3px;
+}
+
+.filters-wrapper .input::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Color al pasar el ratón */
+}
+
+.selector-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: calc(100% - 16px);
 }

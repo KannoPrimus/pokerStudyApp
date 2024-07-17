@@ -27,13 +27,18 @@ position: fixed;
 
 }
 
+select option:checked {
+    color: #555;
+    background-color: #00ECB3; /* Color de fondo cuando está seleccionada */
+}
+
 .input:hover {
-    border-bottom-color: #007bff;  /* Cambio de color en hover también */
+    border-bottom-color: #00ECB3;  /* Cambio de color en hover también */
 }
 
 .input:focus {
     outline: none;
-    border-bottom-color: #007bff;  /* Color del borde inferior cuando está enfocado */
+    border-bottom-color: #00ECB3;  /* Color del borde inferior cuando está enfocado */
     box-shadow: 0 1px 0 0 rgba(0,123,255,0.5);  /* Sombra sutil para enfocar */
 }
 
