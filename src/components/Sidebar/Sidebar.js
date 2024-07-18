@@ -310,7 +310,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                         onChange={handleTitleChange}
                         className="input Spot"
                     >
-                        <option value="" disabled>Secuencia</option>
+                        <option value="" >Selecciona</option>
                         {pokerSequences.map((sequence, index) => (
                             <option key={index} value={sequence}>{sequence}</option>
                         ))}
@@ -322,7 +322,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                         onChange={handleStakeChange}
                         className="input Stake"
                     >
-                        <option value="" disabled>Stake</option>
+                        <option value="" >Cualquiera</option>
                         {pokerStakes.map((stake, index) => (
                             <option key={index} value={stake}>{stake}</option>
                         ))}

@@ -53,7 +53,7 @@ function CardSelector({ card , trainer , currentHand}) {
     }, [pokerHand, card]);
 
     const handleCardClick = () => {
-        console.log(trainer);
+
         if(trainer === 'false') {
             switch (card) {
                 case 'myHand_1':

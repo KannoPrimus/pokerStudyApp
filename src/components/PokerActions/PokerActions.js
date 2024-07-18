@@ -13,10 +13,10 @@ import Modal from 'react-modal'; // Asegúrate de instalar react-modal
 library.add(fas);
 
 const preflopFirstActions = ["OR_2.5bb", "OR_3bb", "ALL-IN"];
-const postflopFirstActions = ["CHECK", "BET_10%", "BET_25%", "BET_33%", "BET_50%", "BET_60%", "BET_75%", "BET_100%", "BET_125%"];
+const postflopFirstActions = ["CHECK", "BET_10%", "BET_25%", "BET_33%", "BET_50%", "BET_60%", "BET_75%", "BET_100%", "BET_125%", "ALL-IN"];
 
 const vsAggressiveActions = ["FOLD", "CALL", "RAISE_x3", "RAISE_x5", "ALL-IN"];
-const vsPassiveActions = ["CHECK", "BET_10%", "BET_25%", "BET_33%", "BET_50%", "BET_60%", "BET_75%", "BET_100%", "BET_125%"];
+const vsPassiveActions = ["CHECK", "BET_10%", "BET_25%", "BET_33%", "BET_50%", "BET_60%", "BET_75%", "BET_100%", "BET_125%", "ALL-IN"];
 
 Modal.setAppElement('#root'); // Reemplaza '#root' con el ID de tu elemento root
 
@@ -76,7 +76,7 @@ function PokerActions({ id }) {
     }, [pokerHand[`${id.toLowerCase()}Action`], previousAction]);
 
     const isAggressiveAction = (action) => {
-        return ["OR_2.5bb", "OR_3bb", "OR_4bb", "BET_25%", "BET_33%", "BET_50%", "BET_75%", "BET_125%", "RAISE", "RAISE_x3", "RAISE_x5", "ALL-IN"].includes(action);
+        return ["OR_2.5bb", "OR_3bb", "OR_4bb", "BET_10%", "BET_25%", "BET_33%", "BET_50%", "BET_60%", "BET_75%", "BET_100%", "BET_125%", "RAISE", "RAISE_x3", "RAISE_x5", "ALL-IN"].includes(action);
     };
 
     const getAvailableActions = (phase, previousAction, isFirstAction) => {
@@ -121,7 +121,7 @@ function PokerActions({ id }) {
 
     const handleSelectAction = (player, action, actionIndex) => {
 
-        console.log(pokerHand.heroPosition+' - '+ pokerHand.villainPosition);
+
 
         if (pokerHand.heroPosition === '9' || pokerHand.villainPosition === '9' || pokerHand.heroPosition === 9 || pokerHand.villainPosition === 9) {
             console.log(modalIsOpen);

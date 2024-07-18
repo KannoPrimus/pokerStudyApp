@@ -10,7 +10,7 @@
     /*border: 1px solid #333;  Borde sutil */
     line-height: 1.5; /* Espaciado de línea para facilitar la lectura */
     outline: none; /* Remover el borde al enfocar */
-    height:400px;
+    height:100px;
     width: 99%;
 }
 

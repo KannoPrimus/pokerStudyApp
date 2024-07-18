@@ -2,12 +2,16 @@
 .street-column-container {
     display: flex;
     flex-direction: column;  /* Cambia la dirección del flex a vertical */
-    /*height: 100%;   Ajusta según la altura deseada */
+    height: 93vh;  /* Ajusta según la altura deseada */
     width: 90%;    /*Ajusta según el ancho deseado */
     font-size: 12px;
     align-items: center; /* Centra horizontalmente */
     justify-content: center; /* Centra verticalmente */
 
+}
+
+.street-column-container h2{
+    color:white;
 }
 
 .section {

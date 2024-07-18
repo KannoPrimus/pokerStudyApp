@@ -5,6 +5,10 @@ import './PokerStats.css';
 import { generateClient } from "aws-amplify/api";
 import { listHands as listHandsQuery } from "../../graphql/queries";
 import PokerHand from 'poker-hand-evaluator';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 const client = generateClient();
 const playerPositions6Max = ['SB', 'BB', 'UTG', 'MP', 'CO', 'BU'];
@@ -28,6 +32,12 @@ const pokerSequences = [
 ];
 const boardTypes = ['No 3straight','3straight bajo','3straight medio','3straight alto','Monocolor','Pareado','HLL','HHL'];
 const handStrengths = ['STRAIGHT_FLUSH','FOUR_OF_A_KIND','FULL_HOUSE','FLUSH','STRAIGHT','THREE_OF_A_KIND','TWO_PAIRS','ONE_PAIR','HIGH_CARD'];
+const handSources = [
+    { value: 'user', label: 'Mis Manos' },
+    { value: 'Rake2high', label: 'Rake2high - NL100' },
+    { value: 'MartaiMrko', label: 'MartaiMrko - NL200' },
+    { value: 'todos', label: 'Todos los crushers' },
+];
 
 const suitColors = {
     '♠': '#808080', // Gris para Espadas
@@ -49,18 +59,18 @@ function PokerStats({ sequence, stake, membership }) {
     const [selectedActionsRiver, setSelectedActionsRiver] = useState([]);
 
     const [filters, setFilters] = useState({
-        spot: '',
-        boardType: '',
-        flopAction: '',
-        turnAction: '',
-        riverAction: '',
-        handValueFlop: '',
-        handValueTurn: '',
-        handValueRiver: '',
+        spot: [''],
+        boardType: [''],
+        flopAction: [''],
+        turnAction: [''],
+        riverAction: [''],
+        handValueFlop: [''],
+        handValueTurn: [''],
+        handValueRiver: [''],
     });
 
     useEffect(() => {
-        fetchAllHands();
+        fetchAllHands('user','');
     }, []);
 
     const getSuitColor = (card) => {
@@ -69,96 +79,117 @@ function PokerStats({ sequence, stake, membership }) {
         return suitColors[suit] || '#000';
     };
 
-    /*const handleActionFlopChange = (event) => {
-        const options = event.target.options;
-        const selectedValues = [];
-        for (const option of options) {
-            if (option.selected) {
-                selectedValues.push(option.value);
-            }
-        }
-        setSelectedActionsFlop(selectedValues);
-    };
-
-    const handleActionTurnChange = (event) => {
-        const options = event.target.options;
-        const selectedValues = [];
-        for (const option of options) {
-            if (option.selected) {
-                selectedValues.push(option.value);
-            }
-        }
-        setSelectedActionsTurn(selectedValues);
-    };
-
-    const handleActionRiverChange = (event) => {
-        const options = event.target.options;
-        const selectedValues = [];
-        for (const option of options) {
-            if (option.selected) {
-                selectedValues.push(option.value);
-            }
-        }
-        setSelectedActionsRiver(selectedValues);
-    };*/
-
     const handleFilterChange = (e) => {
+
+
+
+        if(e.target.name==='source')
+            fetchAllHands(e.target.value,e.target.value);
+
+        const options = e.target.options;
+        const selectedValues = [];
+        for (const option of options) {
+            if (option.selected) {
+                selectedValues.push(option.value);
+            }
+        }
+
         setFilters({
             ...filters,
-            [e.target.name]: e.target.value,
+            //[e.target.name]: e.target.value,
+            [e.target.name]: selectedValues,
         });
     };
 
     const filterDataGrouped = (data) => {
-
         return data.filter(hand => {
+            const { spot, boardType, flopAction, turnAction, riverAction } = filters;
 
 
-            return (
-                (filters.spot === '' || hand.handTitle === filters.spot) &&
-                (filters.boardType === '' || hand.boardClassification === filters.boardType) &&
-                (filters.flopAction === '' || hand.actions.flop.filter(action => action.player === 'Hero').some(action => action.action === filters.flopAction)) &&
-                (filters.turnAction === '' || hand.actions.turn.filter(action => action.player === 'Hero').some(action => action.action === filters.turnAction)) &&
-                (filters.riverAction === '' || hand.actions.river.filter(action => action.player === 'Hero').some(action => action.action === filters.riverAction)) &&
 
-                true
-            );
+            const spotMatch =  spot.includes('') || spot.includes(hand.handTitle);
+            const boardTypeMatch = boardType.includes('') || boardType.includes(hand.boardClassification);
+
+
+            const flopActionMatch = flopAction.includes('') || hand.actions.flop
+                .filter(action => action.player === 'Hero')
+                .some(action => flopAction.includes(action.action));
+
+            const turnActionMatch = turnAction.includes('') || hand.actions.turn
+                .filter(action => action.player === 'Hero')
+                .some(action => turnAction.includes(action.action));
+
+            const riverActionMatch = riverAction.includes('') || hand.actions.river
+                .filter(action => action.player === 'Hero')
+                .some(action => riverAction.includes(action.action));
+
+            return spotMatch && boardTypeMatch && flopActionMatch && turnActionMatch && riverActionMatch;
         });
     };
+
 
     const filterData = (data) => {
 
         return data.filter(hand => {
-            const isHandValueFlopValid = (filters.handValueFlop === '' || (hand.strength.flop !== null && hand.strength.flop.rank === filters.handValueFlop));
-            const isHandValueTurnValid = (filters.handValueTurn === '' || (hand.strength.turn !== null && hand.strength.turn.rank === filters.handValueTurn));
-            const isHandValueRiverValid = (filters.handValueRiver === '' || (hand.strength.river !== null && hand.strength.river.rank === filters.handValueRiver));
 
-            return (
-                (filters.spot === '' || hand.handTitle === filters.spot) &&
-                (filters.boardType === '' || hand.boardClassification === filters.boardType) &&
-                (filters.flopAction === '' || hand.actions.flop.filter(action => action.player === 'Hero').some(action => action.action === filters.flopAction)) &&
-                (filters.turnAction === '' || hand.actions.turn.filter(action => action.player === 'Hero').some(action => action.action === filters.turnAction)) &&
-                (filters.riverAction === '' || hand.actions.river.filter(action => action.player === 'Hero').some(action => action.action === filters.riverAction)) &&
-                isHandValueFlopValid &&
-                isHandValueTurnValid &&
-                isHandValueRiverValid &&
-                true
-            );
+
+            const isHandValueFlopValid = (filters.handValueFlop.includes('') ||
+                (hand.strength.flop !== null && filters.handValueFlop.includes(hand.strength.flop.rank)));
+
+            const isHandValueTurnValid = (filters.handValueTurn.includes('') ||
+                (hand.strength.turn !== null && filters.handValueTurn.includes(hand.strength.turn.rank)));
+
+            const isHandValueRiverValid = (filters.handValueRiver.includes('') ||
+                (hand.strength.river !== null && filters.handValueRiver.includes(hand.strength.river.rank)));
+
+
+            const { spot, boardType, flopAction, turnAction, riverAction } = filters;
+
+            const spotMatch =  spot.includes('') || spot.includes(hand.handTitle);
+            const boardTypeMatch = boardType.includes('') || boardType.includes(hand.boardClassification);
+
+            const flopActionMatch = flopAction.includes('') || hand.actions.flop
+                .filter(action => action.player === 'Hero')
+                .some(action => flopAction.includes(action.action));
+
+            const turnActionMatch = turnAction.includes('') || hand.actions.turn
+                .filter(action => action.player === 'Hero')
+                .some(action => turnAction.includes(action.action));
+
+            const riverActionMatch = riverAction.includes('') || hand.actions.river
+                .filter(action => action.player === 'Hero')
+                .some(action => riverAction.includes(action.action));
+
+            return spotMatch && boardTypeMatch && flopActionMatch && turnActionMatch && riverActionMatch && isHandValueFlopValid && isHandValueTurnValid && isHandValueRiverValid;
         });
     };
 
 
 
 
-    const fetchAllHands = async () => {
+    const fetchAllHands = async (source = null, searchString='') => {
         setLoading(true);
         const filter = {};
+
+        if (source == 'user') {
+            filter.playerId = { eq: user.username };
+
+        }else if(source == 'todos'){
+            filter.description = { contains: '' };
+        }
+        else
+        {
+            filter.description = { contains: searchString };
+
+        }
+
 
         try {
             const result = await client.graphql({
                 query: listHandsQuery,
                 variables: { filter }
             });
+
 
             const parseActions = (actionString) => {
                 const actionList = actionString.slice(1, -1).split('},').map(action => action.endsWith('}') ? action : action + '}');
@@ -309,6 +340,7 @@ function PokerStats({ sequence, stake, membership }) {
                 return data.listHands.items.map(hand => {
                     const {
                         handTitle,
+                        description,
                         myHand_1,
                         myHand_2,
                         flopCards_1,
@@ -326,6 +358,7 @@ function PokerStats({ sequence, stake, membership }) {
 
                     return {
                         handTitle,
+                        description,
                         myHand: [myHand_1, myHand_2],
                         board: [flopCards_1, flopCards_2, flopCards_3, turnCard, riverCard],
                         boardClassification,
@@ -444,7 +477,7 @@ function PokerStats({ sequence, stake, membership }) {
 
     const renderActionDivsIndividual = (actionPercentages) => {
         return actionPercentages
-            .filter(action => action.player === "Hero")
+            .filter(action => action.action !== "NONE")
             .map(action => {
                 let actionClass = '';
 
@@ -481,8 +514,9 @@ function PokerStats({ sequence, stake, membership }) {
                 }
 
                 return (
-                    <div key={action.order} className={`action-div ${actionClass}`}>
-                        <div className="action-div-action-ind">{action.action.replace('NONE', "").replace('BET_125%', "Over Bet").replace(/_/g, " ")}</div>
+                    <div key={action.order} className={action.player==='Hero' ? `action-div ${actionClass}`:'action-div-vill'}>
+                        <div className="action-div-action">{action.action.replace('NONE', "").replace('BET_125%', "Over Bet").replace(/_/g, " ")}</div>
+                        <div className="action-div-freq">{action.player}</div>
                     </div>
                 );
             });
@@ -495,14 +529,23 @@ function PokerStats({ sequence, stake, membership }) {
         <div className="poker-stats-wrapper">
             <div className="filters-wrapper">
                 <div className="selector-wrapper">
-                    <p>Fuente</p>
-                <select className="input" name="crusher" value={filters.spot} onChange={handleFilterChange}>
-                    <option value="">Mis manos</option>
+                    <span><FontAwesomeIcon icon="dice-d6" size="1x" /> Fuente</span>
+                    <select className="input" name="source" value={filters.source}  onChange={handleFilterChange}>
 
-                </select>
+                        {handSources.map((source, index) => (
+                            <option key={index} value={source.value}>{source.label}</option>
+                        ))}
+                    </select>
+
+                    <div className="tooltip">
+
+                        <FontAwesomeIcon icon="circle-question" size="1x" />
+
+                        <span className="tooltip-text">Deja la tecla Control presionada para seleccionar mas de una opción.</span>
+                    </div>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Spot</p>
+                    <span><FontAwesomeIcon icon="bullseye" size="1x" /> Spot</span>
                 <select className="input" multiple={true} name="spot" value={filters.spot} onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {pokerSequences.map((sequence, index) => (
@@ -511,7 +554,7 @@ function PokerStats({ sequence, stake, membership }) {
                 </select>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Tipo Board</p>
+                    <span><FontAwesomeIcon icon="clipboard-list" size="1x" /> Tipo Board</span>
                 <select className="input" multiple={true} name="boardType" value={filters.boardType} onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {boardTypes.map((boards, index) => (
@@ -520,7 +563,7 @@ function PokerStats({ sequence, stake, membership }) {
                 </select>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Acción FLOP</p>
+                    <span><FontAwesomeIcon icon="crosshairs" size="1x" /> Acción FLOP</span>
                 <select className="input" multiple={true} name="flopAction" value={filters.flopAction}  onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {posibleActions.map((actions, index) => (
@@ -529,7 +572,7 @@ function PokerStats({ sequence, stake, membership }) {
                 </select>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Acción TURN</p>
+                    <span><FontAwesomeIcon icon="crosshairs" size="1x" /> Acción TURN</span>
                 <select className="input" multiple={true} name="turnAction" value={filters.turnAction}  onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {posibleActions.map((actions, index) => (
@@ -538,7 +581,7 @@ function PokerStats({ sequence, stake, membership }) {
                 </select>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Acción RIVER</p>
+                    <span><FontAwesomeIcon icon="crosshairs" size="1x" /> Acción RIVER</span>
                 <select className="input" multiple={true} name="riverAction" value={filters.riverAction}  onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {posibleActions.map((actions, index) => (
@@ -547,7 +590,7 @@ function PokerStats({ sequence, stake, membership }) {
                 </select>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Valor al FLOP</p>
+                    <span><FontAwesomeIcon icon="magnifying-glass-dollar" size="1x" /> Valor al FLOP</span>
                 <select className="input" multiple={true} name="handValueFlop" value={filters.handValueFlop} onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {handStrengths.map((strengths, index) => (
@@ -556,7 +599,7 @@ function PokerStats({ sequence, stake, membership }) {
                 </select>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Valor al TURN</p>
+                    <span><FontAwesomeIcon icon="magnifying-glass-dollar" size="1x" /> Valor al TURN</span>
                 <select className="input" multiple={true} name="handValueTurn" value={filters.handValueTurn} onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {handStrengths.map((strengths, index) => (
@@ -565,7 +608,7 @@ function PokerStats({ sequence, stake, membership }) {
                 </select>
                 </div>
                 <div className="selector-wrapper">
-                    <p>Valor al RIVER</p>
+                    <span><FontAwesomeIcon icon="magnifying-glass-dollar" size="1x" /> Valor al RIVER</span>
                 <select className="input" multiple={true} name="handValueRiver" value={filters.handValueRiver} onChange={handleFilterChange}>
                     <option value="">Todos</option>
                     {handStrengths.map((strengths, index) => (
@@ -573,11 +616,13 @@ function PokerStats({ sequence, stake, membership }) {
                     ))}
                 </select>
                 </div>
+
             </div>
 
             {loading ? (
                 <p>Loading...</p>
             ) : (
+                <div className="poker-stats-table-wrapper">
                 <table className="poker-stats-table">
                     <thead style={{backgroundColor:'#000F18'}}>
                     <tr >
@@ -612,15 +657,17 @@ function PokerStats({ sequence, stake, membership }) {
                     ))}
                     </tbody>
                 </table>
+                </div>
             )}
 
             {loading ? (
                 <p>Loading...</p>
             ) : (
+                <div className="poker-stats-table-wrapper">
                 <table className="poker-stats-table">
                     <thead style={{backgroundColor:'#000F18'}}>
                     <tr >
-
+                        <th>Info</th>
                         <th>Hand</th>
                         <th>Flop</th>
                         <th>Turn</th>
@@ -636,12 +683,19 @@ function PokerStats({ sequence, stake, membership }) {
                     <tbody>
                     {filterData(handsData).map((hand, index) => (
                         <tr key={index}>
-
                             <td style={{color: '#00ECB3',textAlign:'left',leftPadding:'10px'}}>
+                                <div className="tooltip">
+
+                                    <FontAwesomeIcon icon="circle-question" size="1x" />
+
+                                    <span className="tooltip-text">{hand.description}</span>
+                                </div>
+                            </td>
+                            <td style={{color: '#00ECB3',textAlign:'left',leftPadding:'10px',width:'80px'}}>
                                 <div className="card" style={{ color: getSuitColor(hand.myHand[0]) }}>{hand.myHand[0]}</div>
                                 <div className="card" style={{ color: getSuitColor(hand.myHand[1]) }}>{hand.myHand[1]}</div>
                             </td>
-                            <td style={{color: '#00ECB3',textAlign:'left',leftPadding:'10px'}}>
+                            <td style={{color: '#00ECB3',textAlign:'left',leftPadding:'10px',width:'120px'}}>
                                 {(hand.board[0]!='') ? (
                                     <>
                                 <div className="card" style={{ color: getSuitColor(hand.board[0]) }}>{hand.board[0]}</div>
@@ -698,6 +752,7 @@ function PokerStats({ sequence, stake, membership }) {
                     ))}
                     </tbody>
                 </table>
+                </div>
             )}
 
         </div>

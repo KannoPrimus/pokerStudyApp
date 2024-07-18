@@ -2,7 +2,7 @@
 .poker-stats-wrapper {
     padding: 20px;
     color: white;
-    margin-top:40px;
+    margin-top:10px;
     margin-left: 370px;
     margin-right: 20px;
 
@@ -11,19 +11,49 @@
 
 }
 
+.poker-stats-table-wrapper {
+    margin-top:15px;
+    max-height: 34vh;
+    overflow: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6); /* Sombra sutil */
+}
+
+.poker-stats-table-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.poker-stats-table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #000F18; /* Color del thumb más oscuro */
+    border-radius: 3px;
+}
+
+.poker-stats-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #000F18; /* Color al pasar el ratón */
+}
+
 .poker-stats-table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
     background: #192831;
-    margin-top:10px;
+
+
+}
+
+
+.poker-stats-table th{
+    position: sticky;
+    top: 0;
+    background-color: #000F18;
+    z-index: 1;
 }
 
 .poker-stats-table th, .poker-stats-table td {
     padding-left: 5px;
     padding-right: 5px;
-    text-align: center;
+    text-align: left;
+    font-size: 12px;
 }
 
 .poker-stats-table tr:hover{
@@ -50,18 +80,26 @@
     margin-left:3px;
 }
 
+.action-div-vill {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    border-radius: 5px;
+    padding: 2px;
+    color: #32414A;
+    width: auto;
+    height: 35px;
+    margin-left:3px;
+    border: 1px solid #32414A;
+}
+
 .action-div-action{
     font-weight: bolder;
     text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
     font-size: 11px;
 }
 
-.action-div-action-ind{
-    padding-top: 7px;
-    font-weight: bolder;
-    text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra sutil */
-    font-size: 11px;
-}
 
 .action-div-freq{
     font-weight: normal;
@@ -108,20 +146,24 @@
     justify-content: left;
     align-items: left;
     border-radius: 5px;
-    padding: 2px;
+    padding: 12px;
     background-color: #000F18;
     color: white;
     width: auto;
-    height: 155px;
+    height: 157px;
     gap:3px;
 }
 
+.filters-wrapper span {
+    font-size: 12px;
+    font-weight: bold;
+}
 /* Estilos para los inputs */
 .filters-wrapper .input {
     width: calc(100% - 16px);
     padding: 8px;
     margin: 8px 0;
-    background-color: #32414A;  /* Asegúrate de que coincida con el color de fondo de la barra lateral */
+    background-color: #000F18;  /* Asegúrate de que coincida con el color de fondo de la barra lateral */
     color: #fff;
     border: none;
     border-bottom: 2px solid #555;  /* Borde inferior visible */
@@ -135,16 +177,20 @@
 .filters-wrapper select option:checked {
     color: #555;
     background-color: #00ECB3; /* Color de fondo cuando está seleccionada */
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 .filters-wrapper .input:hover {
     border-bottom-color: #00ECB3;  /* Cambio de color en hover también */
+    border-radius: 3px;
 }
 
 .filters-wrapper .input:focus {
     outline: none;
     border-bottom-color: #00ECB3;  /* Color del borde inferior cuando está enfocado */
     box-shadow: 0 1px 0 0 rgba(0,123,255,0.5);  /* Sombra sutil para enfocar */
+    border-radius: 3px;
 }
 
 .filters-wrapper .input::-webkit-scrollbar {
@@ -152,12 +198,12 @@
 }
 
 .filters-wrapper .input::-webkit-scrollbar-thumb {
-    background-color: #555; /* Color del thumb más oscuro */
+    background-color: #000F18; /* Color del thumb más oscuro */
     border-radius: 3px;
 }
 
 .filters-wrapper .input::-webkit-scrollbar-thumb:hover {
-    background-color: #777; /* Color al pasar el ratón */
+    background-color: #000F18; /* Color al pasar el ratón */
 }
 
 .selector-wrapper{
@@ -166,4 +212,45 @@
     justify-content: left;
     align-items: left;
     width: calc(100% - 16px);
+}
+
+.poker-stats-wrapper .tooltip {
+
+    position: relative;
+    display: inline-block;
+width:20px;
+}
+
+.poker-stats-wrapper .tooltip .tooltip-text {
+    visibility: hidden;
+    min-width: 100px;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    font-size: small;
+    border-radius: 6px;
+    padding: 3px;
+    position: absolute;
+    bottom: 125%; /* Position above the button */
+    left: 0px;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.poker-stats-wrapper .tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.poker-stats-wrapper .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }

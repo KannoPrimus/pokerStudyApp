@@ -281,7 +281,7 @@ input:checked + .slider:before {
 }
 
 .tooltip {
-z-index: 2000;
+
     position: relative;
     display: inline-block;
 }
