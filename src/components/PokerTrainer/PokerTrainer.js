@@ -58,7 +58,6 @@ function PokerTrainer({ sequence, stake, membership }) {
         let timer;
         if ((currentPlayer !== 'Hero' && currentPlayer !== '') && finishHand === 'false' ) {
 
-            console.log(currentPlayer);
 
             timer = setTimeout(() => {
                 const okButton = document.querySelector('.villainAction + button');
