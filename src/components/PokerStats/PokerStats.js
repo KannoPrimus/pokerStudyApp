@@ -34,8 +34,8 @@ const boardTypes = ['No 3straight','3straight bajo','3straight medio','3straight
 const handStrengths = ['STRAIGHT_FLUSH','FOUR_OF_A_KIND','FULL_HOUSE','FLUSH','STRAIGHT','THREE_OF_A_KIND','TWO_PAIRS','ONE_PAIR','HIGH_CARD'];
 const handSources = [
     { value: 'user', label: 'Mis Manos' },
-    { value: 'Rake2high', label: 'Rake2high - NL100' },
-    { value: 'MartaiMrko', label: 'MartaiMrko - NL200' },
+    { value: 'Rake2high', label: 'Crushers - NL100' },
+    { value: 'MartaiMrko', label: 'Crushers - NL200' },
     { value: 'todos', label: 'Todos los crushers' },
 ];
 

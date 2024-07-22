@@ -20,6 +20,7 @@ import { SignInFooter } from "./SignInFooter";
 import splash from "../../assets/imagenLogin.png";
 import splashMision from "../../assets/Poker Crushers - Study mode.jpg";
 import splashMision2 from "../../assets/Poker Crushers - Trainer mode.jpg";
+import splashMision3 from "../../assets/Poker Crushers - Analytics mode.jpg";
 import pokerplayer from "../../assets/pokerplayer_crusher.png";
 import home1 from "../../assets/home_1.png";
 import home2 from "../../assets/home_2.png";
@@ -325,6 +326,10 @@ export function Login() {
                                     Aprende directamente de las manos y adaptaciones que utilizan los crushers en cada nivel de juego. Con PokerCrushers.pro, estarás un paso adelante de la competencia.
                                 </Text>
                                 <button style={{ borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#00ECB3', fontWeight: 'bold' }} onClick={scrollToNav4}>Crea tu cuenta</button>
+                                <Image
+                                    src={splashMision3}
+                                    style={{ width: '90%', borderRadius: '10px' }}
+                                />
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                 <Image
