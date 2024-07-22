@@ -68,7 +68,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     useEffect(() => {
         if (pokerHand.handTitle) {
             setHandTitle(pokerHand.handTitle);
-            setHandStake(pokerHand.stake);
+            //setHandStake(pokerHand.stake);
             setDescription(pokerHand.description);
             setIsShareable(pokerHand.share.toLowerCase?.() === 'true');
         }else{
@@ -315,18 +315,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                             <option key={index} value={sequence}>{sequence}</option>
                         ))}
                     </select>
-                    <div className="txtChangeMode">Stake</div>
-                    <select
-                        id="handStake"
-                        value={handStake}
-                        onChange={handleStakeChange}
-                        className="input Stake"
-                    >
-                        <option value="" >Cualquiera</option>
-                        {pokerStakes.map((stake, index) => (
-                            <option key={index} value={stake}>{stake}</option>
-                        ))}
-                    </select>
+
 
 
 
@@ -471,3 +460,19 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
 }
 
 export default Sidebar;
+
+
+/*
+<div className="txtChangeMode">Stake</div>
+                    <select
+                        id="handStake"
+                        value={handStake}
+                        onChange={handleStakeChange}
+                        className="input Stake"
+                    >
+                        <option value="" >Cualquiera</option>
+                        {pokerStakes.map((stake, index) => (
+                            <option key={index} value={stake}>{stake}</option>
+                        ))}
+                    </select>
+                    */

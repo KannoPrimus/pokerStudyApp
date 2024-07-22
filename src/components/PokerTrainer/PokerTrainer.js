@@ -41,6 +41,7 @@ function PokerTrainer({ sequence, stake, membership }) {
     const [score, setScore] = useState(0);
     const [totalActions, setTotalActions] = useState(0);
     const [chips, setChips] = useState([]);
+    const [chipsVil, setChipsVil] = useState([]);
     const [trainedHands, setTrainedHands] = useState([]);
     const [streakHands, setStreakHands] = useState([]);
     const [pot, setPot] = useState(1.5);
@@ -52,6 +53,20 @@ function PokerTrainer({ sequence, stake, membership }) {
 
 
     }, []);
+
+    useEffect(() => {
+        let timer;
+        if (currentPlayer !== 'Hero' && finishHand === 'false' ) {
+            timer = setTimeout(() => {
+                //const okButton = document.querySelector('.villainAction + button');
+                //if (okButton) {
+                //    okButton.click();
+                //}
+                handleActionClick(currentAction)
+            }, 2000); // 3 segundos, puedes ajustar este valor según tus necesidades
+        }
+        return () => clearTimeout(timer); // Limpia el timeout al desmontar el componente o cambiar las dependencias
+    }, [currentPlayer, finishHand]);
 
     useEffect(() => {
 
@@ -145,6 +160,7 @@ function PokerTrainer({ sequence, stake, membership }) {
         setScore(0);
         setTotalActions(0);
         setChips([]);
+        setChipsVil([]);
         setResponses({});
         setPot(1.5);
 
@@ -317,6 +333,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             setScore(0);
             setTotalActions(0);
             setChips([]);
+            setChipsVil([]);
             setPot(1.5);
         }
     };
@@ -334,6 +351,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             setScore(0);
             setTotalActions(0);
             setChips([]);
+            setChipsVil([]);
             setPot(1.5);
         }
     };
@@ -347,6 +365,7 @@ function PokerTrainer({ sequence, stake, membership }) {
         setScore(0);
         setTotalActions(0);
         setChips([]);
+        setChipsVil([]);
         setActionIndex(0);
         setCurrentPlayer('Hero');
         setPot(1.5);
@@ -421,13 +440,9 @@ function PokerTrainer({ sequence, stake, membership }) {
         }
 
         const currentPlayer = actions[currentIndex].player;
-        const currentButtons = [];
+        let currentButtons = [];
 
         for (let i = currentIndex; i < actions.length; i++) {
-
-           // if (actions[i].action === "NONE")
-            //    break;
-
             if (actions[i].player === currentPlayer) {
                 currentButtons.push(actions[i]);
             } else {
@@ -438,8 +453,7 @@ function PokerTrainer({ sequence, stake, membership }) {
         let referenceActions = [];
 
         if (streetName === 'preflop') {
-
-            if(currentIndex!=1)
+            if (currentIndex != 1)
                 referenceActions = preflopFirstActions;
             else
                 referenceActions = vsAggressiveActions;
@@ -448,8 +462,6 @@ function PokerTrainer({ sequence, stake, membership }) {
         } else if (vsPassiveActions.includes(currentAction.action)) {
             referenceActions = vsPassiveActions;
         }
-
-
 
         if (currentPlayer === 'Hero') {
             for (let i = 0; i < referenceActions.length; i++) {
@@ -467,21 +479,34 @@ function PokerTrainer({ sequence, stake, membership }) {
             }
         }
 
-        // Detect if the previous action by the villain was "ALL-IN"
         let newCurrentButtons = [];
         const previousAction = actions[currentIndex - 1];
         if (previousAction && previousAction.player === 'Villain' && previousAction.action === 'ALL-IN') {
-
-            newCurrentButtons=currentButtons.filter(button => button.action === 'CALL' || button.action === 'FOLD');
-
-        }
-        else {
-             newCurrentButtons = currentButtons;
+            newCurrentButtons = currentButtons.filter(button => button.action === 'CALL' || button.action === 'FOLD');
+        } else {
+            newCurrentButtons = currentButtons;
         }
 
+        // Find the correct button
+        const correctButton = newCurrentButtons.find(button => button.isCorrect);
 
-        return newCurrentButtons.sort(() => Math.random() - 0.5);
+        // Filter out the correct button
+        let otherButtons = newCurrentButtons.filter(button => !button.isCorrect);
+
+        // Shuffle the other buttons randomly
+        otherButtons = otherButtons.sort(() => Math.random() - 0.5);
+
+        // Limit the total buttons to 4, including the correct button
+        let limitedButtons = [];
+        if (correctButton) {
+            limitedButtons = [correctButton, ...otherButtons.slice(0, 3)];
+        } else {
+            limitedButtons = otherButtons.slice(0, 4);
+        }
+
+        return limitedButtons;
     };
+
 
     const handleActionClick = (action) => {
 
@@ -514,7 +539,17 @@ function PokerTrainer({ sequence, stake, membership }) {
         }
 
         if (['BET', 'RAISE', 'ALL-IN', 'OR', 'CALL'].some(keyword => action.action.includes(keyword))) {
-            setChips(prevChips => [...prevChips, action.action]);
+
+            if(currentPlayer=== 'Hero') {
+                setChips(prevChips => [...prevChips, action.action]);
+                if (action.action.includes('RAISE'))
+                    setChips(prevChips => [...prevChips, action.action]);
+            }
+            else {
+                setChipsVil(prevChips => [...prevChips, action.action]);
+                if (action.action.includes('RAISE'))
+                    setChipsVil(prevChips => [...prevChips, action.action]);
+            }
         }
 
         const nextActionIndex = actions.findIndex((act, idx) => act.player !== currentPlayer && idx > actionIndex);
@@ -588,25 +623,47 @@ function PokerTrainer({ sequence, stake, membership }) {
                                 className={`trainer-player-seat trainer-player-seat-${index}`}
                                 style={getSeatStyle(index)}
                             >
-                                <div className="trainer-seat-text">{position}</div>
+
 
                                 {(index == mySeat && currentHand) ? (
+                                    <>
+                                        <div className="trainer-seat-text">{position}</div>
+                                        <div className={`chips-container-${index}`}>
+                                            {chips.map((chip, index) => (
+                                                <div key={index} className="chip">
+                                                </div>
+                                            ))}
 
-                                    <div className="trainer-board-cards-hero">
+                                        </div>
+                                        <div className="trainer-board-cards-hero">
 
-                                        <CardSelector card="myHand_1" trainer="true" />
-                                        <CardSelector card="myHand_2" trainer="true" />
-                                    </div>
+                                            <CardSelector card="myHand_1" trainer="true" />
+                                            <CardSelector card="myHand_2" trainer="true" />
+                                        </div>
+                                    </>
                                 ) : (index == rivalSeat && currentHand) ? (
+                                    <>
+                                        <div className="trainer-seat-text">{(currentPlayer!=='Hero' && currentPlayer) ? currentAction.action.replace('_',' ') : position}</div>
+                                        <div className={`chips-container-${index}`}>
+                                        {chipsVil.map((chip, index) => (
+                                            <div key={index} className="chip">
+                                            </div>
+                                        ))}
 
-                                    <div className="trainer-board-cards-hero">
-                                        <CardSelector card="trainerCard" trainer="true" />
-                                        <CardSelector card="trainerCard" trainer="true" />
-                                    </div>
+                                        </div>
+
+                                        <div className="trainer-board-cards-hero">
+                                            <CardSelector card="trainerCard" trainer="true" />
+                                            <CardSelector card="trainerCard" trainer="true" />
+                                        </div>
+                                    </>
                                 ) : (
+                                    <>
+                                    <div className="trainer-seat-text">{position}</div>
                                     <div className="trainer-board-cards-hidden">
                                         FOLDED
                                     </div>
+                                        </>
                                 )}
                                 {position === 'BU' && (
                                     <button className="dealer-button">D</button>
@@ -614,13 +671,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                             </div>
                         ))}
                         <div className="trainer-table-center">
-                            <div className="chips-container">
-                                {chips.map((chip, index) => (
-                                    <div key={index} className="chip">
-                                    </div>
-                                ))}
 
-                            </div>
                             <div className="board-cards section ">
                                 {(streetName === 'flop' || streetName === 'turn' || streetName === 'river') && (
                                     <>
@@ -660,9 +711,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                             ) : (
                                 <React.Fragment key={index}>
                                     <p className="villainAction">Villano hizo {action.action.replace(/_/g, ' ')}</p>
-                                    <button onClick={() => handleActionClick(action)}>
-                                        Ok
-                                    </button>
+
                                 </React.Fragment>
                             )
                         ))
@@ -721,3 +770,10 @@ function PokerTrainer({ sequence, stake, membership }) {
 }
 
 export default PokerTrainer;
+
+/*<React.Fragment key={index}>
+    <p className="villainAction">Villano hizo {action.action.replace(/_/g, ' ')}</p>
+    <button onClick={() => handleActionClick(action)}>
+        Ok
+    </button>
+</React.Fragment>*/

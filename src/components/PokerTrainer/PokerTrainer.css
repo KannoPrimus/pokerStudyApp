@@ -116,6 +116,7 @@
     top: 5%;
     text-align: center;
     width: 100%;
+    font-weight: bold;
 }
 
 .trainer-legend {
@@ -311,13 +312,12 @@
     height: auto;
 }
 
-.chips-container {
-    width: 100%;
-    position: relative;
-    left:50%;
-top:-15px;
-}
-
+.chips-container-0 {width: 100%;position: relative;top:30px;left:150px; }
+.chips-container-1 {width: 100%;position: relative;top:95px;left:0px;}
+.chips-container-2 {width: 100%;position: relative;top:20px;left:-80px;}
+.chips-container-3 {width: 100%;position: relative;top:-55px;left:-100px;}
+.chips-container-4 {width: 100%;position: relative;top:-90px;}
+.chips-container-5 {width: 100%;position: relative;top:-55px;left:160px;}
 
 .chip {
     width: 30px;
