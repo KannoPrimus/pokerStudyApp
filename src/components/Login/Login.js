@@ -326,19 +326,20 @@ export function Login() {
                                     Aprende directamente de las manos y adaptaciones que utilizan los crushers en cada nivel de juego. Con PokerCrushers.pro, estarás un paso adelante de la competencia.
                                 </Text>
                                 <button style={{ borderRadius: '25px', marginTop: '20px', width: '200px', height: '40px', backgroundColor: '#00ECB3', fontWeight: 'bold' }} onClick={scrollToNav4}>Crea tu cuenta</button>
-                                <Image
-                                    src={splashMision3}
-                                    style={{ width: '90%', borderRadius: '10px' }}
-                                />
+
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                 <Image
                                     src={splashMision}
-                                    style={{ width: '90%', borderRadius: '10px' }}
+                                    style={{ width: '80%', borderRadius: '10px' }}
                                 />
                                 <Image
                                     src={splashMision2}
-                                    style={{ width: '90%', borderRadius: '10px', marginTop: '-50px', marginLeft: '100px' }} // Ajusta marginLeft según sea necesario
+                                    style={{ width: '80%', borderRadius: '10px', marginTop: '-150px', marginLeft: '70px' }} // Ajusta marginLeft según sea necesario
+                                />
+                                <Image
+                                    src={splashMision3}
+                                    style={{ width: '80%', borderRadius: '10px', marginTop: '-150px', marginLeft:'150px' }}
                                 />
                             </div>
                         </Grid>

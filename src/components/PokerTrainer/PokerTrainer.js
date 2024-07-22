@@ -56,13 +56,16 @@ function PokerTrainer({ sequence, stake, membership }) {
 
     useEffect(() => {
         let timer;
-        if (currentPlayer !== 'Hero' && finishHand === 'false' ) {
+        if ((currentPlayer !== 'Hero' && currentPlayer !== '') && finishHand === 'false' ) {
+
+            console.log(currentPlayer);
+
             timer = setTimeout(() => {
-                //const okButton = document.querySelector('.villainAction + button');
-                //if (okButton) {
-                //    okButton.click();
-                //}
-                handleActionClick(currentAction)
+                const okButton = document.querySelector('.villainAction + button');
+                if (okButton) {
+                    okButton.click();
+                }
+                //handleActionClick(currentAction)
             }, 2000); // 3 segundos, puedes ajustar este valor según tus necesidades
         }
         return () => clearTimeout(timer); // Limpia el timeout al desmontar el componente o cambiar las dependencias
@@ -500,6 +503,7 @@ function PokerTrainer({ sequence, stake, membership }) {
         let limitedButtons = [];
         if (correctButton) {
             limitedButtons = [correctButton, ...otherButtons.slice(0, 3)];
+
         } else {
             limitedButtons = otherButtons.slice(0, 4);
         }
@@ -524,7 +528,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                 setScore(prevScore => prevScore + 1);
             } else {
                 setFinishHand('true');
-
+                setCorrectAnswer(actions[actionIndex].action);
             }
         }
 
@@ -581,6 +585,7 @@ function PokerTrainer({ sequence, stake, membership }) {
     };
 
     const currentAction = actions[actionIndex] || null;
+
     const currentButtons = getCurrentButtons(actions, actionIndex);
 
     const isCorrectResponse = (response, street) => {
@@ -594,7 +599,6 @@ function PokerTrainer({ sequence, stake, membership }) {
 
     const scorePercentage = Math.round((score / totalActions) * 100) || 0;
     const scoreColor = getScoreColor(scorePercentage);
-
 
 
     return (
@@ -711,7 +715,9 @@ function PokerTrainer({ sequence, stake, membership }) {
                             ) : (
                                 <React.Fragment key={index}>
                                     <p className="villainAction">Villano hizo {action.action.replace(/_/g, ' ')}</p>
-
+                                    <button onClick={() => handleActionClick(action)}>
+                                        Ok
+                                    </button>
                                 </React.Fragment>
                             )
                         ))
@@ -730,15 +736,16 @@ function PokerTrainer({ sequence, stake, membership }) {
                         <div key={street}>
 
                             {responses[street].map((response, index) => (
+
                                 <p
                                     key={index}
                                     style={{ marginRight:'5px',color:'#f9f9f9', backgroundColor: isCorrectResponse(response, street) ? '#4caf50' : 'red', border:'1px solid #f9f9f9', width:'auto', padding:'3px',borderRadius:'5px' }}
                                 >
                                     {street}: {response.action.replace(/_/g, ' ')} {isCorrectResponse(response, street) ? <FontAwesomeIcon icon="check" size="1x" /> : <FontAwesomeIcon icon="xmark" size="1x" />}
+
                                 </p>
 
                             ))}
-
 
 
                         </div>
@@ -750,7 +757,7 @@ function PokerTrainer({ sequence, stake, membership }) {
 
                             </div>
                             <Text style={{paddingTop:'5px',color:'white'}}>({score}/{totalActions} acciones correctas)</Text>
-
+                            <h5 style={{color:'yellow'}}>La accion correcta era {correctAnswer.replace('_',' ')}</h5>
                             <Text style={{paddingTop:'20px',color:'white'}}>Notas: </Text>
                             <p>Preflop</p>
                             <div className="handNotes-trainer" dangerouslySetInnerHTML={{__html: currentHand.preflopNotes}}></div>
