@@ -106,7 +106,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
     }, []);
 
     const handleTitleChange = (e) => {
-
+        fetchPokerHands(user.username, handStake, e.target.value);
         setHandTitle(e.target.value);
         setSequence(e.target.value);
     };

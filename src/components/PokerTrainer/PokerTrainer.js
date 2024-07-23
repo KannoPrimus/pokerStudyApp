@@ -165,6 +165,7 @@ function PokerTrainer({ sequence, stake, membership }) {
         setChipsVil([]);
         setResponses({});
         setPot(1.5);
+        setCorrectAnswer('');
 
         if (filtered.length > 0) {
             setActions([]);
@@ -337,6 +338,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             setChips([]);
             setChipsVil([]);
             setPot(1.5);
+            setCorrectAnswer('');
         }
     };
 
@@ -355,6 +357,7 @@ function PokerTrainer({ sequence, stake, membership }) {
             setChips([]);
             setChipsVil([]);
             setPot(1.5);
+            setCorrectAnswer('');
         }
     };
 
@@ -371,6 +374,7 @@ function PokerTrainer({ sequence, stake, membership }) {
         setActionIndex(0);
         setCurrentPlayer('Hero');
         setPot(1.5);
+        setCorrectAnswer('');
     };
 
     const calculatePot = (action) => {
@@ -534,6 +538,7 @@ function PokerTrainer({ sequence, stake, membership }) {
 
         if (action.action.includes('FOLD') || action.action.includes('NONE')) {
             setFinishHand('true');
+            console.log('debug1');
         }
 
         const previousAction = actions[actionIndex - 1];
@@ -563,8 +568,9 @@ function PokerTrainer({ sequence, stake, membership }) {
 
 
 
-            if (actions[nextActionIndex].action.search('FOLD') > -1) {
+            if (actions[nextActionIndex].action.search('FOLD') > -1 && currentPlayer!=='Villain') {
                 setFinishHand('true');
+
             }
         } else {
 

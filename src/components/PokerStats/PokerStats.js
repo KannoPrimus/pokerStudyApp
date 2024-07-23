@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
+import PokerHandMatrix from '../CardMatrix/PokerHandMatrix'
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import './PokerStats.css';
 import { generateClient } from "aws-amplify/api";
@@ -34,8 +35,9 @@ const boardTypes = ['No 3straight','3straight bajo','3straight medio','3straight
 const handStrengths = ['STRAIGHT_FLUSH','FOUR_OF_A_KIND','FULL_HOUSE','FLUSH','STRAIGHT','THREE_OF_A_KIND','TWO_PAIRS','ONE_PAIR','HIGH_CARD'];
 const handSources = [
     { value: 'user', label: 'Mis Manos' },
-    { value: 'Rake2high', label: 'Crushers - NL100' },
-    { value: 'MartaiMrko', label: 'Crushers - NL200' },
+    { value: 'crusher-nl50', label: 'Crushers - NL50' },
+    { value: 'crusher-nl100', label: 'Crushers - NL100' },
+    { value: 'crusher-nl200', label: 'Crushers - NL200' },
     { value: 'todos', label: 'Todos los crushers' },
 ];
 
@@ -57,6 +59,8 @@ function PokerStats({ sequence, stake, membership }) {
     const [selectedActionsFlop, setSelectedActionsFlop] = useState([]);
     const [selectedActionsTurn, setSelectedActionsTurn] = useState([]);
     const [selectedActionsRiver, setSelectedActionsRiver] = useState([]);
+    const [response, setResponse] = useState('');
+    const [loadingGpt, setLoadingGpt] = useState(false);
 
     const [filters, setFilters] = useState({
         spot: [''],
@@ -403,7 +407,7 @@ function PokerStats({ sequence, stake, membership }) {
             try {
                 const nuevaData = reestructurarData(result.data);
                 setHandsData(nuevaData);
-
+//console.log(nuevaData);
                 const groupedData = groupDataByHandTitleAndBoardType(nuevaData);
                 setHandsDataGrouped(groupedData);
 
@@ -522,7 +526,94 @@ function PokerStats({ sequence, stake, membership }) {
             });
     };
 
+    function cleanHandsArray(handsArray) {
 
+
+        return handsArray.map(pokerHand => ({
+            hand: {
+                title: pokerHand.handTitle,
+                description: pokerHand.description,
+                hero_cards: pokerHand.myHand_1 + pokerHand.myHand_2,
+                villain_position: playerPositions6Max[pokerHand.villainPosition],
+                hero_position: playerPositions6Max[pokerHand.heroPosition],
+                streets: {
+                    preflop: {
+                        actions: pokerHand.preflopAction
+                    },
+                    flop: {
+                        cards: pokerHand.flopCards_1 + pokerHand.flopCards_2 + pokerHand.flopCards_3,
+                        actions: pokerHand.flopAction
+                    },
+                    turn: {
+                        cards: pokerHand.turnCard,
+                        actions: pokerHand.turnAction
+                    },
+                    river: {
+                        cards: pokerHand.riverCard,
+                        actions: pokerHand.riverAction
+                    }
+                }
+            }
+        }));
+    }
+
+
+    const fetchOpenAIResponse = async () => {
+        setLoadingGpt(true);
+        const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+        const endpoint = 'https://api.openai.com/v1/chat/completions'; // Updated endpoint
+        const handDataHistory = filterData(handsData);
+        console.log(handDataHistory);
+
+        const prompt = `
+                      Ejemplo de Manos:
+                ${JSON.stringify(handDataHistory, null, 2)}
+        `;
+
+
+        const data = {
+            model: "gpt-3.5-turbo",
+            messages: [
+                {
+                    role: "system",
+                    content: prompt
+                },
+                {
+                    role: "user",
+                    content: `basado en el historial de manos que te proporcione, puedes darme insights sobre tendencias de Hero en las lineas de accion indicando la accion mas frecuente de Hero en cada calle y sus tamaños de apuesta en cada calle. Considera las manos en su conjunto, no me des respuestas de manos individuales.`
+                    //content: `Tengo esta informacion de mi mano de poker :\n\nHand Data:\n${JSON.stringify(handData, null, 2)}`
+                }
+            ],
+            max_tokens: 500, // Limiting the tokens
+            temperature: 0.3, // Setting the temperature
+            top_p: 0.2
+        };
+
+        try {
+            const res = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + API_KEY,
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!res.ok) {
+                const error = await res.json();
+                console.error('Error response from OpenAI:', error);
+                throw new Error(`Error: ${error.message}`);
+            }
+
+            const result = await res.json();
+            setResponse(result.choices[0].message.content);
+            //setSavedNote(pokerHand[`${id.toLowerCase()}Notes`] + ' - **ChatGPT: ' + result.choices[0].message.content);
+        } catch (error) {
+            console.error('Error fetching OpenAI response:', error);
+        } finally {
+            setLoadingGpt(false);
+        }
+    };
 
     return (
 
@@ -543,6 +634,7 @@ function PokerStats({ sequence, stake, membership }) {
 
                         <span className="tooltip-text">Deja la tecla Control presionada para seleccionar mas de una opción.</span>
                     </div>
+
                 </div>
                 <div className="selector-wrapper">
                     <span><FontAwesomeIcon icon="bullseye" size="1x" /> Spot</span>
@@ -622,7 +714,8 @@ function PokerStats({ sequence, stake, membership }) {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <div className="poker-stats-table-wrapper">
+                <div className="poker-stats-table-wrapper-1">
+
                 <table className="poker-stats-table">
                     <thead style={{backgroundColor:'#000F18'}}>
                     <tr >
@@ -663,11 +756,11 @@ function PokerStats({ sequence, stake, membership }) {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <div className="poker-stats-table-wrapper">
+                <div className="poker-stats-table-wrapper-2">
                 <table className="poker-stats-table">
                     <thead style={{backgroundColor:'#000F18'}}>
                     <tr >
-                        <th>Info</th>
+
                         <th>Hand</th>
                         <th>Flop</th>
                         <th>Turn</th>
@@ -683,14 +776,7 @@ function PokerStats({ sequence, stake, membership }) {
                     <tbody>
                     {filterData(handsData).map((hand, index) => (
                         <tr key={index}>
-                            <td style={{color: '#00ECB3',textAlign:'left',leftPadding:'10px'}}>
-                                <div className="tooltip">
 
-                                    <FontAwesomeIcon icon="circle-question" size="1x" />
-
-                                    <span className="tooltip-text">{hand.description}</span>
-                                </div>
-                            </td>
                             <td style={{color: '#00ECB3',textAlign:'left',leftPadding:'10px',width:'80px'}}>
                                 <div className="card" style={{ color: getSuitColor(hand.myHand[0]) }}>{hand.myHand[0]}</div>
                                 <div className="card" style={{ color: getSuitColor(hand.myHand[1]) }}>{hand.myHand[1]}</div>
@@ -761,3 +847,13 @@ function PokerStats({ sequence, stake, membership }) {
 }
 
 export default PokerStats;
+
+/*
+  <div className="insights-gpt">{response}</div>
+<div className="tooltip-gpt">
+                        <button className="chatGPT-note" onClick={fetchOpenAIResponse} disabled={loading || membership === 'BASIC'}>
+                            {loadingGpt ? 'Loading...' : (<FontAwesomeIcon icon="robot" />)}
+                        </button>
+                        <span className="tooltip-text">ChatGPT (Experimental)</span>
+                    </div>
+ */

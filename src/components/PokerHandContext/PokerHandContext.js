@@ -56,6 +56,7 @@ export const PokerHandProvider = ({ children }) => {
     const [pokerHand, setPokerHand] = useState(initialPokerHandState);
 
     const [pokerHandList, setPokerHandList] = useState([]);
+    const [pokerHandHistory, setPokerHandHistory] = useState([]);
 
     const updatePokerHand = (key, value) => {
         setPokerHand(prevState => ({

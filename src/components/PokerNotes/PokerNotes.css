@@ -10,7 +10,7 @@
     /*border: 1px solid #333;  Borde sutil */
     line-height: 1.5; /* Espaciado de línea para facilitar la lectura */
     outline: none; /* Remover el borde al enfocar */
-    height:100px;
+    height:250px;
     width: 99%;
 }
 
@@ -54,7 +54,7 @@ button {
 
 .chatGPT-note{
     margin-left:0px;
-    float:right;
+    float:left;
     position:relative;
 }
 .chatGPT-note:disabled {
@@ -78,8 +78,8 @@ button {
     padding: 3px;
     position: absolute;
     z-index: 1000;
-    bottom: 125%; /* Position above the button */
-    left: 200%;
+    bottom: 100%; /* Position above the button */
+    left: 0%;
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;

@@ -10,7 +10,7 @@
     padding: 50px;
     width: 100%;
     height: 100vh;
-    background-image: url(../../assets/Poker Crushers - Study mode.jpg);
+    background-image: url('../../assets/Poker Crushers - Study mode.jpg');
     background-size: 200%;
     animation: movimiento 15s infinite linear alternate;
     position: relative;
