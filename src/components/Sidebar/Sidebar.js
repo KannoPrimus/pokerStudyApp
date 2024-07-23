@@ -396,9 +396,8 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                             <div className="plan-crusher-pro">
                                 <h2>Modo PRO</h2>
                                 <p style={{ fontSize: '12px' }}>Obtén acceso al Trainer</p>
-                                <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 9.99 / mes</h3>
                                 <h3 style={{ color: '#00ECB3' }}>USD 4.99 / mes</h3>
-                                <p style={{ fontSize: '12px' }}>Oferta especial por lanzamiento.</p>
+
                                 <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
                                 <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
                                     <PayPalButtons
@@ -425,7 +424,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                         )}
                         <div className="plan-crusher-premium">
                             <h2>Modo PREMIUM</h2>
-                            <p style={{ fontSize: '12px' }}>Obtén acceso al Trainer</p>
+                            <p style={{ fontSize: '12px' }}>Obtén acceso al Trainer y al análisis de spots y manos</p>
                             <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 49.99 / mes</h3>
                             <h3 style={{ color: '#00ECB3' }}>USD 29.99 / mes</h3>
                             <p style={{ fontSize: '12px' }}>Oferta especial por lanzamiento.</p>
