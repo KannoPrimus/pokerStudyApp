@@ -433,7 +433,7 @@ export function Login() {
                 {[
                     { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
                     { plan: "Plan Pro", price: "$4.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nTrainer de manos propias" },
-                    { plan: "Plan Premium", price: "$49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nTrainer de manos propias\nSoluciones y estadísticas de manos de crushers" },
+                    { plan: "Plan Premium", price: "$49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nTrainer de manos propias\nAnálisis de spots y estratégias de manos" },
                 ].map((item, index) => (
                     <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'Plan Básico' ? '#fffede' : "#f9f9f9"}>
                         <Text fontSize="1.5rem" fontWeight="bold" color="#000">{item.plan}</Text>
