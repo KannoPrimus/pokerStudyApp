@@ -125,6 +125,7 @@
     flex-direction: column;
     align-items: center;
     z-index: -1;
+    color:#fff;
 }
 
 .trainer-legend-item {
@@ -242,13 +243,29 @@
 }
 
 .trainer-responses {
-    width: 300px;
+    width: 350px;
     margin-left: 20px;
     padding-top:20px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     background-color: #000F18;
+    height: 94vh;
+}
+
+
+/* Personalización de la barra de desplazamiento para mantener el estilo elegante */
+.trainer-responses-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.trainer-responses-container::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color del thumb más oscuro */
+    border-radius: 3px;
+}
+
+.trainer-responses-container::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Color al pasar el ratón */
 }
 
 .trainer-responses-container{
@@ -256,6 +273,7 @@
     height: 100%;
     padding-left: 5px ;
     border-radius: 5px;
+    overflow: auto;
 }
 
 

@@ -10,7 +10,8 @@ import {
     useTheme,
     View,
     Text,
-    Link
+    Link,
+useAuthenticator
 } from "@aws-amplify/ui-react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";

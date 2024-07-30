@@ -47,6 +47,7 @@ function PokerTrainer({ sequence, stake, membership }) {
     const [pot, setPot] = useState(1.5);
     const [bet, setBet] = useState(0);
     const [correctAnswer, setCorrectAnswer] = useState('');
+    const [villainAction, setVillainAction] = useState('');
 
     useEffect(() => {
         resetPokerHand();
@@ -534,6 +535,9 @@ function PokerTrainer({ sequence, stake, membership }) {
                 setCorrectAnswer(actions[actionIndex].action);
             }
         }
+        else{
+            setVillainAction(actions[actionIndex].action);
+        }
 
 
         if (action.action.includes('FOLD') || action.action.includes('NONE')) {
@@ -652,7 +656,7 @@ function PokerTrainer({ sequence, stake, membership }) {
                                     </>
                                 ) : (index == rivalSeat && currentHand) ? (
                                     <>
-                                        <div className="trainer-seat-text">{(currentPlayer!=='Hero' && currentPlayer) ? currentAction.action.replace('_',' ') : position}</div>
+                                        <div className="trainer-seat-text">{(currentPlayer!=='Hero' && currentPlayer) ? currentAction.action.replace('_',' ') : villainAction.replace('_',' ')}</div>
                                         <div className={`chips-container-${index}`}>
                                         {chipsVil.map((chip, index) => (
                                             <div key={index} className="chip">
