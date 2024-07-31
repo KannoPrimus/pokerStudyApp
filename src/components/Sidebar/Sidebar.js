@@ -395,8 +395,13 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                         {(membership === 'BASIC' || membership === 'FREE') && (
                             <div className="plan-crusher-pro">
                                 <h2>Modo PRO</h2>
-                                <p style={{ fontSize: '12px' }}>Obtén acceso al Trainer</p>
-                                <h3 style={{ color: '#00ECB3' }}>USD 4.99 / mes</h3>
+                                <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje (USD 30)</p>
+                                <p style={{ fontSize: '11px' }}>Módulo de notas (USD 10)</p>
+                                <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias (USD 15)</p>
+                                <p style={{ fontSize: '11px' }}>Manos de entrenaminento manos pre-configuradas (USD 30)</p>
+                                <p style={{ fontSize: '11px' }}>Soporte 8x5 (USD 10)</p>
+                                <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 95 / mes</h3>
+                                <h3 style={{ color: '#00ECB3' }}>USD 10 / mes</h3>
 
                                 <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
                                 <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
@@ -407,7 +412,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                                                     {
                                                         description: "Modo PRO",
                                                         amount: {
-                                                            value: '4.99'
+                                                            value: '10'
                                                         }
                                                     }
                                                 ]
@@ -424,9 +429,15 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                         )}
                         <div className="plan-crusher-premium">
                             <h2>Modo PREMIUM</h2>
-                            <p style={{ fontSize: '12px' }}>Obtén acceso al Trainer y al análisis de spots y manos</p>
-                            <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 49.99 / mes</h3>
-                            <h3 style={{ color: '#00ECB3' }}>USD 29.99 / mes</h3>
+                            <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje (USD 30)</p>
+                            <p style={{ fontSize: '11px' }}>Módulo de notas (USD 10)</p>
+                            <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias (USD 15)</p>
+                            <p style={{ fontSize: '11px' }}>Manos de entrenaminento manos pre-configuradas (USD 30)</p>
+                            <p style={{ fontSize: '11px' }}>Soporte 8x5 (USD 10)</p>
+                            <p style={{ fontSize: '11px' }}>Módulo análisis de spots y acciones (USD 30)</p>
+                                <p style={{ fontSize: '11px' }}>Aprendizaje Gamificado (Ranking) (USD 10)</p>
+                            <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 135 / mes</h3>
+                            <h3 style={{ color: '#00ECB3' }}>USD 25 / mes</h3>
                             <p style={{ fontSize: '12px' }}>Oferta especial por lanzamiento.</p>
                             <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
                             <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
@@ -437,7 +448,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                                                 {
                                                     description: "Modo PREMIUM",
                                                     amount: {
-                                                        value: '29.99'
+                                                        value: '25'
                                                     }
                                                 }
                                             ]

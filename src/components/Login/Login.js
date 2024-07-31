@@ -31,7 +31,7 @@ import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the necessary CSS styles
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLightbulb, faBook, faMicrochip, faGraduationCap, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faBook, faMicrochip, faGraduationCap, faBars, faTimes,faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Login.css';
 
@@ -432,14 +432,42 @@ export function Login() {
             </Text>
             <Grid templateColumns={{ base: "1fr", medium: "repeat(3, 1fr)" }} gap="2rem">
                 {[
-                    { plan: "Plan Básico", price: "GRATIS", description: "Acceso al módulo de bitácora de manos." },
-                    { plan: "Plan Pro", price: "$4.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nTrainer de manos propias" },
-                    { plan: "Plan Premium", price: "$49.99 USD / mes", description: "Acceso al módulo de bitácora de manos\nTrainer de manos propias\nAnálisis de spots y estratégias de manos" },
+                    { plan: "Plan Básico", priceRef: "USD 55 / mes",price: "GRATIS",reason:"", stack: [
+                            { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
+                        { description: "Módulo de notas", value:"USD 10"},
+                            { description: "Módulo de entrenamiento", value:"USD 15"},
+
+                        ]},
+                    { plan: "Plan PRO", priceRef: "USD 95 / mes",price: "USD 10 / mes",reason:"Aprovecha esta oferta de lanzamiento a sólo", stack: [
+                            { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
+                            { description: "Módulo de notas", value:"USD 10"},
+                            { description: "Módulo de entrenamiento manos propias", value:"USD 15"},
+                            { description: "Manos de entrenaminento manos pre-configuradas", value:"USD 30"},
+                            { description: "Soporte 8x5", value:"USD 10"},
+
+                        ]},
+                    { plan: "Plan Premium", priceRef: "USD 135 / mes",price: "USD 25 / mes",reason:"Aprovecha esta oferta de lanzamiento a sólo", stack: [
+                            { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
+                            { description: "Módulo de notas", value:"USD 10"},
+                            { description: "Módulo de entrenamiento manos propias", value:"USD 15"},
+                            { description: "Manos de entrenaminento manos pre-configuradas", value:"USD 30"},
+                            { description: "Soporte 8x5", value:"USD 10"},
+                            { description: "Módulo análisis de spots y acciones", value:"USD 30"},
+                            { description: "Aprendizaje Gamificado (Ranking)", value:"USD 10"},
+                        ]},
                 ].map((item, index) => (
                     <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'Plan Básico' ? '#fffede' : "#f9f9f9"}>
                         <Text fontSize="1.5rem" fontWeight="bold" color="#000">{item.plan}</Text>
-                        <Text fontSize="1.25rem" fontWeight="bold" color={item.plan === 'Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
-                        <Text fontSize="1rem" textAlign="center" marginTop="0.5rem" color='black' style={{ whiteSpace: 'pre-line' }}>{item.description}</Text>
+                        <Text fontSize="1rem" textAlign="center" marginTop="0.5rem" color='black' style={{ whiteSpace: 'pre-line' }}>
+                        {item.stack.map((stackItem,index) => (
+                            <p>
+                       <FontAwesomeIcon icon={faCheck} size="1x" /> {stackItem.description} ({stackItem.value})
+                            </p>
+                            ))}
+                            </Text>
+                        <Text fontSize="1.25rem" fontWeight="bold" color="#000" textDecoration="line-through" marginTop="0.5rem">{item.priceRef}</Text>
+                        <Text fontSize="1.25rem" fontWeight="bold" color="#000" marginTop="0.5rem">{item.reason}</Text>
+                        <Text fontSize="1.55rem" fontWeight="bold" color={item.plan === 'Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
                         <button onClick={scrollToNav4}>Ingresar</button>
                     </Flex>
                 ))}
