@@ -115,7 +115,7 @@ export function Footer() {
             </Flex>
 
             <Text fontSize="0.75rem">
-                &copy; {new Date().getFullYear()} Poker Study App. Todos los derechos reservados.
+                &copy; {new Date().getFullYear()} Poker Crushers Pro - Poker Study App. Todos los derechos reservados.
             </Text>
 
             <Modal
