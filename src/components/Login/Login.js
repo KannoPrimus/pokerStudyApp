@@ -26,6 +26,7 @@ import pokerplayer from "../../assets/pokerplayer_crusher.png";
 import home1 from "../../assets/home_1.png";
 import home2 from "../../assets/home_2.png";
 import home3 from "../../assets/home_3.png";
+import article1 from "../../assets/pokerplayer_study.png";
 import logo from "../../assets/logoPSA_soloPica.png";
 import TextCarousel from "./TextCarousel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -60,6 +61,7 @@ const messages = [
 export function Login() {
     const { tokens } = useTheme();
     const nav4Ref = useRef(null);
+    const nav3Ref = useRef(null);
     const nav1_3Ref = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -69,6 +71,10 @@ export function Login() {
 
     const scrollToNav1_3 = () => {
         nav1_3Ref.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const scrollToNav3 = () => {
+        nav3Ref.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     const toggleMenu = () => {
@@ -205,7 +211,7 @@ export function Login() {
                             <div style={{ textAlign: 'center', paddingTop: '100px' }}>
                                 <Image
                                     src={pokerplayer}
-                                    width="80%"
+                                    width="50%"
                                     borderRadius="10px"
                                 />
                             </div>
@@ -218,12 +224,12 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
+                    <div id="nav1" style={{ height: '500px', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
                         <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
                             <div style={{ textAlign: 'center' }}>
                                 <Image
                                     src={home1}
-                                    width="80%"
+                                    width="50%"
                                     borderRadius="10px"
                                 />
                             </div>
@@ -246,7 +252,7 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1_1" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
+                    <div id="nav1_1" style={{ height: '500px', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
                         <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
                             <div>
                                 <Text fontSize="3rem" style={{ color: '#333', fontWeight: 'bold' }}>
@@ -261,7 +267,7 @@ export function Login() {
                             <div style={{ textAlign: 'center' }}>
                                 <Image
                                     src={home2}
-                                    height="80%"
+                                    height="50%"
                                     borderRadius="10px"
                                 />
                             </div>
@@ -274,12 +280,12 @@ export function Login() {
                     columnEnd="-1"
                     height="100%"
                 >
-                    <div id="nav1_2" style={{ height: '100%', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
+                    <div id="nav1_2" style={{ height: '500px', color: '#333', backgroundColor: '#fff', padding: '4rem 2rem', textAlign: 'left' }}>
                         <Grid templateColumns={{ base: "1fr", medium: "1fr 1fr" }} gap="2rem">
                             <div style={{ textAlign: 'center' }}>
                                 <Image
                                     src={home3}
-                                    height="80%"
+                                    height="50%"
                                     borderRadius="10px"
                                 />
                             </div>
@@ -423,7 +429,7 @@ export function Login() {
         columnEnd="-1"
         height="100%"
     >
-        <div id="nav3" style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '4rem 2rem' }}>
+        <div id="nav3" ref={nav3Ref} style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '4rem 2rem' }}>
             <Text fontSize="2rem" style={{ color: '#00ECB3', fontWeight: 'bold' }}>
                 ¡Ingresa, Estudia y Gana!
             </Text>
@@ -525,6 +531,94 @@ export function Login() {
                     />
                 </View>
             </Grid>
+        </div>
+    </Card>
+    <Card
+        padding="0px"
+        columnStart="1"
+        columnEnd="-1"
+        height="100%"
+    >
+        <div id="studypoker"  style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '4rem 2rem' }}>
+            <Text fontSize="2rem" style={{ color: '#00ECB3', fontWeight: 'bold' }}>
+                ¿Como hacer más eficiente mi Metodología de Estudio para el Poker?
+            </Text>
+            <Text fontSize="1.25rem" style={{ color: '#333', fontWeight: 'normal', marginBottom: '20px', marginTop:'20px' }}>
+                En el competitivo mundo del poker, donde cada decisión puede ser la diferencia entre ganar o perder, una metodología de estudio eficiente es crucial. Una que esté diseñada específicamente para optimizar el aprendizaje y la mejora continua en el poker, que esté basada en técnicas probadas que hayan demostrado mejorar significativamente la comprensión y retención de estrategias y conceptos del juego. Aquí exploramos los aspectos fundamentales de nuestra metodología y por qué son tan efectivos para los jugadores de poker.
+            </Text>
+            <Grid templateColumns={{ base: "1fr", medium: "repeat(3, 1fr)" }} gap="2rem">
+
+                    <Flex direction="column" alignItems="center"  padding="2rem">
+                        <div style={{ textAlign: 'center' }}>
+                            <Image
+                                src={article1}
+                                height="3
+                                00px"
+                                borderRadius="10px"
+                            />
+                        </div>
+
+                        <button onClick={scrollToNav1_3}>QUIERO SABER MÁS</button>
+
+                    </Flex>
+                <Flex direction="column" alignItems="center" padding="2rem">
+                    <Text fontSize="1.25rem" fontWeight="bold" textDecoration="underline" color="#000">
+                        1. Notas Activas
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        <span className="subtituloArticulo">Tomar Notas a Mano: </span>
+                        Escribir notas a mano sobre tus sesiones de juego y análisis de manos puede ser más beneficioso para la retención de estrategias. El proceso de escribir a mano involucra una elaboración más profunda del contenido, lo que facilita la memorización y comprensión de las estrategias y patrones de juego.
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        <span className="subtituloArticulo">Reformulación:</span> En lugar de transcribir lo que lees o escuchas de manera literal, reformula el contenido con tus propias palabras. Esta técnica obliga al cerebro a procesar la información de una manera más activa, ayudando a consolidar el aprendizaje de estrategias complejas y escenarios de juego específicos.
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="bold" textDecoration="underline" color="#000">
+                        2. Escritura Explicativa
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        Consiste en escribir explicaciones detalladas de las estrategias de poker como si estuvieras enseñando a alguien más (Técnica Feynman), es una herramienta poderosa. Este método no solo fortalece tu comprensión de los conceptos del juego, sino que también identifica lagunas en tu conocimiento, permitiéndote abordarlas de manera precisa.
+
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="bold" textDecoration="underline" color="#000">
+                        3. Pruebas Prácticas
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        <span className="subtituloArticulo">Autoevaluación:</span> Realizar pruebas de práctica y autoevaluaciones regularmente es fundamental para el aprendizaje efectivo en el poker. Estas pruebas te ayudan a identificar áreas que necesitan mejora, así como a reforzar lo que ya has aprendido, consolidando el conocimiento en tu memoria a largo plazo.
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        <span className="subtituloArticulo">Resolución de Problemas:</span> Trabajar en problemas prácticos y aplicados, como analizar manos jugadas y simular diferentes escenarios de juego, permite poner en práctica lo aprendido. Este enfoque práctico asegura que el conocimiento no se quede en un nivel teórico, sino que se traduzca en habilidades aplicables en las mesas.
+                    </Text>
+
+
+                </Flex>
+                <Flex direction="column" alignItems="center" padding="2rem">
+                    <Text fontSize="1.25rem" fontWeight="bold" textDecoration="underline" color="#000">
+                        4. Espaciado y Repetición
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        <span className="subtituloArticulo">Espaciado:</span> Distribuir el estudio a lo largo del tiempo, en lugar de realizar sesiones intensivas, ésta es una estrategia crucial. El aprendizaje espaciado aprovecha la forma en que el cerebro procesa y almacena información, mejorando la retención y evitando la sobrecarga cognitiva.
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        <span className="subtituloArticulo">Repetición Espaciada:</span> Revisar las estrategias y análisis de manos en intervalos crecientes es una técnica que maximiza la retención a largo plazo. Esta metodología, respaldada por investigaciones en neurociencia, asegura que la información se consolide en la memoria, reduciendo la probabilidad de olvido y mejorando la toma de decisiones en tiempo real.
+
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="bold" textDecoration="underline" color="#000">
+                        Conclusión
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        La metodología de estudio propuesta por nuestra app combina estas técnicas que han sido validadas por la investigación científica para ofrecer un enfoque integral y eficiente para los jugadores de poker.
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        Al integrar Notas Activas, Escritura Explicativa, Pruebas Prácticas, y estrategias de Espaciado y Repetición, nuestra app no solo mejora la retención y comprensión de las estrategias de poker, sino que también facilita un aprendizaje más profundo y duradero.
+                    </Text>
+                    <Text fontSize="1.25rem" fontWeight="normal" color="#000">
+                        Esta combinación de técnicas asegura que los jugadores no solo adquieran conocimientos, sino que también desarrollen habilidades críticas y aplicables en el mundo real del poker.
+                    </Text>
+                    <button onClick={scrollToNav3}>ESTOY LISTO PARA MEJORAR MI METODOLOGÍA</button>
+                </Flex>
+
+            </Grid>
+
         </div>
     </Card>
     <Card

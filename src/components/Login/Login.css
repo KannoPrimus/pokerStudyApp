@@ -15,6 +15,10 @@
     animation: movimiento 15s infinite linear alternate;
     position: relative;
 }
+.subtituloArticulo{
+    color:#00ECB3;
+    font-weight: bold;
+}
 
 @keyframes movimiento {
     from {
