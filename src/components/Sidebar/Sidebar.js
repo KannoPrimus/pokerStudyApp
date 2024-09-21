@@ -47,7 +47,7 @@ const pokerStakes = [
 
 const handSources = [
     { value: 'playerHands', label: 'Mis manos' },
-    { value: 'sharedHands', label: 'Crushers del nivel' }
+    { value: 'sharedHands', label: 'Base de entrenamiento' }
 ];
 
 library.add(fas);
