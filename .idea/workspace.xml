@@ -17,8 +17,8 @@
       <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="456" column="53" lean-forward="false" selection-start-line="456" selection-start-column="53" selection-end-line="456" selection-end-column="53" />
+            <state relative-caret-position="527">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="e#15#78#0" expanded="true" />
               </folding>
@@ -52,7 +52,7 @@
       <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="6392">
               <caret line="376" column="20" lean-forward="true" selection-start-line="376" selection-start-column="20" selection-end-line="376" selection-end-column="20" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
@@ -404,14 +404,7 @@
       <workItem from="1720194276313" duration="5415000" />
       <workItem from="1720478540032" duration="160906000" />
       <workItem from="1723461770685" duration="17413000" />
-      <workItem from="1726868160198" duration="23577000" />
-    </task>
-    <task id="LOCAL-00079" summary="Fix bug buscador de manos">
-      <created>1720195987037</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1720195987037</updated>
+      <workItem from="1726868160198" duration="23730000" />
     </task>
     <task id="LOCAL-00080" summary="Fix bug buscador de manos">
       <created>1720202152337</created>
@@ -749,11 +742,18 @@
       <option name="project" value="LOCAL" />
       <updated>1726959218486</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="Ajustes a pantalla de upgrade de plan">
+      <created>1726959256697</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1726959256697</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="930128000" />
+    <option name="totallyTimeSpent" value="930281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -802,7 +802,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix bug Poker Actions. No se cargaban las acciones al resetear nueva mano y seleccionar la misma que se estaba editando." />
     <MESSAGE value="Se aplica estilos y estructura Responsive al Landing Web" />
     <MESSAGE value="Fix bug poker Actions: solo recalcular el primer jugador en actuar cuando cambian las posiciones o las acciones. Se estaba aplicando cuando cambiaban las cartas y estaban quedando mal el player para cada accion." />
     <MESSAGE value="Fix bug sidebar: limpiar campos cuando se selecciona resetear a una nueva mano y se corrige validacion de titulo spot y descripcion no vacios." />
@@ -827,7 +826,8 @@
     <MESSAGE value="Se remueven algunos console logs" />
     <MESSAGE value="Subimos imagenes de salas de poker" />
     <MESSAGE value="Se corrige restriccion de acceso a rangos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se corrige restriccion de acceso a rangos" />
+    <MESSAGE value="Ajustes a pantalla de upgrade de plan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustes a pantalla de upgrade de plan" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1218,16 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="376" column="20" lean-forward="true" selection-start-line="376" selection-start-column="20" selection-end-line="376" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerActions/PokerActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3451">
@@ -1236,10 +1226,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6392">
+          <caret line="376" column="20" lean-forward="true" selection-start-line="376" selection-start-column="20" selection-end-line="376" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="456" column="53" lean-forward="false" selection-start-line="456" selection-start-column="53" selection-end-line="456" selection-end-column="53" />
+        <state relative-caret-position="527">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="e#15#78#0" expanded="true" />
           </folding>

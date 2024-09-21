@@ -47,7 +47,7 @@ const pokerStakes = [
 
 const handSources = [
     { value: 'playerHands', label: 'Mis manos' },
-    { value: 'sharedHands', label: 'Base de entrenamiento' }
+    { value: 'sharedHands', label: 'Soluciones pre-configuradas' }
 ];
 
 library.add(fas);
