@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb65e616-756c-4e62-a387-c49639d134e7" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/Acr.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/Bodog.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/Champion.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/Coinpoker.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/ggpoker.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerRanges/PokerRanges.js" afterPath="$PROJECT_DIR$/src/components/PokerRanges/PokerRanges.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" afterPath="$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +56,8 @@
       <file leaf-file-name="PokerTrainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="386" column="14" lean-forward="false" selection-start-line="386" selection-start-column="14" selection-end-line="386" selection-end-column="14" />
+            <state relative-caret-position="323">
+              <caret line="376" column="20" lean-forward="true" selection-start-line="376" selection-start-column="20" selection-end-line="376" selection-end-column="20" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -414,14 +417,7 @@
       <workItem from="1720194276313" duration="5415000" />
       <workItem from="1720478540032" duration="160906000" />
       <workItem from="1723461770685" duration="17413000" />
-      <workItem from="1726868160198" duration="21668000" />
-    </task>
-    <task id="LOCAL-00073" summary="Manejo desde sidebar para habilitar y deshabilitar el tutorial.">
-      <created>1719621851233</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1719621851233</updated>
+      <workItem from="1726868160198" duration="21905000" />
     </task>
     <task id="LOCAL-00074" summary="Ajustes menores a trainer, se da diseño a trainer-controls-2">
       <created>1719625458896</created>
@@ -759,15 +755,21 @@
       <option name="project" value="LOCAL" />
       <updated>1726955929313</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Se remueven algunos console logs">
+      <created>1726956183182</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1726956183182</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="928219000" />
+    <option name="totallyTimeSpent" value="928456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -781,7 +783,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14072494" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14072494" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -812,7 +814,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix bug buscador de manos" />
     <MESSAGE value="Ajustes menores al Landing" />
     <MESSAGE value="Ajuste menor al nboton de sugerencias" />
     <MESSAGE value="Fix bug Poker Actions. No se cargaban las acciones al resetear nueva mano y seleccionar la misma que se estaba editando." />
@@ -837,7 +838,8 @@
     <MESSAGE value="Ajuste footer web" />
     <MESSAGE value="Agregamos Google analytics" />
     <MESSAGE value="Se agrega modulo para dibujar rangos&#10;se agrega modulo de deals de poker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega modulo para dibujar rangos&#10;se agrega modulo de deals de poker" />
+    <MESSAGE value="Se remueven algunos console logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se remueven algunos console logs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1248,8 +1250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PokerTrainer/PokerTrainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="386" column="14" lean-forward="false" selection-start-line="386" selection-start-column="14" selection-end-line="386" selection-end-column="14" />
+        <state relative-caret-position="323">
+          <caret line="376" column="20" lean-forward="true" selection-start-line="376" selection-start-column="20" selection-end-line="376" selection-end-column="20" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
