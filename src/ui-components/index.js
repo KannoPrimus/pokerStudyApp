@@ -8,6 +8,8 @@ export { default as HandsCreateForm } from "./HandsCreateForm";
 export { default as HandsUpdateForm } from "./HandsUpdateForm";
 export { default as MembersCreateForm } from "./MembersCreateForm";
 export { default as MembersUpdateForm } from "./MembersUpdateForm";
+export { default as RangesCreateForm } from "./RangesCreateForm";
+export { default as RangesUpdateForm } from "./RangesUpdateForm";
 export { default as TrainingsCreateForm } from "./TrainingsCreateForm";
 export { default as TrainingsUpdateForm } from "./TrainingsUpdateForm";
 export { default as studioTheme } from "./studioTheme";

@@ -6,6 +6,8 @@ import MainContent from './components/MainContent/MainContent';
 import Topbar from './components/Topbar/Topbar'; // Asegúrate de importar correctamente
 import PokerTrainer from './components/PokerTrainer/PokerTrainer';
 import PokerStats from './components/PokerStats/PokerStats';
+import PokerRanges from './components/PokerRanges/PokerRanges';
+import PokerDeals from './components/PokerDeals/PokerDeals';
 import './App.css';
 import "@aws-amplify/ui-react/styles.css";
 import { useAuthenticator, Image } from '@aws-amplify/ui-react';
@@ -150,6 +152,11 @@ function App() {
                                 return <PokerTrainer sequence={sequence} stake={stake} membership={membership} />;
                             case 'Estadisticas':
                                 return <PokerStats />;
+                            case 'Rangos':
+                                return <PokerRanges />;
+                            case 'Deals':
+                                return <PokerDeals />;
+
                             default:
                                 return null;
                         }

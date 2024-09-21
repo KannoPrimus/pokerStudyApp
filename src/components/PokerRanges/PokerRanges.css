@@ -1,0 +1,182 @@
+.ranges-grid-container {
+    padding: 20px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 370px;
+    margin-right: 20px;
+    width: 100%;
+}
+
+/*button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}*/
+
+.ranges-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.ranges-row {
+    display: flex;
+}
+
+.ranges-cell {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    padding: 10px;
+    margin: 5px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.title-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.range-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.range-title-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.color-description-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-size: 10px;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.edit-icon {
+    margin-left: 5px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.ranges-cell:hover .edit-icon {
+    opacity: 1;
+}
+
+
+
+/* Añade una animación o transición suave al tamaño del input */
+.range-title-input:focus, .color-description-input:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6); /* Borde inferior tenue en foco */
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+.color-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.color-tag-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.color-tag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.color-tag.selected {
+    border: 2px solid #ffffff; /* O el color que prefieras para resaltar */
+    box-shadow: 0 0 5px #000000; /* Añade un pequeño resplandor si lo deseas */
+}
+
+.color-description {
+    font-size: 8px;
+    color: white;
+}
+
+.remove-button {
+    padding: 0px ;
+    font-size: 14px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    color: #00ECB3;
+    background-color: transparent;
+}
+
+.range-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 10px; /* Espacio superior para separar de los inputs */
+}
+
+.save-button {
+    padding: 0px 0px;
+    font-size: 14px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    color: #00ECB3;
+    background-color: transparent;
+}
+
+.category-select {
+    padding: 5px 5px;
+    font-size: 12px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 27px;
+}
+.ranges-grid-instructions{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    padding: 5px;
+}
+
+.ranges-grid-instructions p{
+    margin:0px;
+    font-size: small;
+}

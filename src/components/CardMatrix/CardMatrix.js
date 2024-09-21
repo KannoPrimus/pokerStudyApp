@@ -9,7 +9,7 @@ import { PokerHandContext } from '../PokerHandContext/PokerHandContext';
 library.add(fas);
 const ranks = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
 
-function CardMatrix({id,myRange,rangeState, setRangeState}) {
+function CardMatrix({id,myRange,rangeState, setRangeState,onValueChange, range, rangeId }) {
 
     let initialMatrix = () => Array(clickCounts.length).fill().map(() => Array(clickCounts[0].length).fill(0));
     const [clickCounts, setClickCounts] = useState(
@@ -22,6 +22,10 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
     useEffect(() => {
 
 
+       if(range!="{}" ) {
+
+            setClickCounts(JSON.parse(range));
+        }else setClickCounts(initialMatrix());
 
             if (myRange == 'true') {
 
@@ -110,6 +114,8 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
     const handleMouseUp = () => {
         setIsDragging(false);
         setDragColor(null);  // Restablece el color de arrastre
+
+        onValueChange(JSON.stringify(clickCounts),rangeId);
 
         if(myRange=='true'){
 
@@ -223,7 +229,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
     };
 
     const getNextColor = (currentCount) => {
-        return (currentCount + 1) % 5; // Ciclar entre 4 estados
+        return (currentCount + 1) % 6; // Ciclar entre 5 estados
     };
 
     const getColor = (count) => {
@@ -232,7 +238,8 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
             case 1: return '#16974b';
             case 2: return '#ffd60d';
             case 3: return '#ff116e';
-            case 4: return '#818280';
+            case 4: return '#4682B4';
+            case 5: return '#818280';
             default: return 'transparent';
         }
     };
@@ -243,7 +250,7 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
             <button className="button-clear-matrix" onClick={handleClear} title="Limpiar Matriz">
                 <FontAwesomeIcon icon="eraser" />
             </button>
-            <div className="tooltip-matrix">
+            <div >
             {ranks.map((rank1, i) => (
                 <div key={i} className="row">
                     {ranks.map((rank2, j) => (
@@ -255,7 +262,6 @@ function CardMatrix({id,myRange,rangeState, setRangeState}) {
                     ))}
                 </div>
             ))}
-                <span className="tooltip-text"><h5>Tips:</h5><div>Click en celda para colorear.</div><div>  Multiples clicks para cambiar de color. </div><div>  Mantener botón derecho para colorear una zona.</div>  </span>
 
             </div>
         </div>

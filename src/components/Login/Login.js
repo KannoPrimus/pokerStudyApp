@@ -438,28 +438,29 @@ export function Login() {
             </Text>
             <Grid templateColumns={{ base: "1fr", medium: "repeat(3, 1fr)" }} gap="2rem">
                 {[
-                    { plan: "Plan Básico", priceRef: "USD 55 / mes",price: "GRATIS",reason:"", stack: [
+                    { plan: "Plan Básico", priceRef: "",price: "GRATIS",reason:"", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                         { description: "Módulo de notas", value:"USD 10"},
                             { description: "Módulo de entrenamiento", value:"USD 15"},
 
                         ]},
-                    { plan: "Plan PRO", priceRef: "USD 95 / mes",price: "USD 10 / mes",reason:"Aprovecha esta oferta de lanzamiento a sólo", stack: [
+                    { plan: "Plan PRO", priceRef: "",price: "USD 1.5 / mes",reason:"Menos de 1 stack de NL2", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                             { description: "Módulo de notas", value:"USD 10"},
                             { description: "Módulo de entrenamiento manos propias", value:"USD 15"},
-                            { description: "Manos de entrenaminento manos pre-configuradas", value:"USD 30"},
+                            { description: "Modulo de Rangos preflop", value:"USD 30"},
                             { description: "Soporte 8x5", value:"USD 10"},
 
                         ]},
-                    { plan: "Plan Premium", priceRef: "USD 135 / mes",price: "USD 25 / mes",reason:"Aprovecha esta oferta de lanzamiento a sólo", stack: [
+                    { plan: "Plan Premium", priceRef: "",price: "USD 4.5/ mes",reason:"Menos de 1 stack de NL5", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                             { description: "Módulo de notas", value:"USD 10"},
                             { description: "Módulo de entrenamiento manos propias", value:"USD 15"},
+                            { description: "Modulo de Rangos preflop", value:"USD 30"},
                             { description: "Manos de entrenaminento manos pre-configuradas", value:"USD 30"},
-                            { description: "Soporte 8x5", value:"USD 10"},
                             { description: "Módulo análisis de spots y acciones", value:"USD 30"},
                             { description: "Aprendizaje Gamificado (Ranking)", value:"USD 10"},
+                            { description: "Soporte 8x5", value:"USD 10"},
                         ]},
                 ].map((item, index) => (
                     <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'Plan Básico' ? '#fffede' : "#f9f9f9"}>
@@ -467,11 +468,11 @@ export function Login() {
                         <Text fontSize="1rem" textAlign="center" marginTop="0.5rem" color='black' style={{ whiteSpace: 'pre-line' }}>
                         {item.stack.map((stackItem,index) => (
                             <p>
-                       <FontAwesomeIcon icon={faCheck} size="1x" /> {stackItem.description} ({stackItem.value})
+                       <FontAwesomeIcon icon={faCheck} size="1x" /> {stackItem.description}
                             </p>
                             ))}
                             </Text>
-                        <Text fontSize="1.25rem" fontWeight="bold" color="#000" textDecoration="line-through" marginTop="0.5rem">{item.priceRef}</Text>
+                        <Text fontSize="1.25rem" fontWeight="bold" color="#000" marginTop="0.5rem">{item.priceRef}</Text>
                         <Text fontSize="1.25rem" fontWeight="bold" color="#000" marginTop="0.5rem">{item.reason}</Text>
                         <Text fontSize="1.55rem" fontWeight="bold" color={item.plan === 'Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
                         <button onClick={scrollToNav4}>Ingresar</button>

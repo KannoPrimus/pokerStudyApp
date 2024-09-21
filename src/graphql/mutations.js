@@ -204,3 +204,58 @@ export const updateTrainings = /* GraphQL */ `
     }
   }
 `;
+
+export const createRanges = /* GraphQL */ `
+  mutation CreateRanges(
+    $input: CreateRangesInput!
+    $condition: ModelRangesConditionInput
+  ) {
+    createRanges(input: $input, condition: $condition) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateRanges = /* GraphQL */ `
+  mutation UpdateRanges(
+    $input: UpdateRangesInput!
+    $condition: ModelRangesConditionInput
+  ) {
+    updateRanges(input: $input, condition: $condition) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteRanges = /* GraphQL */ `
+  mutation DeleteRanges(
+    $input: DeleteRangesInput!
+    $condition: ModelRangesConditionInput
+  ) {
+    deleteRanges(input: $input, condition: $condition) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;

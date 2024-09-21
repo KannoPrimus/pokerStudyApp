@@ -1,6 +1,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateRanges = /* GraphQL */ `
+  subscription OnCreateRanges($filter: ModelSubscriptionRangesFilterInput) {
+    onCreateRanges(filter: $filter) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateRanges = /* GraphQL */ `
+  subscription OnUpdateRanges($filter: ModelSubscriptionRangesFilterInput) {
+    onUpdateRanges(filter: $filter) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteRanges = /* GraphQL */ `
+  subscription OnDeleteRanges($filter: ModelSubscriptionRangesFilterInput) {
+    onDeleteRanges(filter: $filter) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateTrainings = /* GraphQL */ `
   subscription OnCreateTrainings(
     $filter: ModelSubscriptionTrainingsFilterInput
@@ -53,6 +98,7 @@ export const onCreateMembers = /* GraphQL */ `
       playerId
       memberPlan
       endDate
+      skipTutorial
       createdAt
       updatedAt
       __typename
@@ -66,6 +112,7 @@ export const onUpdateMembers = /* GraphQL */ `
       playerId
       memberPlan
       endDate
+      skipTutorial
       createdAt
       updatedAt
       __typename
@@ -79,6 +126,7 @@ export const onDeleteMembers = /* GraphQL */ `
       playerId
       memberPlan
       endDate
+      skipTutorial
       createdAt
       updatedAt
       __typename

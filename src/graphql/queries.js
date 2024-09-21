@@ -163,3 +163,41 @@ export const listTrainings = /* GraphQL */ `
     }
   }
 `;
+export const getRanges = /* GraphQL */ `
+  query GetRanges($id: ID!) {
+    getRanges(id: $id) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listRanges = /* GraphQL */ `
+  query ListRanges(
+    $filter: ModelRangesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRanges(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        palyerId
+        rangeId
+        title
+        range
+        colors
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;

@@ -137,7 +137,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     const changeMode = (newMode) => {
         if (newMode !== mode) {
-            if ( (newMode === 'Estadisticas' && membership === 'BASIC') || (newMode === 'Estadisticas' && membership === 'PRO')) {
+            if ( (newMode === 'Estadisticas'  && membership === 'BASIC') || (newMode === 'Estadisticas' && membership === 'PRO')) {
                 setShowUpsellModal(true);
             } else {
                 setMode(newMode);
@@ -265,12 +265,31 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                     </div>
                     <div className="tooltip">
                         <button
+                            className={`mode-button-stats ${mode === 'Rangos' ? 'active' : ''}`}
+                            onClick={() => changeMode('Rangos')}
+                        >
+                            <FontAwesomeIcon icon="chess-board" size="1x" />
+                        </button>
+                        <span className="tooltip-text">Rangos</span>
+                    </div>
+                    <div className="tooltip">
+                        <button
                             className={`mode-button-stats ${mode === 'Estadisticas' ? 'active' : ''}`}
                             onClick={() => changeMode('Estadisticas')}
                         >
                             <FontAwesomeIcon icon="chart-simple" size="1x" />
                         </button>
                         <span className="tooltip-text">Estadísticas</span>
+                    </div>
+
+                    <div className="tooltip">
+                        <button
+                            className={`mode-button-stats ${mode === 'Deals' ? 'active' : ''}`}
+                            onClick={() => changeMode('Deals')}
+                        >
+                            <FontAwesomeIcon icon="handshake" size="1x" />
+                        </button>
+                        <span className="tooltip-text">Poker Deals</span>
                     </div>
                 </div>
             </div>
@@ -300,7 +319,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
             ) : (
                 <></>
             )}
-            {mode !== 'Estadisticas' ? (
+            {mode !== 'Estadisticas' && mode !== 'Rangos' && mode !== 'Deals' ? (
                 <>
 
                     <div className="txtChangeMode">Spot</div>
@@ -395,14 +414,13 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                         {(membership === 'BASIC' || membership === 'FREE') && (
                             <div className="plan-crusher-pro">
                                 <h2>Modo PRO</h2>
-                                <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje (USD 30)</p>
-                                <p style={{ fontSize: '11px' }}>Módulo de notas (USD 10)</p>
-                                <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias (USD 15)</p>
-                                <p style={{ fontSize: '11px' }}>Manos de entrenaminento manos pre-configuradas (USD 30)</p>
-                                <p style={{ fontSize: '11px' }}>Soporte 8x5 (USD 10)</p>
-                                <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 95 / mes</h3>
-                                <h3 style={{ color: '#00ECB3' }}>USD 10 / mes</h3>
-
+                                <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje </p>
+                                <p style={{ fontSize: '11px' }}>Módulo de notas </p>
+                                <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias </p>
+                                <p style={{ fontSize: '11px' }}>Módulo de rangos preflop </p>
+                                <p style={{ fontSize: '11px' }}>Soporte 8x5 </p>
+                                <h3 style={{ color: '#ccc' }}>Menos de 1 stack de NL2!</h3>
+                                <h3 style={{ color: '#00ECB3' }}>USD 1.5 / mes</h3>
                                 <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
                                 <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
                                     <PayPalButtons
@@ -412,7 +430,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                                                     {
                                                         description: "Modo PRO",
                                                         amount: {
-                                                            value: '10'
+                                                            value: '1.5'
                                                         }
                                                     }
                                                 ]
@@ -429,16 +447,15 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                         )}
                         <div className="plan-crusher-premium">
                             <h2>Modo PREMIUM</h2>
-                            <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje (USD 30)</p>
-                            <p style={{ fontSize: '11px' }}>Módulo de notas (USD 10)</p>
-                            <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias (USD 15)</p>
-                            <p style={{ fontSize: '11px' }}>Manos de entrenaminento manos pre-configuradas (USD 30)</p>
-                            <p style={{ fontSize: '11px' }}>Soporte 8x5 (USD 10)</p>
-                            <p style={{ fontSize: '11px' }}>Módulo análisis de spots y acciones (USD 30)</p>
-                                <p style={{ fontSize: '11px' }}>Aprendizaje Gamificado (Ranking) (USD 10)</p>
-                            <h3 style={{ textDecoration: 'line-through', color: '#ccc' }}>USD 135 / mes</h3>
-                            <h3 style={{ color: '#00ECB3' }}>USD 25 / mes</h3>
-                            <p style={{ fontSize: '12px' }}>Oferta especial por lanzamiento.</p>
+                            <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje</p>
+                            <p style={{ fontSize: '11px' }}>Módulo de notas</p>
+                            <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias</p>
+                            <p style={{ fontSize: '11px' }}>Módulo de rangos preflop </p>
+                            <p style={{ fontSize: '11px' }}>Manos de entrenaminento manos pre-configuradas</p>
+                            <p style={{ fontSize: '11px' }}>Módulo análisis de spots y acciones</p>
+                            <p style={{ fontSize: '11px' }}>Soporte 8x5</p>
+                            <h3 style={{  color: '#ccc' }}>Menos de 1 stack de NL5!</h3>
+                            <h3 style={{ color: '#00ECB3' }}>USD 4.5 / mes</h3>
                             <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
                             <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
                                 <PayPalButtons
@@ -448,7 +465,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                                                 {
                                                     description: "Modo PREMIUM",
                                                     amount: {
-                                                        value: '25'
+                                                        value: '4.5'
                                                     }
                                                 }
                                             ]

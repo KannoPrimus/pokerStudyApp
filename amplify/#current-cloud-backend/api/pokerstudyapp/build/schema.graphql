@@ -1,3 +1,14 @@
+type Ranges @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  palyerId: ID
+  rangeId: String
+  title: String
+  range: String
+  colors: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
 type Trainings @aws_iam @aws_cognito_user_pools {
   id: ID!
   handId: ID
@@ -205,6 +216,114 @@ enum ModelSortDirection {
   DESC
 }
 
+type ModelRangesConnection @aws_iam @aws_cognito_user_pools {
+  items: [Ranges]!
+  nextToken: String
+}
+
+input ModelRangesFilterInput {
+  id: ModelIDInput
+  palyerId: ModelIDInput
+  rangeId: ModelStringInput
+  title: ModelStringInput
+  range: ModelStringInput
+  colors: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelRangesFilterInput]
+  or: [ModelRangesFilterInput]
+  not: ModelRangesFilterInput
+}
+
+type Query {
+  getRanges(id: ID!): Ranges @aws_iam @aws_cognito_user_pools
+  listRanges(filter: ModelRangesFilterInput, limit: Int, nextToken: String): ModelRangesConnection @aws_iam @aws_cognito_user_pools
+  getTrainings(id: ID!): Trainings @aws_iam @aws_cognito_user_pools
+  listTrainings(filter: ModelTrainingsFilterInput, limit: Int, nextToken: String): ModelTrainingsConnection @aws_iam @aws_cognito_user_pools
+  getMembers(id: ID!): Members @aws_iam @aws_cognito_user_pools
+  listMembers(filter: ModelMembersFilterInput, limit: Int, nextToken: String): ModelMembersConnection @aws_iam @aws_cognito_user_pools
+  getHands(id: ID!): Hands @aws_iam @aws_cognito_user_pools
+  listHands(filter: ModelHandsFilterInput, limit: Int, nextToken: String): ModelHandsConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelRangesConditionInput {
+  palyerId: ModelIDInput
+  rangeId: ModelStringInput
+  title: ModelStringInput
+  range: ModelStringInput
+  colors: ModelStringInput
+  and: [ModelRangesConditionInput]
+  or: [ModelRangesConditionInput]
+  not: ModelRangesConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateRangesInput {
+  id: ID
+  palyerId: ID
+  rangeId: String
+  title: String
+  range: String
+  colors: String
+}
+
+input UpdateRangesInput {
+  id: ID!
+  palyerId: ID
+  rangeId: String
+  title: String
+  range: String
+  colors: String
+}
+
+input DeleteRangesInput {
+  id: ID!
+}
+
+type Mutation {
+  createRanges(input: CreateRangesInput!, condition: ModelRangesConditionInput): Ranges @aws_iam @aws_cognito_user_pools
+  updateRanges(input: UpdateRangesInput!, condition: ModelRangesConditionInput): Ranges @aws_iam @aws_cognito_user_pools
+  deleteRanges(input: DeleteRangesInput!, condition: ModelRangesConditionInput): Ranges @aws_iam @aws_cognito_user_pools
+  createTrainings(input: CreateTrainingsInput!, condition: ModelTrainingsConditionInput): Trainings @aws_iam @aws_cognito_user_pools
+  updateTrainings(input: UpdateTrainingsInput!, condition: ModelTrainingsConditionInput): Trainings @aws_iam @aws_cognito_user_pools
+  deleteTrainings(input: DeleteTrainingsInput!, condition: ModelTrainingsConditionInput): Trainings @aws_iam @aws_cognito_user_pools
+  createMembers(input: CreateMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
+  updateMembers(input: UpdateMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
+  deleteMembers(input: DeleteMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
+  createHands(input: CreateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+  updateHands(input: UpdateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+  deleteHands(input: DeleteHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionRangesFilterInput {
+  id: ModelSubscriptionIDInput
+  palyerId: ModelSubscriptionIDInput
+  rangeId: ModelSubscriptionStringInput
+  title: ModelSubscriptionStringInput
+  range: ModelSubscriptionStringInput
+  colors: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionRangesFilterInput]
+  or: [ModelSubscriptionRangesFilterInput]
+}
+
+type Subscription {
+  onCreateRanges(filter: ModelSubscriptionRangesFilterInput): Ranges @aws_subscribe(mutations: ["createRanges"]) @aws_iam @aws_cognito_user_pools
+  onUpdateRanges(filter: ModelSubscriptionRangesFilterInput): Ranges @aws_subscribe(mutations: ["updateRanges"]) @aws_iam @aws_cognito_user_pools
+  onDeleteRanges(filter: ModelSubscriptionRangesFilterInput): Ranges @aws_subscribe(mutations: ["deleteRanges"]) @aws_iam @aws_cognito_user_pools
+  onCreateTrainings(filter: ModelSubscriptionTrainingsFilterInput): Trainings @aws_subscribe(mutations: ["createTrainings"]) @aws_iam @aws_cognito_user_pools
+  onUpdateTrainings(filter: ModelSubscriptionTrainingsFilterInput): Trainings @aws_subscribe(mutations: ["updateTrainings"]) @aws_iam @aws_cognito_user_pools
+  onDeleteTrainings(filter: ModelSubscriptionTrainingsFilterInput): Trainings @aws_subscribe(mutations: ["deleteTrainings"]) @aws_iam @aws_cognito_user_pools
+  onCreateMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["createMembers"]) @aws_iam @aws_cognito_user_pools
+  onUpdateMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["updateMembers"]) @aws_iam @aws_cognito_user_pools
+  onDeleteMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["deleteMembers"]) @aws_iam @aws_cognito_user_pools
+  onCreateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["createHands"]) @aws_iam @aws_cognito_user_pools
+  onUpdateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["updateHands"]) @aws_iam @aws_cognito_user_pools
+  onDeleteHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["deleteHands"]) @aws_iam @aws_cognito_user_pools
+}
+
 type ModelTrainingsConnection @aws_iam @aws_cognito_user_pools {
   items: [Trainings]!
   nextToken: String
@@ -220,15 +339,6 @@ input ModelTrainingsFilterInput {
   and: [ModelTrainingsFilterInput]
   or: [ModelTrainingsFilterInput]
   not: ModelTrainingsFilterInput
-}
-
-type Query {
-  getTrainings(id: ID!): Trainings @aws_iam @aws_cognito_user_pools
-  listTrainings(filter: ModelTrainingsFilterInput, limit: Int, nextToken: String): ModelTrainingsConnection @aws_iam @aws_cognito_user_pools
-  getMembers(id: ID!): Members @aws_iam @aws_cognito_user_pools
-  listMembers(filter: ModelMembersFilterInput, limit: Int, nextToken: String): ModelMembersConnection @aws_iam @aws_cognito_user_pools
-  getHands(id: ID!): Hands @aws_iam @aws_cognito_user_pools
-  listHands(filter: ModelHandsFilterInput, limit: Int, nextToken: String): ModelHandsConnection @aws_iam @aws_cognito_user_pools
 }
 
 input ModelTrainingsConditionInput {
@@ -260,18 +370,6 @@ input DeleteTrainingsInput {
   id: ID!
 }
 
-type Mutation {
-  createTrainings(input: CreateTrainingsInput!, condition: ModelTrainingsConditionInput): Trainings @aws_iam @aws_cognito_user_pools
-  updateTrainings(input: UpdateTrainingsInput!, condition: ModelTrainingsConditionInput): Trainings @aws_iam @aws_cognito_user_pools
-  deleteTrainings(input: DeleteTrainingsInput!, condition: ModelTrainingsConditionInput): Trainings @aws_iam @aws_cognito_user_pools
-  createMembers(input: CreateMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
-  updateMembers(input: UpdateMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
-  deleteMembers(input: DeleteMembersInput!, condition: ModelMembersConditionInput): Members @aws_iam @aws_cognito_user_pools
-  createHands(input: CreateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
-  updateHands(input: UpdateHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
-  deleteHands(input: DeleteHandsInput!, condition: ModelHandsConditionInput): Hands @aws_iam @aws_cognito_user_pools
-}
-
 input ModelSubscriptionTrainingsFilterInput {
   id: ModelSubscriptionIDInput
   handId: ModelSubscriptionIDInput
@@ -281,18 +379,6 @@ input ModelSubscriptionTrainingsFilterInput {
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionTrainingsFilterInput]
   or: [ModelSubscriptionTrainingsFilterInput]
-}
-
-type Subscription {
-  onCreateTrainings(filter: ModelSubscriptionTrainingsFilterInput): Trainings @aws_subscribe(mutations: ["createTrainings"]) @aws_iam @aws_cognito_user_pools
-  onUpdateTrainings(filter: ModelSubscriptionTrainingsFilterInput): Trainings @aws_subscribe(mutations: ["updateTrainings"]) @aws_iam @aws_cognito_user_pools
-  onDeleteTrainings(filter: ModelSubscriptionTrainingsFilterInput): Trainings @aws_subscribe(mutations: ["deleteTrainings"]) @aws_iam @aws_cognito_user_pools
-  onCreateMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["createMembers"]) @aws_iam @aws_cognito_user_pools
-  onUpdateMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["updateMembers"]) @aws_iam @aws_cognito_user_pools
-  onDeleteMembers(filter: ModelSubscriptionMembersFilterInput): Members @aws_subscribe(mutations: ["deleteMembers"]) @aws_iam @aws_cognito_user_pools
-  onCreateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["createHands"]) @aws_iam @aws_cognito_user_pools
-  onUpdateHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["updateHands"]) @aws_iam @aws_cognito_user_pools
-  onDeleteHands(filter: ModelSubscriptionHandsFilterInput): Hands @aws_subscribe(mutations: ["deleteHands"]) @aws_iam @aws_cognito_user_pools
 }
 
 type ModelMembersConnection @aws_iam @aws_cognito_user_pools {

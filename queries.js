@@ -1,6 +1,44 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getRanges = /* GraphQL */ `
+  query GetRanges($id: ID!) {
+    getRanges(id: $id) {
+      id
+      palyerId
+      rangeId
+      title
+      range
+      colors
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listRanges = /* GraphQL */ `
+  query ListRanges(
+    $filter: ModelRangesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRanges(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        palyerId
+        rangeId
+        title
+        range
+        colors
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getTrainings = /* GraphQL */ `
   query GetTrainings($id: ID!) {
     getTrainings(id: $id) {
@@ -42,6 +80,7 @@ export const getMembers = /* GraphQL */ `
       playerId
       memberPlan
       endDate
+      skipTutorial
       createdAt
       updatedAt
       __typename
@@ -60,6 +99,7 @@ export const listMembers = /* GraphQL */ `
         playerId
         memberPlan
         endDate
+        skipTutorial
         createdAt
         updatedAt
         __typename

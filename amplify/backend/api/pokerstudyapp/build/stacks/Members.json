@@ -49,10 +49,10 @@
     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangesauth0FunctionQuerygetRangesauth0FunctionAppSyncFunctionD76EF416FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId": {
       "Type": "String"
     },
     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -61,19 +61,19 @@
     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesinit0FunctionMutationcreateRangesinit0FunctionAppSyncFunctionB5254B16FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesauth0FunctionMutationcreateRangesauth0FunctionAppSyncFunction5B2C763EFunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationupdateRangesinit0FunctionMutationupdateRangesinit0FunctionAppSyncFunction96C051E6FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId": {
       "Type": "String"
     }
   },
@@ -393,10 +393,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangesauth0FunctionQuerygetRangesauth0FunctionAppSyncFunctionD76EF416FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -504,10 +504,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangesauth0FunctionQuerygetRangesauth0FunctionAppSyncFunctionD76EF416FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -615,13 +615,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesinit0FunctionMutationcreateRangesinit0FunctionAppSyncFunctionB5254B16FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesauth0FunctionMutationcreateRangesauth0FunctionAppSyncFunction5B2C763EFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -780,7 +780,7 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationupdateRangesinit0FunctionMutationupdateRangesinit0FunctionAppSyncFunction96C051E6FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -789,7 +789,7 @@
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -954,7 +954,7 @@
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -1011,13 +1011,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId"
             }
           ]
         },
@@ -1064,13 +1064,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId"
             }
           ]
         },
@@ -1117,13 +1117,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId"
             }
           ]
         },

@@ -49,10 +49,10 @@
     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangesauth0FunctionQuerygetRangesauth0FunctionAppSyncFunctionD76EF416FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId": {
       "Type": "String"
     },
     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -61,19 +61,19 @@
     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesinit0FunctionMutationcreateRangesinit0FunctionAppSyncFunctionB5254B16FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesauth0FunctionMutationcreateRangesauth0FunctionAppSyncFunction5B2C763EFunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationupdateRangesinit0FunctionMutationupdateRangesinit0FunctionAppSyncFunction96C051E6FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId": {
+    "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId": {
       "Type": "String"
     }
   },
@@ -119,12 +119,6 @@
     "MembersTable": {
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
-        "KeySchema": [
-          {
-            "AttributeName": "id",
-            "KeyType": "HASH"
-          }
-        ],
         "AttributeDefinitions": [
           {
             "AttributeName": "id",
@@ -140,6 +134,12 @@
             }
           ]
         },
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
         "PointInTimeRecoverySpecification": {
           "Fn::If": [
             "ShouldUsePointInTimeRecovery",
@@ -309,8 +309,6 @@
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "Name": "MembersTable",
-        "Type": "AMAZON_DYNAMODB",
         "DynamoDBConfig": {
           "AwsRegion": {
             "Ref": "AWS::Region"
@@ -319,12 +317,14 @@
             "Ref": "MembersTable"
           }
         },
+        "Name": "MembersTable",
         "ServiceRoleArn": {
           "Fn::GetAtt": [
             "MembersIAMRoleC2348C1E",
             "Arn"
           ]
-        }
+        },
+        "Type": "AMAZON_DYNAMODB"
       },
       "DependsOn": [
         "MembersIAMRoleC2348C1E"
@@ -342,8 +342,8 @@
             "Name"
           ]
         },
-        "Name": "QueryGetMembersDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "QueryGetMembersDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -388,15 +388,14 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "getMembers",
-        "TypeName": "Query",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangesauth0FunctionQuerygetRangesauth0FunctionAppSyncFunctionD76EF416FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -438,7 +437,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Query"
       }
     },
     "QueryListMembersDataResolverFnQueryListMembersDataResolverFnAppSyncFunction651222F4": {
@@ -453,8 +453,8 @@
             "Name"
           ]
         },
-        "Name": "QueryListMembersDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "QueryListMembersDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -499,15 +499,14 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "listMembers",
-        "TypeName": "Query",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingsauth0FunctionQuerygetTrainingsauth0FunctionAppSyncFunction1AE94367FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangesauth0FunctionQuerygetRangesauth0FunctionAppSyncFunctionD76EF416FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -549,7 +548,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Query"
       }
     },
     "MutationCreateMembersDataResolverFnMutationCreateMembersDataResolverFnAppSyncFunction22A3C23A": {
@@ -564,8 +564,8 @@
             "Name"
           ]
         },
-        "Name": "MutationCreateMembersDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationCreateMembersDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -610,18 +610,17 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "createMembers",
-        "TypeName": "Mutation",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsinit0FunctionMutationcreateTrainingsinit0FunctionAppSyncFunction72AB7B19FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesinit0FunctionMutationcreateRangesinit0FunctionAppSyncFunctionB5254B16FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationcreateTrainingsauth0FunctionMutationcreateTrainingsauth0FunctionAppSyncFunction904C9738FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationcreateRangesauth0FunctionMutationcreateRangesauth0FunctionAppSyncFunction5B2C763EFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -663,7 +662,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Mutation"
       }
     },
     "MutationupdateMembersauth0FunctionMutationupdateMembersauth0FunctionAppSyncFunction531BDA9A": {
@@ -678,8 +678,8 @@
             "Name"
           ]
         },
-        "Name": "MutationupdateMembersauth0Function",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationupdateMembersauth0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -729,8 +729,8 @@
             "Name"
           ]
         },
-        "Name": "MutationUpdateMembersDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationUpdateMembersDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -775,12 +775,11 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "updateMembers",
-        "TypeName": "Mutation",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsMutationupdateTrainingsinit0FunctionMutationupdateTrainingsinit0FunctionAppSyncFunction55C06AA3FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesMutationupdateRangesinit0FunctionMutationupdateRangesinit0FunctionAppSyncFunction96C051E6FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -789,7 +788,7 @@
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -831,7 +830,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Mutation"
       }
     },
     "MutationdeleteMembersauth0FunctionMutationdeleteMembersauth0FunctionAppSyncFunction021873D0": {
@@ -846,8 +846,8 @@
             "Name"
           ]
         },
-        "Name": "MutationdeleteMembersauth0Function",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationdeleteMembersauth0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -897,8 +897,8 @@
             "Name"
           ]
         },
-        "Name": "MutationDeleteMembersDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationDeleteMembersDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -943,7 +943,6 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "deleteMembers",
-        "TypeName": "Mutation",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
@@ -954,7 +953,7 @@
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -996,7 +995,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Mutation"
       }
     },
     "SubscriptiononCreateMembersResolver": {
@@ -1006,18 +1006,17 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "onCreateMembers",
-        "TypeName": "Subscription",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId"
             }
           ]
         },
@@ -1049,7 +1048,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Subscription"
       }
     },
     "SubscriptiononUpdateMembersResolver": {
@@ -1059,18 +1059,17 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "onUpdateMembers",
-        "TypeName": "Subscription",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId"
             }
           ]
         },
@@ -1102,7 +1101,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Subscription"
       }
     },
     "SubscriptiononDeleteMembersResolver": {
@@ -1112,18 +1112,17 @@
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
         "FieldName": "onDeleteMembers",
-        "TypeName": "Subscription",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptiononCreateTrainingsauth0FunctionSubscriptiononCreateTrainingsauth0FunctionAppSyncFunction3FCAEBB8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptiononCreateRangesauth0FunctionSubscriptiononCreateRangesauth0FunctionAppSyncFunctionF2ACC03BFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsQuerygetTrainingspostAuth0FunctionQuerygetTrainingspostAuth0FunctionAppSyncFunction54C2F2F8FunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesQuerygetRangespostAuth0FunctionQuerygetRangespostAuth0FunctionAppSyncFunction57692083FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackTrainingsNestedStackTrainingsNestedStackResourceFFC82C16OutputstransformerrootstackTrainingsSubscriptionOnCreateTrainingsDataResolverFnSubscriptionOnCreateTrainingsDataResolverFnAppSyncFunction5E715DBEFunctionId"
+              "Ref": "referencetotransformerrootstackRangesNestedStackRangesNestedStackResourceD535ABBFOutputstransformerrootstackRangesSubscriptionOnCreateRangesDataResolverFnSubscriptionOnCreateRangesDataResolverFnAppSyncFunction4CF995FBFunctionId"
             }
           ]
         },
@@ -1155,7 +1154,8 @@
             ]
           ]
         },
-        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Subscription"
       }
     }
   },
