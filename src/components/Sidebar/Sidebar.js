@@ -137,7 +137,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
 
     const changeMode = (newMode) => {
         if (newMode !== mode) {
-            if ( ((newMode === 'Estadisticas' || newMode === 'Rangos')  && membership === 'BASIC') || ((newMode === 'Estadisticas' || newMode === 'Rangos') && membership === 'PRO')) {
+            if ( ((newMode === 'Estadisticas' || newMode === 'Rangos')  && membership === 'BASIC') || (newMode === 'Estadisticas' && membership === 'PRO')) {
                 setShowUpsellModal(true);
             } else {
                 setMode(newMode);
