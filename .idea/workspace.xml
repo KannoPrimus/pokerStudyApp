@@ -17,8 +17,8 @@
       <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="415" column="40" lean-forward="false" selection-start-line="415" selection-start-column="40" selection-end-line="415" selection-end-column="40" />
               <folding>
                 <element signature="e#15#78#0" expanded="true" />
               </folding>
@@ -404,14 +404,7 @@
       <workItem from="1720194276313" duration="5415000" />
       <workItem from="1720478540032" duration="160906000" />
       <workItem from="1723461770685" duration="17413000" />
-      <workItem from="1726868160198" duration="22918000" />
-    </task>
-    <task id="LOCAL-00077" summary="Ajustes mayores a trainer:&#10;&#10; logicas para calcular pozo&#10; logicas para calcular estadisticas&#10; mejora en visualizacion de resultados&#10; Mejora en filtro de manos para entrenar">
-      <created>1719846335427</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1719846335427</updated>
+      <workItem from="1726868160198" duration="23544000" />
     </task>
     <task id="LOCAL-00078" summary="Ajustes mayores a trainer:&#10;&#10; logicas para calcular pozo&#10; logicas para calcular estadisticas&#10; mejora en visualizacion de resultados&#10; Mejora en filtro de manos para entrenar">
       <created>1720096827939</created>
@@ -749,11 +742,18 @@
       <option name="project" value="LOCAL" />
       <updated>1726957394328</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Se corrige restriccion de acceso a rangos">
+      <created>1726957468870</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1726957468870</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="929469000" />
+    <option name="totallyTimeSpent" value="930095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
@@ -1238,8 +1238,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="189">
+          <caret line="415" column="40" lean-forward="false" selection-start-line="415" selection-start-column="40" selection-end-line="415" selection-end-column="40" />
           <folding>
             <element signature="e#15#78#0" expanded="true" />
           </folding>

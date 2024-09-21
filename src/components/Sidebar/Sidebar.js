@@ -413,7 +413,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                     <div className="plan-container">
                         {(membership === 'BASIC' || membership === 'FREE') && (
                             <div className="plan-crusher-pro">
-                                <h2>Modo PRO</h2>
+                                <h2>PLAN PRO</h2>
                                 <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje </p>
                                 <p style={{ fontSize: '11px' }}>Módulo de notas </p>
                                 <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias </p>
@@ -446,7 +446,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                             </div>
                         )}
                         <div className="plan-crusher-premium">
-                            <h2>Modo PREMIUM</h2>
+                            <h2>PLAN PREMIUM</h2>
                             <p style={{ fontSize: '11px' }}>Metodología efectiva de aprendizaje</p>
                             <p style={{ fontSize: '11px' }}>Módulo de notas</p>
                             <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias</p>
