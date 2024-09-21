@@ -419,7 +419,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                                 <p style={{ fontSize: '11px' }}>Módulo de entrenamiento manos propias </p>
                                 <p style={{ fontSize: '11px' }}>Módulo de rangos preflop </p>
                                 <p style={{ fontSize: '11px' }}>Soporte 8x5 </p>
-                                <h3 style={{ color: '#ccc' }}>Menos de 1 stack de NL2!</h3>
+                                <h3 style={{ color: 'Red' }}>Menos de 1 stack de NL2!</h3>
                                 <h3 style={{ color: '#00ECB3' }}>USD 1.5 / mes</h3>
                                 <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
                                 <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
@@ -454,7 +454,7 @@ function UpsellModal({ onClose, onUpgrade, isUpgraded, membership , activaMembre
                             <p style={{ fontSize: '11px' }}>Manos de entrenaminento manos pre-configuradas</p>
                             <p style={{ fontSize: '11px' }}>Módulo análisis de spots y acciones</p>
                             <p style={{ fontSize: '11px' }}>Soporte 8x5</p>
-                            <h3 style={{  color: '#ccc' }}>Menos de 1 stack de NL5!</h3>
+                            <h3 style={{  color: 'Red' }}>Menos de 1 stack de NL5!</h3>
                             <h3 style={{ color: '#00ECB3' }}>USD 4.5 / mes</h3>
                             <p style={{ fontSize: '12px' }}>¿Otros medios de pago?, escríbenos a: <a href="mailto:info@pokerstudyapp.com">info@pokerstudyapp.com</a></p>
                             <PayPalScriptProvider options={{ clientId: "ASWXXIbmZawGEP6YVu8McY_Z77H9jZp4qGSeZOLmalIMsZUbkQvB2g2HR-nY7eGa4GJCXaRIlZM6hwKf" }}>
