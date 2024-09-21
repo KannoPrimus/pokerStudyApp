@@ -384,7 +384,7 @@ function PokerTrainer({ sequence, stake, membership }) {
 
         if (action.action.includes('OR')) {
             const amount = parseFloat(action.action.split('_')[1].replace('bb', ''));
-            console.log('OR', newPot+' - '+ amount);
+            //console.log('OR', newPot+' - '+ amount);
             setBet(amount);
             newPot += amount;
         } else if (action.action.includes('BET')) {

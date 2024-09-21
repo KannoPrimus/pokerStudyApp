@@ -204,7 +204,7 @@ function PokerRanges() {
                 // Accede al array de items que viene en la respuesta
                 const fetchedRanges = result.data.listRanges.items;
 
-                console.log(result);
+                //console.log(result);
 
                 const transformedRanges = fetchedRanges.map(range => ({
                     ...range,
