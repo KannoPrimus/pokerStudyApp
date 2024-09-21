@@ -372,7 +372,7 @@ function Sidebar({ mode, setMode, sequence, setSequence, membership, stake, setS
                             <FontAwesomeIcon icon="filter" size="1x" /> Filtrar manos
                         </button>
                     ) : (
-                        <button className="loadHandsButton" onClick={loadAllHands}>
+                        <button className="loadHandsButton" style={{color:'#fff',fontWeight:'bold',background:'#ff116e'}} onClick={loadAllHands}>
                             <FontAwesomeIcon icon="filter-circle-xmark" size="1x" /> Borrar filtro
                         </button>
                     )}
