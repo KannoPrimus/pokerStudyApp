@@ -14,7 +14,7 @@ import { useAuthenticator, Image } from '@aws-amplify/ui-react';
 import { generateClient } from "aws-amplify/api";
 import { listMembers, getMembers, listHands as listHandsQuery } from "./graphql/queries";
 import { createMembers, updateMembers } from "./graphql/mutations";
-import { isBefore, parseISO } from "date-fns";
+import {addMonths, format, isBefore, parseISO} from "date-fns";
 import Tutorial from './components/About/Tutorial';
 import logo2 from './assets/logoPSA_soloPica.png';
 
@@ -49,14 +49,17 @@ function App() {
                     setSkipTutorial(userMembership.skipTutorial);
                 } else {
                     const createBasicMembership = async (playerId) => {
+
+                        const endDate = format(addMonths(new Date(), 1), "yyyy-MM-dd") + "Z";
+
                         const newMembers = await client.graphql({
                             query: createMembers,
                             variables: {
                                 input: {
                                     "id": playerId,
                                     "playerId": playerId,
-                                    "memberPlan": "BASIC",
-                                    "endDate": "9999-01-01Z",
+                                    "memberPlan": "PREMIUM",
+                                    "endDate": endDate,
                                     "skipTutorial":"false"
                                 }
                             }

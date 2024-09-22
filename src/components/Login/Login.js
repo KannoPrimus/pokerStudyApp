@@ -441,13 +441,13 @@ export function Login() {
                     { plan: "Plan Básico", priceRef: "",price: "GRATIS",reason:"", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                         { description: "Módulo de notas", value:"USD 10"},
-                            { description: "Módulo de entrenamiento", value:"USD 15"},
+                            { description: "Módulo de entrenamiento de manos propias", value:"USD 15"},
 
                         ]},
                     { plan: "Plan PRO", priceRef: "",price: "USD 1.5 / mes",reason:"Menos de 1 stack de NL2", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                             { description: "Módulo de notas", value:"USD 10"},
-                            { description: "Módulo de entrenamiento manos propias", value:"USD 15"},
+                            { description: "Módulo de entrenamiento de manos propias", value:"USD 15"},
                             { description: "Modulo de Rangos preflop", value:"USD 30"},
                             { description: "Soporte 8x5", value:"USD 10"},
 
@@ -455,9 +455,9 @@ export function Login() {
                     { plan: "Plan Premium", priceRef: "",price: "USD 4.5/ mes",reason:"Menos de 1 stack de NL5", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                             { description: "Módulo de notas", value:"USD 10"},
-                            { description: "Módulo de entrenamiento manos propias", value:"USD 15"},
+                            { description: "Módulo de entrenamiento de manos propias", value:"USD 15"},
                             { description: "Modulo de Rangos preflop", value:"USD 30"},
-                            { description: "Manos de entrenaminento manos pre-configuradas", value:"USD 30"},
+                            { description: "Manos de entrenaminento de manos pre-configuradas", value:"USD 30"},
                             { description: "Módulo análisis de spots y acciones", value:"USD 30"},
                             { description: "Aprendizaje Gamificado (Ranking)", value:"USD 10"},
                             { description: "Soporte 8x5", value:"USD 10"},
