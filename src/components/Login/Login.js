@@ -430,40 +430,45 @@ export function Login() {
         height="100%"
     >
         <div id="nav3" ref={nav3Ref} style={{ height: '100%', color: 'black', backgroundColor: 'white', padding: '4rem 2rem' }}>
-            <Text fontSize="2rem" style={{ color: '#00ECB3', fontWeight: 'bold' }}>
+            <Text fontSize="3.5rem" style={{ color: '#00ECB3', fontWeight: 'bold' }}>
                 ¡Ingresa, Estudia y Gana!
             </Text>
             <Text fontSize="1.25rem" style={{ color: '#333', fontWeight: 'bold', marginBottom: '20px' }}>
                 Accede a las herramientas, estrategias y entrenamientos que te harán destacar en la mesa. Suscríbete hoy y conviértete en el jugador que siempre has querido ser.
             </Text>
+            <Text fontSize="2rem" style={{ color: '#ff0000', fontWeight: 'bold' }}>
+                ¡Aprovecha nuestra oferta de lanzamiento de 1 mes GRATUITO del PLAN PREMIUM al registrar tu cuenta en el PLAN BASICO!
+            </Text>
             <Grid templateColumns={{ base: "1fr", medium: "repeat(3, 1fr)" }} gap="2rem">
                 {[
-                    { plan: "Plan Básico", priceRef: "",price: "GRATIS",reason:"", stack: [
+                    { plan: "PLAN BÁSICO", priceRef: "",price: "GRATIS",reason:"", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                         { description: "Módulo de notas", value:"USD 10"},
                             { description: "Módulo de entrenamiento de manos propias", value:"USD 15"},
 
                         ]},
-                    { plan: "Plan PRO", priceRef: "",price: "USD 1.5 / mes",reason:"Menos de 1 stack de NL2", stack: [
+                    { plan: "PLAN PRO", priceRef: "",price: "USD 1.5 / mes",reason:"Menos de 1 stack de NL2", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                             { description: "Módulo de notas", value:"USD 10"},
                             { description: "Módulo de entrenamiento de manos propias", value:"USD 15"},
                             { description: "Modulo de Rangos preflop", value:"USD 30"},
                             { description: "Soporte 8x5", value:"USD 10"},
+                            { description: "", value:"USD 30"},
+                            { description: "", value:"USD 30"},
+
 
                         ]},
-                    { plan: "Plan Premium", priceRef: "",price: "USD 4.5/ mes",reason:"Menos de 1 stack de NL5", stack: [
+                    { plan: "PLAN PREMIUM", priceRef: "",price: "USD 4.5/ mes",reason:"Menos de 1 stack de NL5", stack: [
                             { description: "Metodología efectiva de aprendizaje", value:"USD 30"},
                             { description: "Módulo de notas", value:"USD 10"},
                             { description: "Módulo de entrenamiento de manos propias", value:"USD 15"},
                             { description: "Modulo de Rangos preflop", value:"USD 30"},
                             { description: "Manos de entrenaminento de manos pre-configuradas", value:"USD 30"},
                             { description: "Módulo análisis de spots y acciones", value:"USD 30"},
-                            { description: "Aprendizaje Gamificado (Ranking)", value:"USD 10"},
                             { description: "Soporte 8x5", value:"USD 10"},
                         ]},
                 ].map((item, index) => (
-                    <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'Plan Básico' ? '#fffede' : "#f9f9f9"}>
+                    <Flex key={index} direction="column" alignItems="center" padding="2rem" border="1px solid #00ECB3" borderRadius="10px" backgroundColor={item.plan === 'PLAN BÁSICO' ? '#fffede' : "#f9f9f9"}>
                         <Text fontSize="1.5rem" fontWeight="bold" color="#000">{item.plan}</Text>
                         <Text fontSize="1rem" textAlign="center" marginTop="0.5rem" color='black' style={{ whiteSpace: 'pre-line' }}>
                         {item.stack.map((stackItem,index) => (
@@ -474,7 +479,7 @@ export function Login() {
                             </Text>
                         <Text fontSize="1.25rem" fontWeight="bold" color="#000" marginTop="0.5rem">{item.priceRef}</Text>
                         <Text fontSize="1.25rem" fontWeight="bold" color="#000" marginTop="0.5rem">{item.reason}</Text>
-                        <Text fontSize="1.55rem" fontWeight="bold" color={item.plan === 'Plan Básico' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
+                        <Text fontSize="1.55rem" fontWeight="bold" color={item.plan === 'PLAN BÁSICO' ? '#ff116e' : "#039370"} marginTop="0.5rem">{item.price}</Text>
                         <button onClick={scrollToNav4}>Ingresar</button>
                     </Flex>
                 ))}
